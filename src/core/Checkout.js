@@ -5,7 +5,7 @@ import Card from './Card';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
 // import "braintree-web"; // not using this package
-import DropIn from 'braintree-web-drop-in-react';
+//import DropIn from 'braintree-web-drop-in-react';
 
 const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     const [data, setData] = useState({
@@ -134,15 +134,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                         />
                     </div>
 
-                    <DropIn
-                        options={{
-                            authorization: data.clientToken,
-                            paypal: {
-                                flow: 'vault'
-                            }
-                        }}
-                        onInstance={instance => (data.instance = instance)}
-                    />
+                    
                     <button onClick={buy} className="btn btn-success btn-block">
                         Pay
                     </button>

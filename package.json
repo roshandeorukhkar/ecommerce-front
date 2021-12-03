@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "braintree-web": "^3.45.0",
-    "braintree-web-drop-in-react": "^1.0.7",
     "compression": "^1.7.4",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
