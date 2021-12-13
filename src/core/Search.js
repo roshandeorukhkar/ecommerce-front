@@ -80,45 +80,33 @@ const Search = () => {
 
     const searchForm = () => (
         <form onSubmit={searchSubmit}>
-            <span className="input-group-text">
-                <div className="input-group input-group-lg">
-                    <div className="input-group-prepend">
-                        <select
-                            className="btn mr-2"
-                            onChange={handleChange("category")}
-                        >
-                            <option value="All">All</option>
-                            {categories.map((c, i) => (
-                                <option key={i} value={c._id}>
-                                    {c.name}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-
-                    <input
-                        type="search"
-                        className="form-control"
-                        onChange={handleChange("search")}
-                        placeholder="Search by name"
-                    />
-                </div>
-                <div
-                    className="btn input-group-append"
-                    style={{ border: "none" }}
+            <div className="search_filter">
+                <select 
+                    className="select_dropdown"
+                    onChange={handleChange("category")}
                 >
-                    <button className="input-group-text">Search</button>
-                </div>
-            </span>
+                <option value="">All Categories</option>
+                    {categories.map((c, i) => (
+                        <option key={i} value={c._id}>
+                            {c.name}
+                        </option>
+                    ))}
+                </select>
+                <input 
+                    type="text" 
+                    onChange={handleChange("search")}
+                    placeholder="Search Product"/>
+                <button className="search_btn">
+                    <i className="fas fa-search"></i>
+                </button>
+            </div>
         </form>
     );
 
     return (
         <div className="row">
             <div className="container mb-3">{searchForm()}</div>
-            <div className="container-fluid mb-3">
                 {searchedProducts(results)}
-            </div>
         </div>
     );
 };
