@@ -19,6 +19,8 @@ jobs:
       run: |
         yarn install
     - name: UAT Build
+      env:
+        CI: "false"
       run: |
         yarn build
     - name: Deploy to S3
@@ -31,4 +33,3 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
         SOURCE_DIR: "build"
-        CI: false
