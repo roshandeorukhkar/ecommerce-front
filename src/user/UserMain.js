@@ -1,15 +1,17 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from 'react';
 import { Route, Redirect } from "react-router-dom";
-import { isAuthenticated } from "./Cutomer";
-
-const AdminRoute = ({ component: Component, ...rest }) => {
+const AdminMain = () => {
+    console.log("i am in")
     return (
         <Route
-            {...rest}
-            
             render={props =>
-                1 === 1 ? (
-                    <Component {...props} />
+                1 == 1 ? (
+                    <Redirect
+                        to={{
+                            pathname: "/admin/dashboard",
+                            state: { from: props.location }
+                        }}
+                    />
                 ) : (
                     <Redirect
                         to={{
@@ -23,4 +25,4 @@ const AdminRoute = ({ component: Component, ...rest }) => {
     )
 };
 
-export default AdminRoute;
+export default AdminMain;

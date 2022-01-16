@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../core/Layout";
-import { isAuthenticated } from "../auth";
+import { isAuthenticated } from "../common/utils";
 import { Link } from "react-router-dom";
 import { getProducts, deleteProduct } from "./apiAdmin";
 
