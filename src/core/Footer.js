@@ -10,7 +10,7 @@ export default function Footer(){
                     <div className="col-lg-3 col-md-4 col-12">
                     <div className="footer_links-list">
                         <div className="footer_logo">
-                            <img className="img-fluid" src="../assets/images/footer_logo.png" alt="footer-logo" />
+                            <img className="img-fluid" src="../assets/images/logo.png" alt="footer-logo" />
                             <p>Various versions have evolved over an the years, sometimes a accident, sometimes on purpose .</p>
                         </div>
                         <div className="information">
@@ -19,7 +19,7 @@ export default function Footer(){
                                 <Link to="#"> <span><i className="fa fa-map-marker-alt"></i></span> Electronic Store United States Location Sometimes.</Link>
                                 </li>
                                 <li><Link to="tel:1234567890"> <span><i className="fas fa-phone"></i></span>Helpline: +123-456-7890</Link></li>
-                                <li> <Link to="mailto:bazooka@example.com" target="_top"><span><i className="fas fa-envelope"></i></span>bazooka@example.com</Link></li>
+                                <li> <Link to="mailto:info@example.com" target="_top"><span><i className="fas fa-envelope"></i></span>info@example.com</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -85,8 +85,10 @@ export default function Footer(){
                     </div>
                        
                 </div>
-                <div className="copy_right_footer"> 
-                    <div>© Copyright 2021-22 - Design By Webstrot</div>
+                <div class="bz_bottom_footer_main_wrapper float_left">
+                    <div class="copy_right">
+                    <p> © Copyright 2021-22 - Design By KEA</p>
+                    </div>
                 </div> 
                 {/* <div className="bz_bottom_footer_main_wrapper float_left">
                     <div className="copy_right">

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link ,withRouter } from "react-router-dom";
 import Search from "./Search";
-import { signout, isAuthenticated } from "../auth";
+//import { signout, isAuthenticated } from "../auth";
 import Menu from "./Menu"
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -12,36 +12,36 @@ const isActive = (history, path) => {
 };
 
 export default function Header({ history }){
-    console.log(isAuthenticated())
+    //console.log(isAuthenticated())
     return(
         <div className="pd_header_main_wrapper float_left">
             <div className="container">
                 <div className="pd_top_header_wrapper">
-                    {/* <div className="baz_top_header"> */}
-                    {/* <div className="row">
-                        <div className="col-lg-4 col-md-4 col-12">
-                            <div className="left_side">
-                                <ul>
-                                <li className="res_hidden">
-                                    <Link to="#"> <span><i className="fas fa-phone"></i></span>Helpline: +1234567890 </Link>
-                                </li>
-                                <li className="language">
-                                    <Link to="#">Eng <i className="fas fa-angle-down"></i></Link>
-                                    <div className="submenu">
-                                        <Link to="#"> <span><img src="../assets/images/usa.png" alt="flag" /></span> English</Link>
-                                        <Link to="#"> <span><img src="../assets/images/india.png" alt="flag" /></span> Hindi</Link>
-                                    </div>
-                                </li>
-                                </ul>
+                    <div className="baz_top_header"> 
+                        <div className="row">
+                            <div className="col-lg-4 col-md-4 col-12">
+                                <div className="left_side">
+                                    <ul>
+                                    <li className="res_hidden">
+                                        <Link to="#"> <span><i className="fas fa-phone"></i></span>Helpline: +1234567890 </Link>
+                                    </li>
+                                    <li className="language">
+                                        <Link to="#">Eng <i className="fas fa-angle-down"></i></Link>
+                                        <div className="submenu">
+                                            <Link to="#"> <span><img src="../assets/images/usa.png" alt="flag" /></span> English</Link>
+                                            <Link to="#"> <span><img src="../assets/images/india.png" alt="flag" /></span> Hindi</Link>
+                                        </div>
+                                    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="col-lg-8 col-md-8 col-12">
+                                <div className="right_side">
+                                    <Menu/>
+                                </div>
                             </div>
                         </div>
-                        <div className="col-lg-8 col-md-8 col-12">
-                            <div className="right_side">
-                                <Menu/>
-                            </div>
-                        </div>
-                    </div> */}
-                    {/* </div> */}
+                    </div> 
                     <div className="middle_header float_left">
                     <div className="row">
                         <div className="col-md-2 col-12">
@@ -54,13 +54,10 @@ export default function Header({ history }){
                         <div className="col-md-7 col-12">
                             <Search/>
                         </div>
-                        <div  className="col-md-1 col-12">
-                            <Menu/>
-                        </div>
                         <div className="col-md-2 col-12">
                             <div className="cart_shop">
                                 <Link to="#">
-                               
+                                <i class="fas fa-shopping-cart fa-2x" style={{color: "#000 !important"}}></i>
                                 <span>Your Cart <small>$3590</small> </span>
                                 </Link>
                                 <div className="cart_details">

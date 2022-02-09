@@ -5,6 +5,7 @@ import {NewProducts} from './newProducts';
 import {BestSellers} from './bestSellers';
 import Search from './Search';
 import {SliderMainWrapper} from "./SliderMainWrapper"
+import Layout from './Layout';
 const Home = () => {
     const [productsBySell, setProductsBySell] = useState([]);
     const [productsByArrival, setProductsByArrival] = useState([]);
@@ -40,23 +41,26 @@ const Home = () => {
         <>
             {/* <SliderMainWrapper/> */}
             {/* <h2 className="mb-4">........</h2> */}
-            <div className="row">
-                {productsByArrival.map((product, i) => (
-                    <div key={i} className="col-4 mb-3">
-                        <Card product={product} />
-                    </div>
-                ))}
-            </div>
-             <NewProducts/>       
-            {/* <h2 className="mb-4">Best Sellers</h2> */}
-            <div className="row">
-                {productsBySell.map((product, i) => (
-                    <div key={i} className="col-4 mb-3">
-                        <Card product={product} />
-                    </div>
-                ))}
-            </div>
-            <BestSellers/>
+            <Layout>
+                <div className="row">
+                    {productsByArrival.map((product, i) => (
+                        <div key={i} className="col-4 mb-3">
+                            <Card product={product} />
+                        </div>
+                    ))}
+                </div>
+                <NewProducts/>       
+                {/* <h2 className="mb-4">Best Sellers</h2> */}
+                <div className="row">
+                    {productsBySell.map((product, i) => (
+                        <div key={i} className="col-4 mb-3">
+                            <Card product={product} />
+                        </div>
+                    ))}
+                </div>
+                <BestSellers/>
+            </Layout>
+            
         </>
     );
 };

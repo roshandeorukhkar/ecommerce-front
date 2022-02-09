@@ -80,7 +80,7 @@ const Menu = ({ history }) => (
                         style={isActive(history, "/signin")}
                         to="/signin"
                     >
-                        Signin/
+                        <a href="javascript:void(0);">Signin&nbsp;/</a> 
                     </Link>
                 
                     <Link
@@ -88,12 +88,11 @@ const Menu = ({ history }) => (
                         style={isActive(history, "/signup")}
                         to="/signup"
                     >
-                        Signup
+                        <a href="javascript:void(0);">&nbsp;Signup</a>
                     </Link>
                 </Fragment>
             )}
-            </li>
-
+            </li>                  
             {isAuthenticated() && (
                 <li className="nav-item">
                     <span
@@ -109,6 +108,11 @@ const Menu = ({ history }) => (
                     </span>
                 </li>
             )}
+            <li>
+                <a href="#">
+                    <i className="fas fa-question-circle"></i> &nbsp;Help
+                </a>
+            </li> 
         </ul>
     </div>
 );

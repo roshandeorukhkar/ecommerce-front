@@ -11,7 +11,8 @@ const Search = () => {
         searched: false
     });
 
-    const { categories, category, search, results, searched } = data;
+    //const { categories, category, search, results, searched } = data;
+    const categories =[], category=[], search =[], results=[], searched = [];
 
     const loadCategories = () => {
         getCategories().then(data => {
@@ -55,7 +56,7 @@ const Search = () => {
         if (searched && results.length > 0) {
             return `Found ${results.length} products`;
         }
-        if (searched && results.length < 1) {
+        if (searched != '' && results.length < 1) {
             return `No products found`;
         }
     };
