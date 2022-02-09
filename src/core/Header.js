@@ -57,7 +57,7 @@ export default function Header({ history }){
                         <div className="col-md-2 col-12">
                             <div className="cart_shop">
                                 <Link to="#">
-                                <i class="fas fa-shopping-cart fa-2x" style={{color: "#000 !important"}}></i>
+                                <i class="fas fa-shopping-cart fa-2x" style={{color: "white"}}></i>
                                 <span>Your Cart <small>$3590</small> </span>
                                 </Link>
                                 <div className="cart_details">
@@ -104,7 +104,7 @@ export default function Header({ history }){
                             <input type="text" placeholder="Search categories"/>
                         </li>
                         <li>
-                            <Link to="index.html"> Home</Link>
+                            <Link to=""> Home</Link>
                         </li>
                         <li className='has-sub'>
                             <Link to='#'> Pages</Link>
@@ -314,7 +314,7 @@ export default function Header({ history }){
                     </div>
                     <ul>
                         <li>
-                            <Link to="index.html"> Home</Link>
+                            <Link to="/"> Home</Link>
                         </li>
                         <li><Link to="#">Laptops <span className="badge">Hot</span></Link>
                         </li>

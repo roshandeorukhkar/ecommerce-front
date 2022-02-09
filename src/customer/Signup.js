@@ -38,35 +38,63 @@ const Signup = () => {
     };
 
     const signUpForm = () => (
-        <form>
-            <div className="form-group">
-                <label className="text-muted">Name</label>
-                <input onChange={handleChange('name')} type="text" className="form-control" value={name} />
+        <div class="bz_product_grid_content_main_wrapper float_left">
+            <div class="container custom_container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                    <div class="login_form">
+                        <h3>Signup</h3>
+                        <form>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label>Name*</label>
+                                </div>
+                                <div class="col-12">
+                                    <input placeholder="Enter you name here" onChange={handleChange('name')} type="text" className="form-control" value={name} />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label>Email*</label>
+                                </div>
+                                <div class="col-12">
+                                    <input placeholder="Enter you email here" onChange={handleChange('email')} type="email" className="form-control" value={email} />
+                                </div>
+                            </div> 
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label>Password*</label>
+                                </div>
+                                <div class="col-12">
+                                    <input placeholder="Enter your password here" onChange={handleChange('password')} type="password" className="form-control" value={password} />
+                                </div>
+                            </div>                          
+                            <button onClick={clickSubmit} className="submit_btn">
+                                Submit
+                            </button>
+                        </form>              
+        
+                        <p>Alreay have an account? <a href="/signin">Signin</a></p>
+                    </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                    <div class="login_side_img">
+                        Image
+                    </div>
+                    </div>
+                </div>
             </div>
-
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input onChange={handleChange('email')} type="email" className="form-control" value={email} />
-            </div>
-
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input onChange={handleChange('password')} type="password" className="form-control" value={password} />
-            </div>
-            <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
-            </button>
-        </form>
+        </div>
     );
 
     const showError = () => (
-        <div className="alert alert-danger" style={{ display: error ? '' : 'none' }}>
+        <div className="alert alert-danger clearfix" style={{ display: error ? '' : 'none' }}>
             {error}
         </div>
     );
 
     const showSuccess = () => (
-        <div className="alert alert-info" style={{ display: success ? '' : 'none' }}>
+        <div className="alert alert-info clearfix" style={{ display: success ? '' : 'none' }}>
             New account is created. Please <Link to="/signin">Signin</Link>
         </div>
     );
@@ -81,11 +109,21 @@ const Signup = () => {
         //     {showError()}
         //     {signUpForm()}
         // </Layout>
-        <div className="container col-md-8 offset-md-2" >
+        <Layout>
+            <div class="bz_inner_page_navigation float_left">
+               <div class="container custom_container">
+                  <div class="inner_menu float_left">
+                     <ul>
+                        <li><a href="/"> <span><i class="fas fa-home"></i></span> </a></li>
+                        <li class="active"><a href="#"> <span><i class="fas fa-angle-right"></i></span> Signup</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
             {showSuccess()}
             {showError()}
             {signUpForm()}
-        </div>
+        </Layout>
     );
 };
 

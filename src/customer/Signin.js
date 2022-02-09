@@ -38,35 +38,61 @@ const Signin = () => {
     };
 
     const signUpForm = () => (
-        <form>
-            <div className="form-group">
-                <label className="text-muted">Email</label>
-                <input
-                    onChange={handleChange("email")}
-                    type="email"
-                    className="form-control"
-                    value={email}
-                />
+        <div class="bz_product_grid_content_main_wrapper float_left">
+               <div class="container custom_container">
+                  <div class="row">
+                     <div class="col-lg-6 col-md-6 col-12">
+                        <div class="login_form">
+                           <h3>Signin</h3>
+                            <form>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label>Email*</label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input 
+                                        onChange={handleChange("email")}
+                                        type="email"
+                                        className="form-control"
+                                        value={email}
+                                        placeholder="Enter your email here"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <label>Password*</label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input 
+                                        placeholder="Enter your password here"
+                                        onChange={handleChange("password")}
+                                        type="password"
+                                        className="form-control"
+                                        value={password}
+                                        />
+                                        <a href="#">Forgot Password!</a>
+                                    </div>
+                                </div>                           
+                                <button onClick={clickSubmit} className="submit_btn">
+                                    Submit
+                                </button>
+                            </form>
+                            <p>Don't have an account? <a href="/signup">Signup</a></p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6 col-12">
+                        <div class="login_side_img">
+                           Image
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input
-                    onChange={handleChange("password")}
-                    type="password"
-                    className="form-control"
-                    value={password}
-                />
-            </div>
-            <button onClick={clickSubmit} className="btn btn-primary">
-                Submit
-            </button>
-        </form>
     );
 
     const showError = () => (
         <div
-            className="alert alert-danger"
+            className="alert alert-danger clearfix"
             style={{ display: error ? "" : "none" }}
         >
             {error}
@@ -75,7 +101,7 @@ const Signin = () => {
 
     const showLoading = () =>
         loading && (
-            <div className="alert alert-info">
+            <div className="alert alert-info clearfix">
                 <h2>Loading...</h2>
             </div>
         );
@@ -94,11 +120,18 @@ const Signin = () => {
     };
 
     return (
-        <Layout
-            title="Signin"
-            description="Signin to E-commerce"
-            className="container col-md-8 offset-md-2"
-        >
+        
+        <Layout>
+            <div class="bz_inner_page_navigation float_left">
+               <div class="container custom_container">
+                  <div class="inner_menu float_left">
+                     <ul>
+                        <li><a href="/"> <span><i class="fas fa-home"></i></span> </a></li>
+                        <li class="active"><a href="#"> <span><i class="fas fa-angle-right"></i></span> Signin</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
             {showLoading()}
             {showError()}
             {signUpForm()}
