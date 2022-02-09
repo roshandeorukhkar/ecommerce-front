@@ -79,7 +79,7 @@ const Signup = () => {
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                     <div class="login_side_img">
-                        Image
+                        <img className="img-fluid" src="../assets/images/1.jpg" alt="online-shopping" style={{height:'569px'}}/>
                     </div>
                     </div>
                 </div>
