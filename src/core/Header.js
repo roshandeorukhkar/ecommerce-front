@@ -49,7 +49,7 @@ export default function Header({ history }){
                             </div>
                         </div>
                     </div>*/}
-                    <div className="middle_header float_left"  style={{padding: "12px 0px"}}>
+                    <div className="middle_header float_left"  style={{padding: "12px 0px 0px 0px"}}>
                     <div className="row">
                         <div className="col-md-2 col-12">
                             <div className="logo">
