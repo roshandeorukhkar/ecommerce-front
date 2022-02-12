@@ -71,8 +71,8 @@ const Menu = ({ history }) => (
                     </Link>
                 </li>
             )} */}
-        <ul>   
-            <li className="nav-item">
+        <ul style={{ float: "right" }}>   
+            <li className="nav-item" style={{ marginTop: '15px' }}>
             {!isAuthenticated() && (
                 <Fragment>
                     <Link
@@ -80,7 +80,7 @@ const Menu = ({ history }) => (
                         style={isActive(history, "/signin")}
                         to="/signin"
                     >
-                        <a href="javascript:void(0);">Signin&nbsp;/</a> 
+                        Login&nbsp;/
                     </Link>
                 
                     <Link
@@ -88,13 +88,13 @@ const Menu = ({ history }) => (
                         style={isActive(history, "/signup")}
                         to="/signup"
                     >
-                        <a href="javascript:void(0);">&nbsp;Signup</a>
+                        &nbsp;Register
                     </Link>
                 </Fragment>
             )}
             </li>                  
             {isAuthenticated() && (
-                <li className="nav-item">
+                <li className="nav-item" style={{ marginTop: '15px' }}>
                     <span
                         className="nav-link"
                         style={{ cursor: "pointer", color: "#ffffff" }}
@@ -104,15 +104,15 @@ const Menu = ({ history }) => (
                             })
                         }
                     >
-                        Signout
+                        Logout
                     </span>
                 </li>
             )}
-            <li>
+            {/*<li>
                 <a href="#">
                     <i className="fas fa-question-circle"></i> &nbsp;Help
                 </a>
-            </li> 
+            </li>*/} 
         </ul>
     </div>
 );

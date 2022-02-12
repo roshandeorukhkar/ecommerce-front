@@ -13,11 +13,18 @@ const isActive = (history, path) => {
 
 export default function Header({ history }){
     //console.log(isAuthenticated())
+
+    const iStyle = {
+        background: '#edf6ff',
+        borderRadius: '50%',
+        padding: '10px',
+    }
+
     return(
         <div className="pd_header_main_wrapper float_left">
             <div className="container">
                 <div className="pd_top_header_wrapper">
-                    <div className="baz_top_header"> 
+                    {/*<div className="baz_top_header"> 
                         <div className="row">
                             <div className="col-lg-4 col-md-4 col-12">
                                 <div className="left_side">
@@ -41,12 +48,12 @@ export default function Header({ history }){
                                 </div>
                             </div>
                         </div>
-                    </div> 
-                    <div className="middle_header float_left">
+                    </div>*/}
+                    <div className="middle_header float_left"  style={{padding: "12px 0px"}}>
                     <div className="row">
                         <div className="col-md-2 col-12">
                             <div className="logo">
-                                <Link to="index.html">
+                                <Link to="/">
                                 <img className="img-fluid" src="../assets/images/logo.png" alt="logo" />
                                 </Link>
                             </div>
@@ -54,38 +61,39 @@ export default function Header({ history }){
                         <div className="col-md-7 col-12">
                             <Search/>
                         </div>
-                        <div className="col-md-2 col-12">
-                            <div className="cart_shop">
+                        <div className="col-md-3 col-12">
+                            <div className="cart_shop" style={{float: "left"}}>
                                 <Link to="#">
                                 <i class="fas fa-shopping-cart fa-2x" style={{color: "white"}}></i>
                                 <span>Your Cart <small>$3590</small> </span>
                                 </Link>
                                 <div className="cart_details">
-                                <div className="total-count">
-                                    <span>1 ITEM</span>
-                                    <Link to="#">VIEW CART</Link>
-                                </div>
-                                <div className="cart_list">
-                                    <div className="select_cart">
-                                        <Link to="#">Brow Backpack</Link>
-                                        <span>1 x $258.00</span>
+                                    <div className="total-count">
+                                        <span>1 ITEM</span>
+                                        <Link to="#">VIEW CART</Link>
                                     </div>
-                                    <div className="select_img">
-                                        <img alt="" src="../assets/images/car1.jpg"/>
-                                        <div className="close_btn">
-                                            <i className="fa fa-times"></i>
+                                    <div className="cart_list">
+                                        <div className="select_cart">
+                                            <Link to="#">Brow Backpack</Link>
+                                            <span>1 x $258.00</span>
+                                        </div>
+                                        <div className="select_img">
+                                            <img alt="" src="../assets/images/car1.jpg"/>
+                                            <div className="close_btn">
+                                                <i className="fa fa-times"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="sub_total">
-                                    <p>Sub Total:<span>$ 289.00</span></p>
-                                </div>
-                                <div className="cart_btn">
-                                    <Link to="#"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
-                                    <Link to="#"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
-                                </div>
+                                    <div className="sub_total">
+                                        <p>Sub Total:<span>$ 289.00</span></p>
+                                    </div>
+                                    <div className="cart_btn">
+                                        <Link to="#"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
+                                        <Link to="#"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
+                                    </div>
                                 </div>
                             </div>
+                            <Menu/>
                         </div>
                     </div>
                     </div>
@@ -93,7 +101,7 @@ export default function Header({ history }){
                 {/* <!-- responsive menu start--> */}
                 <div id="sidebar" className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
                     <div className="pd_toggle_logo">
-                    <Link to="index.html">
+                    <Link to="/">
                         <img src="../assets/images/logo.png" alt="img"/>
                     </Link>
                     </div>
@@ -158,7 +166,7 @@ export default function Header({ history }){
                 </div>
             </div>
             {/* <!-- responsive menu End--> */}
-            <div className="pd_navigation_wrapper">
+            <div className="pd_navigation_wrapper" style={{ background: '#fff' }}>
                 <div className="container custom_container">
                     <div className="pd_responsive_logo d-block d-sm-block d-md-block d-lg-none d-xl-none">
                     <div className="response_top_header">
@@ -269,17 +277,10 @@ export default function Header({ history }){
                     </div>
                     </div>
                     <div className="pd_inner_navigation_wrapper">
-                    <div className="baz_categories">
+                    {/*<div className="baz_categories">
                         <ul>
                             <li>
                                 <Link to="#">
-                                {/* <span>
-                                    <svg height="384pt" viewBox="0 -53 384 384" width="384pt" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/>
-                                        <path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/>
-                                        <path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0"/>
-                                    </svg>
-                                </span> */}
                                 Categories
                                 </Link>
                                 <ul className="cat_sub_menu">
@@ -312,16 +313,18 @@ export default function Header({ history }){
                             </li>
                         </ul>
                     </div>
+                    */}
+                    
                     <ul>
-                        <li>
+                        {/*<li>
                             <Link to="/"> Home</Link>
+                        </li>*/}
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops</Link>
                         </li>
-                        <li><Link to="#">Laptops <span className="badge">Hot</span></Link>
-                        </li>
-                        <li><Link to="#">Dekstops</Link>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>
                         </li>
                         <li>
-                            <Link to="#">Cameras &nbsp;<i className="fas fa-angle-down"></i> <span className="badge new">New</span></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Cameras &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
                                 <li><Link to="#">Digital Camera</Link>
                                 </li>
@@ -333,10 +336,10 @@ export default function Header({ history }){
                                 </li>
                             </ul>
                         </li>
-                        <li><Link to="#">Mobile</Link>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Mobile</Link>
                         </li>
                         <li>
-                            <Link to="#">Pages &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Pages &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
                                 <li><Link to="checkout.html">Checkout</Link></li>
                                 <li><Link to="compare.html">Compare</Link></li>
@@ -348,7 +351,7 @@ export default function Header({ history }){
                             </ul>
                         </li>
                         <li>
-                            <Link to="#">Shop &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Shop &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
                                 <li><Link to="product-grid-view.html">Product Grid View</Link></li>
                                 <li><Link to="single-product.html">Product Single 1</Link></li>
@@ -359,7 +362,7 @@ export default function Header({ history }){
                             </ul>
                         </li>
                         <li>
-                            <Link to="#">Blog  &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Blog  &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
                                 <li><Link to="blog.html">Blog</Link>
                                 </li>
@@ -372,12 +375,12 @@ export default function Header({ history }){
                                 <li><Link to="blog_single_sidebar.html">Blog Single</Link></li>
                             </ul>
                         </li>
-                        <li><Link to="contact_us.html">Contact</Link>
-                        </li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Contact</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Hotel</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Book</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Furnitures</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Mobile</Link></li>
                     </ul>
-                    <div className="today">
-                        <Link to="#">Today's Deals</Link>
-                    </div>
                     </div>
                 </div>
             </div>

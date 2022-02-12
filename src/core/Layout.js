@@ -12,7 +12,7 @@ const Layout = ({
 }) => (
     <div>
         <Header />
-        <div className="jumbotron">
+        <div className="jumbotron_1">
             <h2>{title}</h2>
             <p className="lead">{description}</p>
         </div>
