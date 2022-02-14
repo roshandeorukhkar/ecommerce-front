@@ -55,21 +55,7 @@ function BestSellers(){
                      <div class="col-lg-9 col-md-6 col-12">
                         <div class="new_product_tabs">
                            <div class="justify-content-end">
-                              <h3 class="title"> <span> <img src="../assets/images/washing_icon.png" alt="icon"/></span>  Wahing Machine</h3>
-                              <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                  <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="laptop-tab" data-toggle="tab" href="#laptop" role="tab" aria-controls="laptop" aria-selected="false">Laptop</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="mobile-tab" data-toggle="tab" href="#mobile" role="tab" aria-controls="mobile" aria-selected="false">Mobile</a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" id="speakers-tab" data-toggle="tab" href="#speakers" role="tab" aria-controls="speakers" aria-selected="false">Speakers</a>
-                                </li>
-                              </ul>
+                              <h3 class="title"> <span> <img src="../assets/images/washing_icon.png" alt="icon"/></span>  New Product</h3>
                            </div>
                            <div class="tab-content">
                               <div id="all" class="tab-pane active show" role="tabpanel" aria-labelledby="all-tab">
@@ -482,7 +468,7 @@ function BestSellers(){
                         <h3 class="title"><span><img class="img-fluid" src="../assets/images/partner.png" alt="icon"/></span> &nbsp;Our Partner</h3>
                      </div>
                      <div class="partner_slider">
-                        <OwlCarousel className='owl-carousel owl-theme' loop margin={10} nav items={5} dots={false}>
+                        <OwlCarousel className='owl-carousel owl-theme' loop margin={10} nav items={5} dots={false}  autoplay={true}>
                            <div class='item'>
                               <div class="partner_img">
                                  <img src="../assets/images/team_6.png" alt="logo"/>

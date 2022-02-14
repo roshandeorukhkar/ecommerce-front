@@ -9,7 +9,7 @@ function NewProducts(){
                        
         <div className="upperPadding" style={{padding:'0%'}}>
             <div class="col-lg-12 col-md-12 col-12 no_padd">
-                <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={1}>
+                <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={1} autoplay={true}>
                     <div class='item'>
                         <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
                     </div>
@@ -27,21 +27,7 @@ function NewProducts(){
                         <div class="col-md-12 col-12">
                         <div class="new_product_tabs">
                             <div class="justify-content-end">
-                                <h3 class="title"> <span><i class="fas fa-gift"></i></span> New Product</h3>
-                                <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">All</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="menu1-tab" data-toggle="tab" href="#menu1" role="tab" aria-controls="menu1" aria-selected="false">Laptop</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="menu2-tab" data-toggle="tab" href="#menu2" role="tab" aria-controls="menu2" aria-selected="false">Mobile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="menu3-tab" data-toggle="tab" href="#menu3" role="tab" aria-controls="menu3" aria-selected="false">Speakers</a>
-                                </li>
-                                </ul>
+                                <h3 class="title"> <span><i class="fas fa-gift"></i></span> Featured Product</h3>
                             </div>
                             <div class="tab-content" id="myTabContent">
                                 <div id="home" class="tab-pane active show" role="tabpanel" aria-labelledby="home-tab">
