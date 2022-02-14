@@ -48,7 +48,7 @@ function BestSellers(){
                               </ul>
                            </div>
                            <div class="bz_post_add_wrapper">
-                              <img class="img-fluid" src="../assets/images/product3.png" alt="addpost" />
+                              <img class="img-fluid" src="../assets/images/product3.png" alt="addpost" style={{height:'245px'}} />
                            </div>
                         </div>
                      </div>
