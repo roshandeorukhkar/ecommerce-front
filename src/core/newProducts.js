@@ -174,396 +174,6 @@ function NewProducts(){
                                         </OwlCarousel>
                                     </div>
                                 </div>
-                                <div id="menu1" class="tab-pane" role="tabpanel" aria-labelledby="menu1-tab">
-                                    <div class="product_slider">
-                                    <div class="owl-carousel owl-theme">
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product1.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Headphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/related4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p>hot</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Earphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product3.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Ultra HD Laptop</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">HD Camera</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div id="menu2" class="tab-pane" role="tabpanel" aria-labelledby="menu1-tab">
-                                    <div class="product_slider">
-                                    <div class="owl-carousel owl-theme">
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product1.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Headphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/related4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p>hot</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Earphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product3.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Ultra HD Laptop</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">HD Camera</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div id="menu3" class="tab-pane">
-                                    <div class="product_slider">
-                                    <div class="owl-carousel owl-theme">
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product1.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Headphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/related4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p>hot</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Earphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product3.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Ultra HD Laptop</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">HD Camera</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         </div>
@@ -779,6 +389,90 @@ function NewProducts(){
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bz_section_innerbox_main_wrapper float_left">
+               <div class="container custom_container">
+                  <div class="row">
+                     <div class="col-lg-4 col-md-6 col-12">
+                        <div class="add_post">
+                           <div class="img_hover">
+                              <img class="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                           </div>
+                           <div class="post_content color_change">
+                              <p>Amazing Discount</p>
+                              <h2>Men's <span>Watchs</span> </h2>
+                              <a class="custom_btn" href="javascript:;">Buy Now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-12">
+                        <div class="add_post">
+                           <div class="img_hover">
+                              <img class="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                           </div>
+                           <div class="post_content color_change">
+                              <p>Amazing Discount</p>
+                              <h2>Digital <span>Camera</span> </h2>
+                              <a class="custom_btn" href="javascript:;">Buy Now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-12">
+                        <div class="add_post">
+                           <div class="img_hover">
+                              <img class="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                           </div>
+                           <div class="post_content color_change">
+                              <p>Amazing Discount</p>
+                              <h2>Camera <span>Lens</span> </h2>
+                              <a class="custom_btn" href="javascript:;">Buy Now</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bz_section_style_main_wrapper float_left">
+               <div class="container custom_container">
+                  <div class="row">
+                     <div class="col-md-5 col-12">
+                        <div class="style_img">
+                           <img class="img-fluid" src="../assets/images/style-img.png" alt="style"/>
+                        </div>
+                     </div>
+                     <div class="col-md-7 col-12">
+                        <div class="style_heading">
+                           <h2>Sleek, Stylish &amp; Quality Powerful</h2>
+                           <p>Save on innovative &amp; cutting-edge Bazooka applians that make life good.</p>
+                           <a class="custom_btn" href="javascript:;">Buy now</a>
+                        </div>
+                        <div class="sale_bg">
+                           <img class="img-fluid" src="../assets/images/sale.png" alt="sale" />
+                           <div class="tag_heading">
+                              <p><strong>Special</strong> sale <span>up to 50%</span> </p>
+                           </div>
+                        </div>
+                        <div id="clockdiv" class="product_timer float_left">
+                           <div class="da">
+                              <span class="days wow fadeInUp">-103</span>
+                              <div class="smalltext wow fadeInUp">Days</div>
+                           </div>
+                           <div class="ho">
+                              <span class="hours wow fadeInUp">19</span>
+                              <div class="smalltext wow fadeInUp">Hrs</div>
+                           </div>
+                           <div class="min">
+                              <span class="minutes wow fadeInUp">44</span>
+                              <div class="smalltext wow fadeInUp">Mins</div>
+                           </div>
+                           <div class="second">
+                              <span class="seconds wow fadeInUp">47</span>
+                              <div class="smalltext wow fadeInUp">Secs</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
         </div>
     )

@@ -20207,5 +20207,9 @@ ul.mm-listview li a {
 			.partner_slider div:last-child {padding-right: 0px;}
 			
 			.testimonial_slider .item { width: 100%;}
+      .owl-prev, .owl-next {
+        color: white !important;
+        font-size: 200% !important;
+      }
 
 /*# sourceMappingURL=style.css.map */

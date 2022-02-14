@@ -74,7 +74,7 @@ function BestSellers(){
                            <div class="tab-content">
                               <div id="all" class="tab-pane active show" role="tabpanel" aria-labelledby="all-tab">
                                  <div class="washing_slider">
-                                    <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={3}>
+                                    <OwlCarousel className='owl-carousel owl-theme' loop nav={true} dot={false} margin={10} items={3}>
                                        <div class="item" style={{width:'99%'}}>
                                           <div class="product_box">
                                              <div class="product_img">
@@ -472,6 +472,71 @@ function BestSellers(){
                         </div>
                      </div>
                   </div>
+               </div>
+            </div>
+            <div class="bz_section_partner_main_wrapper float_left">
+               <div class="container custom_container">
+               <div class="row">
+                  <div class="col-md-12 col-12">
+                     <div class="our_partner_heading">
+                        <h3 class="title"><span><img class="img-fluid" src="../assets/images/partner.png" alt="icon"/></span> &nbsp;Our Partner</h3>
+                     </div>
+                     <div class="partner_slider">
+                        <OwlCarousel className='owl-carousel owl-theme' loop margin={10} nav items={5} dots={false}>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                           <div class='item'>
+                              <div class="partner_img">
+                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                              </div>
+                           </div>
+                        </OwlCarousel>
+                     </div>
+                  </div>
+               </div>
                </div>
             </div>
         </div>
