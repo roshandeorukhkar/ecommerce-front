@@ -1,4 +1,7 @@
 import React from "react";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function BestSellers(){
     return(
@@ -12,7 +15,7 @@ function BestSellers(){
                               <ul>
                                  <li>
                                     <div class="icon_post">
-                                       <img src="images/icon1.png" alt="icon" />
+                                       <img src="../assets/images/icon1.png" alt="icon" />
                                     </div>
                                     <div class="icon_list">
                                        <a href="#">Special Gift Cardst <span>Special Gift cards</span> </a>
@@ -20,7 +23,7 @@ function BestSellers(){
                                  </li>
                                  <li>
                                     <div class="icon_post">
-                                       <img src="images/icon2.png" alt="icon" />
+                                       <img src="../assets/images/icon2.png" alt="icon" />
                                     </div>
                                     <div class="icon_list">
                                        <a href="#">Secure Payment <span>100% Secure Payment</span> </a>
@@ -28,7 +31,7 @@ function BestSellers(){
                                  </li>
                                  <li>
                                     <div class="icon_post">
-                                       <img src="images/icon3.png" alt="icon" />
+                                       <img src="../assets/images/icon3.png" alt="icon" />
                                     </div>
                                     <div class="icon_list">
                                        <a href="#">24/7 <span>Support</span> </a>
@@ -36,7 +39,7 @@ function BestSellers(){
                                  </li>
                                  <li>
                                     <div class="icon_post">
-                                       <img src="images/icon4.png" alt="icon" />
+                                       <img src="../assets/images/icon4.png" alt="icon" />
                                     </div>
                                     <div class="icon_list">
                                        <a href="#">Free Shipping <span>on order over $99</span> </a>
@@ -45,14 +48,14 @@ function BestSellers(){
                               </ul>
                            </div>
                            <div class="bz_post_add_wrapper">
-                              <img class="img-fluid" src="images/addpost.jpg" alt="addpost" />
+                              <img class="img-fluid" src="../assets/images/product3.png" alt="addpost" />
                            </div>
                         </div>
                      </div>
                      <div class="col-lg-9 col-md-6 col-12">
                         <div class="new_product_tabs">
                            <div class="justify-content-end">
-                              <h3 class="title"> <span> <img src="images/washing_icon.png" alt="icon"/></span>  Wahing Machine</h3>
+                              <h3 class="title"> <span> <img src="../assets/images/washing_icon.png" alt="icon"/></span>  Wahing Machine</h3>
                               <ul class="nav nav-tabs justify-content-end" id="myTab" role="tablist">
                                 <li class="nav-item">
                                   <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
@@ -71,11 +74,11 @@ function BestSellers(){
                            <div class="tab-content">
                               <div id="all" class="tab-pane active show" role="tabpanel" aria-labelledby="all-tab">
                                  <div class="washing_slider">
-                                    <div class="owl-carousel owl-theme">
-                                       <div class="item">
+                                    <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={3}>
+                                       <div class="item" style={{width:'99%'}}>
                                           <div class="product_box">
                                              <div class="product_img">
-                                                <img class="img-fluid" src="images/washing1.png" alt="product img"/>
+                                                <img class="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
                                                 <div class="top_icon">
                                                    <p>hot</p>
                                                    <span><i class="far fa-heart"></i></span>
@@ -103,10 +106,10 @@ function BestSellers(){
                                              </div>
                                           </div>
                                        </div>
-                                       <div class="item">
+                                       <div class="item" style={{width:'99%'}}>
                                           <div class="product_box">
                                              <div class="product_img">
-                                                <img class="img-fluid" src="images/washing2.png" alt="product img"/>
+                                                <img class="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
                                                 <div class="top_icon">
                                                    <p class="new">new</p>
                                                    <span><i class="far fa-heart"></i></span>
@@ -134,10 +137,10 @@ function BestSellers(){
                                              </div>
                                           </div>
                                        </div>
-                                       <div class="item">
+                                       <div class="item" style={{width:'99%'}}>
                                           <div class="product_box">
                                              <div class="product_img">
-                                                <img class="img-fluid" src="images/washing3.png" alt="product img"/>
+                                                <img class="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
                                                 <div class="top_icon">
                                                    <p>hot</p>
                                                    <span><i class="far fa-heart"></i></span>
@@ -165,7 +168,7 @@ function BestSellers(){
                                              </div>
                                           </div>
                                        </div>
-                                    </div>
+                                    </OwlCarousel>
                                  </div>
                               </div>
                               <div id="laptop" class="tab-pane" role="tabpanel" aria-labelledby="laptop-tab">

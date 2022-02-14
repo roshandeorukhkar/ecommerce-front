@@ -1,11 +1,29 @@
 import React from "react";
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function NewProducts(){
+
     return(
-        <div className="upperPadding">
+                       
+        <div className="upperPadding" style={{padding:'0%'}}>
+            <div class="col-lg-12 col-md-12 col-12 no_padd">
+                <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={1}>
+                    <div class='item'>
+                        <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                    </div>
+                    <div class='item'>
+                        <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                    </div>
+                    <div class='item'>
+                        <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                    </div>
+                </OwlCarousel>
+            </div>
             <div class="bz_newproduct_main_wrapper float_left">
                 <div class="container custom_container">
-                    <div class="row">
+                    <div class="row1">
                         <div class="col-md-12 col-12">
                         <div class="new_product_tabs">
                             <div class="justify-content-end">
@@ -28,132 +46,132 @@ function NewProducts(){
                             <div class="tab-content" id="myTabContent">
                                 <div id="home" class="tab-pane active show" role="tabpanel" aria-labelledby="home-tab">
                                     <div class="product_slider">
-                                    <div class="owl-carousel owl-theme">
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product1.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                        <OwlCarousel className='owl-carousel owl-theme' margin={10} loop items={4}>
+                                            <div class="item" style={{width:'99%'}}>
+                                                <div class="product_box">
+                                                    <div class="product_img">
+                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div class="top_icon">
+                                                        <p class="new">new</p>
+                                                        <span><i class="far fa-heart"></i></span>
+                                                    </div>
+                                                    <div class="product_overlay">
+                                                        <div class="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="product_content">
+                                                    <span class="category-list">Headphones</span>
+                                                    <a href="mobile_single_product.html">
+                                                        <h3 class="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
+                                                    </a>
+                                                    <ul class="star">
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    </ul>
+                                                    <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
+                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
                                                     </div>
                                                 </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Headphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/related4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p>hot</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                            <div class="item" style={{width:'99%'}}>
+                                                <div class="product_box">
+                                                    <div class="product_img">
+                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div class="top_icon">
+                                                        <p>hot</p>
+                                                        <span><i class="far fa-heart"></i></span>
+                                                    </div>
+                                                    <div class="product_overlay">
+                                                        <div class="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="product_content">
+                                                    <span class="category-list">Earphones</span>
+                                                    <a href="mobile_single_product.html">
+                                                        <h3 class="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
+                                                    </a>
+                                                    <ul class="star">
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    </ul>
+                                                    <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
+                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
                                                     </div>
                                                 </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Earphones</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product3.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
+                                            <div class="item" style={{width:'99%'}}>
+                                                <div class="product_box">
+                                                    <div class="product_img">
+                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div class="top_icon">
+                                                        <p class="new">new</p>
+                                                        <span><i class="far fa-heart"></i></span>
+                                                    </div>
+                                                    <div class="product_overlay">
+                                                        <div class="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="product_content">
+                                                    <span class="category-list">Ultra HD Laptop</span>
+                                                    <a href="mobile_single_product.html">
+                                                        <h3 class="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
+                                                    </a>
+                                                    <ul class="star">
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    </ul>
+                                                    <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
+                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
                                                     </div>
                                                 </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">Ultra HD Laptop</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="product_box">
-                                                <div class="product_img">
-                                                <img class="img-fluid" src="images/product4.png" alt="product img"/>
-                                                <div class="top_icon">
-                                                    <p class="new">new</p>
-                                                    <span><i class="far fa-heart"></i></span>
-                                                </div>
-                                                <div class="product_overlay">
-                                                    <div class="search_icon">
-                                                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                            <div class="item" style={{width:'99%'}}>
+                                                <div class="product_box">
+                                                    <div class="product_img">
+                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div class="top_icon">
+                                                        <p class="new">new</p>
+                                                        <span><i class="far fa-heart"></i></span>
+                                                    </div>
+                                                    <div class="product_overlay">
+                                                        <div class="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="product_content">
+                                                    <span class="category-list">HD Camera</span>
+                                                    <a href="mobile_single_product.html">
+                                                        <h3 class="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
+                                                    </a>
+                                                    <ul class="star">
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    </ul>
+                                                    <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
+                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
                                                     </div>
                                                 </div>
-                                                </div>
-                                                <div class="product_content">
-                                                <span class="category-list">HD Camera</span>
-                                                <a href="mobile_single_product.html">
-                                                    <h3 class="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
-                                                </a>
-                                                <ul class="star">
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                </ul>
-                                                <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
-                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </OwlCarousel>
                                     </div>
                                 </div>
                                 <div id="menu1" class="tab-pane" role="tabpanel" aria-labelledby="menu1-tab">

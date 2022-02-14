@@ -6,7 +6,9 @@ import {BestSellers} from './bestSellers';
 import Search from './Search';
 import {SliderMainWrapper} from "./SliderMainWrapper"
 import Layout from './Layout';
+
 const Home = () => {
+    
     const [productsBySell, setProductsBySell] = useState([]);
     const [productsByArrival, setProductsByArrival] = useState([]);
     const [error, setError] = useState(false);
@@ -42,9 +44,9 @@ const Home = () => {
             {/* <SliderMainWrapper/> */}
             {/* <h2 className="mb-4">........</h2> */}
             <Layout>
-                <div class="col-lg-12 col-md-12 col-12 no_padd">
+                {/*<div class="col-lg-12 col-md-12 col-12 no_padd">
                     <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
-                </div>
+                </div>*/}
                 <div className="row">
                     {productsByArrival.map((product, i) => (
                         <div key={i} className="col-4 mb-3">

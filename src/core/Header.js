@@ -321,10 +321,10 @@ export default function Header({ history }){
                         </li>*/}
                         <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops</Link>
                         </li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-desktop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>
                         </li>
                         <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Cameras &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-camera-retro fa-2x" style={iStyle}></i> <br/>Cameras &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
                                 <li><Link to="#">Digital Camera</Link>
                                 </li>
@@ -336,50 +336,29 @@ export default function Header({ history }){
                                 </li>
                             </ul>
                         </li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Mobile</Link>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-mobile-alt fa-2x" style={iStyle}></i> <br/>Mobile</Link>
                         </li>
                         <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Pages &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-shapes fa-2x" style={iStyle}></i> <br/>Fashion &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
-                                <li><Link to="checkout.html">Checkout</Link></li>
-                                <li><Link to="compare.html">Compare</Link></li>
-                                <li><Link to="shoping_cart.html">Shoping Cart</Link></li>
-                                <li><Link to="order_tracking.html">Order Tracking</Link></li>
-                                <li><Link to="coming_soon.html">Coming Soon 1</Link></li>
-                                <li><Link to="coming_soon_update.html">Coming Soon 2</Link></li>
-                                <li><Link to="error.html">404 Error</Link></li>
+                                <li><Link to="#">Trending</Link></li>
+                                <li><Link to="#">Unique</Link></li>
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Shop &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-box-open fa-2x" style={iStyle}></i> <br/>Appliances &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
-                                <li><Link to="product-grid-view.html">Product Grid View</Link></li>
-                                <li><Link to="single-product.html">Product Single 1</Link></li>
-                                <li><Link to="single-product1.html">Product Single 2</Link></li>
-                                <li><Link to="single-product2.html">Product Single 3</Link></li>
-                                <li><Link to="single-product3.html">Product Single 4</Link></li>
-                                <li><Link to="single-product4.html">Product Single 5</Link></li>
+                                <li><Link to="#">Appliances 1</Link>
+                                </li>
+                                <li><Link to="#">Appliances 2</Link>
+                                </li>
                             </ul>
                         </li>
-                        <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Blog  &nbsp;<i className="fas fa-angle-down"></i></Link>
-                            <ul>
-                                <li><Link to="blog.html">Blog</Link>
-                                </li>
-                                <li><Link to="blog_full_width.html">Blog Full Width</Link>
-                                </li>
-                                <li><Link to="blog_grid.html">Blog Grid</Link>
-                                </li>
-                                <li><Link to="blog_list.html">Blog List</Link>
-                                </li>
-                                <li><Link to="blog_single_sidebar.html">Blog Single</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Contact</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Hotel</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Book</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Furnitures</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Mobile</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-motorcycle fa-2x" style={iStyle}></i> <br/>Bike</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-hotel fa-2x" style={iStyle}></i> <br/>Hotel</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-book-open fa-2x" style={iStyle}></i> <br/>Book</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-chair fa-2x" style={iStyle}></i> <br/>Furnitures</Link></li>
+                        <li><Link to="#" style={{ textAlign: 'center' }}><i class="fas fa-money-check-alt fa-2x" style={iStyle}></i> <br/>Rental</Link></li>
                     </ul>
                     </div>
                 </div>
