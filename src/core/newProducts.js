@@ -55,7 +55,7 @@ function NewProducts(){
                                                     </div>
                                                     <div className="product_content">
                                                     <span className="category-list">Headphones</span>
-                                                    <a href="mobile_single_product.html">
+                                                    <a href="/product/1">
                                                         <h3 className="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
                                                     </a>
                                                     <ul className="star">
@@ -86,7 +86,7 @@ function NewProducts(){
                                                     </div>
                                                     <div className="product_content">
                                                     <span className="category-list">Earphones</span>
-                                                    <a href="mobile_single_product.html">
+                                                    <a href="/product/1">
                                                         <h3 className="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
                                                     </a>
                                                     <ul className="star">
@@ -148,7 +148,7 @@ function NewProducts(){
                                                     </div>
                                                     <div className="product_content">
                                                     <span className="category-list">HD Camera</span>
-                                                    <a href="mobile_single_product.html">
+                                                    <a href="/product/1">
                                                         <h3 className="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
                                                     </a>
                                                     <ul className="star">

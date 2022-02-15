@@ -7848,12 +7848,12 @@ form#mc-form {
 }
 
 .bz_product_grid_content_main_wrapper .bz_grid_menu_main_wrapper {
-  margin-top: 25px;
+  margin-top: 0px;
 }
 
 .bz_product_grid_content_main_wrapper .bz_grid_menu_main_wrapper .menu_tabs {
   padding: 10px 11px;
-  background-color: #f3f3f3;
+  background-color: #fff;
 }
 
 .bz_product_grid_content_main_wrapper .bz_grid_menu_main_wrapper .menu_tabs .list-grid ul li {
@@ -8119,7 +8119,7 @@ form#mc-form {
 
 .bz_product_grid_content_main_wrapper .bz_grid_menu_main_wrapper .tab-content .bz_product_view_grip_wrapper .product_box .product_img .product_overlay .search_icon {
   position: absolute;
-  left: 45%;
+  left: 40%;
   top: 45%;
 }
 

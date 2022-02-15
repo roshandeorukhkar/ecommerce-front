@@ -77,7 +77,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Automatic Load Washing Machines </h3>
                                                 </a>
                                                 <ul className="star">
@@ -108,7 +108,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Number of wash programs - 2</h3>
                                                 </a>
                                                 <ul className="star">
@@ -139,7 +139,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Semi Automatic Top Load</h3>
                                                 </a>
                                                 <ul className="star">
@@ -176,7 +176,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Automatic Load Washing Machines </h3>
                                                 </a>
                                                 <ul className="star">
@@ -207,7 +207,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Number of wash programs - 2</h3>
                                                 </a>
                                                 <ul className="star">
@@ -238,7 +238,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Semi Automatic Top Load</h3>
                                                 </a>
                                                 <ul className="star">
@@ -275,7 +275,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Automatic Load Washing Machines </h3>
                                                 </a>
                                                 <ul className="star">
@@ -306,7 +306,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Number of wash programs - 2</h3>
                                                 </a>
                                                 <ul className="star">
@@ -337,7 +337,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Semi Automatic Top Load</h3>
                                                 </a>
                                                 <ul className="star">
@@ -374,7 +374,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Automatic Load Washing Machines </h3>
                                                 </a>
                                                 <ul className="star">
@@ -405,7 +405,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Number of wash programs - 2</h3>
                                                 </a>
                                                 <ul className="star">
@@ -436,7 +436,7 @@ function BestSellers(){
                                              </div>
                                              <div className="product_content">
                                                 <span className="category-list">Washing Machine</span>
-                                                <a href="mobile_single_product.html">
+                                                <a href="/product/1">
                                                    <h3 className="woocommerce-loop-product__title">Semi Automatic Top Load</h3>
                                                 </a>
                                                 <ul className="star">

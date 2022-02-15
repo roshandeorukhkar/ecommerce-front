@@ -299,46 +299,46 @@ export default function Header({ history }){
                         {/*<li>
                             <Link to="/"> Home</Link>
                         </li>*/}
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops</Link>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops</Link>
                         </li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-desktop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-desktop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>
                         </li>
                         <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-camera-retro fa-2x" style={iStyle}></i> <br/>Cameras &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-camera-retro fa-2x" style={iStyle}></i> <br/>Cameras &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
-                                <li><Link to="#">Digital Camera</Link>
+                                <li><Link to="/shop">Digital Camera</Link>
                                 </li>
-                                <li><Link to="#">CyberShot Camera</Link>
+                                <li><Link to="/shop">CyberShot Camera</Link>
                                 </li>
-                                <li><Link to="#">PowerShot Camera</Link>
+                                <li><Link to="/shop">PowerShot Camera</Link>
                                 </li>
-                                <li><Link to="#">Dual Lens Camera</Link>
+                                <li><Link to="/shop">Dual Lens Camera</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-mobile-alt fa-2x" style={iStyle}></i> <br/>Mobile</Link>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-mobile-alt fa-2x" style={iStyle}></i> <br/>Mobile</Link>
                         </li>
                         <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-shapes fa-2x" style={iStyle}></i> <br/>Fashion &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-shapes fa-2x" style={iStyle}></i> <br/>Fashion &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
-                                <li><Link to="#">Trending</Link></li>
-                                <li><Link to="#">Unique</Link></li>
+                                <li><Link to="/shop">Trending</Link></li>
+                                <li><Link to="/shop">Unique</Link></li>
                             </ul>
                         </li>
                         <li>
-                            <Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-box-open fa-2x" style={iStyle}></i> <br/>Appliances &nbsp;<i className="fas fa-angle-down"></i></Link>
+                            <Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-box-open fa-2x" style={iStyle}></i> <br/>Appliances &nbsp;<i className="fas fa-angle-down"></i></Link>
                             <ul>
-                                <li><Link to="#">Appliances 1</Link>
+                                <li><Link to="/shop">Appliances 1</Link>
                                 </li>
-                                <li><Link to="#">Appliances 2</Link>
+                                <li><Link to="/shop">Appliances 2</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-motorcycle fa-2x" style={iStyle}></i> <br/>Bike</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-hotel fa-2x" style={iStyle}></i> <br/>Hotel</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-book-open fa-2x" style={iStyle}></i> <br/>Book</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-chair fa-2x" style={iStyle}></i> <br/>Furnitures</Link></li>
-                        <li><Link to="#" style={{ textAlign: 'center' }}><i className="fas fa-money-check-alt fa-2x" style={iStyle}></i> <br/>Rental</Link></li>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-motorcycle fa-2x" style={iStyle}></i> <br/>Bike</Link></li>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-hotel fa-2x" style={iStyle}></i> <br/>Hotel</Link></li>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-book-open fa-2x" style={iStyle}></i> <br/>Book</Link></li>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-chair fa-2x" style={iStyle}></i> <br/>Furnitures</Link></li>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-money-check-alt fa-2x" style={iStyle}></i> <br/>Rental</Link></li>
                     </ul>
                     </div>
                 </div>
