@@ -1,10 +1,27 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import $ from 'jquery';
+
+$(document).ready(function(){
+    // Password SHow Hide js
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 100) {       
+            $('#return-to-top').fadeIn(200);   
+        } else {
+            $('#return-to-top').fadeOut(200);  
+        }
+    });
+    $('#return-to-top').click(function() {     
+        $('body,html').animate({
+            scrollTop : 0                
+        }, 500);
+    });
+});    
 
 export default function Footer(){
     return(
         <div className="bz_bottom_footer_main_wrapper float_left">
-            <Link to="javascript:" id="return-to-top"><i className="fa fa-angle-up"></i></Link>
+            <Link to="#" id="return-to-top"><i className="fa fa-angle-up"></i></Link>
             <div className="container custom_container">
                 <div className="row">
                     <div className="col-lg-3 col-md-4 col-12">
@@ -85,8 +102,8 @@ export default function Footer(){
                     </div>
                        
                 </div>
-                <div class="bz_bottom_footer_main_wrapper float_left">
-                    <div class="copy_right">
+                <div className="bz_bottom_footer_main_wrapper float_left">
+                    <div className="copy_right">
                     <p> © Copyright 2021-22 - Design By KEA</p>
                     </div>
                 </div> 

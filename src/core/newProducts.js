@@ -8,152 +8,152 @@ function NewProducts(){
     return(
                        
         <div className="upperPadding" style={{padding:'0%'}}>
-            <div class="col-lg-12 col-md-12 col-12 no_padd">
+            <div className="col-lg-12 col-md-12 col-12 no_padd">
                 <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={1} autoplay={true}>
-                    <div class='item'>
-                        <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                    <div className='item'>
+                        <img className="img-fluid" src="../assets/images/banner.png" alt="logo"/>
                     </div>
-                    <div class='item'>
-                        <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                    <div className='item'>
+                        <img className="img-fluid" src="../assets/images/banner.png" alt="logo"/>
                     </div>
-                    <div class='item'>
-                        <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                    <div className='item'>
+                        <img className="img-fluid" src="../assets/images/banner.png" alt="logo"/>
                     </div>
                 </OwlCarousel>
             </div>
-            <div class="bz_newproduct_main_wrapper float_left">
-                <div class="container custom_container">
-                    <div class="row1">
-                        <div class="col-md-12 col-12">
-                        <div class="new_product_tabs">
-                            <div class="justify-content-end">
-                                <h3 class="title"> <span><i class="fas fa-gift"></i></span> Featured Product</h3>
+            <div className="bz_newproduct_main_wrapper float_left">
+                <div className="container custom_container">
+                    <div className="row1">
+                        <div className="col-md-12 col-12">
+                        <div className="new_product_tabs">
+                            <div className="justify-content-end">
+                                <h3 className="title"> <span><i className="fas fa-gift"></i></span> Featured Product</h3>
                             </div>
-                            <div class="tab-content" id="myTabContent">
-                                <div id="home" class="tab-pane active show" role="tabpanel" aria-labelledby="home-tab">
-                                    <div class="product_slider">
-                                        <OwlCarousel className='owl-carousel owl-theme' margin={10} loop items={4}>
-                                            <div class="item" style={{width:'99%'}}>
-                                                <div class="product_box">
-                                                    <div class="product_img">
-                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
-                                                    <div class="top_icon">
-                                                        <p class="new">new</p>
-                                                        <span><i class="far fa-heart"></i></span>
+                            <div className="tab-content" id="myTabContent">
+                                <div id="home" className="tab-pane active show" role="tabpanel" aria-labelledby="home-tab">
+                                    <div className="product_slider">
+                                        <OwlCarousel className='owl-carousel owl-theme' margin={10} loop nav items={4}>
+                                            <div className="item" style={{width:'99%'}}>
+                                                <div className="product_box">
+                                                    <div className="product_img">
+                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div className="top_icon">
+                                                        <p className="new">new</p>
+                                                        <span><i className="far fa-heart"></i></span>
                                                     </div>
-                                                    <div class="product_overlay">
-                                                        <div class="search_icon">
-                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                                    <div className="product_overlay">
+                                                        <div className="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                         </div>
                                                     </div>
                                                     </div>
-                                                    <div class="product_content">
-                                                    <span class="category-list">Headphones</span>
+                                                    <div className="product_content">
+                                                    <span className="category-list">Headphones</span>
                                                     <a href="mobile_single_product.html">
-                                                        <h3 class="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
+                                                        <h3 className="woocommerce-loop-product__title">Supre Extra Base Sound.</h3>
                                                     </a>
-                                                    <ul class="star">
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <ul className="star">
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item" style={{width:'99%'}}>
-                                                <div class="product_box">
-                                                    <div class="product_img">
-                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
-                                                    <div class="top_icon">
+                                            <div className="item" style={{width:'99%'}}>
+                                                <div className="product_box">
+                                                    <div className="product_img">
+                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div className="top_icon">
                                                         <p>hot</p>
-                                                        <span><i class="far fa-heart"></i></span>
+                                                        <span><i className="far fa-heart"></i></span>
                                                     </div>
-                                                    <div class="product_overlay">
-                                                        <div class="search_icon">
-                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                                    <div className="product_overlay">
+                                                        <div className="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                         </div>
                                                     </div>
                                                     </div>
-                                                    <div class="product_content">
-                                                    <span class="category-list">Earphones</span>
+                                                    <div className="product_content">
+                                                    <span className="category-list">Earphones</span>
                                                     <a href="mobile_single_product.html">
-                                                        <h3 class="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
+                                                        <h3 className="woocommerce-loop-product__title">Blue, Wireles in the ear.</h3>
                                                     </a>
-                                                    <ul class="star">
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <ul className="star">
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
-                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item" style={{width:'99%'}}>
-                                                <div class="product_box">
-                                                    <div class="product_img">
-                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
-                                                    <div class="top_icon">
-                                                        <p class="new">new</p>
-                                                        <span><i class="far fa-heart"></i></span>
+                                            <div className="item" style={{width:'99%'}}>
+                                                <div className="product_box">
+                                                    <div className="product_img">
+                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div className="top_icon">
+                                                        <p className="new">new</p>
+                                                        <span><i className="far fa-heart"></i></span>
                                                     </div>
-                                                    <div class="product_overlay">
-                                                        <div class="search_icon">
-                                                            <a href="#" data-toggle="modal" data-target="#myModal1"><i class="fa fa-search"></i></a>
+                                                    <div className="product_overlay">
+                                                        <div className="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal1"><i className="fa fa-search"></i></a>
                                                         </div>
                                                     </div>
                                                     </div>
-                                                    <div class="product_content">
-                                                    <span class="category-list">Ultra HD Laptop</span>
+                                                    <div className="product_content">
+                                                    <span className="category-list">Ultra HD Laptop</span>
                                                     <a href="mobile_single_product.html">
-                                                        <h3 class="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
+                                                        <h3 className="woocommerce-loop-product__title">4GB/TB HDD/Window 10</h3>
                                                     </a>
-                                                    <ul class="star">
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <ul className="star">
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
-                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="item" style={{width:'99%'}}>
-                                                <div class="product_box">
-                                                    <div class="product_img">
-                                                    <img class="img-fluid" src="../assets/images/product1.png" alt="product img"/>
-                                                    <div class="top_icon">
-                                                        <p class="new">new</p>
-                                                        <span><i class="far fa-heart"></i></span>
+                                            <div className="item" style={{width:'99%'}}>
+                                                <div className="product_box">
+                                                    <div className="product_img">
+                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <div className="top_icon">
+                                                        <p className="new">new</p>
+                                                        <span><i className="far fa-heart"></i></span>
                                                     </div>
-                                                    <div class="product_overlay">
-                                                        <div class="search_icon">
-                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-search"></i></a>
+                                                    <div className="product_overlay">
+                                                        <div className="search_icon">
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                         </div>
                                                     </div>
                                                     </div>
-                                                    <div class="product_content">
-                                                    <span class="category-list">HD Camera</span>
+                                                    <div className="product_content">
+                                                    <span className="category-list">HD Camera</span>
                                                     <a href="mobile_single_product.html">
-                                                        <h3 class="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
+                                                        <h3 className="woocommerce-loop-product__title">20.1 MP Optical Zoom</h3>
                                                     </a>
-                                                    <ul class="star">
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                    <ul className="star">
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                        <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                    <a class="add_btn custom_btn" href="javascript:;">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -166,68 +166,68 @@ function NewProducts(){
                     </div>
                 </div>
                 {/* <!-- The Modal --> */}
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog product_modal">
-                        <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <div class="row">
-                                <div class="col-lg-5 col-md-5 col-12">
-                                    <div class="sell_slider">
-                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img class="d-block w-100" src="images/pop_slider_img.jpeg" alt="First slide"/>
+                <div className="modal" id="myModal">
+                    <div className="modal-dialog product_modal">
+                        <div className="modal-content">
+                        <div className="modal-body">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <div className="row">
+                                <div className="col-lg-5 col-md-5 col-12">
+                                    <div className="sell_slider">
+                                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                                        <div className="carousel-inner">
+                                            <div className="carousel-item active">
+                                                <img className="d-block w-100" src="images/pop_slider_img.jpeg" alt="First slide"/>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="images/pop_slider_img1.jpeg" alt="Second slide"/>
+                                            <div className="carousel-item">
+                                                <img className="d-block w-100" src="images/pop_slider_img1.jpeg" alt="Second slide"/>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="images/pop_slider_img2.jpeg" alt="Third slide"/>
+                                            <div className="carousel-item">
+                                                <img className="d-block w-100" src="images/pop_slider_img2.jpeg" alt="Third slide"/>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="images/pop_slider_img3.jpeg" alt="Third slide"/>
+                                            <div className="carousel-item">
+                                                <img className="d-block w-100" src="images/pop_slider_img3.jpeg" alt="Third slide"/>
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
+                                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span className="sr-only">Previous</span>
                                         </a>
-                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
+                                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span className="sr-only">Next</span>
                                         </a>
-                                        <div class="container pt-4 pb-5 small_slider">
-                                            <div class="row carousel-indicators">
-                                                <div class="item">
-                                                <img src="images/pop_slider_img.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                        <div className="container pt-4 pb-5 small_slider">
+                                            <div className="row carousel-indicators">
+                                                <div className="item">
+                                                <img src="images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                                                 </div>
-                                                <div class="item">
-                                                <img src="images/pop_slider_img1.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
+                                                <div className="item">
+                                                <img src="images/pop_slider_img1.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
                                                 </div>
-                                                <div class="item">
-                                                <img src="images/pop_slider_img2.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
+                                                <div className="item">
+                                                <img src="images/pop_slider_img2.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
                                                 </div>
-                                                <div class="item">
-                                                <img src="images/pop_slider_img3.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
+                                                <div className="item">
+                                                <img src="images/pop_slider_img3.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-7 col-md-7 col-12">
-                                    <div class="b_product_sell_details_wrapper float_left">
-                                    <div class="bz_product_heading float_left">
+                                <div className="col-lg-7 col-md-7 col-12">
+                                    <div className="b_product_sell_details_wrapper float_left">
+                                    <div className="bz_product_heading float_left">
                                         <h3>Boat Rockerz 450 Bluetooth Headset</h3>
-                                        <ul class="review">
+                                        <ul className="review">
                                             <li>
-                                                <ul class="star">
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                <ul className="star">
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">1 customer review</a></li>
@@ -236,29 +236,29 @@ function NewProducts(){
                                         <h3>$492.00 <span><del>$379.00</del></span> </h3>
                                         <p>Set your mind ablaze with the slick sound and expansive design that has culminated into the boAt Rockerz 450, adding luxury to your sound. Propelled by crystal clear 40mm dynamic drivers, slip into an alternate HD Immersive Audio reality. The soft cornered matte black finish allows for a comfortable fit, propagated by plush foam in an adaptive and adjustable design. Choose your mode, go wireless with Bluetooth V4.2 or connect an aux wire that cause any drain on the 300mAh Rechargeable Lithium Battery.</p>
                                     </div>
-                                    <div class="color_code float_left">
+                                    <div className="color_code float_left">
                                         <label>Color :</label>
-                                        <ul class="color_change">
-                                            <li class="black-co"><a href="#"></a></li>
-                                            <li class="grey-co"><a href="#"></a></li>
-                                            <li class="pink-co"><a href="#"></a></li>
-                                            <li class="pink-co"><a href="#"></a></li>
+                                        <ul className="color_change">
+                                            <li className="black-co"><a href="#"></a></li>
+                                            <li className="grey-co"><a href="#"></a></li>
+                                            <li className="pink-co"><a href="#"></a></li>
+                                            <li className="pink-co"><a href="#"></a></li>
                                         </ul>
                                         <p>Categories: <span><a href="#">Electronic</a></span></p>
                                         <p>Tag: <span><a href="#">Electronic,</a> <a href="#">Mobile,</a> <a href="#">Fashion cloth</a></span></p>
                                     </div>
-                                    <div class="number_pluse float_left">
-                                        <input type="number" value="1"/>
-                                        <a href="#" class="cart_btn">Add To Cart</a>
+                                    <div className="number_pluse float_left">
+                                        <input type="number" defaultValue="1"/>
+                                        <a href="#" className="cart_btn">Add To Cart</a>
                                     </div>
-                                    <div class="share_icon float_left">
+                                    <div className="share_icon float_left">
                                         <p>Share:</p>
                                         <ul>
                                             <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                                <a href="#"><i className="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i className="fab fa-twitter"></i></a>
+                                                <a href="#"><i className="fab fa-instagram"></i></a>
+                                                <a href="#"><i className="fab fa-youtube"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -271,68 +271,68 @@ function NewProducts(){
                     </div>
                 </div>
                 {/* <!-- The Modal --> */}
-                <div class="modal" id="myModal1">
-                    <div class="modal-dialog product_modal">
-                        <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <div class="row">
-                                <div class="col-lg-5 col-md-5 col-12">
-                                    <div class="sell_slider">
-                                    <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img class="d-block w-100" src="images/pop_slider_img4.jpeg" alt="First slide"/>
+                <div className="modal" id="myModal1">
+                    <div className="modal-dialog product_modal">
+                        <div className="modal-content">
+                        <div className="modal-body">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <div className="row">
+                                <div className="col-lg-5 col-md-5 col-12">
+                                    <div className="sell_slider">
+                                    <div id="carouselExampleIndicators1" className="carousel slide" data-ride="carousel">
+                                        <div className="carousel-inner">
+                                            <div className="carousel-item active">
+                                                <img className="d-block w-100" src="images/pop_slider_img4.jpeg" alt="First slide"/>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="images/pop_slider_img5.jpeg" alt="Second slide"/>
+                                            <div className="carousel-item">
+                                                <img className="d-block w-100" src="images/pop_slider_img5.jpeg" alt="Second slide"/>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="images/pop_slider_img6.jpeg" alt="Third slide"/>
+                                            <div className="carousel-item">
+                                                <img className="d-block w-100" src="images/pop_slider_img6.jpeg" alt="Third slide"/>
                                             </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100" src="images/pop_slider_img7.jpeg" alt="Third slide"/>
+                                            <div className="carousel-item">
+                                                <img className="d-block w-100" src="images/pop_slider_img7.jpeg" alt="Third slide"/>
                                             </div>
                                         </div>
-                                        <a class="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
+                                        <a className="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
+                                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span className="sr-only">Previous</span>
                                         </a>
-                                        <a class="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
+                                        <a className="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
+                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span className="sr-only">Next</span>
                                         </a>
-                                        <div class="container pt-4 pb-5 small_slider">
-                                            <div class="row carousel-indicators">
-                                                <div class="item">
-                                                <img src="images/pop_slider_img4.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="0"/>
+                                        <div className="container pt-4 pb-5 small_slider">
+                                            <div className="row carousel-indicators">
+                                                <div className="item">
+                                                <img src="images/pop_slider_img4.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="0"/>
                                                 </div>
-                                                <div class="item">
-                                                <img src="images/pop_slider_img5.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="1"/>
+                                                <div className="item">
+                                                <img src="images/pop_slider_img5.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="1"/>
                                                 </div>
-                                                <div class="item">
-                                                <img src="images/pop_slider_img6.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="2"/>
+                                                <div className="item">
+                                                <img src="images/pop_slider_img6.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="2"/>
                                                 </div>
-                                                <div class="item">
-                                                <img src="images/pop_slider_img7.jpeg" class="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="3"/>
+                                                <div className="item">
+                                                <img src="images/pop_slider_img7.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="3"/>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-7 col-md-7 col-12">
-                                    <div class="b_product_sell_details_wrapper float_left">
-                                    <div class="bz_product_heading float_left">
+                                <div className="col-lg-7 col-md-7 col-12">
+                                    <div className="b_product_sell_details_wrapper float_left">
+                                    <div className="bz_product_heading float_left">
                                         <h3>Window 10 I3 4rth Generation  </h3>
-                                        <ul class="review">
+                                        <ul className="review">
                                             <li>
-                                                <ul class="star">
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-star"></i></a></li>
+                                                <ul className="star">
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
+                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#">1 customer review</a></li>
@@ -341,29 +341,29 @@ function NewProducts(){
                                         <h3>$800.00 <span><del>$850.00</del></span> </h3>
                                         <p>For on-the-go fast computing, easy multitasking, and reliable performance, you need the 14Q laptop that features multiple impressive features. This laptop has a 256 GB SSD to store music, videos, and much more. Also, it has a 3 cell 41 WHr Li-ion fast-charge battery and the Windows 10 OS to perform a number of tasks uninterruptedly and effortlessly.</p>
                                     </div>
-                                    <div class="color_code float_left">
+                                    <div className="color_code float_left">
                                         <label>Color :</label>
-                                        <ul class="color_change">
-                                            <li class="black-co"><a href="#"></a></li>
-                                            <li class="grey-co"><a href="#"></a></li>
-                                            <li class="pink-co"><a href="#"></a></li>
-                                            <li class="pink-co"><a href="#"></a></li>
+                                        <ul className="color_change">
+                                            <li className="black-co"><a href="#"></a></li>
+                                            <li className="grey-co"><a href="#"></a></li>
+                                            <li className="pink-co"><a href="#"></a></li>
+                                            <li className="pink-co"><a href="#"></a></li>
                                         </ul>
                                         <p>Categories: <span><a href="#">Electronic</a></span></p>
                                         <p>Tag: <span><a href="#">Electronic,</a> <a href="#">Mobile,</a> <a href="#">Fashion cloth</a></span></p>
                                     </div>
-                                    <div class="number_pluse float_left">
-                                        <input type="number" value="1"/>
-                                        <a href="#" class="cart_btn">Add To Cart</a>
+                                    <div className="number_pluse float_left">
+                                        <input type="number" defaultValue="1"/>
+                                        <a href="#" className="cart_btn">Add To Cart</a>
                                     </div>
-                                    <div class="share_icon float_left">
+                                    <div className="share_icon float_left">
                                         <p>Share:</p>
                                         <ul>
                                             <li>
-                                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                                <a href="#"><i class="fab fa-youtube"></i></a>
+                                                <a href="#"><i className="fab fa-facebook-f"></i></a>
+                                                <a href="#"><i className="fab fa-twitter"></i></a>
+                                                <a href="#"><i className="fab fa-instagram"></i></a>
+                                                <a href="#"><i className="fab fa-youtube"></i></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -376,84 +376,84 @@ function NewProducts(){
                     </div>
                 </div>
             </div>
-            <div class="bz_section_innerbox_main_wrapper float_left">
-               <div class="container custom_container">
-                  <div class="row">
-                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="add_post">
-                           <div class="img_hover">
-                              <img class="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+            <div className="bz_section_innerbox_main_wrapper float_left">
+               <div className="container custom_container">
+                  <div className="row">
+                     <div className="col-lg-4 col-md-6 col-12">
+                        <div className="add_post">
+                           <div className="img_hover">
+                              <img className="img-fluid" src="../assets/images/add4.jpg" alt="add" />
                            </div>
-                           <div class="post_content color_change">
+                           <div className="post_content color_change">
                               <p>Amazing Discount</p>
                               <h2>Men's <span>Watchs</span> </h2>
-                              <a class="custom_btn" href="javascript:;">Buy Now</a>
+                              <a className="custom_btn" href="#">Buy Now</a>
                            </div>
                         </div>
                      </div>
-                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="add_post">
-                           <div class="img_hover">
-                              <img class="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                     <div className="col-lg-4 col-md-6 col-12">
+                        <div className="add_post">
+                           <div className="img_hover">
+                              <img className="img-fluid" src="../assets/images/add4.jpg" alt="add" />
                            </div>
-                           <div class="post_content color_change">
+                           <div className="post_content color_change">
                               <p>Amazing Discount</p>
                               <h2>Digital <span>Camera</span> </h2>
-                              <a class="custom_btn" href="javascript:;">Buy Now</a>
+                              <a className="custom_btn" href="#">Buy Now</a>
                            </div>
                         </div>
                      </div>
-                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="add_post">
-                           <div class="img_hover">
-                              <img class="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                     <div className="col-lg-4 col-md-6 col-12">
+                        <div className="add_post">
+                           <div className="img_hover">
+                              <img className="img-fluid" src="../assets/images/add4.jpg" alt="add" />
                            </div>
-                           <div class="post_content color_change">
+                           <div className="post_content color_change">
                               <p>Amazing Discount</p>
                               <h2>Camera <span>Lens</span> </h2>
-                              <a class="custom_btn" href="javascript:;">Buy Now</a>
+                              <a className="custom_btn" href="#">Buy Now</a>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <div class="bz_section_style_main_wrapper float_left">
-               <div class="container custom_container">
-                  <div class="row">
-                     <div class="col-md-5 col-12">
-                        <div class="style_img">
-                           <img class="img-fluid" src="../assets/images/style-img.png" alt="style"/>
+            <div className="bz_section_style_main_wrapper float_left">
+               <div className="container custom_container">
+                  <div className="row">
+                     <div className="col-md-5 col-12">
+                        <div className="style_img">
+                           <img className="img-fluid" src="../assets/images/style-img.png" alt="style"/>
                         </div>
                      </div>
-                     <div class="col-md-7 col-12">
-                        <div class="style_heading">
+                     <div className="col-md-7 col-12">
+                        <div className="style_heading">
                            <h2>Sleek, Stylish &amp; Quality Powerful</h2>
                            <p>Save on innovative &amp; cutting-edge Bazooka applians that make life good.</p>
-                           <a class="custom_btn" href="javascript:;">Buy now</a>
+                           <a className="custom_btn" href="#">Buy now</a>
                         </div>
-                        <div class="sale_bg">
-                           <img class="img-fluid" src="../assets/images/sale.png" alt="sale" />
-                           <div class="tag_heading">
+                        <div className="sale_bg">
+                           <img className="img-fluid" src="../assets/images/sale.png" alt="sale" />
+                           <div className="tag_heading">
                               <p><strong>Special</strong> sale <span>up to 50%</span> </p>
                            </div>
                         </div>
-                        <div id="clockdiv" class="product_timer float_left">
-                           <div class="da">
-                              <span class="days wow fadeInUp">-103</span>
-                              <div class="smalltext wow fadeInUp">Days</div>
+                        <div id="clockdiv" className="product_timer float_left">
+                           <div className="da">
+                              <span className="days wow fadeInUp">-103</span>
+                              <div className="smalltext wow fadeInUp">Days</div>
                            </div>
-                           <div class="ho">
-                              <span class="hours wow fadeInUp">19</span>
-                              <div class="smalltext wow fadeInUp">Hrs</div>
+                           <div className="ho">
+                              <span className="hours wow fadeInUp">19</span>
+                              <div className="smalltext wow fadeInUp">Hrs</div>
                            </div>
-                           <div class="min">
-                              <span class="minutes wow fadeInUp">44</span>
-                              <div class="smalltext wow fadeInUp">Mins</div>
+                           <div className="min">
+                              <span className="minutes wow fadeInUp">44</span>
+                              <div className="smalltext wow fadeInUp">Mins</div>
                            </div>
-                           <div class="second">
-                              <span class="seconds wow fadeInUp">47</span>
-                              <div class="smalltext wow fadeInUp">Secs</div>
+                           <div className="second">
+                              <span className="seconds wow fadeInUp">47</span>
+                              <div className="smalltext wow fadeInUp">Secs</div>
                            </div>
                         </div>
                      </div>
