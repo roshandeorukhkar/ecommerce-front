@@ -71,7 +71,7 @@ function BestSellers(){
                                                 </div>
                                                 <div className="product_overlay">
                                                    <div className="search_icon">
-                                                      <a href="#"><i className="fa fa-search"></i></a>
+                                                      <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                    </div>
                                                 </div>
                                              </div>
@@ -102,7 +102,7 @@ function BestSellers(){
                                                 </div>
                                                 <div className="product_overlay">
                                                    <div className="search_icon">
-                                                      <a href="#"><i className="fa fa-search"></i></a>
+                                                      <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                    </div>
                                                 </div>
                                              </div>
@@ -133,7 +133,7 @@ function BestSellers(){
                                                 </div>
                                                 <div className="product_overlay">
                                                    <div className="search_icon">
-                                                      <a href="#"><i className="fa fa-search"></i></a>
+                                                      <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                    </div>
                                                 </div>
                                              </div>

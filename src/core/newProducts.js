@@ -2,6 +2,12 @@ import React from "react";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import $ from 'jquery';
+
+function test()
+{
+    //$('#myModal').modal('show');
+}
 
 function NewProducts(){
 
@@ -33,7 +39,7 @@ function NewProducts(){
                                 <div id="home" className="tab-pane active show" role="tabpanel" aria-labelledby="home-tab">
                                     <div className="product_slider">
                                         <OwlCarousel className='owl-carousel owl-theme' margin={10} loop nav items={4}>
-                                            <div className="item" style={{width:'99%'}}>
+                                            <div className="item" style={{width:'99%'}} onClick={test}>
                                                 <div className="product_box">
                                                     <div className="product_img">
                                                     <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
@@ -105,7 +111,7 @@ function NewProducts(){
                                                     </div>
                                                     <div className="product_overlay">
                                                         <div className="search_icon">
-                                                            <a href="#" data-toggle="modal" data-target="#myModal1"><i className="fa fa-search"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#myModal"><i className="fa fa-search"></i></a>
                                                         </div>
                                                     </div>
                                                     </div>
@@ -177,16 +183,16 @@ function NewProducts(){
                                     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                                         <div className="carousel-inner">
                                             <div className="carousel-item active">
-                                                <img className="d-block w-100" src="images/pop_slider_img.jpeg" alt="First slide"/>
+                                                <img className="d-block w-100" src="../assets/images/pop_slider_img.jpeg" alt="First slide"/>
                                             </div>
                                             <div className="carousel-item">
-                                                <img className="d-block w-100" src="images/pop_slider_img1.jpeg" alt="Second slide"/>
+                                                <img className="d-block w-100" src="../assets/images/pop_slider_img1.jpeg" alt="Second slide"/>
                                             </div>
                                             <div className="carousel-item">
-                                                <img className="d-block w-100" src="images/pop_slider_img2.jpeg" alt="Third slide"/>
+                                                <img className="d-block w-100" src="../assets/images/pop_slider_img2.jpeg" alt="Third slide"/>
                                             </div>
                                             <div className="carousel-item">
-                                                <img className="d-block w-100" src="images/pop_slider_img3.jpeg" alt="Third slide"/>
+                                                <img className="d-block w-100" src="../assets/images/pop_slider_img3.jpeg" alt="Third slide"/>
                                             </div>
                                         </div>
                                         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -198,19 +204,23 @@ function NewProducts(){
                                         <span className="sr-only">Next</span>
                                         </a>
                                         <div className="container pt-4 pb-5 small_slider">
-                                            <div className="row carousel-indicators">
-                                                <div className="item">
-                                                <img src="images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
-                                                </div>
-                                                <div className="item">
-                                                <img src="images/pop_slider_img1.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
-                                                </div>
-                                                <div className="item">
-                                                <img src="images/pop_slider_img2.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
-                                                </div>
-                                                <div className="item">
-                                                <img src="images/pop_slider_img3.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
-                                                </div>
+                                            <div className="row carousel-indicators">  
+                                                <div className="col-lg-12 col-md-12 col-12 no_padd">
+                                                    <OwlCarousel className='owl-theme' loop margin={10} nav items={4}>
+                                                        <div className='item'>
+                                                        <   img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                        </div>
+                                                        <div className='item'>
+                                                         <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                        </div>
+                                                        <div className='item'>
+                                                            <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                        </div>
+                                                        <div className='item'>
+                                                            <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                        </div>
+                                                    </OwlCarousel>
+                                                </div> 
                                             </div>
                                         </div>
                                     </div>
@@ -235,111 +245,6 @@ function NewProducts(){
                                         </ul>
                                         <h3>$492.00 <span><del>$379.00</del></span> </h3>
                                         <p>Set your mind ablaze with the slick sound and expansive design that has culminated into the boAt Rockerz 450, adding luxury to your sound. Propelled by crystal clear 40mm dynamic drivers, slip into an alternate HD Immersive Audio reality. The soft cornered matte black finish allows for a comfortable fit, propagated by plush foam in an adaptive and adjustable design. Choose your mode, go wireless with Bluetooth V4.2 or connect an aux wire that cause any drain on the 300mAh Rechargeable Lithium Battery.</p>
-                                    </div>
-                                    <div className="color_code float_left">
-                                        <label>Color :</label>
-                                        <ul className="color_change">
-                                            <li className="black-co"><a href="#"></a></li>
-                                            <li className="grey-co"><a href="#"></a></li>
-                                            <li className="pink-co"><a href="#"></a></li>
-                                            <li className="pink-co"><a href="#"></a></li>
-                                        </ul>
-                                        <p>Categories: <span><a href="#">Electronic</a></span></p>
-                                        <p>Tag: <span><a href="#">Electronic,</a> <a href="#">Mobile,</a> <a href="#">Fashion cloth</a></span></p>
-                                    </div>
-                                    <div className="number_pluse float_left">
-                                        <input type="number" defaultValue="1"/>
-                                        <a href="#" className="cart_btn">Add To Cart</a>
-                                    </div>
-                                    <div className="share_icon float_left">
-                                        <p>Share:</p>
-                                        <ul>
-                                            <li>
-                                                <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                                <a href="#"><i className="fab fa-twitter"></i></a>
-                                                <a href="#"><i className="fab fa-instagram"></i></a>
-                                                <a href="#"><i className="fab fa-youtube"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <!-- Modal footer --> */}
-                        </div>
-                    </div>
-                </div>
-                {/* <!-- The Modal --> */}
-                <div className="modal" id="myModal1">
-                    <div className="modal-dialog product_modal">
-                        <div className="modal-content">
-                        <div className="modal-body">
-                            <button type="button" className="close" data-dismiss="modal">&times;</button>
-                            <div className="row">
-                                <div className="col-lg-5 col-md-5 col-12">
-                                    <div className="sell_slider">
-                                    <div id="carouselExampleIndicators1" className="carousel slide" data-ride="carousel">
-                                        <div className="carousel-inner">
-                                            <div className="carousel-item active">
-                                                <img className="d-block w-100" src="images/pop_slider_img4.jpeg" alt="First slide"/>
-                                            </div>
-                                            <div className="carousel-item">
-                                                <img className="d-block w-100" src="images/pop_slider_img5.jpeg" alt="Second slide"/>
-                                            </div>
-                                            <div className="carousel-item">
-                                                <img className="d-block w-100" src="images/pop_slider_img6.jpeg" alt="Third slide"/>
-                                            </div>
-                                            <div className="carousel-item">
-                                                <img className="d-block w-100" src="images/pop_slider_img7.jpeg" alt="Third slide"/>
-                                            </div>
-                                        </div>
-                                        <a className="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
-                                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span className="sr-only">Previous</span>
-                                        </a>
-                                        <a className="carousel-control-next" href="#carouselExampleIndicators1" role="button" data-slide="next">
-                                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span className="sr-only">Next</span>
-                                        </a>
-                                        <div className="container pt-4 pb-5 small_slider">
-                                            <div className="row carousel-indicators">
-                                                <div className="item">
-                                                <img src="images/pop_slider_img4.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="0"/>
-                                                </div>
-                                                <div className="item">
-                                                <img src="images/pop_slider_img5.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="1"/>
-                                                </div>
-                                                <div className="item">
-                                                <img src="images/pop_slider_img6.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="2"/>
-                                                </div>
-                                                <div className="item">
-                                                <img src="images/pop_slider_img7.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="3"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                                <div className="col-lg-7 col-md-7 col-12">
-                                    <div className="b_product_sell_details_wrapper float_left">
-                                    <div className="bz_product_heading float_left">
-                                        <h3>Window 10 I3 4rth Generation  </h3>
-                                        <ul className="review">
-                                            <li>
-                                                <ul className="star">
-                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                                <li><a href="#"><i className="fas fa-star"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">1 customer review</a></li>
-                                            <li><a href="#">Add a review</a></li>
-                                        </ul>
-                                        <h3>$800.00 <span><del>$850.00</del></span> </h3>
-                                        <p>For on-the-go fast computing, easy multitasking, and reliable performance, you need the 14Q laptop that features multiple impressive features. This laptop has a 256 GB SSD to store music, videos, and much more. Also, it has a 3 cell 41 WHr Li-ion fast-charge battery and the Windows 10 OS to perform a number of tasks uninterruptedly and effortlessly.</p>
                                     </div>
                                     <div className="color_code float_left">
                                         <label>Color :</label>
