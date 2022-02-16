@@ -1148,7 +1148,7 @@ const Shop = () => {
                                        <p>Tag: <span><a href="#">Electronic,</a> <a href="#">Mobile,</a> <a href="#">Fashion cloth</a></span></p>
                                     </div>
                                     <div className="number_pluse float_left">
-                                       <input type="number" value="1"/>
+                                    <div class="nice-number"><button type="button">-</button><input type="number" value="1"/><button type="button">+</button></div>
                                        <a href="#" className="cart_btn">Add To Cart</a>
                                     </div>
                                     <div className="share_icon float_left">

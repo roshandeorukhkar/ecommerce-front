@@ -118,17 +118,17 @@ export default function Header({ history }){
                             <div className="cart_shop" style={{float: "left"}}>
                                 <Link to="#">
                                 <i className="fas fa-shopping-cart fa-2x" style={{color: "white"}}></i>
-                                <span>Your Cart <small>$3590</small> </span>
+                                <span>Your Cart <small><i class="fas fa-rupee-sign fa-sm"></i>3590</small> </span>
                                 </Link>
                                 <div className="cart_details">
                                     <div className="total-count">
                                         <span>1 ITEM</span>
-                                        <Link to="#">VIEW CART</Link>
+                                        <Link to="/cart">VIEW CART</Link>
                                     </div>
                                     <div className="cart_list">
                                         <div className="select_cart">
                                             <Link to="#">Brow Backpack</Link>
-                                            <span>1 x $258.00</span>
+                                            <span>1 x <i class="fas fa-rupee-sign fa-sm"></i>258.00</span>
                                         </div>
                                         <div className="select_img">
                                             <img alt="" src="../assets/images/car1.jpg"/>
@@ -138,11 +138,11 @@ export default function Header({ history }){
                                         </div>
                                     </div>
                                     <div className="sub_total">
-                                        <p>Sub Total:<span>$ 289.00</span></p>
+                                        <p>Sub Total:<span><i class="fas fa-rupee-sign fa-sm"></i> 289.00</span></p>
                                     </div>
                                     <div className="cart_btn">
-                                        <Link to="#"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
-                                        <Link to="#"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
+                                        <Link to="/cart"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
+                                        <Link to="/checkout"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
                                     </div>
                                 </div>
                             </div>
@@ -235,14 +235,14 @@ export default function Header({ history }){
                                 <div className="cart_list">
                                     <div className="select_cart">
                                         <Link to="#">Brow Backpack</Link>
-                                        <span>1 x $258.00</span>
+                                        <span>1 x <i class="fas fa-rupee-sign fa-sm"></i>258.00</span>
                                     </div>
                                     <div className="select_img">
                                         <img alt="" src="../assets/images/car1.jpg"/>
                                     </div>
                                 </div>
                                 <div className="sub_total">
-                                    <p>Sub Total:<span>$ 289.00</span></p>
+                                    <p>Sub Total:<span><i class="fas fa-rupee-sign fa-sm"></i> 289.00</span></p>
                                 </div>
                                 <div className="cart_btn">
                                     <Link to="#"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>

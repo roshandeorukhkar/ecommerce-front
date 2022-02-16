@@ -42,7 +42,7 @@ function BestSellers(){
                                        <img src="../assets/images/icon4.png" alt="icon" />
                                     </div>
                                     <div className="icon_list">
-                                       <a href="#">Free Shipping <span>on order over $99</span> </a>
+                                       <a href="#">Free Shipping <span>on order over <i class="fas fa-rupee-sign"></i>99</span> </a>
                                     </div>
                                  </li>
                               </ul>
@@ -87,7 +87,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>492.00 <span> <del><i class="fas fa-rupee-sign"></i>379.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -118,7 +118,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$500.00 <span> <del>$679.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>500.00 <span> <del><i class="fas fa-rupee-sign"></i>679.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -149,7 +149,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$800.00 <span> <del>$900.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>800.00 <span> <del><i class="fas fa-rupee-sign"></i>900.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -186,7 +186,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>492.00 <span> <del><i class="fas fa-rupee-sign"></i>379.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -217,7 +217,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$500.00 <span> <del>$679.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>500.00 <span> <del><i class="fas fa-rupee-sign"></i>679.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -248,7 +248,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$800.00 <span> <del>$900.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>800.00 <span> <del><i class="fas fa-rupee-sign"></i>900.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -285,7 +285,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>492.00 <span> <del><i class="fas fa-rupee-sign"></i>379.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -316,7 +316,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$500.00 <span> <del>$679.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>500.00 <span> <del><i class="fas fa-rupee-sign"></i>679.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -347,7 +347,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$800.00 <span> <del>$900.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>800.00 <span> <del><i class="fas fa-rupee-sign"></i>900.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -384,7 +384,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>492.00 <span> <del><i class="fas fa-rupee-sign"></i>379.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -415,7 +415,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$500.00 <span> <del>$679.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>500.00 <span> <del><i class="fas fa-rupee-sign"></i>679.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>
@@ -446,7 +446,7 @@ function BestSellers(){
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
-                                                <h4>$800.00 <span> <del>$900.00</del> </span> </h4>
+                                                <h4><i class="fas fa-rupee-sign"></i>800.00 <span> <del><i class="fas fa-rupee-sign"></i>900.00</del> </span> </h4>
                                                 <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                              </div>
                                           </div>

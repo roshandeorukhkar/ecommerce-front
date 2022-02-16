@@ -19,6 +19,7 @@ import UpdateProduct from './user/UpdateProduct';
 import UpdateCategory from './user/updateCategory';
 import AdminSignin from './user/Signin';
 import AdminMain from './user/UserMain';
+import Checkout from './core/Checkout';
 const Routes = () => {
     return (
         <BrowserRouter>
@@ -40,6 +41,7 @@ const Routes = () => {
                 <PrivateRoute path="/admin/products" exact component={ManageProducts} />
                 <AdminRoute path="/admin/product/update/:productId" exact component={UpdateProduct} />
                 <AdminRoute path="/admin/category/update/:categoryId" exact component={UpdateCategory} />
+                <Route path="/checkout" exact component={Checkout} />
             </Switch>
         </BrowserRouter>
     );
