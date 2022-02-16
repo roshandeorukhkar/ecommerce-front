@@ -153,7 +153,7 @@ const Cart = () => {
                            <div className="order_rate float_left">
                               <h3>Order Total <span><i class="fas fa-rupee-sign"></i>1172.00</span> </h3>
                            </div>
-                           <a className="placeholder_btn" href="#">Place Order</a>
+                           <a className="placeholder_btn" href="/checkout">Place Order</a>
                         </div>
                      </div>
                   </div>

@@ -6,7 +6,7 @@ import $ from 'jquery';
 
 function test()
 {
-    //<i class="fas fa-rupee-sign"></i>('#myModal').modal('show');
+    //<i class="fas fa-rupee-sign fa-sm"></i>('#myModal').modal('show');
 }
 
 function NewProducts(){
@@ -65,7 +65,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
-                                                    <h4><i class="fas fa-rupee-sign"></i>492.00 <span> <del><i class="fas fa-rupee-sign"></i>379.00</del> </span> </h4>
+                                                    <h4><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                                                     <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
@@ -96,7 +96,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
-                                                    <h4><i class="fas fa-rupee-sign"></i>350.00 <span> <del><i class="fas fa-rupee-sign"></i>379.00</del> </span> </h4>
+                                                    <h4><i class="fas fa-rupee-sign fa-sm"></i>350.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                                                     <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
@@ -127,7 +127,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
-                                                    <h4><i class="fas fa-rupee-sign"></i>500.00 <span> <del><i class="fas fa-rupee-sign"></i>550.00</del> </span> </h4>
+                                                    <h4><i class="fas fa-rupee-sign fa-sm"></i>500.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>550.00</del> </span> </h4>
                                                     <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
@@ -158,7 +158,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
-                                                    <h4><i class="fas fa-rupee-sign"></i>450.00 <span> <del><i class="fas fa-rupee-sign"></i>500.00</del> </span> </h4>
+                                                    <h4><i class="fas fa-rupee-sign fa-sm"></i>450.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>500.00</del> </span> </h4>
                                                     <a className="add_btn custom_btn" href="#">Add to Cart</a>
                                                     </div>
                                                 </div>
@@ -243,7 +243,7 @@ function NewProducts(){
                                             <li><a href="#">1 customer review</a></li>
                                             <li><a href="#">Add a review</a></li>
                                         </ul>
-                                        <h3><i class="fas fa-rupee-sign"></i>492.00 <span><del><i class="fas fa-rupee-sign"></i>379.00</del></span> </h3>
+                                        <h3><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span><del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del></span> </h3>
                                         <p>Set your mind ablaze with the slick sound and expansive design that has culminated into the boAt Rockerz 450, adding luxury to your sound. Propelled by crystal clear 40mm dynamic drivers, slip into an alternate HD Immersive Audio reality. The soft cornered matte black finish allows for a comfortable fit, propagated by plush foam in an adaptive and adjustable design. Choose your mode, go wireless with Bluetooth V4.2 or connect an aux wire that cause any drain on the 300mAh Rechargeable Lithium Battery.</p>
                                     </div>
                                     <div className="color_code float_left">
