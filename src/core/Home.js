@@ -44,8 +44,8 @@ const Home = () => {
             {/* <SliderMainWrapper/> */}
             {/* <h2 className="mb-4">........</h2> */}
             <Layout>
-                {/*<div class="col-lg-12 col-md-12 col-12 no_padd">
-                    <img class="img-fluid" src="../assets/images/banner.png" alt="logo"/>
+                {/*<div className="col-lg-12 col-md-12 col-12 no_padd">
+                    <img className="img-fluid" src="../assets/images/banner.png" alt="logo"/>
                 </div>*/}
                 <div className="row">
                     {productsByArrival.map((product, i) => (

@@ -38,34 +38,34 @@ const Signup = () => {
     };
 
     const signUpForm = () => (
-        <div class="bz_product_grid_content_main_wrapper float_left">
-            <div class="container custom_container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12">
-                    <div class="login_form">
+        <div className="bz_product_grid_content_main_wrapper float_left">
+            <div className="container custom_container">
+                <div className="row">
+                    <div className="col-lg-6 col-md-6 col-12">
+                    <div className="login_form">
                         <h3>Signup</h3>
                         <form>
-                            <div class="form-group row">
-                                <div class="col-12">
+                            <div className="form-group row">
+                                <div className="col-12">
                                     <label>Name*</label>
                                 </div>
-                                <div class="col-12">
+                                <div className="col-12">
                                     <input placeholder="Enter you name here" onChange={handleChange('name')} type="text" className="form-control" value={name} />
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <div class="col-12">
+                            <div className="form-group row">
+                                <div className="col-12">
                                     <label>Email*</label>
                                 </div>
-                                <div class="col-12">
+                                <div className="col-12">
                                     <input placeholder="Enter you email here" onChange={handleChange('email')} type="email" className="form-control" value={email} />
                                 </div>
                             </div> 
-                            <div class="form-group row">
-                                <div class="col-12">
+                            <div className="form-group row">
+                                <div className="col-12">
                                     <label>Password*</label>
                                 </div>
-                                <div class="col-12">
+                                <div className="col-12">
                                     <input placeholder="Enter your password here" onChange={handleChange('password')} type="password" className="form-control" value={password} />
                                 </div>
                             </div>                          
@@ -77,8 +77,8 @@ const Signup = () => {
                         <p>Alreay have an account? <a href="/signin">Signin</a></p>
                     </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                    <div class="login_side_img">
+                    <div className="col-lg-6 col-md-6 col-12">
+                    <div className="login_side_img">
                         <img className="img-fluid" src="../assets/images/login_img.jpg" alt="online-shopping" style={{height:'569px'}}/>
                     </div>
                     </div>
@@ -110,12 +110,12 @@ const Signup = () => {
         //     {signUpForm()}
         // </Layout>
         <Layout>
-            <div class="bz_inner_page_navigation float_left">
-               <div class="container custom_container">
-                  <div class="inner_menu float_left">
+            <div className="bz_inner_page_navigation float_left">
+               <div className="container custom_container">
+                  <div className="inner_menu float_left">
                      <ul>
-                        <li><a href="/"> <span><i class="fas fa-home"></i></span> </a></li>
-                        <li class="active"><a href="#"> <span><i class="fas fa-angle-right"></i></span> Signup</a></li>
+                        <li><a href="/"> <span><i className="fas fa-home"></i></span> </a></li>
+                        <li className="active"><a href="#"> <span><i className="fas fa-angle-right"></i></span> Signup</a></li>
                      </ul>
                   </div>
                </div>

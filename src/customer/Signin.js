@@ -38,18 +38,18 @@ const Signin = () => {
     };
 
     const signUpForm = () => (
-        <div class="bz_product_grid_content_main_wrapper float_left">
-               <div class="container custom_container">
-                  <div class="row">
-                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="login_form">
+        <div className="bz_product_grid_content_main_wrapper float_left">
+               <div className="container custom_container">
+                  <div className="row">
+                     <div className="col-lg-6 col-md-6 col-12">
+                        <div className="login_form">
                            <h3>Signin</h3>
                             <form>
-                                <div class="form-group row">
-                                    <div class="col-12">
+                                <div className="form-group row">
+                                    <div className="col-12">
                                         <label>Email*</label>
                                     </div>
-                                    <div class="col-12">
+                                    <div className="col-12">
                                         <input 
                                         onChange={handleChange("email")}
                                         type="email"
@@ -58,11 +58,11 @@ const Signin = () => {
                                         placeholder="Enter your email here"/>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-12">
+                                <div className="form-group row">
+                                    <div className="col-12">
                                         <label>Password*</label>
                                     </div>
-                                    <div class="col-12">
+                                    <div className="col-12">
                                         <input 
                                         placeholder="Enter your password here"
                                         onChange={handleChange("password")}
@@ -80,8 +80,8 @@ const Signin = () => {
                             <p>Don't have an account? <a href="/signup">Signup</a></p>
                         </div>
                      </div>
-                     <div class="col-lg-6 col-md-6 col-12">
-                        <div class="login_side_img">
+                     <div className="col-lg-6 col-md-6 col-12">
+                        <div className="login_side_img">
                             <img className="img-fluid" src="../assets/images/login_img.jpg" alt="online-shopping" style={{height:'500px'}}/> 
                         </div>
                      </div>
@@ -122,12 +122,12 @@ const Signin = () => {
     return (
         
         <Layout>
-            <div class="bz_inner_page_navigation float_left">
-               <div class="container custom_container">
-                  <div class="inner_menu float_left">
+            <div className="bz_inner_page_navigation float_left">
+               <div className="container custom_container">
+                  <div className="inner_menu float_left">
                      <ul>
-                        <li><a href="/"> <span><i class="fas fa-home"></i></span> </a></li>
-                        <li class="active"><a href="#"> <span><i class="fas fa-angle-right"></i></span> Signin</a></li>
+                        <li><a href="/"> <span><i className="fas fa-home"></i></span> </a></li>
+                        <li className="active"><a href="#"> <span><i className="fas fa-angle-right"></i></span> Signin</a></li>
                      </ul>
                   </div>
                </div>

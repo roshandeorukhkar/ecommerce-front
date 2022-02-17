@@ -203,7 +203,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                                                 <h3>New Customer</h3>
                                                 <form>
                                                    <p>
-                                                      <input type="radio" id="test1" name="radio-group" checked="checked"/>
+                                                      <input type="radio" id="test1" name="radio-group" defaultChecked="checked"/>
                                                       <label htmlFor="test1">Register Account</label>
                                                    </p>
                                                    <p>
@@ -302,7 +302,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                                              
                                              <div className="form-group row">
                                                 <div className="col-md-12 col-12">
-                                                   <input type="checkbox" id="scales" name="scales" checked=""/>
+                                                   <input type="checkbox" id="scales" name="scales"/>
                                                    <label htmlFor="scales">Ship to Same Address As Billing</label>
                                                 </div>
                                              </div>
@@ -399,7 +399,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                                        <div className="payment_method float_left">
                                           <form>
                                              <p>
-                                                <input type="radio" id="test3" name="radio-group" checked=""/>
+                                                <input type="radio" id="test3" name="radio-group" defaultChecked="checked"/>
                                                 <label className="direct_bank" htmlFor="test3">Direct Bank Transfer
                                                 <span className="small-text">Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</span>
                                                 </label>
@@ -436,13 +436,13 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                         <div className="your_order float_left">
                            <h3>Your Order</h3>
                            <div className="order_details">
-                              <p> Dress with belt × 2 <span><i class="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
-                              <p> Dress with belt × 2 <span><i class="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
-                              <p> CART SUBTOTAL <span><i class="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
-                              <p> SHIPPING <span><i class="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
+                              <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
+                              <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
+                              <p> CART SUBTOTAL <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
+                              <p> SHIPPING <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
                            </div>
                            <div className="order_rate float_left">
-                              <h3>Order Total <span><i class="fas fa-rupee-sign"></i>1172.00</span> </h3>
+                              <h3>Order Total <span><i className="fas fa-rupee-sign"></i>1172.00</span> </h3>
                            </div>
                            <a className="placeholder_btn" href="#">Place Order</a>
                         </div>

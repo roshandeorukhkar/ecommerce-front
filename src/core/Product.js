@@ -130,7 +130,7 @@ const Product = props => {
                                  <li><a href="#">1 customer review</a></li>
                                  <li><a href="#">Add a review</a></li>
                               </ul>
-                              <h3><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span><del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del></span> </h3>
+                              <h3><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span><del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del></span> </h3>
                               <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                            </div>
                            <div className="color_code float_left">
@@ -150,7 +150,7 @@ const Product = props => {
                            </div>
                            <div className="fashion_count float_left">
                               <div className="number_pluse fashion_number">
-                                 <div className="nice-number"><button type="button">-</button><input type="number" value='1'/><button type="button">+</button></div>
+                                 <div className="nice-number"><button type="button">-</button><input type="number" defaultValue='1'/><button type="button">+</button></div>
                               </div>
                               <div className="share_icon">
                                  <p>Share:</p>
@@ -343,7 +343,7 @@ const Product = props => {
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                               </ul>
-                              <h4><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
+                              <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
                                  <a href="#">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
@@ -379,7 +379,7 @@ const Product = props => {
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                               </ul>
-                              <h4><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
+                              <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
                                  <a href="#">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
@@ -415,7 +415,7 @@ const Product = props => {
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                               </ul>
-                              <h4><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
+                              <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
                                  <a href="#">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
@@ -451,7 +451,7 @@ const Product = props => {
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                                  <li><a href="#"><i className="fas fa-star"></i></a></li>
                               </ul>
-                              <h4><i class="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i class="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
+                              <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
                                  <a href="#">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart

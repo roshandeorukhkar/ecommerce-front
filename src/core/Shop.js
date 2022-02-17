@@ -211,7 +211,7 @@ const Shop = () => {
                                     </div>
                                     <div className="card-body accord_body price_range">
                                        <div id="slider-range"></div>
-                                       <p> Price <span><input type="text" id="amount" readonly/></span> </p>
+                                       <p> Price <span><input type="text" id="amount"/></span> </p>
                                     </div>
                                  </div>
                               </div>
@@ -226,23 +226,23 @@ const Shop = () => {
                                        <div className="select_categories">
                                           <p className="cc_pc_color7">
                                              <input type="checkbox" id="c37" name="cb"/>
-                                             <label for="c37">Phone (22)</label>
+                                             <label htmlFor="c37">Phone (22)</label>
                                           </p>
                                           <p className="cc_pc_color8">
                                              <input type="checkbox" id="38" name="cb"/>
-                                             <label for="38">Sony (245)</label>
+                                             <label htmlFor="38">Sony (245)</label>
                                           </p>
                                           <p className="cc_pc_color9">
                                              <input type="checkbox" id="39" name="cb"/>
-                                             <label for="39">FabAlley (11)</label>
+                                             <label htmlFor="39">FabAlley (11)</label>
                                           </p>
                                           <p className="cc_pc_color10">
                                              <input type="checkbox" id="40"/>
-                                             <label for="40">Vero Moda (78)</label>
+                                             <label htmlFor="40">Vero Moda (78)</label>
                                           </p>
                                           <p className="cc_pc_color11">
                                              <input type="checkbox" id="41"/>
-                                             <label for="41">DressBerry (36)</label>
+                                             <label htmlFor="41">DressBerry (36)</label>
                                           </p>
                                           <p><a href="#">+12 More</a></p>
                                        </div>
@@ -260,23 +260,23 @@ const Shop = () => {
                                        <div className="select_categories">
                                           <p className="cc_pc_color12">
                                              <input type="checkbox" id="c42" name="cb"/>
-                                             <label for="c42">Phone (22)</label>
+                                             <label htmlFor="c42">Phone (22)</label>
                                           </p>
                                           <p className="cc_pc_color13">
                                              <input type="checkbox" id="43" name="cb"/>
-                                             <label for="43">Sony (245)</label>
+                                             <label htmlFor="43">Sony (245)</label>
                                           </p>
                                           <p className="cc_pc_color14">
                                              <input type="checkbox" id="44" name="cb"/>
-                                             <label for="44">FabAlley (11)</label>
+                                             <label htmlFor="44">FabAlley (11)</label>
                                           </p>
                                           <p className="cc_pc_color15">
                                              <input type="checkbox" id="45"/>
-                                             <label for="45">Vero Moda (78)</label>
+                                             <label htmlFor="45">Vero Moda (78)</label>
                                           </p>
                                           <p className="cc_pc_color16">
                                              <input type="checkbox" id="46"/>
-                                             <label for="46">DressBerry (36)</label>
+                                             <label htmlFor="46">DressBerry (36)</label>
                                           </p>
                                           <p><a href="#">+12 More</a></p>
                                        </div>
@@ -294,23 +294,23 @@ const Shop = () => {
                                        <div className="select_categories">
                                           <p className="cc_pc_color17">
                                              <input type="checkbox" id="c47" name="cb"/>
-                                             <label for="c47">Phone (22)</label>
+                                             <label htmlFor="c47">Phone (22)</label>
                                           </p>
                                           <p className="cc_pc_color18">
                                              <input type="checkbox" id="48" name="cb"/>
-                                             <label for="48">Sony (245)</label>
+                                             <label htmlFor="48">Sony (245)</label>
                                           </p>
                                           <p className="cc_pc_color19">
                                              <input type="checkbox" id="49" name="cb"/>
-                                             <label for="49">FabAlley (11)</label>
+                                             <label htmlFor="49">FabAlley (11)</label>
                                           </p>
                                           <p className="cc_pc_color20">
                                              <input type="checkbox" id="50"/>
-                                             <label for="50">Vero Moda (78)</label>
+                                             <label htmlFor="50">Vero Moda (78)</label>
                                           </p>
                                           <p className="cc_pc_color21">
                                              <input type="checkbox" id="51"/>
-                                             <label for="51">DressBerry (36)</label>
+                                             <label htmlFor="51">DressBerry (36)</label>
                                           </p>
                                           <p><a href="#">+12 More</a></p>
                                        </div>
@@ -327,7 +327,7 @@ const Shop = () => {
                                     <div className="card-body accord_body">
                                        <div className="color_slide">
                                           <label className="main_box_color">
-                                          <input type="checkbox" checked="checked"/>
+                                          <input type="checkbox" defaultChecked="checked"/>
                                           <span className="checkmark red"></span>
                                           </label>
                                           <label className="main_box_color">
@@ -1148,7 +1148,7 @@ const Shop = () => {
                                        <p>Tag: <span><a href="#">Electronic,</a> <a href="#">Mobile,</a> <a href="#">Fashion cloth</a></span></p>
                                     </div>
                                     <div className="number_pluse float_left">
-                                    <div class="nice-number"><button type="button">-</button><input type="number" value="1"/><button type="button">+</button></div>
+                                    <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
                                        <a href="#" className="cart_btn">Add To Cart</a>
                                     </div>
                                     <div className="share_icon float_left">
@@ -1251,7 +1251,7 @@ const Shop = () => {
                                        <p>Tag: <span><a href="#">Electronic,</a> <a href="#">Mobile,</a> <a href="#">Fashion cloth</a></span></p>
                                     </div>
                                     <div className="number_pluse float_left">
-                                       <input type="number" value="1"/>
+                                       <input type="number" defaultValue="1"/>
                                        <a href="#" className="cart_btn">Add To Cart</a>
                                     </div>
                                     <div className="share_icon float_left">

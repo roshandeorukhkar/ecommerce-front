@@ -17,7 +17,7 @@ const Cart = () => {
     const showItems = items => {
         return (
             <div>
-                <h2>Your cart has {`<i class="fas fa-rupee-sign"></i>{items.length}`} items</h2>
+                <h2>Your cart has {`<i className="fas fa-rupee-sign"></i>{items.length}`} items</h2>
                 <hr />
                 {items.map((product, i) => (
                     <Card
@@ -91,44 +91,44 @@ const Cart = () => {
                                           <td>Womens Purse</td>
                                           <td>
                                              <div className="number_pluse">
-                                                <div className="nice-number"><button type="button">-</button><input type="number" value="1"/><button type="button">+</button></div>
+                                                <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
                                              </div>
                                           </td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>744.00</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>744.00</td>
                                        </tr>
                                        <tr>
                                           <td><a href="#">x</a> <img className="img-fluid" src="images/instra_a2.jpg" alt=""/></td>
                                           <td>Women T-shirt</td>
                                           <td>
                                              <div className="number_pluse">
-                                                <div className="nice-number"><button type="button">-</button><input type="number" value="1"/><button type="button">+</button></div>
+                                                <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
                                              </div>
                                           </td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>744.00</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>744.00</td>
                                        </tr>
                                        <tr>
                                           <td><a href="#">x</a> <img className="img-fluid" src="images/instra_a3.jpg" alt=""/></td>
                                           <td>Men's Shoes</td>
                                           <td>
                                              <div className="number_pluse">
-                                                <div className="nice-number"><button type="button">-</button><input type="number" value="1"/><button type="button">+</button></div>
+                                                <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
                                              </div>
                                           </td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>744.00</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>744.00</td>
                                        </tr>
                                        <tr>
                                           <td><a href="#">x</a> <img className="img-fluid" src="images/instra_a4.jpg" alt=""/></td>
                                           <td>Mens Glasses</td>
                                           <td>
                                              <div className="number_pluse">
-                                                <div className="nice-number"><button type="button">-</button><input type="number" value="1"/><button type="button">+</button></div>
+                                                <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
                                              </div>
                                           </td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
-                                          <td><i class="fas fa-rupee-sign fa-sm"></i>744.00</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>378 x 2</td>
+                                          <td><i className="fas fa-rupee-sign fa-sm"></i>744.00</td>
                                        </tr>
                                     </tbody>
                                  </table>
@@ -145,13 +145,13 @@ const Cart = () => {
                         <div className="your_order float_left">
                            <h3>Your Order</h3>
                            <div className="order_details">
-                              <p> Dress with belt × 2 <span><i class="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
-                              <p> Dress with belt × 2 <span><i class="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
-                              <p> CART SUBTOTAL <span><i class="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
-                              <p> SHIPPING <span><i class="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
+                              <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
+                              <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
+                              <p> CART SUBTOTAL <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
+                              <p> SHIPPING <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
                            </div>
                            <div className="order_rate float_left">
-                              <h3>Order Total <span><i class="fas fa-rupee-sign"></i>1172.00</span> </h3>
+                              <h3>Order Total <span><i className="fas fa-rupee-sign"></i>1172.00</span> </h3>
                            </div>
                            <a className="placeholder_btn" href="/checkout">Place Order</a>
                         </div>
