@@ -311,8 +311,7 @@ const Product = props => {
             <div className="bz_cosmetic_new_product_wraaper padd_bottom float_left">
                <div className="container custom_container">
                   <div className="title-heading">
-                     <h2>Just in now</h2>
-                     <img className="img-fluid" src="../assets/images/line.png" alt="line"/>
+                     <h3><span style={{borderBottom:'1px solid #01a5ed', paddingBottom:'15px'}}>Just in now</span></h3><br/>
                   </div>
                   <div className="row">
                     <OwlCarousel className='owl-theme' loop margin={10} nav items={4} dots={false}>
