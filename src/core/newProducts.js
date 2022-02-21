@@ -11,6 +11,23 @@ function test()
 
 function NewProducts(){
 
+    const state= {
+        responsive:{
+            0: {
+                items: 1,
+            },
+            450: {
+                items: 2,
+            },
+            600: {
+                items: 3,
+            },
+            1000: {
+                items: 4,
+            },
+        },
+    }
+
     return(
                        
         <div className="upperPadding" style={{padding:'0%'}}>
@@ -38,7 +55,7 @@ function NewProducts(){
                             <div className="tab-content" id="myTabContent">
                                 <div id="home" className="tab-pane active show" role="tabpanel" aria-labelledby="home-tab">
                                     <div className="product_slider">
-                                        <OwlCarousel className='owl-carousel owl-theme' margin={10} loop nav items={4}>
+                                        <OwlCarousel className='owl-carousel owl-theme' margin={10} loop nav responsive={state.responsive}>
                                             <div className="item" style={{width:'99%'}} onClick={test}>
                                                 <div className="product_box">
                                                     <div className="product_img">

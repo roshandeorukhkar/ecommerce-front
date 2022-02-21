@@ -4,7 +4,25 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function BestSellers(){
-    return(
+
+   const state_1= {
+      responsive:{
+          0: {
+              items: 1,
+          },
+          450: {
+              items: 2,
+          },
+          600: {
+              items: 2,
+          },
+          1000: {
+              items: 3,
+          },
+      },
+   }
+
+   return(
         <div className="upperPadding">
             <div className="bz_section_washing_main_wrapper float_left">
                <div className="container custom_container">
@@ -60,7 +78,7 @@ function BestSellers(){
                            <div className="tab-content">
                               <div id="all" className="tab-pane active show" role="tabpanel" aria-labelledby="all-tab">
                                  <div className="washing_slider">
-                                    <OwlCarousel className='owl-carousel owl-theme' loop nav={true} dot={'false'} margin={10} items={3}>
+                                    <OwlCarousel className='owl-carousel owl-theme' loop nav={true} dot={'false'} margin={10} responsive={state_1.responsive}>
                                        <div className="item" style={{width:'99%'}}>
                                           <div className="product_box">
                                              <div className="product_img">

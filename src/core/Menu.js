@@ -19,7 +19,9 @@ const sendOTPLogin = () => {
 };
 
 const verifyOTPLogin = () => {
-    alert('login');
+    localStorage.setItem('jwt', JSON.stringify('test'));
+    window.location.reload();
+    //alert('login');
 };
 
 const sendOTPRegister = () => {
@@ -28,7 +30,15 @@ const sendOTPRegister = () => {
 };
 
 const verifyOTPRegister = () => {
-    alert('Register Successfully');
+    localStorage.setItem('jwt', JSON.stringify('test'));
+    window.location.reload();
+    //alert('Register Successfully');
+};
+
+const logout = () => {
+    localStorage.removeItem('jwt');
+    window.location.reload();
+    //alert('Register Successfully');
 };
 
 const Menu = ({ history }) => (
@@ -111,7 +121,7 @@ const Menu = ({ history }) => (
                     </a>
                 </li>
             )}
-                  
+            {/*    
             {isAuthenticated() && (
                 <li className="nav-item margin-t-15 f-l">
                     <span
@@ -125,6 +135,12 @@ const Menu = ({ history }) => (
                     >
                         Logout
                     </span>
+                </li>
+            )}
+            */}
+            {isAuthenticated() && (
+                <li className="nav-item margin-t-15 f-l white">
+                    <a herf="#" onClick={logout}>UserName</a>
                 </li>
             )}
             {/*<li>
