@@ -217,9 +217,9 @@ export default function Header({ history }){
                     <div className="inner_icon">
                         <ul>
                             <li>
-                                <Link to="/signin">
+                                <a href="#" data-toggle="modal" data-target="#loginModal">
                                     <i className="fas fa-user"></i>
-                                </Link>
+                                </a>
                             </li>
                             <li className="cart_shop1">
                                 <Link to="#">
@@ -344,5 +344,6 @@ export default function Header({ history }){
                 </div>
             </div>
         </div>
+        
     )
 }
