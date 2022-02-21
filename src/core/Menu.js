@@ -112,7 +112,7 @@ const Menu = ({ history }) => (
                 </li>
             )}
                   
-            {!isAuthenticated() && (
+            {isAuthenticated() && (
                 <li className="nav-item margin-t-15 f-l">
                     <span
                         className="nav-link"
