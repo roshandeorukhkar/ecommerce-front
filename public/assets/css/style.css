@@ -20252,10 +20252,10 @@ ul.mm-listview li a {
   margin-top:15px;
 }
 .f-l{
-  float: left;
+  float: left !important;
 }
 .f-r{
-  float: right;
+  float: right !important;
 }
 .login li a{
   color:white;

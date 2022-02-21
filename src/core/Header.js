@@ -102,22 +102,23 @@ export default function Header({ history }){
                             </div>
                         </div>
                     </div>*/}
-                    <div className="middle_header float_left"  style={{padding: "12px 0px 0px 0px"}}>
+                    <div className="middle_header float_left" style={{padding: "12px 0px 0px 0px"}}>
                     <div className="row">
                         <div className="col-md-2 col-12">
                             <div className="logo">
-                                <Link to="/">
-                                <img className="img-fluid" src="../assets/images/logo.png" alt="logo" />
-                                </Link>
+                                <Link to="/"><h1 className="white">Logo</h1></Link>
+                                {/*<Link to="/">
+                                    <img className="img-fluid" src="../assets/images/logo.png" alt="logo" />
+                                </Link>*/}
                             </div>
                         </div>
                         <div className="col-md-7 col-12">
                             <Search/>
                         </div>
                         <div className="col-md-3 col-12">
-                            <div className="cart_shop" style={{float: "left"}}>
+                            <div className="cart_shop f-l">
                                 <Link to="#">
-                                <i className="fas fa-shopping-cart fa-2x" style={{color: "white"}}></i>
+                                <i className="fas fa-shopping-cart fa-2x white"></i>
                                 <span>Your Cart <small><i className="fas fa-rupee-sign fa-sm"></i>3590</small> </span>
                                 </Link>
                                 <div className="cart_details">
@@ -153,37 +154,36 @@ export default function Header({ history }){
                 </div>
                 {/* <!-- responsive menu start--> */}
                 <div id="sidebar" className="d-block d-sm-block d-md-block d-lg-none d-xl-none">
-                    <div className="pd_toggle_logo">
-                    <a href="index.html">
-                        <img src="../assets/images/logo.png" alt="img"/>
-                    </a>
+                    <div className="pd_toggle_logo">                    
+                        <Link to="/"><h1 className="white" style={{background:'#000'}}>Logo</h1></Link>
+                        {/*<img src="../assets/images/logo.png" alt="img"/>*/}
                     </div>
                     <div id="toggle_close">&times;</div>
                     <div id='cssmenu'>
                     <ul>
                         <li>
-                            <a href="#"> Laptops</a>
+                            <a href="/shop"> Laptops</a>
                         </li>
                         <li>
-                            <a href="#"> Dekstops</a>
+                            <a href="/shop"> Dekstops</a>
                         </li>
                         <li className='has-sub'>
-                            <a href='#'>Cameras</a>
+                            <a href='/shop'>Cameras</a>
                             <ul>
-                                <li><Link to="#">Digital Camera</Link>
+                                <li><Link to="/shop">Digital Camera</Link>
                                 </li>
-                                <li><Link to="#">CyberShot Camera</Link>
+                                <li><Link to="/shop">CyberShot Camera</Link>
                                 </li>
-                                <li><Link to="#">PowerShot Camera</Link>
+                                <li><Link to="/shop">PowerShot Camera</Link>
                                 </li>
-                                <li><Link to="#">Dual Lens Camera</Link>
+                                <li><Link to="/shop">Dual Lens Camera</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#">Mobile</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Appliances</a></li>
-                        <li><a href="#">Bike</a></li>
+                        <li><a href="/shop">Mobile</a></li>
+                        <li><a href="/shop">Fashion</a></li>
+                        <li><a href="/shop">Appliances</a></li>
+                        <li><a href="/shop">Bike</a></li>
                     </ul>
                     <div className="share_link">
                         <a href="#"><i className="fab fa-facebook-f"></i></a>
@@ -201,9 +201,10 @@ export default function Header({ history }){
                         
                     </div>
                     <div className="res_logo">
-                        <Link to="/">
+                        <Link to="/"><h1>Logo</h1></Link>
+                        {/*<Link to="/">
                             <img className="img-fluid" src="../assets/images/logo.png" alt="img"/>
-                        </Link>
+                            </Link>*/}
                     </div>
                     <div className="search_filter">
                         <select className="select_dropdown">
@@ -218,19 +219,19 @@ export default function Header({ history }){
                         <ul>
                             <li>
                                 <a href="#" data-toggle="modal" data-target="#loginModal">
-                                    <i className="fas fa-user"></i>
+                                    <i className="fas fa-user fa-2x"></i>
                                 </a>
                             </li>
                             <li className="cart_shop1">
                                 <Link to="#">
                                 <span>
-                                <i className="fas fa-shopping-cart"></i>
+                                <i className="fas fa-shopping-cart fa-2x"></i>
                                 </span>
                                 </Link>
                                 <div className="cart_details">
                                 <div className="total-count">
                                     <span>1 ITEM</span>
-                                    <Link to="#">VIEW CART</Link>
+                                    <Link to="/cart">VIEW CART</Link>
                                 </div>
                                 <div className="cart_list">
                                     <div className="select_cart">
@@ -245,8 +246,8 @@ export default function Header({ history }){
                                     <p>Sub Total:<span><i className="fas fa-rupee-sign fa-sm"></i> 289.00</span></p>
                                 </div>
                                 <div className="cart_btn">
-                                    <Link to="#"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
-                                    <Link to="#"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
+                                    <Link to="/cart"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
+                                    <Link to="/checkout"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
                                 </div>
                                 </div>
                             </li>

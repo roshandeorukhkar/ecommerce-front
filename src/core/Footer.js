@@ -27,7 +27,8 @@ export default function Footer(){
                     <div className="col-lg-3 col-md-4 col-12">
                     <div className="footer_links-list">
                         <div className="footer_logo">
-                            <img className="img-fluid" src="../assets/images/logo.png" alt="footer-logo" />
+                            <h1 className="white">Logo</h1>
+                            {/*<img className="img-fluid" src="../assets/images/logo.png" alt="footer-logo" />*/}
                             <p>Various versions have evolved over an the years, sometimes a accident, sometimes on purpose .</p>
                         </div>
                         <div className="information">
