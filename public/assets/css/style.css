@@ -20264,4 +20264,37 @@ ul.mm-listview li a {
 input, textarea {
 	border: none !important;
 }
+
+#loginModal .close {
+  position: absolute;
+  right: -10px;
+  z-index: 999;
+  background-color: #01a5ed;
+  opacity: 1;
+  width: 37px;
+  height: 37px;
+  color: #fff;
+  border-radius: 30px;
+  margin: 5px;
+  transition: all 0.5s;
+}
+
+#registerModal .close {
+  position: absolute;
+  right: -10px;
+  z-index: 999;
+  background-color: #01a5ed;
+  opacity: 1;
+  width: 37px;
+  height: 37px;
+  color: #fff;
+  border-radius: 30px;
+  margin: 5px;
+  transition: all 0.5s;
+}
+
+.device li {
+  width:100%;
+  text-align: left;
+}
 /*# sourceMappingURL=style.css.map */

@@ -18,6 +18,33 @@ $(document).ready(function(){
     });
 });    
 
+const sendOTPLogin = () => {
+    $('#sendOTP').hide();
+    $('#verifyOTP').show();
+};
+
+const verifyOTPLogin = () => {
+    localStorage.setItem('jwt', JSON.stringify('test'));
+    window.location.reload();
+    //alert('login');
+};
+
+const sendOTPRegister = () => {
+    $('#sendOTPRegister').hide();
+    $('#verifyOTPRegister').show();
+};
+
+const verifyOTPRegister = () => {
+    localStorage.setItem('jwt', JSON.stringify('test'));
+    window.location.reload();
+    //alert('Register Successfully');
+};
+
+const signupPopup = () => {
+    $('#loginModal').hide();     
+    $('#registerModal').show(); 
+};
+
 export default function Footer(){
     return(
         <div className="bz_bottom_footer_main_wrapper float_left">
@@ -114,6 +141,146 @@ export default function Footer(){
                     </div>
                 </div> */}
             </div>
+
+
+            <div className="modal" id="loginModal">
+                <div className="modal-dialog modal-lg">
+                    <div className="modal-content">
+                        <div className="modal-body no-padding">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <div className="row">
+                                <div className="col-lg-7 col-md-7 col-12 login-popup-left">
+                                    <div id="sendOTP">  
+                                        <h4>Login With Mobile Number</h4><br/>
+                                        <p>Enter your mobile number we will send you OTP to verify</p><br/>
+                                        <div className="form-group row">
+                                            <div className="col-12">
+                                                <label>Phone Number*</label>
+                                            </div>
+                                            <div className="col-12">
+                                                <input 
+                                                type="text"
+                                                maxLength={10}
+                                                className="form-control"
+                                                placeholder="Enter here"
+                                                onKeyPress={(event) => {
+                                                    if (!/[0-9]/.test(event.key)) {
+                                                    event.preventDefault();
+                                                    }
+                                                }}
+                                                />
+                                            </div>
+                                        </div>                      
+                                        <button className="submit_btn ucfirst" onClick={sendOTPLogin}>
+                                            Send OTP
+                                        </button>
+                                        <br/><br/>
+                                        <p>Don't have an account? <a href="#" className="sky-blue" onClick={signupPopup}>Signup</a></p>
+                                    </div>
+                                    <div id="verifyOTP" style={{display:'none'}}>  
+                                        <h4>Login With Mobile Number</h4><br/>
+                                        <p>Please enter the OTP sent to your given number or change.</p><br/>
+                                        <div className="form-group row">
+                                            <div className="col-12">
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                            </div>
+                                        </div>                      
+                                        <button className="submit_btn ucfirst" onClick={verifyOTPLogin}>
+                                            Verify
+                                        </button>
+                                        <br/><br/>
+                                        <p>Not received you code? <a href="javascript:void(0);" className="sky-blue">Resend Code</a></p>
+                                    </div>
+                                </div>
+                                <div className="col-lg-5 col-md-5 col-12 login-popup-right">
+                                    <div id="sendOTPText">
+                                        <br/><h2 className="white">Login</h2><br/><br/>
+                                        <p className="login-text">Get access to your Orders, Wishlist and Recommmendations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="modal" id="registerModal">
+                <div className="modal-dialog modal-lg">
+                    <div className="modal-content">
+                        <div className="modal-body no-padding">
+                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <div className="row">
+                                <div className="col-lg-7 col-md-7 col-12 login-popup-left">
+                                    <div id="sendOTPRegister">  
+                                        <h4>New User, Signup with your mobile number to get started</h4><br/>
+                                        <div className="form-group row">
+                                            <div className="col-12">
+                                                <label>Phone Number*</label>
+                                            </div>
+                                            <div className="col-12">
+                                                <input 
+                                                type="text"
+                                                className="form-control"
+                                            placeholder="Enter here"/>
+                                            </div>
+                                            <div className="col-12 margin-t-15">
+                                                <div className="col-6 f-l" style={{paddingLeft: '0px'}}>
+                                                    <label>First Name*</label>
+                                                    <input 
+                                                    type="text"
+                                                    className="form-control"
+                                                placeholder="Enter here"/>
+                                                </div>
+                                                <div className="col-6 f-l" style={{paddingRight: '0px'}}>
+                                                    <label>Last Name*</label>
+                                                    <input 
+                                                    type="text"
+                                                    className="form-control"
+                                                placeholder="Enter here"/>
+                                                </div>
+                                            </div>
+                                        </div>                      
+                                        <button className="submit_btn ucfirst" onClick={sendOTPRegister}>
+                                            Send OTP
+                                        </button>
+                                    </div>
+                                    <div id="verifyOTPRegister" style={{display:'none'}}>  
+                                        <h4>Login With Mobile Number</h4><br/>
+                                        <p>Please enter the OTP sent to your given number or change.</p><br/>
+                                        <div className="form-group row">
+                                            <div className="col-12">
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                            </div>
+                                        </div>                      
+                                        <button className="signup_btn ucfirst" onClick={verifyOTPRegister}>
+                                            Signup
+                                        </button>
+                                        <br/><br/>
+                                        <p>Not received you code? <a href="javascript:void(0);" className="sky-blue">Resend Code</a></p>
+                                    </div>
+                                </div>
+                                <div className="col-lg-5 col-md-5 col-12 login-popup-right">
+                                    <div>
+                                        <br/><h2 className="white">Registration</h2><br/><br/>
+                                        <p className="login-text">Get access to your Orders, Wishlist and Recommmendations</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }

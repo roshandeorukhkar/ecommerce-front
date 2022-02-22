@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link ,withRouter } from "react-router-dom";
 import Search from "./Search";
 //import { signout, isAuthenticated } from "../auth";
+import {isAuthenticated } from "../common/utils"
 import Menu from "./Menu"
 import $ from 'jquery';
 
@@ -11,6 +12,12 @@ const isActive = (history, path) => {
     } else {
         return { color: "#ffffff" };
     }
+};
+
+const logout = () => {
+    localStorage.removeItem('jwt');
+    window.location.reload();
+    //alert('Register Successfully');
 };
 
 $(document).ready(function(){
@@ -217,11 +224,6 @@ export default function Header({ history }){
                     </div>
                     <div className="inner_icon">
                         <ul>
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#loginModal">
-                                    <i className="fas fa-user fa-2x"></i>
-                                </a>
-                            </li>
                             <li className="cart_shop1">
                                 <Link to="#">
                                 <span>
@@ -251,6 +253,28 @@ export default function Header({ history }){
                                 </div>
                                 </div>
                             </li>
+                            {!isAuthenticated() && (   
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#loginModal">
+                                        <i className="fas fa-user fa-2x"></i>
+                                    </a>
+                                </li> 
+                            )}
+                            {isAuthenticated() && (
+                                <li className="cart_shop1" style={{display: 'inline-block'}}>
+                                    <Link to="#">
+                                        <i className="fas fa-user fa-2x"></i> <i class="fas fa-angle-down fa-2x"></i>
+                                    </Link>
+                                    <div className="cart_details device" style={{width: '120px'}}>
+                                        <ul style={{display: 'block'}}>
+                                            <li><a href="#">My Profile</a></li>
+                                            <li><a href="#">Wishlist</a></li>
+                                            <li><a href="#">Conatct Us</a></li>
+                                            <li><a href="#" onClick={logout}>Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </li>  
+                            )}                         
                         </ul>
                     </div>
                     <div id="toggle" className="d-block d-sm-block d-md-block d-lg-none d-xl-none">

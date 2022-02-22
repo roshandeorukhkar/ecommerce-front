@@ -13,6 +13,7 @@ const isActive = (history, path) => {
     }
 };
 
+/*
 const sendOTPLogin = () => {
     $('#sendOTP').hide();
     $('#verifyOTP').show();
@@ -34,6 +35,7 @@ const verifyOTPRegister = () => {
     window.location.reload();
     //alert('Register Successfully');
 };
+*/
 
 const logout = () => {
     localStorage.removeItem('jwt');
@@ -138,19 +140,35 @@ const Menu = ({ history }) => (
                 </li>
             )}
             */}
+            {/*}
             {isAuthenticated() && (
                 <li className="nav-item margin-t-15 f-l white">
-                    <a herf="#" onClick={logout}>UserName</a>
+                    <a herf="#" onClick={logout}>UserName <i class="fas fa-angle-down"></i></a>
                 </li>
-            )}
+            )}*/}
             {/*<li>
                 <a href="#">
                     <i className="fas fa-question-circle"></i> &nbsp;Help
                 </a>
             </li>*/} 
         </ul>
+        {isAuthenticated() && (   
+            <div className="cart_shop f-r margin-t-15">
+                <Link to="#">
+                    <span>User Name <i class="fas fa-angle-down"></i></span>
+                </Link>
+                <div className="cart_details" style={{width:'160px'}}>
+                    <ul>
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Conatct Us</a></li>
+                        <li><a href="#" onClick={logout}>Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        )}
         
-        <div className="modal" id="loginModal">
+        {/*<div className="modal" id="loginModal">
             <div className="modal-dialog modal-lg">
                 <div className="modal-content">
                 <div className="modal-body no-padding">
@@ -171,7 +189,7 @@ const Menu = ({ history }) => (
                                         placeholder="Enter here"
                                         onKeyPress={(event) => {
                                             if (!/[0-9]/.test(event.key)) {
-                                              event.preventDefault();
+                                            event.preventDefault();
                                             }
                                         }}
                                         />
@@ -284,7 +302,7 @@ const Menu = ({ history }) => (
                 </div>
                 </div>
             </div>
-        </div>
+        </div>*/}
     </div>
 );
 

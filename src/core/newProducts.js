@@ -189,6 +189,7 @@ function NewProducts(){
                     </div>
                 </div>
                 {/* <!-- The Modal --> */}
+                
                 <div className="modal" id="myModal">
                     <div className="modal-dialog product_modal">
                         <div className="modal-content">
