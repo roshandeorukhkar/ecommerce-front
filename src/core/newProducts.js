@@ -32,7 +32,7 @@ function NewProducts(){
                        
         <div className="upperPadding" style={{padding:'0%'}}>
             <div className="col-lg-12 col-md-12 col-12 no_padd">
-                <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={1} autoplay={true}>
+                <OwlCarousel className='owl-theme' loop margin={10} items={1} autoplay={true}>
                     <div className='item'>
                         <img className="img-fluid" src="../assets/images/banner.png" alt="logo"/>
                     </div>
@@ -305,7 +305,7 @@ function NewProducts(){
                      <div className="col-lg-4 col-md-6 col-12">
                         <div className="add_post">
                            <div className="img_hover">
-                              <img className="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                              <img className="img-fluid" src="../assets/images/add_4.jpg" alt="add" />
                            </div>
                            <div className="post_content color_change">
                               <p>Amazing Discount</p>
@@ -317,7 +317,7 @@ function NewProducts(){
                      <div className="col-lg-4 col-md-6 col-12">
                         <div className="add_post">
                            <div className="img_hover">
-                              <img className="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                              <img className="img-fluid" src="../assets/images/add_4.jpg" alt="add" />
                            </div>
                            <div className="post_content color_change">
                               <p>Amazing Discount</p>
@@ -329,7 +329,7 @@ function NewProducts(){
                      <div className="col-lg-4 col-md-6 col-12">
                         <div className="add_post">
                            <div className="img_hover">
-                              <img className="img-fluid" src="../assets/images/add4.jpg" alt="add" />
+                              <img className="img-fluid" src="../assets/images/add_4.jpg" alt="add" />
                            </div>
                            <div className="post_content color_change">
                               <p>Amazing Discount</p>

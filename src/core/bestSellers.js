@@ -22,6 +22,23 @@ function BestSellers(){
       },
    }
 
+   const state_2= {
+      responsive:{
+          0: {
+              items: 2,
+          },
+          450: {
+              items: 2,
+          },
+          600: {
+              items: 4,
+          },
+          1000: {
+              items: 5,
+          },
+      },
+  }
+
    return(
         <div className="upperPadding">
             <div className="bz_section_washing_main_wrapper float_left">
@@ -486,7 +503,7 @@ function BestSellers(){
                         <h3 className="title"><span><img className="img-fluid" src="../assets/images/partner.png" alt="icon"/></span> &nbsp;Our Partner</h3>
                      </div>
                      <div className="partner_slider">
-                        <OwlCarousel className='owl-carousel owl-theme' loop margin={10} nav items={5} dots={false}  autoplay={true}>
+                        <OwlCarousel className='owl-carousel owl-theme' loop margin={10} nav  responsive={state_2.responsive} dots={false}  autoplay={true}>
                            <div className='item'>
                               <div className="partner_img">
                                  <img src="../assets/images/team_6.jpg" alt="logo"/>

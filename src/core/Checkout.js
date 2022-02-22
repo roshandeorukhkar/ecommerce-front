@@ -8,6 +8,11 @@ import { Link } from 'react-router-dom';
 //import DropIn from 'braintree-web-drop-in-react';
 import Layout from './Layout';
 
+const placeOrder = () => {
+   alert('Your Order has been placed successfully.')
+   window.location='/';
+};
+
 const Checkout = ({ products, setRun = f => f, run = undefined }) => {
     const [data, setData] = useState({
         loading: false,
@@ -18,8 +23,8 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
         address: ''
     });
 
-    const userId = isAuthenticated() && isAuthenticated().user._id;
-    const token = isAuthenticated() && isAuthenticated().token;
+    const userId = '';//isAuthenticated() && isAuthenticated().user._id;
+    const token = '';//isAuthenticated() && isAuthenticated().token;
 
     const getToken = (userId, token) => {
         getBraintreeClientToken(userId, token).then(data => {
@@ -206,17 +211,21 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                                                       <input type="radio" id="test1" name="radio-group" defaultChecked="checked"/>
                                                       <label htmlFor="test1">Register Account</label>
                                                    </p>
+                                                   {/*}
                                                    <p>
                                                       <input type="radio" id="test2" name="radio-group"/>
-                                                      <label htmlFor="test2">Stayc As Guest</label>
+                                                      <label htmlFor="test2">Stay As Guest</label>
                                                    </p>
+                                                   */}
                                                 </form>
-                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority havesuffered alteration in.</p>
+                                                <p>New User, Signup with your mobile number to get started</p>
                                                 <a className="submit_btn" href="#">Continue</a>
                                              </div>
                                           </div>
+                                          
+                                          {!isAuthenticated() && (
                                           <div className="col-md-6 col-12">
-                                             <div className="login_form">
+                                             <div className="login_form" style={{padding:'0px'}}>
                                                 <h3>Log In</h3>
                                                 <form>
                                                    <div className="form-group row">
@@ -224,13 +233,24 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                                                          <label>Phone Number</label>
                                                       </div>
                                                       <div className="col-12">
-                                                         <input type="password" placeholder="enter here"/>
+                                                         <input 
+                                                         type="text"
+                                                         maxLength={10}
+                                                         className="form-control"
+                                                         placeholder="Enter here"
+                                                         onKeyPress={(event) => {
+                                                            if (!/[0-9]/.test(event.key)) {
+                                                            event.preventDefault();
+                                                            }
+                                                         }}
+                                                         />
                                                       </div>
                                                    </div>
                                                 </form>
                                                 <a className="submit_btn" href="#">Send OTP</a>
                                              </div>
                                           </div>
+                                          )}
                                        </div>
                                     </div>
                                  </div>
@@ -444,7 +464,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                            <div className="order_rate float_left">
                               <h3>Order Total <span><i className="fas fa-rupee-sign"></i>1172.00</span> </h3>
                            </div>
-                           <a className="placeholder_btn" href="#">Place Order</a>
+                           <a className="placeholder_btn" href="#" onClick={placeOrder}>Place Order</a>
                         </div>
                      </div>
                   </div>

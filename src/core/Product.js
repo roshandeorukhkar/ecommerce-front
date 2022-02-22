@@ -29,6 +29,23 @@ const Product = props => {
         });
     };
 
+    const state_3= {
+      responsive:{
+          0: {
+              items: 2,
+          },
+          450: {
+              items: 2,
+          },
+          600: {
+              items: 4,
+          },
+          1000: {
+              items: 5,
+          },
+      },
+   }
+
     useEffect(() => {
         const productId = props.match.params.productId;
         loadSingleProduct(productId);

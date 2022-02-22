@@ -68,7 +68,7 @@ export default function Footer(){
                         <div className="information">
                             <ul>
                                 <li>
-                                <Link to="#"> <span><i className="fa fa-map-marker-alt"></i></span> Electronic Store United States Location Sometimes.</Link>
+                                <Link to="#"> <span><i className="fa fa-map-marker-alt"></i></span>Location - India</Link>
                                 </li>
                                 <li><Link to="tel:1234567890"> <span><i className="fas fa-phone"></i></span>Helpline: +123-456-7890</Link></li>
                                 <li> <Link to="mailto:info@example.com" target="_top"><span><i className="fas fa-envelope"></i></span>info@example.com</Link></li>
@@ -139,7 +139,7 @@ export default function Footer(){
                 </div>
                 <div className="bz_bottom_footer_main_wrapper float_left">
                     <div className="copy_right">
-                    <p> © Copyright 2021-22 - Design By KEA</p>
+                    <p> © Copyright 2021-22</p>
                     </div>
                 </div> 
                 {/* <div className="bz_bottom_footer_main_wrapper float_left">
