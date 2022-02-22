@@ -356,7 +356,7 @@ const Shop = () => {
                         <OwlCarousel className='owl-carousel owl-theme' loop margin={10} items={1} autoplay={true}>
                               <div className="item">
                                  <div className="offer_box">
-                                    <img className="img-fluid" src="../assets/images/banner4.jpg" alt="offer"/>
+                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="offer"/>
                                     <div className="offer_content">
                                        <div className="left_offer">
                                           <p>40% Off</p>
@@ -371,7 +371,7 @@ const Shop = () => {
                               </div>
                               <div className="item">
                                  <div className="offer_box">
-                                    <img className="img-fluid" src="../assets/images/banner4.jpg" alt="offer"/>
+                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="offer"/>
                                     <div className="offer_content">
                                        <div className="left_offer">
                                           <p>40% Off</p>
@@ -386,7 +386,7 @@ const Shop = () => {
                               </div>
                               <div className="item">
                                  <div className="offer_box">
-                                    <img className="img-fluid" src="../assets/images/banner4.jpg" alt="offer"/>
+                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="offer"/>
                                     <div className="offer_content">
                                        <div className="left_offer">
                                           <p>40% Off</p>
@@ -433,7 +433,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -465,7 +465,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/related4.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -497,7 +497,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product3.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -533,7 +533,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product4.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -565,7 +565,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -597,7 +597,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -633,7 +633,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing2.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -665,7 +665,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/camera1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -697,7 +697,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/camera2.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -732,7 +732,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product4.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -764,7 +764,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -796,7 +796,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -831,7 +831,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product4.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -862,7 +862,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -893,7 +893,7 @@ const Shop = () => {
                                        <div className="col-lg-4 col-md-6 col-12">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -927,7 +927,7 @@ const Shop = () => {
                               <div id="list" className="tab-pane fade">
                                  <div className="product_details float_left">
                                     <div className="img_product">
-                                       <img className="img-fluid" src="../assets/images/product2.jpg" alt="img"/>
+                                       <img className="img-fluid" src="../assets/images/product.jpg" alt="img"/>
                                        <div className="top_icon">
                                           <p>new</p>
                                        </div>
@@ -958,7 +958,7 @@ const Shop = () => {
                                  </div>
                                  <div className="product_details float_left">
                                     <div className="img_product">
-                                       <img className="img-fluid" src="../assets/images/product3.jpg" alt="img"/>
+                                       <img className="img-fluid" src="../assets/images/product.jpg" alt="img"/>
                                        <div className="top_icon">
                                           <p>new</p>
                                        </div>
@@ -989,7 +989,7 @@ const Shop = () => {
                                  </div>
                                  <div className="product_details float_left">
                                     <div className="img_product">
-                                       <img className="img-fluid" src="../assets/images/product4.jpg" alt="img"/>
+                                       <img className="img-fluid" src="../assets/images/product.jpg" alt="img"/>
                                        <div className="top_icon">
                                           <p>new</p>
                                        </div>
@@ -1020,7 +1020,7 @@ const Shop = () => {
                                  </div>
                                  <div className="product_details float_left">
                                     <div className="img_product">
-                                       <img className="img-fluid" src="../assets/images/product5.jpg" alt="img"/>
+                                       <img className="img-fluid" src="../assets/images/product.jpg" alt="img"/>
                                        <div className="top_icon">
                                           <p>new</p>
                                        </div>
@@ -1077,16 +1077,16 @@ const Shop = () => {
                                     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                                        <div className="carousel-inner">
                                           <div className="carousel-item active">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img.jpeg" alt="First slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="First slide"/>
                                           </div>
                                           <div className="carousel-item">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img1.jpeg" alt="Second slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="Second slide"/>
                                           </div>
                                           <div className="carousel-item">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img2.jpeg" alt="Third slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                           </div>
                                           <div className="carousel-item">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img3.jpeg" alt="Third slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                           </div>
                                        </div>
                                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -1100,16 +1100,16 @@ const Shop = () => {
                                        <div className="container pt-4 pb-5 small_slider">
                                           <div className="row carousel-indicators">
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                                              </div>
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img1.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
                                              </div>
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img2.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
                                              </div>
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img3.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
                                              </div>
                                           </div>
                                        </div>
@@ -1180,16 +1180,16 @@ const Shop = () => {
                                     <div id="carouselExampleIndicators1" className="carousel slide" data-ride="carousel">
                                        <div className="carousel-inner">
                                           <div className="carousel-item active">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img4.jpeg" alt="First slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="First slide"/>
                                           </div>
                                           <div className="carousel-item">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img5.jpeg" alt="Second slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="Second slide"/>
                                           </div>
                                           <div className="carousel-item">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img6.jpeg" alt="Third slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                           </div>
                                           <div className="carousel-item">
-                                             <img className="d-block w-100" src="../assets/images/pop_slider_img7.jpeg" alt="Third slide"/>
+                                             <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                           </div>
                                        </div>
                                        <a className="carousel-control-prev" href="#carouselExampleIndicators1" role="button" data-slide="prev">
@@ -1203,16 +1203,16 @@ const Shop = () => {
                                        <div className="container pt-4 pb-5 small_slider">
                                           <div className="row carousel-indicators">
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img4.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="0"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="0"/>
                                              </div>
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img5.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="1"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="1"/>
                                              </div>
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img6.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="2"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="2"/>
                                              </div>
                                              <div className="item">
-                                                <img src="../assets/images/pop_slider_img7.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="3"/>
+                                                <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators1" data-slide-to="3"/>
                                              </div>
                                           </div>
                                        </div>

@@ -66,7 +66,7 @@ function BestSellers(){
                               </ul>
                            </div>
                            <div className="bz_post_add_wrapper">
-                              <img className="img-fluid" src="../assets/images/product3.png" alt="addpost" style={{height:'245px'}} />
+                              <img className="img-fluid" src="../assets/images/product.jpg" alt="addpost" style={{height:'245px'}} />
                            </div>
                         </div>
                      </div>
@@ -82,7 +82,7 @@ function BestSellers(){
                                        <div className="item" style={{width:'99%'}}>
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -113,7 +113,7 @@ function BestSellers(){
                                        <div className="item" style={{width:'99%'}}>
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -144,7 +144,7 @@ function BestSellers(){
                                        <div className="item" style={{width:'99%'}}>
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="../assets/images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -181,7 +181,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -212,7 +212,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing2.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -243,7 +243,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing3.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -280,7 +280,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -311,7 +311,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing2.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -342,7 +342,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing3.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -379,7 +379,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing1.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -410,7 +410,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing2.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p className="new">new</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -441,7 +441,7 @@ function BestSellers(){
                                        <div className="item">
                                           <div className="product_box">
                                              <div className="product_img">
-                                                <img className="img-fluid" src="images/washing3.png" alt="product img"/>
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                 <div className="top_icon">
                                                    <p>hot</p>
                                                    <span><i className="far fa-heart"></i></span>
@@ -489,52 +489,52 @@ function BestSellers(){
                         <OwlCarousel className='owl-carousel owl-theme' loop margin={10} nav items={5} dots={false}  autoplay={true}>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                            <div className='item'>
                               <div className="partner_img">
-                                 <img src="../assets/images/team_6.png" alt="logo"/>
+                                 <img src="../assets/images/team_6.jpg" alt="logo"/>
                               </div>
                            </div>
                         </OwlCarousel>

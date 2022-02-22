@@ -69,16 +69,16 @@ const Product = props => {
                         <div className="container pt-4 pb-5 small_slider verticle_slider">
                            <div className="row carousel-indicators">
                               <div className="item">
-                                 <img src="../assets/images/single_product.png" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                 <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                               </div>
                               <div className="item">
-                                 <img src="../assets/images/single_product1.png" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
+                                 <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="1"/>
                               </div>
                               <div className="item">
-                                 <img src="../assets/images/single_product2.png" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
+                                 <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="2"/>
                               </div>
                               <div className="item">
-                                 <img src="../assets/images/single_product3.png" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
+                                 <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="3"/>
                               </div>
                            </div>
                         </div>
@@ -86,16 +86,16 @@ const Product = props => {
                            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                               <div className="carousel-inner">
                                  <div className="carousel-item active">
-                                    <img className="d-block w-100" src="../assets/images/single_product.png" alt="First slide"/>
+                                    <img className="d-block w-100" src="../assets/images/product.jpg" alt="First slide"/>
                                  </div>
                                  <div className="carousel-item">
-                                    <img className="d-block w-100" src="../assets/images/single_product1.png" alt="Second slide"/>
+                                    <img className="d-block w-100" src="../assets/images/product.jpg" alt="Second slide"/>
                                  </div>
                                  <div className="carousel-item">
-                                    <img className="d-block w-100" src="../assets/images/single_product2.png" alt="Third slide"/>
+                                    <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                  </div>
                                  <div className="carousel-item">
-                                    <img className="d-block w-100" src="../assets/images/single_product3.png" alt="Third slide"/>
+                                    <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                  </div>
                               </div>
                               <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -223,7 +223,7 @@ const Product = props => {
                                           <h4>2 review for Ultimate 3D Bluetooth Headphone</h4>
                                           <div className="post_product float_left">
                                              <div className="post_img">
-                                                <img className="img-fluid" src="../assets/images/post-img.png" alt="img" />
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="img" />
                                              </div>
                                              <div className="post_details">
                                                 <h5>Spiritinsire <span>April 10, 2020</span></h5>
@@ -239,7 +239,7 @@ const Product = props => {
                                           </div>
                                           <div className="post_product float_left">
                                              <div className="post_img">
-                                                <img className="img-fluid" src="../assets/images/post-img.png" alt="img" />
+                                                <img className="img-fluid" src="../assets/images/product.jpg" alt="img" />
                                              </div>
                                              <div className="post_details">
                                                 <h5>Spiritinsire <span>April 10, 2020</span></h5>
@@ -318,7 +318,7 @@ const Product = props => {
                      <div className="col-lg-3 col-md-6 col-12">
                        <div className="product_box" style={{width:'660%'}}>
                            <div className="img_sales">
-                              <img className="img-fluid" src="../assets/images/main-product5.png" alt="fashion"/>
+                              <img className="img-fluid" src="../assets/images/product.jpg" alt="fashion"/>
                               <div className="overlay_sales">
                                  <div className="upper">
                                     <a href="#">New</a>
@@ -354,7 +354,7 @@ const Product = props => {
                      <div className="col-lg-3 col-md-6 col-12">
                         <div className="product_box" style={{width:'660%'}}>
                            <div className="img_sales">
-                              <img className="img-fluid" src="../assets/images/main-product5.png" alt="fashion"/>
+                              <img className="img-fluid" src="../assets/images/product.jpg" alt="fashion"/>
                               <div className="overlay_sales">
                                  <div className="upper">
                                     <a href="#">New</a>
@@ -390,7 +390,7 @@ const Product = props => {
                      <div className="col-lg-3 col-md-6 col-12">
                         <div className="product_box" style={{width:'660%'}}>
                            <div className="img_sales">
-                              <img className="img-fluid" src="../assets/images/main-product5.png" alt="fashion"/>
+                              <img className="img-fluid" src="../assets/images/product.jpg" alt="fashion"/>
                               <div className="overlay_sales">
                                  <div className="upper">
                                     <a href="#">New</a>
@@ -426,7 +426,7 @@ const Product = props => {
                      <div className="col-lg-3 col-md-6 col-12">
                         <div className="product_box" style={{width:'660%'}}>
                            <div className="img_sales">
-                              <img className="img-fluid" src="../assets/images/main-product5.png" alt="fashion"/>
+                              <img className="img-fluid" src="../assets/images/product.jpg" alt="fashion"/>
                               <div className="overlay_sales">
                                  <div className="upper">
                                     <a href="#">New</a>

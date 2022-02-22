@@ -59,7 +59,7 @@ function NewProducts(){
                                             <div className="item" style={{width:'99%'}} onClick={test}>
                                                 <div className="product_box">
                                                     <div className="product_img">
-                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                     <div className="top_icon">
                                                         <p className="new">new</p>
                                                         <span><i className="far fa-heart"></i></span>
@@ -90,7 +90,7 @@ function NewProducts(){
                                             <div className="item" style={{width:'99%'}}>
                                                 <div className="product_box">
                                                     <div className="product_img">
-                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                     <div className="top_icon">
                                                         <p>hot</p>
                                                         <span><i className="far fa-heart"></i></span>
@@ -121,7 +121,7 @@ function NewProducts(){
                                             <div className="item" style={{width:'99%'}}>
                                                 <div className="product_box">
                                                     <div className="product_img">
-                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                     <div className="top_icon">
                                                         <p className="new">new</p>
                                                         <span><i className="far fa-heart"></i></span>
@@ -152,7 +152,7 @@ function NewProducts(){
                                             <div className="item" style={{width:'99%'}}>
                                                 <div className="product_box">
                                                     <div className="product_img">
-                                                    <img className="img-fluid" src="../assets/images/product1.png" alt="product img"/>
+                                                    <img className="img-fluid" src="../assets/images/product.jpg" alt="product img"/>
                                                     <div className="top_icon">
                                                         <p className="new">new</p>
                                                         <span><i className="far fa-heart"></i></span>
@@ -201,16 +201,16 @@ function NewProducts(){
                                     <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                                         <div className="carousel-inner">
                                             <div className="carousel-item active">
-                                                <img className="d-block w-100" src="../assets/images/pop_slider_img.jpeg" alt="First slide"/>
+                                                <img className="d-block w-100" src="../assets/images/product.jpg" alt="First slide"/>
                                             </div>
                                             <div className="carousel-item">
-                                                <img className="d-block w-100" src="../assets/images/pop_slider_img1.jpeg" alt="Second slide"/>
+                                                <img className="d-block w-100" src="../assets/images/product.jpg" alt="Second slide"/>
                                             </div>
                                             <div className="carousel-item">
-                                                <img className="d-block w-100" src="../assets/images/pop_slider_img2.jpeg" alt="Third slide"/>
+                                                <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                             </div>
                                             <div className="carousel-item">
-                                                <img className="d-block w-100" src="../assets/images/pop_slider_img3.jpeg" alt="Third slide"/>
+                                                <img className="d-block w-100" src="../assets/images/product.jpg" alt="Third slide"/>
                                             </div>
                                         </div>
                                         <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -226,16 +226,16 @@ function NewProducts(){
                                                 <div className="col-lg-12 col-md-12 col-12 no_padd">
                                                     <OwlCarousel className='owl-theme' loop margin={10} nav items={4}>
                                                         <div className='item'>
-                                                        <   img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                        <   img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                                                         </div>
                                                         <div className='item'>
-                                                         <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                         <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                                                         </div>
                                                         <div className='item'>
-                                                            <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                            <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                                                         </div>
                                                         <div className='item'>
-                                                            <img src="../assets/images/pop_slider_img.jpeg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                                                            <img src="../assets/images/product.jpg" className="img-fluid" alt="img" data-target="#carouselExampleIndicators" data-slide-to="0"/>
                                                         </div>
                                                     </OwlCarousel>
                                                 </div> 
