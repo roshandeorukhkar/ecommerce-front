@@ -26,7 +26,6 @@ const sendOTPLogin = () => {
 const verifyOTPLogin = () => {
     localStorage.setItem('jwt', JSON.stringify('test'));
     window.location.reload();
-    //alert('login');
 };
 
 const sendOTPRegister = () => {
@@ -37,12 +36,20 @@ const sendOTPRegister = () => {
 const verifyOTPRegister = () => {
     localStorage.setItem('jwt', JSON.stringify('test'));
     window.location.reload();
-    //alert('Register Successfully');
 };
 
 const signupPopup = () => {
     $('#loginModal').hide();     
     $('#registerModal').show(); 
+};
+
+const signinPopup = () => {
+    $('#loginModal').show();     
+    $('#registerModal').hide(); 
+};
+
+const closeRegister = () => {
+    //$('#registerModal').hide(); 
 };
 
 export default function Footer(){
@@ -213,7 +220,7 @@ export default function Footer(){
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div className="modal-body no-padding">
-                            <button type="button" className="close" data-dismiss="modal">&times;</button>
+                            <button type="button" className="close" onClick={closeRegister}>&times;</button>
                             <div className="row">
                                 <div className="col-lg-7 col-md-7 col-12 login-popup-left">
                                     <div id="sendOTPRegister">  
@@ -248,6 +255,8 @@ export default function Footer(){
                                         <button className="submit_btn ucfirst" onClick={sendOTPRegister}>
                                             Send OTP
                                         </button>
+                                        <br/><br/>
+                                        <p>Already have an account? <a href="#" className="sky-blue" onClick={signinPopup}>Signin</a></p>
                                     </div>
                                     <div id="verifyOTPRegister" style={{display:'none'}}>  
                                         <h4>Login With Mobile Number</h4><br/>
