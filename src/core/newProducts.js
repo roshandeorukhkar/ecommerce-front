@@ -83,7 +83,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
-                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -114,7 +114,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4><i className="fas fa-rupee-sign fa-sm"></i>350.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
-                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4><i className="fas fa-rupee-sign fa-sm"></i>500.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>550.00</del> </span> </h4>
-                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,7 +176,7 @@ function NewProducts(){
                                                         <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                     </ul>
                                                     <h4><i className="fas fa-rupee-sign fa-sm"></i>450.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>500.00</del> </span> </h4>
-                                                    <a className="add_btn custom_btn" href="#">Add to Cart</a>
+                                                    <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -277,7 +277,7 @@ function NewProducts(){
                                     </div>
                                     <div className="number_pluse float_left">
                                         <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
-                                        <a href="#" className="cart_btn">Add To Cart</a>
+                                        <a href="/cart" className="cart_btn">Add To Cart</a>
                                     </div>
                                     <div className="share_icon float_left">
                                         <p>Share:</p>
