@@ -52,6 +52,22 @@ const closeRegister = () => {
     //$('#registerModal').hide(); 
 };
 
+const autoTab = e => {
+    const BACKSPACE_KEY = 8;
+    const DELETE_KEY = 46;
+    let tabindex = $(e.target).attr("tabindex") || 0;
+    tabindex = Number(tabindex);
+    if (e.keyCode === BACKSPACE_KEY) {
+      tabindex -= 1;
+    } else if (e.keyCode !== DELETE_KEY) {
+      tabindex += 1;
+    }
+    const elem = $("[tabindex=" + tabindex + "]");
+    if (elem[0]) {
+      elem.focus();
+    }
+  };
+
 export default function Footer(){
     return(
         <div className="bz_bottom_footer_main_wrapper float_left">
@@ -189,12 +205,42 @@ export default function Footer(){
                                         <p>Please enter the OTP sent to your given number or change.</p><br/>
                                         <div className="form-group row">
                                             <div className="col-12">
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                                                <input type="text" autoComplete="new-password"
+                                                className="form-control verify-otp-input"
+                                                tabIndex={0}
+                                                key={0}
+                                                maxLength={1}
+                                                onKeyUp={autoTab}/>
+                                                <input type="text" autoComplete="new-password" 
+                                                className="form-control verify-otp-input"
+                                                tabIndex={1}
+                                                key={1}
+                                                maxLength={1}
+                                                onKeyUp={autoTab}/>
+                                                <input type="text" autoComplete="new-password" 
+                                                className="form-control verify-otp-input"
+                                                tabIndex={2}
+                                                key={2}
+                                                maxLength={1}
+                                                onKeyUp={autoTab}/>
+                                                <input type="text" autoComplete="new-password" 
+                                                className="form-control verify-otp-input"
+                                                tabIndex={3}
+                                                key={3}
+                                                maxLength={1}
+                                                onKeyUp={autoTab}/>
+                                                <input type="text" autoComplete="new-password" 
+                                                className="form-control verify-otp-input"
+                                                tabIndex={4}
+                                                key={4}
+                                                maxLength={1}
+                                                onKeyUp={autoTab}/>
+                                                <input type="text" autoComplete="new-password" 
+                                                className="form-control verify-otp-input"
+                                                tabIndex={5}
+                                                key={5}
+                                                maxLength={1}
+                                                onKeyUp={autoTab}/>
                                             </div>
                                         </div>                      
                                         <button className="submit_btn ucfirst" onClick={verifyOTPLogin}>
