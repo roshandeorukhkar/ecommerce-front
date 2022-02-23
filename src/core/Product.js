@@ -126,7 +126,7 @@ const Product = props => {
                            </div>
                            <div className="slider_btn">
                               <a href="#">Add To Wishlist</a>
-                              <a className="black_btn" href="#">Add To Cart</a>
+                              <a className="black_btn" href="/cart">Add To Cart</a>
                            </div>
                         </div>
                      </div>
@@ -361,7 +361,7 @@ const Product = props => {
                               </ul>
                               <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
-                                 <a href="#">
+                                 <a href="/cart">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
                                  </a>
                               </div>
@@ -397,7 +397,7 @@ const Product = props => {
                               </ul>
                               <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
-                                 <a href="#">
+                                 <a href="/cart">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
                                  </a>
                               </div>
@@ -433,7 +433,7 @@ const Product = props => {
                               </ul>
                               <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
-                                 <a href="#">
+                                 <a href="/cart">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
                                  </a>
                               </div>
@@ -469,7 +469,7 @@ const Product = props => {
                               </ul>
                               <h4><i className="fas fa-rupee-sign fa-sm"></i>492.00 <span> <del><i className="fas fa-rupee-sign fa-sm"></i>379.00</del> </span> </h4>
                               <div className="custom_btn">
-                                 <a href="#">
+                                 <a href="/cart">
                                     <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add To Cart
                                  </a>
                               </div>
