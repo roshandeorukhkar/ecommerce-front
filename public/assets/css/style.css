@@ -20298,3 +20298,7 @@ input, textarea {
   text-align: left;
 }
 /*# sourceMappingURL=style.css.map */
+
+.error {
+  color: #ff4d4d;
+}

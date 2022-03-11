@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import $ from 'jquery';
+import { signup } from '../auth/Cutomer';
 
 $(document).ready(function(){
     // Password SHow Hide js
@@ -68,7 +69,135 @@ const autoTab = e => {
     }
   };
 
+
 export default function Footer(){
+
+    const [values, setValues] = useState({
+        phone_number: '',
+        phone_number_error: '',
+        first_name: '',
+        first_name_error: '',
+        last_name: '',
+        last_name_error: '',
+        error: '',
+        success: false
+    });
+    
+    const { phone_number, first_name, last_name, success, error } = values;
+    
+    const handleChange = name => event => {
+        setValues({ ...values, error: false, [name]: event.target.value });
+    };
+    
+    const clickSubmit = event => {
+        event.preventDefault();
+        setValues({ ...values, error: false });
+        signup({ phone_number, first_name, last_name }).then(data => {
+            if (data.status == false) {
+                setValues({ 
+                    ...values, 
+                    phone_number_error: data.errors.phone_number,
+                    first_name_error: data.errors.first_name,
+                    last_name_error: data.errors.last_name,
+                    error: true, 
+                    success: false 
+                });
+            } else {
+                setValues({
+                    ...values,
+                    phone_number: '',
+                    phone_number_error: '',
+                    first_name: '',
+                    first_name_error:'',
+                    last_name: '',
+                    last_name_error:'',
+                    error: '',
+                    success: true
+                });
+                $('#sendOTPRegister').hide();
+                $('#verifyOTPRegister').show();
+            }
+        });
+    };
+    
+      const signUpForm = () => (
+            <div>
+                <form>
+                    <h4>New User, Signup with your mobile number to get started</h4><br/>
+                    <div className="form-group row">
+                        <div className="col-12">
+                            <label>Phone Number*</label>
+                        </div>
+                        <div className="col-12">
+                            <input 
+                            type="text"
+                            name="phone_number"
+                            className="form-control"
+                            onChange={handleChange('phone_number')}
+                            value={values.phone_number}
+                            placeholder="Enter here"/>
+                            <div className="error">{values.phone_number_error}</div>
+                        </div>
+                        <div className="col-12 margin-t-15">
+                            <div className="col-6 f-l" style={{paddingLeft: '0px'}}>
+                                <label>First Name*</label>
+                                <input 
+                                type="text"
+                                name="first_name"
+                                className="form-control"
+                                onChange={handleChange('first_name')}
+                                value={first_name}
+                                placeholder="Enter here"/>
+                                <div className="error">{values.first_name_error}</div>
+                            </div>
+                            <div className="col-6 f-l" style={{paddingRight: '0px'}}>
+                                <label>Last Name*</label>
+                                <input 
+                                type="text"
+                                name="last_name"
+                                className="form-control"
+                                onChange={handleChange('last_name')}
+                                value={last_name}
+                                placeholder="Enter here"/>
+                                <div className="error">{values.last_name_error}</div>
+                            </div>
+                        </div>
+                    </div>                      
+                    <button className="submit_btn ucfirst" onClick={clickSubmit}>
+                        Send OTP
+                    </button>
+                    <br/><br/>
+                    <p>Already have an account? <a href="#" className="sky-blue" onClick={signinPopup}>Signin</a></p>
+                </form>
+            </div>
+        );  
+    
+        const verifyOTPRegisterForm = () => (
+            <div>
+                <form>
+                    <h4>Login With Mobile Number</h4><br/>
+                    <p>Please enter the OTP sent to your given number or change.</p><br/>
+                    <div className="form-group row">
+                        <div className="col-12">
+                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
+                        </div>
+                    </div>                      
+                    <button className="signup_btn ucfirst" onClick={verifyOTPRegister}>
+                        Signup
+                    </button>
+                    <br/><br/>
+                    <p>Not received you code? <a href="javascript:void(0);" className="sky-blue">Resend Code</a></p>
+                
+                </form>
+            </div>
+        ); 
+    
+
     return(
         <div className="bz_bottom_footer_main_wrapper float_left">
             <Link to="#" id="return-to-top"><i className="fa fa-angle-up"></i></Link>
@@ -270,58 +399,10 @@ export default function Footer(){
                             <div className="row">
                                 <div className="col-lg-7 col-md-7 col-12 login-popup-left">
                                     <div id="sendOTPRegister">  
-                                        <h4>New User, Signup with your mobile number to get started</h4><br/>
-                                        <div className="form-group row">
-                                            <div className="col-12">
-                                                <label>Phone Number*</label>
-                                            </div>
-                                            <div className="col-12">
-                                                <input 
-                                                type="text"
-                                                className="form-control"
-                                            placeholder="Enter here"/>
-                                            </div>
-                                            <div className="col-12 margin-t-15">
-                                                <div className="col-6 f-l" style={{paddingLeft: '0px'}}>
-                                                    <label>First Name*</label>
-                                                    <input 
-                                                    type="text"
-                                                    className="form-control"
-                                                placeholder="Enter here"/>
-                                                </div>
-                                                <div className="col-6 f-l" style={{paddingRight: '0px'}}>
-                                                    <label>Last Name*</label>
-                                                    <input 
-                                                    type="text"
-                                                    className="form-control"
-                                                placeholder="Enter here"/>
-                                                </div>
-                                            </div>
-                                        </div>                      
-                                        <button className="submit_btn ucfirst" onClick={sendOTPRegister}>
-                                            Send OTP
-                                        </button>
-                                        <br/><br/>
-                                        <p>Already have an account? <a href="#" className="sky-blue" onClick={signinPopup}>Signin</a></p>
+                                        {signUpForm()}
                                     </div>
                                     <div id="verifyOTPRegister" style={{display:'none'}}>  
-                                        <h4>Login With Mobile Number</h4><br/>
-                                        <p>Please enter the OTP sent to your given number or change.</p><br/>
-                                        <div className="form-group row">
-                                            <div className="col-12">
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                                <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                                            </div>
-                                        </div>                      
-                                        <button className="signup_btn ucfirst" onClick={verifyOTPRegister}>
-                                            Signup
-                                        </button>
-                                        <br/><br/>
-                                        <p>Not received you code? <a href="javascript:void(0);" className="sky-blue">Resend Code</a></p>
+                                        {verifyOTPRegisterForm()}        
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-5 col-12 login-popup-right">
