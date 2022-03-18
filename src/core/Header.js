@@ -51,7 +51,7 @@ $(document).ready(function(){
 
     $('#cssmenu li.active').addClass('open').children('ul').show();
 	$('#cssmenu li.has-sub>a').on('click', function(){
-		$(this).removeAttr('href');
+		$(this).removeAttr('to');
 		var element = $(this).parent('li');
 		if (element.hasClass('open')) {
 			element.removeClass('open');
@@ -84,39 +84,11 @@ export default function Header({ history }){
         <div className="pd_header_main_wrapper float_left">
             <div className="container">
                 <div className="pd_top_header_wrapper">
-                    {/*<div className="baz_top_header"> 
-                        <div className="row">
-                            <div className="col-lg-4 col-md-4 col-12">
-                                <div className="left_side">
-                                    <ul>
-                                    <li className="res_hidden">
-                                        <Link to="#"> <span><i className="fas fa-phone"></i></span>Helpline: +1234567890 </Link>
-                                    </li>
-                                    <li className="language">
-                                        <Link to="#">Eng <i className="fas fa-angle-down"></i></Link>
-                                        <div className="submenu">
-                                            <Link to="#"> <span><img src="../assets/images/usa.png" alt="flag" /></span> English</Link>
-                                            <Link to="#"> <span><img src="../assets/images/india.png" alt="flag" /></span> Hindi</Link>
-                                        </div>
-                                    </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="col-lg-8 col-md-8 col-12">
-                                <div className="right_side">
-                                    <Menu/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>*/}
-                    <div className="middle_header float_left" style={{padding: "12px 0px 0px 0px"}}>
+                   <div className="middle_header float_left" style={{padding: "12px 0px 0px 0px"}}>
                     <div className="row">
                         <div className="col-md-2 col-12">
                             <div className="logo">
                                 <Link to="/"><h1 className="white">Logo</h1></Link>
-                                {/*<Link to="/">
-                                    <img className="img-fluid" src="../assets/images/logo.png" alt="logo" />
-                                </Link>*/}
                             </div>
                         </div>
                         <div className="col-md-7 col-12">
@@ -169,13 +141,13 @@ export default function Header({ history }){
                     <div id='cssmenu'>
                     <ul>
                         <li>
-                            <a href="/shop"> Laptops</a>
+                            <Link to="/shop"> Laptops</Link>
                         </li>
                         <li>
-                            <a href="/shop"> Dekstops</a>
+                            <Link to="/shop"> Dekstops</Link>
                         </li>
                         <li className='has-sub'>
-                            <a href='/shop'>Cameras</a>
+                            <Link to='/shop'>Cameras</Link>
                             <ul>
                                 <li><Link to="/shop">Digital Camera</Link>
                                 </li>
@@ -187,15 +159,15 @@ export default function Header({ history }){
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="/shop">Mobile</a></li>
-                        <li><a href="/shop">Fashion</a></li>
-                        <li><a href="/shop">Appliances</a></li>
-                        <li><a href="/shop">Bike</a></li>
+                        <li><Link to="/shop">Mobile</Link></li>
+                        <li><Link to="/shop">Fashion</Link></li>
+                        <li><Link to="/shop">Appliances</Link></li>
+                        <li><Link to="/shop">Bike</Link></li>
                     </ul>
                     <div className="share_link">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
+                        <Link to="#"><i className="fab fa-facebook-f"></i></Link>
+                        <Link to="#"><i className="fab fa-twitter"></i></Link>
+                        <Link to="#"><i className="fab fa-instagram"></i></Link>
                     </div>
                     </div>
                 </div>
@@ -209,9 +181,6 @@ export default function Header({ history }){
                     </div>
                     <div className="res_logo">
                         <Link to="/"><h1>Logo</h1></Link>
-                        {/*<Link to="/">
-                            <img className="img-fluid" src="../assets/images/logo.png" alt="img"/>
-                            </Link>*/}
                     </div>
                     <div className="search_filter">
                         <select className="select_dropdown">
@@ -255,9 +224,9 @@ export default function Header({ history }){
                             </li>
                             {!isAuthenticated() && (   
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#loginModal">
+                                    <Link to="#" data-toggle="modal" data-target="#loginModal">
                                         <i className="fas fa-user fa-2x"></i>
-                                    </a>
+                                    </Link>
                                 </li> 
                             )}
                             {isAuthenticated() && (
@@ -267,10 +236,10 @@ export default function Header({ history }){
                                     </Link>
                                     <div className="cart_details device" style={{width: '120px'}}>
                                         <ul style={{display: 'block'}}>
-                                            <li><a href="#">My Profile</a></li>
-                                            <li><a href="#">Wishlist</a></li>
-                                            <li><a href="#">Conatct Us</a></li>
-                                            <li><a href="#" onClick={logout}>Logout</a></li>
+                                            <li><Link to="#">My Profile</Link></li>
+                                            <li><Link to="#">Wishlist</Link></li>
+                                            <li><Link to="#">Conatct Us</Link></li>
+                                            <li><Link to="#" onClick={logout}>Logout</Link></li>
                                         </ul>
                                     </div>
                                 </li>  
@@ -282,48 +251,7 @@ export default function Header({ history }){
                     </div>
                     </div>
                     <div className="pd_inner_navigation_wrapper">
-                    {/*<div className="baz_categories">
-                        <ul>
-                            <li>
-                                <Link to="#">
-                                Categories
-                                </Link>
-                                <ul className="cat_sub_menu">
-                                <li className="category_a">
-                                    <p>Woment Dress</p>
-                                    <div className="cat_links">
-                                        <Link to="#">Sheath Dresses</Link>
-                                        <Link to="#">Blouson Dresses</Link>
-                                        <Link to="#">Tunic Dresses</Link>
-                                        <Link to="#">Pencil Dresses</Link>
-                                        <Link to="#">Asymmetric Dresses</Link>
-                                    </div>
-                                </li>
-                                <li className="category_a">
-                                    <p>Men's Dress</p>
-                                    <div className="cat_links">
-                                        <Link to="#">Jodhpuri suit</Link>
-                                        <Link to="#">Kurta</Link>
-                                        <Link to="#">Sherwani</Link>
-                                        <Link to="#">Jeans</Link>
-                                        <Link to="#">T-Shirts</Link>
-                                    </div>
-                                </li>
-                                <li className="category_a">
-                                    <div className="dat_img">
-                                        <img className="img-fluid" src="../assets/images/menu-banner.jpg" alt="" />
-                                    </div>
-                                </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    */}
-                    
                     <ul>
-                        {/*<li>
-                            <Link to="/"> Home</Link>
-                        </li>*/}
                         <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops</Link>
                         </li>
                         <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-desktop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>

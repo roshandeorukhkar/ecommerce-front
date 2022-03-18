@@ -48,3 +48,16 @@ export const signout = next => {
     }
 };
 
+export const otpVerification = data =>{
+    return fetch(`${API}/otpVerification`,{
+        method : "POST",
+        headers : {
+            Accept : 'application/json',
+            'content-Type' : 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(responce => {
+        return responce.json();
+    }).catch(error => 
+        console.log("Error :" ,error));
+}

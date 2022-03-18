@@ -28,6 +28,8 @@ const UpdateCategory = ({ match }) => {
                     ...values,
                     name: data.name
                 });
+
+                
             }
         });
     };

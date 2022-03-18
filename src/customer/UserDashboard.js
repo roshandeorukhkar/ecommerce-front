@@ -9,7 +9,7 @@ const Dashboard = () => {
     const [history, setHistory] = useState([]);
 
     const {
-        user: { _id, name, email, role }
+        user : { _id, firstName, lastName, mobileNo_, role }
     } = isAuthenticated();
     const token = isAuthenticated().token;
 
@@ -52,8 +52,8 @@ const Dashboard = () => {
             <div className="card mb-5">
                 <h3 className="card-header">User Information</h3>
                 <ul className="list-group">
-                    <li className="list-group-item">{name}</li>
-                    <li className="list-group-item">{email}</li>
+                    <li className="list-group-item">{firstName+ ' ' + lastName}</li>
+                    <li className="list-group-item">{mobileNo_}</li>
                     <li className="list-group-item">
                         {role === 1 ? "Admin" : "Registered User"}
                     </li>
@@ -100,7 +100,7 @@ const Dashboard = () => {
     return (
         <Layout
             title="Dashboard"
-            description={`G'day ${name}!`}
+            description={`G'day ${firstName+' '+lastName}!`}
             className="container-fluid"
         >
             <div className="row">

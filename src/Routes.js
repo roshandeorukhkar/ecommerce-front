@@ -20,11 +20,13 @@ import UpdateCategory from './user/updateCategory';
 import AdminSignin from './user/Signin';
 import AdminMain from './user/UserMain';
 import Checkout from './core/Checkout';
+import RegistrationModel from './core/RegistrationModel';
 const Routes = () => {
     return (
         <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home} />
+                <Route path="?module=register" exact component={RegistrationModel} />
                 <Route path="/shop" exact component={Shop} />
                 <Route path="/signin" exact component={Signin} />
                 <Route path="/signup" exact component={Signup} />

@@ -3,6 +3,7 @@ import Menu from "./Menu";
 import "../styles.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import FooterNew from "./FooterNew";
 
 const Layout = ({
     title = "",
@@ -17,7 +18,7 @@ const Layout = ({
             <p className="lead">{description}</p>
         </div>
         <div className={className}>{children}</div>
-        <Footer />
+        <FooterNew />
     </div>
 );
 

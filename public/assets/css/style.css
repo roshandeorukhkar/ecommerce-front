@@ -20302,3 +20302,9 @@ input, textarea {
 .error {
   color: #ff4d4d;
 }
+
+/* shubha :  Input Number up-down arrow remove 22-02-2022 */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

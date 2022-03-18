@@ -41,12 +41,7 @@ const Home = () => {
 
     return (
         <>
-            {/* <SliderMainWrapper/> */}
-            {/* <h2 className="mb-4">........</h2> */}
             <Layout>
-                {/*<div className="col-lg-12 col-md-12 col-12 no_padd">
-                    <img className="img-fluid" src="../assets/images/banner.png" alt="logo"/>
-                </div>*/}
                 <div className="row">
                     {productsByArrival.map((product, i) => (
                         <div key={i} className="col-4 mb-3">
@@ -55,7 +50,6 @@ const Home = () => {
                     ))}
                 </div>
                 <NewProducts/>       
-                {/* <h2 className="mb-4">Best Sellers</h2> */}
                 <div className="row">
                     {productsBySell.map((product, i) => (
                         <div key={i} className="col-4 mb-3">

@@ -2,6 +2,10 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import $ from 'jquery';
 import { signup } from '../auth/Cutomer';
+import RegistrationModel from "./RegistrationModel";
+import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Search from "./Search";
 
 $(document).ready(function(){
     // Password SHow Hide js
@@ -50,7 +54,7 @@ const signinPopup = () => {
 };
 
 const closeRegister = () => {
-    $('#registerModal').hide(); 
+    //$('#registerModal').hide(); 
 };
 
 const autoTab = e => {
@@ -71,6 +75,7 @@ const autoTab = e => {
 
 
 export default function Footer(){
+
 
     const [values, setValues] = useState({
         phone_number: '',
@@ -119,83 +124,6 @@ export default function Footer(){
             }
         });
     };
-    
-      const signUpForm = () => (
-            <div>
-                <form>
-                    <h4>New User, Signup with your mobile number to get started</h4><br/>
-                    <div className="form-group row">
-                        <div className="col-12">
-                            <label>Phone Number*</label>
-                        </div>
-                        <div className="col-12">
-                            <input 
-                            type="text"
-                            name="phone_number"
-                            className="form-control"
-                            onChange={handleChange('phone_number')}
-                            value={values.phone_number}
-                            placeholder="Enter here"/>
-                            <div className="error">{values.phone_number_error}</div>
-                        </div>
-                        <div className="col-12 margin-t-15">
-                            <div className="col-6 f-l" style={{paddingLeft: '0px'}}>
-                                <label>First Name*</label>
-                                <input 
-                                type="text"
-                                name="first_name"
-                                className="form-control"
-                                onChange={handleChange('first_name')}
-                                value={first_name}
-                                placeholder="Enter here"/>
-                                <div className="error">{values.first_name_error}</div>
-                            </div>
-                            <div className="col-6 f-l" style={{paddingRight: '0px'}}>
-                                <label>Last Name*</label>
-                                <input 
-                                type="text"
-                                name="last_name"
-                                className="form-control"
-                                onChange={handleChange('last_name')}
-                                value={last_name}
-                                placeholder="Enter here"/>
-                                <div className="error">{values.last_name_error}</div>
-                            </div>
-                        </div>
-                    </div>                      
-                    <button className="submit_btn ucfirst" onClick={clickSubmit}>
-                        Send OTP
-                    </button>
-                    <br/><br/>
-                    <p>Already have an account? <Link to="#" className="sky-blue" onClick={signinPopup}>Signin</Link></p>
-                </form>
-            </div>
-        );  
-    
-        const verifyOTPRegisterForm = () => (
-            <div>
-                <form>
-                    <h4>Login With Mobile Number</h4><br/>
-                    <p>Please enter the OTP sent to your given number or change.</p><br/>
-                    <div className="form-group row">
-                        <div className="col-12">
-                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                            <input type="text" maxlength="1" autoComplete="new-password" className="form-control verify-otp-input"/>
-                        </div>
-                    </div>                      
-                    <button className="signup_btn ucfirst" onClick={verifyOTPRegister}>
-                        Signup
-                    </button>
-                    <br/><br/>
-                    <p>Not received you code? <Link to="#" className="sky-blue">Resend Code</Link></p>
-                
-                </form>
-            </div>
-        ); 
     
 
     return(
@@ -295,7 +223,7 @@ export default function Footer(){
             </div>
 
 
-            <div className="modal" id="loginModal">
+            <div className="modal show" id="loginModal">
                 <div className="modal-dialog modal-lg">
                     <div className="modal-content">
                         <div className="modal-body no-padding">
@@ -376,7 +304,7 @@ export default function Footer(){
                                             Verify
                                         </button>
                                         <br/><br/>
-                                        <p>Not received you code? <Link to="#" className="sky-blue">Resend Code</Link></p>
+                                        <p>Not received you code? <Link to="javascript:void(0);" className="sky-blue">Resend Code</Link></p>
                                     </div>
                                 </div>
                                 <div className="col-lg-5 col-md-5 col-12 login-popup-right">
@@ -390,33 +318,6 @@ export default function Footer(){
                     </div>
                 </div>
             </div>
-
-            <div className="modal" id="registerModal">
-                <div className="modal-dialog modal-lg">
-                    <div className="modal-content">
-                        <div className="modal-body no-padding">
-                            <button type="button" className="close" onClick={closeRegister}>&times;</button>
-                            <div className="row">
-                                <div className="col-lg-7 col-md-7 col-12 login-popup-left">
-                                    <div id="sendOTPRegister">  
-                                        {signUpForm()}
-                                    </div>
-                                    <div id="verifyOTPRegister" style={{display:'none'}}>  
-                                        {verifyOTPRegisterForm()}        
-                                    </div>
-                                </div>
-                                <div className="col-lg-5 col-md-5 col-12 login-popup-right">
-                                    <div>
-                                        <br/><h2 className="white">Registration</h2><br/><br/>
-                                        <p className="login-text">Get access to your Orders, Wishlist and Recommmendations</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     )
 }
