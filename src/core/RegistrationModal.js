@@ -11,7 +11,7 @@ import { authenticate, isAuthenticated } from "../common/utils";
 import Login from "./Login";
 import { signin } from "../auth/Cutomer";
 
-const RegistrationModel = (props) => {
+const RegistrationModal = (props) => {
   const [show, setShow] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const { user } = isAuthenticated();
@@ -388,4 +388,4 @@ const RegistrationModel = (props) => {
   );
 };
 
-export default RegistrationModel;
+export default RegistrationModal;

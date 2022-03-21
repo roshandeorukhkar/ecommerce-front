@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import { signin } from "../auth/Cutomer";
 import { authenticate, isAuthenticated } from "../common/utils";
 import { otpVerification } from "../auth/Cutomer";
-import RegistrationModel from "./RegistrationModel";
+import RegistrationModal from "./RegistrationModal";
 
 const Login = (props) => {
   const [showLogin, setShowLogin] = useState(false);
@@ -187,7 +187,7 @@ const Login = (props) => {
         <br />
         <p>
           Don't have an account?{" "}
-          <RegistrationModel newClassName="sky-blue" assignName="Signup" />
+          <RegistrationModal newClassName="sky-blue" assignName="Signup" />
         </p>
       </div>
     );

@@ -4,8 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import { signout } from "../auth/Cutomer";
 import { isAuthenticated } from "../common/utils"
 import { itemTotal } from "./cartHelpers";
-import $ from 'jquery';
-import RegistrationModel from "./RegistrationModel";
+import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
 
 const isActive = (history, path) => {
@@ -18,26 +17,13 @@ const isActive = (history, path) => {
 
 
 const logout = () => {
-    
     localStorage.removeItem('jwt');
     <Redirect to="/" />
 };
 
 const Menu = ({ history }) => {
-    const [userName , setUserName] = useState('');
-
-    // console.log(user._id, "userid...........")
-   
-    const userLogin = () =>{
-        var user =  localStorage.getItem("jwt");
-        if(user){
-            const userData = JSON.parse(user);
-            const name = userData.user.firstName+ ' ' + userData.user.lastName;
-            console.log(name,"name");
-            setUserName(name);
-        }
-    }
-      
+    const { user, token } = isAuthenticated();
+    
     const handleClose = () =>{
         console.log("close");
     }
@@ -58,14 +44,14 @@ const Menu = ({ history }) => {
                 )}
                 {!isAuthenticated() && (
                     <li className="nav-item margin-t-15 f-l">
-                        <RegistrationModel newClassName="" assignName="Register"/>
+                        <RegistrationModal newClassName="" assignName="Register"/>
                     </li>
                 )}
             </ul>
             {isAuthenticated() && (
                 <div className="cart_shop f-r margin-t-15">
                     <Link to="#">
-                        <span>{userName? userName : "User Name"} <i className="fas fa-angle-down"></i></span>
+                        <span>{user.firstName+" "+user.lastName} <i className="fas fa-angle-down"></i></span>
                     </Link>
                     <div className="cart_details" style={{ width: '160px' }}>
                         <ul>
@@ -75,7 +61,6 @@ const Menu = ({ history }) => {
                             <li><Link to="#" onClick={logout}>Logout</Link></li>
                         </ul>
                     </div>
-                {userLogin}
                 </div>
             )
             }

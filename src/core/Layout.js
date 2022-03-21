@@ -14,8 +14,8 @@ const Layout = ({
     <div>
         <Header />
         <div className="jumbotron_1">
-            <h2>{title}</h2>
-            <p className="lead">{description}</p>
+            {/* <h2>{title}</h2> */}
+            {/* <p className="lead">{description}</p> */}
         </div>
         <div className={className}>{children}</div>
         <FooterNew />

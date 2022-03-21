@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from './apiCore';
 import Card from './Card';
-import {NewProducts} from './newProducts';
-import {BestSellers} from './bestSellers';
+import NewProducts from './NewProducts';
+import BestSellers from './bestSellers';
 import Search from './Search';
 import {SliderMainWrapper} from "./SliderMainWrapper"
 import Layout from './Layout';
@@ -42,22 +42,31 @@ const Home = () => {
     return (
         <>
             <Layout>
-                <div className="row">
-                    {productsByArrival.map((product, i) => (
-                        <div key={i} className="col-4 mb-3">
-                            <Card product={product} />
-                        </div>
-                    ))}
-                </div>
-                <NewProducts/>       
-                <div className="row">
+                 <div className="row">
+                   
+                </div>  
+                {productsByArrival.length != '' ?
+                <NewProducts products={productsByArrival}/>   :
+                null   
+                 }
+                {/* <div className="row">
                     {productsBySell.map((product, i) => (
                         <div key={i} className="col-4 mb-3">
                             <Card product={product} />
                         </div>
                     ))}
                 </div>
-                <BestSellers/>
+                    ----
+                     {productsByArrival.map((product, i) => (
+                        <div key={i} className="col-4 mb-3">
+                            <Card product={product} />
+                        </div>
+                    ))}
+                 */}
+                {productsByArrival.length != '' ?
+                <BestSellers products={productsByArrival}/>   :
+                null   
+                 }
             </Layout>
             
         </>
