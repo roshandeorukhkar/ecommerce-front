@@ -10,10 +10,12 @@ import { otpVerification } from "../auth/Cutomer";
 import { authenticate, isAuthenticated } from "../common/utils";
 import Login from "./Login";
 import { signin } from "../auth/Cutomer";
+import { getResendOTP } from "../auth/Cutomer";
+import { otp } from "../common/otp";
 
 const RegistrationModal = (props) => {
-  const [show, setShow] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const { user } = isAuthenticated();
 
   const [values, setValues] = useState({
@@ -39,18 +41,22 @@ const RegistrationModal = (props) => {
     otpError: "",
     loading: false,
     redirectToReferrer: false,
+    formName : "registrion"
   });
 
   const { mobile, firstName, lastName, success, error } = values;
 
-  const handleShow = () => {
-    setShow(true);
+  const backRegistration = () => {
     setShowForm(false);
   };
-  const handleClose = () => {
-    console.log("Registration form");
-    setShow(false);
-  };
+  const handleLoginModalShow = () =>{
+    props.loginModal();
+    props.close();
+}
+
+const handleLoginModalClose = () => {
+    setShowLoginModal(false);
+}
 
   const handleChange = (name) => (event) => {
     setOtpValues({ ...otpValues, [name]: event.target.value });
@@ -76,7 +82,6 @@ const RegistrationModal = (props) => {
         });
       } else {
         console.log("OTP-- ", data.otpData.otp);
-
         setValues({
           ...values,
           mobile: "",
@@ -108,7 +113,8 @@ const RegistrationModal = (props) => {
     const min = 100000;
     const max = 999999;
     const otp = Math.floor(min + Math.random() * (max - min));
-    signin({ mobile: otpValues.mobileNo, otp }).then((data) => {
+
+    getResendOTP({ mobile: otpValues.mobileNo, otp }).then((data) => {
       console.log("-----", data.otpData.otp);
     });
   };
@@ -122,7 +128,7 @@ const RegistrationModal = (props) => {
       otpValues.fourthNumber +
       otpValues.fifthNumber +
       otpValues.sixthNumber;
-    otpVerification({ mobileNo: otpValues.mobileNo, otp: otpNumber }).then(
+    otpVerification({ mobileNo: otpValues.mobileNo, otp: otpNumber,formName : otpValues.formName }).then(
       (data) => {
         console.log("data", data);
         if (data.status == false) {
@@ -232,11 +238,11 @@ const RegistrationModal = (props) => {
         <br />
         <p>
           Already have an account?{" "}
-          <Login
-            newClassName="sky-blue"
-            assignName="Signin"
-            onClick={handleClose}
-          />
+          <Link to="#" className="sky-blue" onClick={handleLoginModalShow}>
+            {" "}
+            Signin
+          </Link>
+          {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} /> : null}
         </p>
       </form>
     </div>
@@ -247,7 +253,13 @@ const RegistrationModal = (props) => {
       <form>
         <h4>Login With Mobile Number</h4>
         <br />
-        <p>Please enter the OTP sent to your given number or change.</p>
+        <p>
+          Please enter the OTP sent to your given number({otpValues.mobileNo})
+          or change mobile no. to{" "}
+          <Link to="#" className="sky-blue" onClick={backRegistration}>
+            click here
+          </Link>{" "}
+        </p>
         <br />
         <div className="form-group row">
           <div className="col-12">
@@ -320,6 +332,7 @@ const RegistrationModal = (props) => {
           </div>
           <span className="error">{otpValues.otpError}</span>
         </div>
+        <input type="hidden" name="formName" value={otpValues.formName} />
         <input type="hidden" name="mobileNo" value={otpValues.mobileNo} />
         <button className="signup_btn ucfirst" onClick={verifyOTPRegister}>
           Signup
@@ -338,20 +351,17 @@ const RegistrationModal = (props) => {
 
   return (
     <>
-      <Link to="#" onClick={handleShow} className={props.newClassName}>
-        {props.assignName}
-      </Link>
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
-        show={show}
+        show={props.show}
         size="lg"
-        onHide={handleClose}
+        onHide={props.close}
       >
         <Modal.Body className="no-padding">
           <button
             type="button"
             className="close"
-            onClick={handleClose}
+            onClick={props.close}
             style={{
               zIndex: "999999 !important",
               position: "relative",

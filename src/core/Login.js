@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { Col, Container, Modal, Row } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import { signin } from "../auth/Cutomer";
+import { getResendOTP } from "../auth/Cutomer";
 import { authenticate, isAuthenticated } from "../common/utils";
 import { otpVerification } from "../auth/Cutomer";
 import RegistrationModal from "./RegistrationModal";
 
 const Login = (props) => {
-  const [showLogin, setShowLogin] = useState(false);
   const [loginDisplay, setLoginDisplay] = useState(false);
+  const [showRegistrationModal, setShowRegistrationModal] = useState(false);
+
   const [values, setValues] = useState({
     mobile: "",
     mobileError: "",
@@ -23,9 +25,10 @@ const Login = (props) => {
     fifthNumber: "",
     sixthNumber: "",
     mobileNo: "",
-    otpError:"",
+    otpError: "",
     loading: false,
     redirectToReferrer: false,
+    formName: "login",
   });
 
   const {
@@ -39,14 +42,20 @@ const Login = (props) => {
     otpError,
     loading,
     redirectToReferrer,
+    formName,
   } = otpValues;
 
-  const handleShow = () => {
-    setShowLogin(true);
+  const handleRegistartionModalShow = (e) => {
+    props.registrationModal();
+    props.close();
+  };
+  const handleRegistartionModalClose = () => {
+    setShowRegistrationModal(false);
+  };
+
+  const backRegistration = () => {
     setLoginDisplay(false);
   };
-  const handleClose = () => setShowLogin(false);
-
   const autoTab = (e) => {
     const BACKSPACE_KEY = 8;
     const DELETE_KEY = 46;
@@ -111,7 +120,7 @@ const Login = (props) => {
     const min = 100000;
     const max = 999999;
     const otp = Math.floor(min + Math.random() * (max - min));
-    signin({ mobile: mobileNo, otp }).then((data) => {
+    getResendOTP({ mobile: mobileNo, otp }).then((data) => {
       console.log("-----", data.otpData.otp);
     });
   };
@@ -125,13 +134,17 @@ const Login = (props) => {
       fourthNumber +
       fifthNumber +
       sixthNumber;
-    otpVerification({ mobileNo: mobileNo, otp: otpNumber }).then((data) => {
+    otpVerification({
+      mobileNo: mobileNo,
+      otp: otpNumber,
+      formName: formName,
+    }).then((data) => {
       if (data.status == false) {
         console.log("data----", data);
         setOtpValues({
           ...otpValues,
-          otpError : data.message
-        })
+          otpError: data.message,
+        });
       } else {
         authenticate(data, () => {
           setOtpValues({
@@ -142,7 +155,7 @@ const Login = (props) => {
             fourthNumber: "",
             fifthNumber: "",
             sixthNumber: "",
-            otpError : "",
+            otpError: "",
             loading: false,
             redirectToReferrer: true,
           });
@@ -161,7 +174,9 @@ const Login = (props) => {
         <br />
         <div className="form-group row">
           <div className="col-12">
-            <label>Phone Number*</label>
+            <label>
+              Phone Number<span className="error">*</span>
+            </label>
           </div>
           <div className="col-12">
             <input
@@ -187,7 +202,18 @@ const Login = (props) => {
         <br />
         <p>
           Don't have an account?{" "}
-          <RegistrationModal newClassName="sky-blue" assignName="Signup" />
+          <Link
+            to="#"
+            className="sky-blue"
+            onClick={handleRegistartionModalShow}
+          >
+            {" "}
+            Signup
+          </Link>
+          <RegistrationModal
+            show={showRegistrationModal}
+            close={handleRegistartionModalClose}
+          />
         </p>
       </div>
     );
@@ -198,7 +224,11 @@ const Login = (props) => {
       <div id="verifyOTP">
         <h4>Login With Mobile Number</h4>
         <br />
-        <p>Please enter the OTP sent to your given number or change.</p>
+        Please enter the OTP sent to your given number({otpValues.mobileNo}) or
+        change mobile no. to{" "}
+        <Link to="#" className="sky-blue" onClick={backRegistration}>
+          click here
+        </Link>{" "}
         <br />
         <div className="form-group row">
           <div className="col-12">
@@ -271,8 +301,8 @@ const Login = (props) => {
           </div>
           <span className="error">{otpError}</span>
         </div>
+        <input type="hidden" name="formName" value={formName} />
         <input type="hidden" name="mobileNo" value={mobileNo} />
-
         <button className="submit_btn ucfirst" onClick={verifyOTPLogin}>
           {" "}
           Verify{" "}
@@ -291,11 +321,7 @@ const Login = (props) => {
 
   return (
     <>
-      <Link to="#" onClick={handleShow} className={props.newClassName}>
-        {props.assignName}
-      </Link>
-
-      <Modal show={showLogin} onHide={handleClose} size="lg">
+      <Modal show={props.show} onHide={props.close} size="lg">
         <Modal.Body className="no-padding">
           <Container>
             <Row>

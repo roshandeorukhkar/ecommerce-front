@@ -23,9 +23,23 @@ const logout = () => {
 
 const Menu = ({ history }) => {
     const { user, token } = isAuthenticated();
+    const [showLoginModal , setShowLoginModal] = useState(false);
+    const [showRegistrationModal , setShowRegistrationModal] = useState(false);
+
+    const handleLoginModalShow = () =>{
+        setShowLoginModal(true);
+    }
+
+    const handleLoginModalClose = () => {
+        console.log("-------close");
+        setShowLoginModal(false);
+    }
     
-    const handleClose = () =>{
-        console.log("close");
+    const handleRegistartionModalShow = () =>{
+        setShowRegistrationModal(true)
+    }
+    const handleRegistartionModalClose = () =>{
+        setShowRegistrationModal(false)
     }
   
     return (
@@ -34,7 +48,10 @@ const Menu = ({ history }) => {
 
                 {!isAuthenticated() && (
                     <li className="nav-item margin-t-15 f-l">
-                    <Login newClassName="" assignName="Login" close={handleClose} />
+                    <Link to="#" onClick={handleLoginModalShow} >
+                            Login
+                    </Link>
+                    {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow}/> : null}
                     </li>
                 )}
                 {!isAuthenticated() && (
@@ -44,7 +61,10 @@ const Menu = ({ history }) => {
                 )}
                 {!isAuthenticated() && (
                     <li className="nav-item margin-t-15 f-l">
-                        <RegistrationModal newClassName="" assignName="Register"/>
+                    <Link to="#" onClick={handleRegistartionModalShow} >
+                         Register
+                    </Link>
+                        <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/>
                     </li>
                 )}
             </ul>

@@ -61,3 +61,20 @@ export const otpVerification = data =>{
     }).catch(error => 
         console.log("Error :" ,error));
 }
+
+export const getResendOTP = user => {
+    return fetch(`${API}/getResendOTP`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => {
+            console.log(err);
+        });
+};
