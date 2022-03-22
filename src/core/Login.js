@@ -321,8 +321,21 @@ const Login = (props) => {
 
   return (
     <>
-      <Modal show={props.show} onHide={props.close} size="lg">
+      <Modal show={props.show} onHide={props.close} backdrop="static" size="lg">
         <Modal.Body className="no-padding">
+        <button
+            type="button"
+            className="close"
+            onClick={props.close}
+            style={{
+              zIndex: 1,
+              position: "relative",
+              top: "5px",
+              right: "5px",
+            }}
+          >
+            &times;
+          </button>
           <Container>
             <Row>
               <Col lg={7} md={7} className="login-popup-left">

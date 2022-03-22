@@ -358,6 +358,7 @@ const handleLoginModalClose = () => {
         aria-labelledby="contained-modal-title-vcenter"
         show={props.show}
         size="lg"
+        backdrop="static"
         onHide={props.close}
       >
         <Modal.Body className="no-padding">
@@ -366,7 +367,7 @@ const handleLoginModalClose = () => {
             className="close"
             onClick={props.close}
             style={{
-              zIndex: "999999 !important",
+              zIndex: 1,
               position: "relative",
               top: "5px",
               right: "5px",
