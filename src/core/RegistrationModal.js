@@ -84,11 +84,8 @@ const handleLoginModalClose = () => {
         console.log("OTP-- ", data.otpData.otp);
         setValues({
           ...values,
-          mobile: "",
           mobile_error: "",
-          firstName: "",
           firstName_error: "",
-          lastName: "",
           lastName_error: "",
           error: "",
           success: true,
@@ -149,6 +146,12 @@ const handleLoginModalClose = () => {
               otpError: "",
               loading: false,
               redirectToReferrer: true,
+            });
+            setValues({
+              ...values,
+              mobile: "",
+              firstName: "",
+              lastName: "",
             });
           });
           //setShowForm(false);
