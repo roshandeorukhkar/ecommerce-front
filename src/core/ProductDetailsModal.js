@@ -29,8 +29,6 @@ const ProductDetailsModal = ({showModel,close,productId,category}) => {
   }
   
   return(
-    <>
-     
       <Modal
         aria-labelledby="contained-modal-title-vcenter"
         size="xl"
@@ -270,7 +268,6 @@ const ProductDetailsModal = ({showModel,close,productId,category}) => {
         </Modal.Body>
         </div>
       </Modal>  
-    </>
   );
 };
 export default ProductDetailsModal;

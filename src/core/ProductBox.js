@@ -71,13 +71,13 @@ const ProductBox = ({image,productId, name, category, price}) => {
           <h4>
             <i className="fas fa-rupee-sign fa-sm"></i>
             {price}{" "}
-            <span>
+            {/* <span>
               {" "}
               <del>
                 <i className="fas fa-rupee-sign fa-sm"></i>
                 500.00
               </del>{" "}
-            </span>{" "}
+            </span>{" "} */}
           </h4>
           <a className="add_btn custom_btn" href="/cart">
             Add to Cart

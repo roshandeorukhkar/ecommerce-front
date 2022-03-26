@@ -10,7 +10,6 @@ const NewProducts = (props) => {
   useEffect(() => {
     setProductList(props.products);
   }, [props]);
-  console.log("showMyProduct--", productList);
 
   const state = {
     responsive: {
@@ -76,7 +75,7 @@ const NewProducts = (props) => {
                     Featured Product
                   </h3>
                 </div>
-                <div className="tab-content" id="myTabContent">
+                <div className="tab-content" id="">
                   <div
                     id="home"
                     className="tab-pane active show"
