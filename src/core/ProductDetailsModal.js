@@ -113,31 +113,13 @@ const ProductDetailsModal = ({showModel,close,productId,category}) => {
                               <ShowImage item={productArray} url="product" className="d-block w-100"/>
                             </div>
                             <div className="item">
-                              <img
-                                src="../assets/images/product.jpg"
-                                className="img-fluid"
-                                alt="img"
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to="0"
-                              />
+                            <ShowImage item={productArray} url="product" className="d-block w-100"/>
                             </div>
                             <div className="item">
-                              <img
-                                src="../assets/images/product.jpg"
-                                className="img-fluid"
-                                alt="img"
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to="0"
-                              />
+                            <ShowImage item={productArray} url="product" className="d-block w-100"/>
                             </div>
                             <div className="item">
-                              <img
-                                src="../assets/images/product.jpg"
-                                className="img-fluid"
-                                alt="img"
-                                data-target="#carouselExampleIndicators"
-                                data-slide-to="0"
-                              />
+                            <ShowImage item={productArray} url="product" className="d-block w-100"/>
                             </div>
                           </OwlCarousel>
                         </div>

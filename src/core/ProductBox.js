@@ -4,7 +4,6 @@ import ProductDetailsModal from "./ProductDetailsModal";
 import { Link } from "react-router-dom";
 
 const ProductBox = ({image,productId, name, category, price}) => {
-  console.log("product",productId);
   const [showProductDetailsModal , setShowProductDetailsModel] = useState(false);
   const handelModelOpen = (e) =>{
     e.preventDefault();
@@ -38,9 +37,9 @@ const ProductBox = ({image,productId, name, category, price}) => {
         </div>
         <div className="product_content">
           <span className="category-list">{category}</span>
-          <a href="/product/1">
+          <Link to={`/product/${productId}`}>
             <h3 className="woocommerce-loop-product__title">{name}</h3>
-          </a>
+          </Link>
           <ul className="star">
             <li>
               <a href="#">
