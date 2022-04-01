@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const Product = (props) => {
   const [product, setProduct] = useState({});
+  const [category,setCategory] = useState({});
   const [relatedProduct, setRelatedProduct] = useState([]);
   const [error, setError] = useState(false);
   const [reload ,setReload] = useState(false);
@@ -20,6 +21,7 @@ const Product = (props) => {
         setError(data.error);
       } else {
         setProduct(data);
+        setCategory(data.category);
         // fetch related products
         listRelated(data._id).then((data) => {
           if (data.error) {
@@ -90,7 +92,7 @@ const Product = (props) => {
                   <span>
                     <i className="fas fa-angle-right"></i>
                   </span>{" "}
-                  Electronic
+                  {category.name}
                 </Link>
               </li>
             </ul>
@@ -243,11 +245,11 @@ const Product = (props) => {
                     <h3>
                       <i className="fas fa-rupee-sign fa-sm"></i>
                       {product.price}{" "}
-                      <span>
+                      {/* <span>
                         <del>
                           <i className="fas fa-rupee-sign fa-sm"></i>379.00
                         </del>
-                      </span>{" "}
+                      </span>{" "} */}
                     </h3>
                     <p>
                       Pellentesque habitant morbi tristique senectus et netus et
@@ -279,7 +281,7 @@ const Product = (props) => {
                       <p>
                         Categories:{" "}
                         <span>
-                          <Link to="#">Electronic</Link>
+                          <Link to="#">{category.name}</Link>
                         </span>
                       </p>
                     </div>
