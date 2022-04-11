@@ -123,3 +123,48 @@ export const createOrder = (userId, token, createOrderData) => {
         })
         .catch(err => console.log(err));
 };
+
+export const sliderList = () =>{
+    return fetch(`${API}/sliderList`,{
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "Content-Type" : "application/json",
+            // Authorization:`Bearer ${token}`
+        },
+    }).then(responce =>{
+        return responce.json();
+    }).catch( err =>
+        console.log(err)
+    )
+}
+
+export const advertiseListAPI = () =>{
+    return fetch(`${API}/advertiseList`,{
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "Content-Type" : "application/json",
+            // Authorization:`Bearer ${token}`
+        },
+    }).then(responce =>{
+        return responce.json();
+    }).catch( err =>
+        console.log(err)
+    )
+}
+
+export const partnerImgListAPI = () =>{
+    return fetch(`${API}/partnerImgList`,{
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "Content-Type" : "application/json",
+            // Authorization:`Bearer ${token}`
+        },
+    }).then(responce =>{
+        return responce.json();
+    }).catch( err =>
+        console.log(err)
+    )
+}

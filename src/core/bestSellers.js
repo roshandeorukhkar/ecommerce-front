@@ -3,11 +3,22 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ProductBox from "./ProductBox";
+import { partnerImgListAPI } from "./apiCore";
 
 const BestSellers = (props) => {
   const [productList, setProductList] = useState(props.products);
+  const [partnerImages , setPartnerImages] = useState([]);
+
+  const partnerImgLists = () => {
+    partnerImgListAPI().then((data) =>{
+      setPartnerImages(data.res_);
+      
+    })
+  }
+   
   useEffect(() => {
     setProductList(props.products);
+    partnerImgLists();
   }, [props]);
 
   const state_1 = {
@@ -392,242 +403,7 @@ const BestSellers = (props) => {
                       </div>
                     </div>
                   </div>
-                  {/* <div
-                    id="mobile"
-                    className="tab-pane"
-                    role="tabpanel"
-                    aria-labelledby="mobile-tab"
-                  >
-                    <div className="washing_slider">
-                      <div className="owl-carousel owl-theme">
-                        <div className="item">
-                          <div className="product_box">
-                            <div className="product_img">
-                              <img
-                                className="img-fluid"
-                                src="../assets/images/product.jpg"
-                                alt="product img"
-                              />
-                              <div className="top_icon">
-                                <p>hot</p>
-                                <span>
-                                  <i className="far fa-heart"></i>
-                                </span>
-                              </div>
-                              <div className="product_overlay">
-                                <div className="search_icon">
-                                  <a href="#">
-                                    <i className="fa fa-search"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="product_content">
-                              <span className="category-list">
-                                Washing Machine
-                              </span>
-                              <a href="/product/1">
-                                <h3 className="woocommerce-loop-product__title">
-                                  Automatic Load Washing Machines{" "}
-                                </h3>
-                              </a>
-                              <ul className="star">
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                              <h4>
-                                <i className="fas fa-rupee-sign fa-sm"></i>
-                                492.00{" "}
-                                <span>
-                                  {" "}
-                                  <del>
-                                    <i className="fas fa-rupee-sign fa-sm"></i>
-                                    379.00
-                                  </del>{" "}
-                                </span>{" "}
-                              </h4>
-                              <a className="add_btn custom_btn" href="/cart">
-                                Add to Cart
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="item">
-                          <div className="product_box">
-                            <div className="product_img">
-                              <img
-                                className="img-fluid"
-                                src="../assets/images/product.jpg"
-                                alt="product img"
-                              />
-                              <div className="top_icon">
-                                <p className="new">new</p>
-                                <span>
-                                  <i className="far fa-heart"></i>
-                                </span>
-                              </div>
-                              <div className="product_overlay">
-                                <div className="search_icon">
-                                  <a href="#">
-                                    <i className="fa fa-search"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="product_content">
-                              <span className="category-list">
-                                Washing Machine
-                              </span>
-                              <a href="/product/1">
-                                <h3 className="woocommerce-loop-product__title">
-                                  Number of wash programs - 2
-                                </h3>
-                              </a>
-                              <ul className="star">
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                              <h4>
-                                <i className="fas fa-rupee-sign fa-sm"></i>
-                                500.00{" "}
-                                <span>
-                                  {" "}
-                                  <del>
-                                    <i className="fas fa-rupee-sign fa-sm"></i>
-                                    679.00
-                                  </del>{" "}
-                                </span>{" "}
-                              </h4>
-                              <a className="add_btn custom_btn" href="/cart">
-                                Add to Cart
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="item">
-                          <div className="product_box">
-                            <div className="product_img">
-                              <img
-                                className="img-fluid"
-                                src="../assets/images/product.jpg"
-                                alt="product img"
-                              />
-                              <div className="top_icon">
-                                <p>hot</p>
-                                <span>
-                                  <i className="far fa-heart"></i>
-                                </span>
-                              </div>
-                              <div className="product_overlay">
-                                <div className="search_icon">
-                                  <a href="#">
-                                    <i className="fa fa-search"></i>
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="product_content">
-                              <span className="category-list">
-                                Washing Machine
-                              </span>
-                              <a href="/product/1">
-                                <h3 className="woocommerce-loop-product__title">
-                                  Semi Automatic Top Load
-                                </h3>
-                              </a>
-                              <ul className="star">
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <i className="fas fa-star"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                              <h4>
-                                <i className="fas fa-rupee-sign fa-sm"></i>
-                                800.00{" "}
-                                <span>
-                                  {" "}
-                                  <del>
-                                    <i className="fas fa-rupee-sign fa-sm"></i>
-                                    900.00
-                                  </del>{" "}
-                                </span>{" "}
-                              </h4>
-                              <a className="add_btn custom_btn" href="/cart">
-                                Add to Cart
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
+                
                   <div
                     id="speakers"
                     className="tab-pane"
@@ -896,56 +672,20 @@ const BestSellers = (props) => {
                   dots={false}
                   autoplay={true}
                 >
-                  <div className="item">
+                  {partnerImages.length != 0 ?
+                  partnerImages.map((res , i) =>(
+                    <div className="item" key={i}>
+                    <div className="partner_img">
+                      <img src={res.image} alt="logo" height={150} width={80}/>
+                    </div>
+                  </div>
+                  )) : <div className="item">
                     <div className="partner_img">
                       <img src="../assets/images/team_6.jpg" alt="logo" />
                     </div>
                   </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
-                  <div className="item">
-                    <div className="partner_img">
-                      <img src="../assets/images/team_6.jpg" alt="logo" />
-                    </div>
-                  </div>
+                  }
+                 
                 </OwlCarousel>
               </div>
             </div>

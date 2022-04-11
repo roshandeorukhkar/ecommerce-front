@@ -4,11 +4,34 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ProductBox from "./ProductBox";
 import ProductDetailsModal from "./ProductDetailsModal";
+import { sliderList, advertiseListAPI } from "./apiCore";
 
 const NewProducts = (props) => {
   const [productList, setProductList] = useState(props.products);
+  const [sliderImages, setSliderImages] = useState([]);
+  const [advertisImage, setAdvertiseImage] = useState([]);
+
+  const SliderLists = () => {
+    sliderList().then((data) => {
+      setSliderImages(data.result);
+    });
+  };
+
+  const advertiseList = () => {
+    advertiseListAPI().then((data) => {
+      setAdvertiseImage(data.res_);
+    });
+  };
+
   useEffect(() => {
+    const interval = setInterval(() => {
+      SliderLists();
+      advertiseList();
+    }, 50000);
+    SliderLists();
+    advertiseList();
     setProductList(props.products);
+    return () => clearInterval(interval);
   }, [props]);
 
   const state = {
@@ -38,27 +61,13 @@ const NewProducts = (props) => {
           items={1}
           autoplay={true}
         >
-          <div className="item">
-            <img
-              className="img-fluid"
-              src="../assets/images/banner.png"
-              alt="logo"
-            />
-          </div>
-          <div className="item">
-            <img
-              className="img-fluid"
-              src="../assets/images/banner.png"
-              alt="logo"
-            />
-          </div>
-          <div className="item">
-            <img
-              className="img-fluid"
-              src="../assets/images/banner.png"
-              alt="logo"
-            />
-          </div>
+          {sliderImages.length != 0
+            ? sliderImages.map((res, i) => (
+                <div className="item" key={i}>
+                  <img className="img-fluid" src={res.image} alt="logo" />
+                </div>
+              ))
+            : null}
         </OwlCarousel>
       </div>
       <div className="bz_newproduct_main_wrapper float_left">
@@ -121,66 +130,26 @@ const NewProducts = (props) => {
       <div className="bz_section_innerbox_main_wrapper float_left">
         <div className="container custom_container">
           <div className="row">
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="add_post">
-                <div className="img_hover">
-                  <img
-                    className="img-fluid"
-                    src="../assets/images/add_4.jpg"
-                    alt="add"
-                  />
-                </div>
-                <div className="post_content color_change">
-                  <p>Amazing Discount</p>
-                  <h2>
-                    Men's <span>Watchs</span>{" "}
-                  </h2>
-                  <a className="custom_btn" href="#">
-                    Buy Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="add_post">
-                <div className="img_hover">
-                  <img
-                    className="img-fluid"
-                    src="../assets/images/add_4.jpg"
-                    alt="add"
-                  />
-                </div>
-                <div className="post_content color_change">
-                  <p>Amazing Discount</p>
-                  <h2>
-                    Digital <span>Camera</span>{" "}
-                  </h2>
-                  <a className="custom_btn" href="#">
-                    Buy Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 col-12">
-              <div className="add_post">
-                <div className="img_hover">
-                  <img
-                    className="img-fluid"
-                    src="../assets/images/add_4.jpg"
-                    alt="add"
-                  />
-                </div>
-                <div className="post_content color_change">
-                  <p>Amazing Discount</p>
-                  <h2>
-                    Camera <span>Lens</span>{" "}
-                  </h2>
-                  <a className="custom_btn" href="#">
-                    Buy Now
-                  </a>
-                </div>
-              </div>
-            </div>
+            {advertisImage.length != 0
+              ? advertisImage.map((res, i) => (
+                  <div className="col-lg-4 col-md-6 col-12" key={i}>
+                    <div className="add_post">
+                      <div className="img_hover">
+                        <img className="img-fluid" src={res.image} alt="add" />
+                      </div>
+                      <div className="post_content color_change">
+                        <p>Amazing Discount</p>
+                        <h2>
+                          Digital <span>Camera</span>{" "}
+                        </h2>
+                        <a className="custom_btn" href="#">
+                          Buy Now
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              : null}
           </div>
         </div>
       </div>
