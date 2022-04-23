@@ -7,6 +7,7 @@ import { Modal, Button, Container, Row, Col } from "react-bootstrap";
 import { read, listRelated } from './apiCore';
 import ShowImage from "./ShowImage";
 
+
 const ProductDetailsModal = ({showModel,close,productId,category}) => {
   
   const [product, setProduct] = useState(false);
@@ -15,9 +16,9 @@ const ProductDetailsModal = ({showModel,close,productId,category}) => {
   useEffect(()=>{
     productDetails();
   },[productId])
-  console.log("--------product",product.category);
+  // console.log("--------product",product.category);
   const productDetails = () =>{
-    console.log("hello----",);
+    // console.log("hello----",);
     read(productId).then(data => {
       if (data.error) {
           setError(data.error);

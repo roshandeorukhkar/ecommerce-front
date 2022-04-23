@@ -10,7 +10,7 @@ const NewProducts = (props) => {
   const [productList, setProductList] = useState(props.products);
   const [sliderImages, setSliderImages] = useState([]);
   const [advertisImage, setAdvertiseImage] = useState([]);
-
+  
   const SliderLists = () => {
     sliderList().then((data) => {
       setSliderImages(data.result);
@@ -107,11 +107,12 @@ const NewProducts = (props) => {
                                 style={{ width: "99%" }}
                               >
                                 <ProductBox
-                                  image={ele}
+                                  image={ele.images}
                                   productId={ele._id}
                                   name={ele.name}
                                   price={ele.price}
                                   category={ele.category.name}
+                                  product={ele}
                                 />
                               </div>
                             ))

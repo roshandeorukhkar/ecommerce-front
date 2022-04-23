@@ -5,6 +5,9 @@ import Search from "./Search";
 import {isAuthenticated } from "../common/utils"
 import Menu from "./Menu"
 import $ from 'jquery';
+import {  useRecoilValue } from "recoil";
+
+import { cartFetchData } from "../recoil/carts/cartHelpers";
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -20,66 +23,65 @@ const logout = () => {
     //alert('Register Successfully');
 };
 
-$(document).ready(function(){
-    $("#toggle").on("click", function(){
-        var w = $('#sidebar').width();
-        var pos = $('#sidebar').offset().left;
+// $(document).ready(function(){
+//     $("#toggle").on("click", function(){
+//         var w = $('#sidebar').width();
+//         var pos = $('#sidebar').offset().left;
        
-        if(pos == 0){
-        $("#sidebar").animate({"left": -w}, "slow");
-        }
-        else
-        {
-        $("#sidebar").animate({"left": "0"}, "slow");
-        }
+//         if(pos == 0){
+//         $("#sidebar").animate({"left": -w}, "slow");
+//         }
+//         else
+//         {
+//         $("#sidebar").animate({"left": "0"}, "slow");
+//         }
         
-      });
+//       });
       
-      $("#toggle_close").on("click", function(){
-        var w = $('#sidebar').width();
-        var pos = $('#sidebar').offset().left;
+//       $("#toggle_close").on("click", function(){
+//         var w = $('#sidebar').width();
+//         var pos = $('#sidebar').offset().left;
        
-        if(pos == 0){
-        $("#sidebar").animate({"left": -w}, "slow");
-        }
-        else
-        {
-        $("#sidebar").animate({"left": "0"}, "slow");
-        }
+//         if(pos == 0){
+//         $("#sidebar").animate({"left": -w}, "slow");
+//         }
+//         else
+//         {
+//         $("#sidebar").animate({"left": "0"}, "slow");
+//         }
         
-      });
+//       });
 
-    $('#cssmenu li.active').addClass('open').children('ul').show();
-	$('#cssmenu li.has-sub>a').on('click', function(){
-		$(this).removeAttr('to');
-		var element = $(this).parent('li');
-		if (element.hasClass('open')) {
-			element.removeClass('open');
-			element.find('li').removeClass('open');
-			element.find('ul').slideUp(200);
-		}
-		else {
-			element.addClass('open');
-			element.children('ul').slideDown(200);
-			element.siblings('li').children('ul').slideUp(200);
-			element.siblings('li').removeClass('open');
-			element.siblings('li').find('li').removeClass('open');
-			element.siblings('li').find('ul').slideUp(200);
-		}
-	});
-})
-
-
+//     $('#cssmenu li.active').addClass('open').children('ul').show();
+// 	$('#cssmenu li.has-sub>a').on('click', function(){
+// 		$(this).removeAttr('to');
+// 		var element = $(this).parent('li');
+// 		if (element.hasClass('open')) {
+// 			element.removeClass('open');
+// 			element.find('li').removeClass('open');
+// 			element.find('ul').slideUp(200);
+// 		}
+// 		else {
+// 			element.addClass('open');
+// 			element.children('ul').slideDown(200);
+// 			element.siblings('li').children('ul').slideUp(200);
+// 			element.siblings('li').removeClass('open');
+// 			element.siblings('li').find('li').removeClass('open');
+// 			element.siblings('li').find('ul').slideUp(200);
+// 		}
+// 	});
+// })
 
 export default function Header({ history }){
-    //console.log(isAuthenticated())
-
+    const {
+        clength,
+        total
+    } = useRecoilValue(cartFetchData);
     const iStyle = {
         background: '#edf6ff',
         borderRadius: '50%',
         padding: '10px',
     }
-
     return(
         <div className="pd_header_main_wrapper float_left">
             <div className="container">
@@ -98,9 +100,10 @@ export default function Header({ history }){
                             <div className="cart_shop f-l">
                                 <Link to="#">
                                 <i className="fas fa-shopping-cart fa-2x white"></i>
-                                <span>Your Cart <small><i className="fas fa-rupee-sign fa-sm"></i>3590</small> </span>
+                                  <span className="cart-count" style={{background : "red" , borderRadius: "50%" , padding : "1px" }}> {clength} </span>  
+                                <span>Your Cart <small><i className="fas fa-rupee-sign fa-sm"></i>{total}</small> </span>
                                 </Link>
-                                <div className="cart_details">
+                                {/* <div className="cart_details">
                                     <div className="total-count">
                                         <span>1 ITEM</span>
                                         <Link to="/cart">VIEW CART</Link>
@@ -124,7 +127,7 @@ export default function Header({ history }){
                                         <Link to="/cart"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
                                         <Link to="/checkout"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             <Menu/>
                         </div>

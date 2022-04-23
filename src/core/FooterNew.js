@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import $ from "jquery";
 
-$(document).ready(function () {
-  // Password SHow Hide js
-  $(window).scroll(function () {
-    if ($(this).scrollTop() >= 100) {
-      $("#return-to-top").fadeIn(200);
-    } else {
-      $("#return-to-top").fadeOut(200);
-    }
-  });
-  $("#return-to-top").click(function () {
-    $("body,html").animate(
-      {
-        scrollTop: 0,
-      },
-      500
-    );
-  });
-});
+// $(document).ready(function () {
+//   // Password SHow Hide js
+//   $(window).scroll(function () {
+//     if ($(this).scrollTop() >= 100) {
+//       $("#return-to-top").fadeIn(200);
+//     } else {
+//       $("#return-to-top").fadeOut(200);
+//     }
+//   });
+//   $("#return-to-top").click(function () {
+//     $("body,html").animate(
+//       {
+//         scrollTop: 0,
+//       },
+//       500
+//     );
+//   });
+// });
 
 export default function Footer() {
   return (

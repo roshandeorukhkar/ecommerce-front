@@ -1,88 +1,111 @@
-import React, { useState } from "react";
-import ShowImage from "./ShowImage";
-import ProductDetailsModal from "./ProductDetailsModal";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { cartList } from "../recoil/carts/cartHelpers";
+import { generatedId } from "../uuid/genratedId";
 
-const ProductBox = ({image,productId, name, category, price}) => {
-  const [showProductDetailsModal , setShowProductDetailsModel] = useState(false);
-  const handelModelOpen = (e) =>{
+const ProductBox = ({ image, productId, name, category, price, product }) => {
+  const [cartItem, setCartItem] = useRecoilState(cartList);
+  const history = useHistory();
+  const addToCart = (e) => {
     e.preventDefault();
-    setShowProductDetailsModel(true);
-  }
-  const handelModelClose = () => {
-    setShowProductDetailsModel(false)
-  }
-  
+    if (cartItem.some((item) => item.id === productId)) {
+      setCartItem((cartItem) =>
+        cartItem.map((item) =>
+          item.id === productId ? { ...item, quantity : item.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCartItem((oldCartItem) => [
+        ...oldCartItem,
+        {
+          id: productId,
+          name: name,
+          price: price,
+          quantity: 1,
+          isComplete: false,
+        },
+      ]);
+    }
+    history.push("/cart");
+  };
+
   return (
-      <div className="product_box">
-        <div className="product_img">
-          <ShowImage item={image} url="product" className="img-fluid" />
-          <div className="top_icon">
-            <p className="new">new</p>
-            <span>
-              <i className="far fa-heart"></i>
-            </span>
-          </div>
-          <div className="product_overlay">
-            <div className="search_icon">
-            <Link to="#" onClick={handelModelOpen}>
-                <i className="fa fa-search"></i>
-           </Link>
-           {
-            showProductDetailsModal === true && productId != 'undefined' ? 
-            <ProductDetailsModal showModel={showProductDetailsModal} close={handelModelClose} productId={productId} category={category}/> : null
-           }
-            </div>
+    <div className="product_box">
+      <div className="product_img">
+        {Object.values(image).map((res, i) =>
+          i == 0 ? (
+            <img
+              src={res[0]}
+              className="img-fluid"
+              style={{ maxHeight: "100%", maxWidth: "100%" }}
+              alt={name}
+            />
+          ) : null
+        )}
+        <div className="top_icon">
+          <p className="new">new</p>
+          <span>
+            <i className="far fa-heart"></i>
+          </span>
+        </div>
+        <div className="product_overlay">
+          <div className="search_icon">
+            <Link to={`/product/${productId}`}>
+              <i className="fa fa-search"></i>
+            </Link>
           </div>
         </div>
-        <div className="product_content">
-          <span className="category-list">{category}</span>
-          <Link to={`/product/${productId}`}>
-            <h3 className="woocommerce-loop-product__title">{name}</h3>
-          </Link>
-          <ul className="star">
-            <li>
-              <a href="#">
-                <i className="fas fa-star"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-star"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-star"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-star"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-star"></i>
-              </a>
-            </li>
-          </ul>
-          <h4>
-            <i className="fas fa-rupee-sign fa-sm"></i>
-            {price}{" "}
-            {/* <span>
+      </div>
+      <div className="product_content">
+        <span className="category-list">{category}</span>
+        <Link to={`/product/${productId}`}>
+          <h3 className="woocommerce-loop-product__title">{name}</h3>
+        </Link>
+        <ul className="star">
+          <li>
+            <a href="#">
+              <i className="fas fa-star"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="fas fa-star"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="fas fa-star"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="fas fa-star"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i className="fas fa-star"></i>
+            </a>
+          </li>
+        </ul>
+        <h4>
+          <i className="fas fa-rupee-sign fa-sm"></i>
+          {price}{" "}
+          {/* <span>
               {" "}
               <del>
                 <i className="fas fa-rupee-sign fa-sm"></i>
                 500.00
               </del>{" "}
             </span>{" "} */}
-          </h4>
-          <a className="add_btn custom_btn" href="/cart">
-            Add to Cart
-          </a>
-        </div>
+        </h4>
+        <Link to="" onClick={addToCart} className="add_btn custom_btn">
+          Add to Cart
+        </Link>
       </div>
+    </div>
   );
 };
 

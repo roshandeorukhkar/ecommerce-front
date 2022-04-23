@@ -4,9 +4,12 @@ import { read, listRelated } from "./apiCore";
 import Card from "./Card";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
-import ShowImage from "./ShowImage";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Link } from "react-router-dom";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { cartList ,cartFetchData } from "../recoil/carts/cartHelpers";
+import { useHistory } from "react-router-dom";
+
 
 const Product = (props) => {
   const [product, setProduct] = useState({});
@@ -14,13 +17,41 @@ const Product = (props) => {
   const [relatedProduct, setRelatedProduct] = useState([]);
   const [error, setError] = useState(false);
   const [reload ,setReload] = useState(false);
+  const [productImages , setProductImages] = useState({});
+  const [colorProductImages , setColorProductImages] = useState([]);
+  const [color , setColor] = useState([]);
+  const [cartItem , setCartItem ] =  useRecoilState(cartList);
+  let history = useHistory();
+  const { cartData } = useRecoilValue(cartFetchData);
+  const [quantity , setQuantity] = useState(1);
+
+  const getQuantityOfProduct = (productId) =>{
+     cartData.map(item => item.id == productId ? setQuantity(item.quantity) : 1 )
+  }
+
+  console.log("quantity",quantity)
+  console.log("cartData",cartData)
 
   const loadSingleProduct = (productId) => {
+    const colorArray = [];
     read(productId).then((data) => {
       if (data.error) {
         setError(data.error);
       } else {
         setProduct(data);
+        var images = JSON.parse(JSON.stringify(data.images));
+        setProductImages(images);
+        Object.keys(images).forEach((key,i) =>{
+          colorArray.push(key);
+        });
+        var i = 0;
+        Object.entries(images).forEach((data) =>{
+          if(i == 0){
+             setColorProductImages(data[1]);
+            i++;
+          }
+        });
+        setColor(colorArray);
         setCategory(data.category);
         // fetch related products
         listRelated(data._id).then((data) => {
@@ -55,7 +86,62 @@ const Product = (props) => {
     const productId = props.match.params.productId;
     loadSingleProduct(productId);
     setReload(true);
+    getQuantityOfProduct(productId)
   }, [props,reload]);
+
+  const addToCart = (e) =>{
+    e.preventDefault();
+    const productId = props.match.params.productId;
+   if(cartItem.some(item => item.id === productId)){
+     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item,))
+   }else{
+     setCartItem((oldCartItem) =>[
+       ...oldCartItem,
+       {
+         id : product._id,
+         name : product.name,
+         price : product.price,
+         quantity : quantity,
+         isComplete: false
+        }
+      ]);
+    }
+   history.push('/cart');
+  }
+
+  const quantityIncrement = () => {
+    const productId = props.match.params.productId;
+    if(cartItem.some(item => item.id === productId)){
+      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ))
+      cartItem.map(item => setQuantity(item.quantity));
+    }else{
+      setQuantity(quantity + 1)
+    }
+  }
+
+
+  const quantityDecrement = () => {
+    const productId = props.match.params.productId;
+    if(cartItem.some(item => item.id === productId && item.quantity > 0)){
+      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity - 1 } : item,))
+      cartItem.map(item => setQuantity(item.quantity));
+    }else{
+      setQuantity(quantity - 1 )
+    }
+  }
+
+  console.log("cartItem",cartItem)
+                        
+  const handelImages = (color) => (e) => {
+    e.preventDefault();
+    Object.entries(productImages).forEach((data,key) =>{
+      if(data[0] === color){
+        setColorProductImages(data[1]);
+      }
+    });
+  }
+
+  // console.log("real",relatedProduct);
   return (
     <Layout
       title={product && product.name}
@@ -102,34 +188,22 @@ const Product = (props) => {
               <div className="col-lg-6 col-md-6 col-12">
                 <div className="container pt-4 pb-5 small_slider verticle_slider">
                   <div className="row carousel-indicators">
-                    <div className="item">
-                    <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                    </div>
-                    <div className="item">
-                    <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                    </div>
-                    <div className="item">
-                    <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                    </div>
-                    <div className="item">
-                    <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                    </div>
+                  {
+                      colorProductImages.length != 0 ?
+                      colorProductImages.map((ele , i ) => (
+                        <div className="item"  key={i}>
+                          <div className="product-img">
+                            <img
+                            src={ele}
+                            alt={product.name}
+                            className="d-block w-100"
+                            style={{ maxHeight: "100%", maxWidth: "100%" }}
+                          /> 
+                          </div>
+                        </div>
+                      )) 
+                      : null
+                    }
                   </div>
                 </div>
                 <div className="sell_slider horizontal_slider">
@@ -139,34 +213,23 @@ const Product = (props) => {
                     data-ride="carousel"
                   >
                     <div className="carousel-inner">
-                      <div className="carousel-item active">
-                        <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                      </div>
-                      <div className="carousel-item">
-                      <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                      </div>
-                      <div className="carousel-item">
-                      <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                      </div>
-                      <div className="carousel-item">
-                      <ShowImage
-                          item={product}
-                          url="product"
-                          className="d-block w-100"
-                        />
-                      </div>
+                    {
+                      colorProductImages.length != 0 ?
+                      colorProductImages.map((ele , i ) => (
+                        
+                        <div className={`carousel-item ${i==0 ? 'active' : ''}`} key={i}>
+                          <div className="product-img" >
+                            <img
+                            src={ele}
+                            alt={product.name}
+                            className="d-block w-100"
+                            style={{ maxHeight: "100%", maxWidth: "100%" }}
+                          /> 
+                          </div>
+                        </div>
+                      )) 
+                      : null
+                    }
                     </div>
                     <a
                       className="carousel-control-prev"
@@ -195,7 +258,7 @@ const Product = (props) => {
                   </div>
                   <div className="slider_btn">
                     <Link to="#">Add To Wishlist</Link>
-                    <Link className="black_btn" to="/cart">
+                    <Link className="black_btn" to="#" onClick={addToCart} >
                       Add To Cart
                     </Link>
                   </div>
@@ -251,30 +314,29 @@ const Product = (props) => {
                         </del>
                       </span>{" "} */}
                     </h3>
-                    <p>
+                    {/* <p>
                       Pellentesque habitant morbi tristique senectus et netus et
                       malesuada fames ac turpis egestas. Vestibulum tortor quam,
                       feugiat vitae, ultricies eget, tempor sit amet, ante.
                       Donec eu libero sit amet quam egestas semper. Aenean
                       ultricies mi vitae est. Mauris placerat eleifend leo.
-                    </p>
+                    </p> */}
                   </div>
                   <div className="color_code float_left">
                     <div className="fashion_color">
                       <label>Color :</label>
                       <ul className="color_change">
-                        <li className="black-co">
-                          <Link to="#"></Link>
-                        </li>
-                        <li className="grey-co">
-                          <Link to="#"></Link>
-                        </li>
-                        <li className="pink-co">
-                          <Link to="#"></Link>
-                        </li>
-                        <li className="pink-co">
-                          <Link to="#"></Link>
-                        </li>
+                      {
+                        color.length != 0 ?
+                        color.map((ele,i) => (
+                          <Link onClick={handelImages(ele)} style={{padding:"3px"}}>
+                          <li key={i} onClick={handelImages(ele)} style={{background: ele,  padding: "10px", borderRadius: "50%" }}>
+                              {/* <Link to="#" onClick={handelImages(ele)}></Link> */}
+                          </li>
+                          </Link>
+                        ))
+                        : null
+                      }
                       </ul>
                     </div>
                     <div className="fashion_category">
@@ -289,9 +351,9 @@ const Product = (props) => {
                   <div className="fashion_count float_left">
                     <div className="number_pluse fashion_number">
                       <div className="nice-number">
-                        <button type="button">-</button>
-                        <input type="number" defaultValue="1" />
-                        <button type="button">+</button>
+                        <button type="button" onClick={quantityDecrement}>-</button>
+                        <input type="number" value={quantity} />
+                        <button type="button" onClick={quantityIncrement}>+</button>
                       </div>
                     </div>
                     <div className="share_icon">
@@ -368,43 +430,15 @@ const Product = (props) => {
                           <div className="content_single_product">
                             <p>{product.description}</p>
                             <ul className="nots">
-                              <li>
+                              {/* <li>
                                 {" "}
                                 <span>
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
                                 Lorem Ipsum is simply dummy text.
-                              </li>
-                              <li>
-                                {" "}
-                                <span>
-                                  <i className="fas fa-check"></i>
-                                </span>{" "}
-                                It is a long established fact that a reader.
-                              </li>
-                              <li>
-                                {" "}
-                                <span>
-                                  <i className="fas fa-check"></i>
-                                </span>{" "}
-                                There are many variations of passages of Lorem.
-                              </li>
-                              <li>
-                                {" "}
-                                <span>
-                                  <i className="fas fa-check"></i>
-                                </span>{" "}
-                                The standard chunk of Lorem Ipsum.
-                              </li>
-                              <li>
-                                {" "}
-                                <span>
-                                  <i className="fas fa-check"></i>
-                                </span>{" "}
-                                Lorem Ipsum comes from sections.
-                              </li>
+                              </li> */}
                             </ul>
-                            <div className="row">
+                            {/* <div className="row">
                               <div className="col-md-4 col-12">
                                 <div className="img_box">
                                   <div className="product_icon">
@@ -435,7 +469,7 @@ const Product = (props) => {
                                   </div>
                                 </div>
                               </div>
-                            </div>
+                            </div> */}
                             <p>
                               Lorem ipsum dolor sit amet, consectetur adipiscing
                               elit, sed do this one eiusmod tempor incididunt ut
@@ -738,12 +772,17 @@ const Product = (props) => {
             <div key={i} className="col-lg-3 col-md-6 col-12">
                 <div className="product_box" style={{ width: "660%" }}>
                   <div className="img_sales">
-                  {relatedProduct !== "" ? 
-                  <ShowImage
-                          item={res}
-                          url="product"
-                          className="img-fluid"
-                        />
+                  {relatedProduct !== "" ?
+                  Object.values(res.images).map(( img , j ) =>(
+                    <div className="product-img" key={j}>
+                      {j === 0 ?
+                        <img src={img[1]} className="img-fluid" alt="My-image" style={{maxHeight : "100%" , maxWidth: "100%"}}></img>
+                        :null
+                      }
+                    </div>
+                  )) 
+                
+                 
                         : null}
                     <div className="overlay_sales">
                       <div className="upper">

@@ -7,8 +7,8 @@ import Search from './Search';
 import {SliderMainWrapper} from "./SliderMainWrapper"
 import Layout from './Layout';
 
+
 const Home = () => {
-    
     const [productsBySell, setProductsBySell] = useState([]);
     const [productsByArrival, setProductsByArrival] = useState([]);
     const [error, setError] = useState(false);
@@ -43,26 +43,11 @@ const Home = () => {
         <>
             <Layout>
                  <div className="row">
-                   
                 </div>  
                 {productsByArrival.length != '' ?
                 <NewProducts products={productsByArrival}/>   :
                 null   
                  }
-                {/* <div className="row">
-                    {productsBySell.map((product, i) => (
-                        <div key={i} className="col-4 mb-3">
-                            <Card product={product} />
-                        </div>
-                    ))}
-                </div>
-                    ----
-                     {productsByArrival.map((product, i) => (
-                        <div key={i} className="col-4 mb-3">
-                            <Card product={product} />
-                        </div>
-                    ))}
-                 */}
                 {productsByArrival.length != '' ?
                 <BestSellers products={productsByArrival}/>   :
                 null   

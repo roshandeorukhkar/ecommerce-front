@@ -1,15 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from './Layout';
-import { getCart } from './cartHelpers';
 import Card from './Card';
 import Checkout from './Checkout';
 import $ from 'jquery';
+import { getCart } from './cartHelpers';
+import { useRecoilState,useRecoilValue } from 'recoil';
+import { cartFetchData } from "../recoil/carts/cartHelpers";
+
 
 const Cart = () => {
-    const [items, setItems] = useState([]);
-    const [run, setRun] = useState(false);
+   const [items, setItems] = useState([]);
+   const [run, setRun] = useState(false);
+   // const { cartData } = 
+   //  const cartData = useRecoilValue(cartDetails);
+   const {
+      cartData ,
+      clength,
+      total
 
+  } = useRecoilValue(cartFetchData);
+
+   console.log("cart----",total)
     useEffect(() => {
         setItems(getCart());
     }, [run]);
@@ -145,13 +157,16 @@ const Cart = () => {
                         <div className="your_order float_left">
                            <h3>Your Order</h3>
                            <div className="order_details">
-                              <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
+                              {cartData.map((res,i) =>(
+                                 <p> {res.name} <span><i className="fas fa-rupee-sign fa-sm"></i>{res.price}</span> </p>
+                              ))}
+                              {/* <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
                               <p> Dress with belt × 2 <span><i className="fas fa-rupee-sign fa-sm"></i>774.00</span> </p>
                               <p> CART SUBTOTAL <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
-                              <p> SHIPPING <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p>
+                              <p> SHIPPING <span><i className="fas fa-rupee-sign fa-sm"></i>15,48.00</span> </p> */}
                            </div>
                            <div className="order_rate float_left">
-                              <h3>Order Total <span><i className="fas fa-rupee-sign"></i>1172.00</span> </h3>
+                              <h3>Order Total <span><i className="fas fa-rupee-sign"></i>{total}</span> </h3>
                            </div>
                            <a className="placeholder_btn" href="/checkout">Place Order</a>
                         </div>
