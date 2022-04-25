@@ -4,7 +4,7 @@ import Layout from './Layout';
 import Card from './Card';
 import Checkout from './Checkout';
 import $ from 'jquery';
-import { getCart } from './cartHelpers';
+import { getCart ,addItem } from './cartHelpers';
 import { useRecoilState,useRecoilValue } from 'recoil';
 import { cartFetchData } from "../recoil/carts/cartHelpers";
 
@@ -12,18 +12,14 @@ import { cartFetchData } from "../recoil/carts/cartHelpers";
 const Cart = () => {
    const [items, setItems] = useState([]);
    const [run, setRun] = useState(false);
-   // const { cartData } = 
-   //  const cartData = useRecoilValue(cartDetails);
    const {
       cartData ,
       clength,
       total
-
   } = useRecoilValue(cartFetchData);
 
-   console.log("cart----",total)
     useEffect(() => {
-        setItems(getCart());
+        setItems(cartData);
     }, [run]);
 
     const showItems = items => {

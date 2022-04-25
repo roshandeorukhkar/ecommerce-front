@@ -6,7 +6,7 @@ import {isAuthenticated } from "../common/utils"
 import Menu from "./Menu"
 import $ from 'jquery';
 import {  useRecoilValue } from "recoil";
-
+import { itemTotal } from "./cartHelpers";
 import { cartFetchData } from "../recoil/carts/cartHelpers";
 
 const isActive = (history, path) => {
@@ -98,7 +98,7 @@ export default function Header({ history }){
                         </div>
                         <div className="col-md-3 col-12">
                             <div className="cart_shop f-l">
-                                <Link to="#">
+                                <Link to="/cart">
                                 <i className="fas fa-shopping-cart fa-2x white"></i>
                                   <span className="cart-count" style={{background : "red" , borderRadius: "50%" , padding : "1px" }}> {clength} </span>  
                                 <span>Your Cart <small><i className="fas fa-rupee-sign fa-sm"></i>{total}</small> </span>

@@ -24,13 +24,11 @@ const Product = (props) => {
   let history = useHistory();
   const { cartData } = useRecoilValue(cartFetchData);
   const [quantity , setQuantity] = useState(1);
+  const [discountPrice , setDiscountPrice] = useState();
 
-  const getQuantityOfProduct = (productId) =>{
+  const getQuantityOfProduct = (productId) => {
      cartData.map(item => item.id == productId ? setQuantity(item.quantity) : 1 )
   }
-
-  console.log("quantity",quantity)
-  console.log("cartData",cartData)
 
   const loadSingleProduct = (productId) => {
     const colorArray = [];
@@ -53,6 +51,11 @@ const Product = (props) => {
         });
         setColor(colorArray);
         setCategory(data.category);
+        console.log("dicount",data.discount);
+        if(data.discount != ''){
+          const discountPrice_ = data.price - ( data.price * data.discount / 100 );
+          setDiscountPrice(discountPrice_); 
+        }
         // fetch related products
         listRelated(data._id).then((data) => {
           if (data.error) {
@@ -111,21 +114,24 @@ const Product = (props) => {
 
   const quantityIncrement = () => {
     const productId = props.match.params.productId;
-    if(cartItem.some(item => item.id === productId)){
-      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ))
-      cartItem.map(item => setQuantity(item.quantity));
-    }else{
+    if(cartItem.some(item => item.id === productId && quantity >= 1)){
+    setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ));
+    setQuantity(cartItem => cartData.map(item => item.id === productId ? item.quantity : null))
+    }else  if(quantity >= 1){
       setQuantity(quantity + 1)
     }
   }
 
 
   const quantityDecrement = () => {
+    console.log("click---")
     const productId = props.match.params.productId;
-    if(cartItem.some(item => item.id === productId && item.quantity > 0)){
+    if(cartItem.some(item => item.id === productId && quantity > 1)){
+      console.log("click---quantityDecrement")
       setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity - 1 } : item,))
-      cartItem.map(item => setQuantity(item.quantity));
-    }else{
+      setQuantity(cartItem => cartData.some(item => item.id === productId ? item.quantity : null))
+    }else if(quantity > 1){
+      console.log("click---quantityDecrement22")
       setQuantity(quantity - 1 )
     }
   }
@@ -305,15 +311,21 @@ const Product = (props) => {
                         <Link to="#">Add a review</Link>
                       </li>
                     </ul>
+                    {
+                      discountPrice ? 
                     <h3>
                       <i className="fas fa-rupee-sign fa-sm"></i>
-                      {product.price}{" "}
-                      {/* <span>
+                      {discountPrice}{" "}
+                      <span>
                         <del>
-                          <i className="fas fa-rupee-sign fa-sm"></i>379.00
+                          <i className="fas fa-rupee-sign fa-sm"></i>{product.price}
                         </del>
-                      </span>{" "} */}
+                      </span>{" "}
                     </h3>
+                    : <h3>
+                      <i className="fas fa-rupee-sign fa-sm"></i>
+                      {product.price}{" "}
+                    </h3> }
                     {/* <p>
                       Pellentesque habitant morbi tristique senectus et netus et
                       malesuada fames ac turpis egestas. Vestibulum tortor quam,
@@ -347,12 +359,20 @@ const Product = (props) => {
                         </span>
                       </p>
                     </div>
+                    <div className="fashion_category">
+                      <p>
+                        Brand:{" "}
+                        <span>
+                          <p>{product.brand}</p>
+                        </span>
+                      </p>
+                    </div>
                   </div>
                   <div className="fashion_count float_left">
                     <div className="number_pluse fashion_number">
                       <div className="nice-number">
                         <button type="button" onClick={quantityDecrement}>-</button>
-                        <input type="number" value={quantity} />
+                        <input type="text" value={quantity} />
                         <button type="button" onClick={quantityIncrement}>+</button>
                       </div>
                     </div>
@@ -430,13 +450,14 @@ const Product = (props) => {
                           <div className="content_single_product">
                             <p>{product.description}</p>
                             <ul className="nots">
-                              {/* <li>
+                              <h3>Specification</h3>
+                              <li>
                                 {" "}
                                 <span>
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
                                 Lorem Ipsum is simply dummy text.
-                              </li> */}
+                              </li>
                             </ul>
                             {/* <div className="row">
                               <div className="col-md-4 col-12">
@@ -470,13 +491,6 @@ const Product = (props) => {
                                 </div>
                               </div>
                             </div> */}
-                            <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit, sed do this one eiusmod tempor incididunt ut
-                              labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris
-                              nisi ut aliquip ex ea commodo consequat.
-                            </p>
                           </div>
                         </div>
                         <div

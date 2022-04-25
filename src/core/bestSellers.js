@@ -155,13 +155,14 @@ const BestSellers = (props) => {
                                 className="item"
                                 style={{ width: "99%" }}
                               >
-                           <ProductBox image={ele.images}
+                           <ProductBox 
+                            image={ele.images}
                             productId={ele._id}
                             name={ele.name}
                             price={ele.price}
                             category={ele.category.name}
+                            product={ele}
                             keyID={i} 
-                            q={ele}
                             />
                             </div>
                             ))

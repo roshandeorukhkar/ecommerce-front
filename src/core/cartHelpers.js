@@ -1,4 +1,5 @@
 export const addItem = (item = [], count = 0, next = f => f) => {
+    console.log("addItem",item);
     let cart = [];
     if (typeof window !== 'undefined') {
         if (localStorage.getItem('cart')) {

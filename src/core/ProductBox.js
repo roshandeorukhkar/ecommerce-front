@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { cartList } from "../recoil/carts/cartHelpers";
-import { generatedId } from "../uuid/genratedId";
 
 const ProductBox = ({ image, productId, name, category, price, product }) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
   const history = useHistory();
+  let discount_ = 0;
+  if( product.discount != "" ){
+    discount_ = price - (price * product.discount / 100 ) 
+  }
+
   const addToCart = (e) => {
     e.preventDefault();
     if (cartItem.some((item) => item.id === productId)) {
@@ -22,7 +26,7 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
         {
           id: productId,
           name: name,
-          price: price,
+          price: discount_!= 0 ? discount_ : price,
           quantity: 1,
           isComplete: false,
         },
@@ -92,14 +96,15 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
         </ul>
         <h4>
           <i className="fas fa-rupee-sign fa-sm"></i>
-          {price}{" "}
-          {/* <span>
+          {discount_ != 0 ? discount_ : price }{" "}
+          <span>
               {" "}
-              <del>
+              {discount_ != 0 ? <del>
                 <i className="fas fa-rupee-sign fa-sm"></i>
-                500.00
-              </del>{" "}
-            </span>{" "} */}
+               {price}
+              </del> : null }{" "}
+              {" "}
+            </span>{" "}
         </h4>
         <Link to="" onClick={addToCart} className="add_btn custom_btn">
           Add to Cart

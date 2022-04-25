@@ -18,7 +18,7 @@ const isActive = (history, path) => {
 
 const logout = () => {
     localStorage.removeItem('jwt');
-    <Redirect to="/" />
+    // <Redirect to="/" />
 };
 
 const Menu = ({ history }) => {

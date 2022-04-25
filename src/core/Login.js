@@ -59,17 +59,17 @@ const Login = (props) => {
   const autoTab = (e) => {
     const BACKSPACE_KEY = 8;
     const DELETE_KEY = 46;
-    let tabindex = $(e.target).attr("tabindex") || 0;
-    tabindex = Number(tabindex);
-    if (e.keyCode === BACKSPACE_KEY) {
-      tabindex -= 1;
-    } else if (e.keyCode !== DELETE_KEY) {
-      tabindex += 1;
-    }
-    const elem = $("[tabindex=" + tabindex + "]");
-    if (elem[0]) {
-      elem.focus();
-    }
+    // let tabindex = $(e.target).attr("tabindex") || 0;
+    // tabindex = Number(tabindex);
+    // if (e.keyCode === BACKSPACE_KEY) {
+    //   tabindex -= 1;
+    // } else if (e.keyCode !== DELETE_KEY) {
+    //   tabindex += 1;
+    // }
+    // const elem = $("[tabindex=" + tabindex + "]");
+    // if (elem[0]) {
+    //   elem.focus();
+    // }
   };
 
   //redirct of pages

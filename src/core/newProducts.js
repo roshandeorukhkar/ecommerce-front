@@ -99,7 +99,8 @@ const NewProducts = (props) => {
                         nav
                         responsive={state.responsive}
                       >
-                        {productList != ""
+                        {
+                          productList != ""
                           ? productList.map((ele, i) => (
                               <div
                                 key={i}
@@ -113,6 +114,7 @@ const NewProducts = (props) => {
                                   price={ele.price}
                                   category={ele.category.name}
                                   product={ele}
+                                  keyID={i}
                                 />
                               </div>
                             ))
