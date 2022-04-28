@@ -151,6 +151,8 @@ const Cart = () => {
           <YourOrder total={total} placeOrder='' location="/checkout"  />
         }
         {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location="/checkout"/> : null}
+        <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/>
+        
       </div>
     );
   };
