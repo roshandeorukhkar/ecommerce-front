@@ -31,7 +31,6 @@ const Menu = ({ history }) => {
     }
 
     const handleLoginModalClose = () => {
-        console.log("-------close");
         setShowLoginModal(false);
     }
     
@@ -51,7 +50,7 @@ const Menu = ({ history }) => {
                     <Link to="#" onClick={handleLoginModalShow} >
                             Login
                     </Link>
-                    {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow}/> : null}
+                    {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location="/user/dashboard" /> : null}
                     </li>
                 )}
                 {!isAuthenticated() && (
@@ -75,7 +74,7 @@ const Menu = ({ history }) => {
                     </Link>
                     <div className="cart_details" style={{ width: '160px' }}>
                         <ul>
-                            <li><Link to="#">My Profile</Link></li>
+                            <li><Link to="/user/dashboard">My Profile</Link></li>
                             <li><Link to="#">Wishlist</Link></li>
                             <li><Link to="#">Conatct Us</Link></li>
                             <li><Link to="#" onClick={logout}>Logout</Link></li>

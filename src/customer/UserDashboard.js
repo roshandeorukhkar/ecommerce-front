@@ -15,6 +15,7 @@ const Dashboard = () => {
 
     const init = (userId, token) => {
         getPurchaseHistory(userId, token).then(data => {
+            console.log("purches---",data);
             if (data.error) {
                 console.log(data.error);
             } else {

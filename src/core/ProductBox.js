@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
@@ -6,14 +6,22 @@ import { cartList } from "../recoil/carts/cartHelpers";
 
 const ProductBox = ({ image, productId, name, category, price, product }) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
+  const [productImage , setProductImage] = useState(image);
   const history = useHistory();
   let discount_ = 0;
   if( product.discount != "" ){
     discount_ = price - (price * product.discount / 100 ) 
   }
-
   const addToCart = (e) => {
     e.preventDefault();
+    var i = 0;
+    let image = "";
+    Object.values(productImage).map((img)=>{
+      if(i==0){
+        image = img[0];
+        i++;
+      }
+    })
     if (cartItem.some((item) => item.id === productId)) {
       setCartItem((cartItem) =>
         cartItem.map((item) =>
@@ -26,6 +34,9 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
         {
           id: productId,
           name: name,
+          image : image,
+          description : product.description,
+          category : category,
           price: discount_!= 0 ? discount_ : price,
           quantity: 1,
           isComplete: false,
@@ -41,6 +52,7 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
         {Object.values(image).map((res, i) =>
           i == 0 ? (
             <img
+              key={i}
               src={res[0]}
               className="img-fluid"
               style={{ maxHeight: "100%", maxWidth: "100%" }}

@@ -51,7 +51,6 @@ const Product = (props) => {
         });
         setColor(colorArray);
         setCategory(data.category);
-        console.log("dicount",data.discount);
         if(data.discount != ''){
           const discountPrice_ = data.price - ( data.price * data.discount / 100 );
           setDiscountPrice(discountPrice_); 
@@ -96,27 +95,66 @@ const Product = (props) => {
     e.preventDefault();
     const productId = props.match.params.productId;
    if(cartItem.some(item => item.id === productId)){
-     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item,))
+     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ))
    }else{
      setCartItem((oldCartItem) =>[
        ...oldCartItem,
        {
          id : product._id,
          name : product.name,
-         price : product.price,
-         quantity : quantity,
-         isComplete: false
+         description : product.description,
+         category : category.name,
+         image : colorProductImages['0'],
+         price : discountPrice!=''? discountPrice : product.price,
+         quantity : quantity
         }
       ]);
     }
    history.push('/cart');
   }
 
+  const addToCartSubProduct = productId => (e) =>{
+   e.preventDefault();
+   read(productId).then((data) => {
+     let discountPrice = '';
+     if(data.discount != ""){
+       discountPrice = data.price - (data.price * data.discount / 100);
+     }
+     var i = 0;
+     let img = ''; 
+     Object.values(data.images).map(res => {
+       if(i == 0){
+        img = res[0];
+        i++;
+       }
+     })
+      //Add to cart
+     if(cartItem.some(item => item.id == data._id)){
+     setCartItem(cartItem => cartItem.map(item => item.id === data._id ? {...item, quantity : item.quantity + 1 } : item ))
+     }else{
+     setCartItem((oldCartItem) => [
+       ...oldCartItem,
+       {
+         id: productId,
+         name: data.name,
+         description: data.description,
+         category: data.category.name,
+         image: img,
+         price: discountPrice != "" ? discountPrice : data.price,
+         quantity: 1,
+       },
+     ]);
+    }
+  })
+   history.push('/cart');
+}
+
+
   const quantityIncrement = () => {
     const productId = props.match.params.productId;
     if(cartItem.some(item => item.id === productId && quantity >= 1)){
     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ));
-    setQuantity(cartItem => cartData.map(item => item.id === productId ? item.quantity : null))
+    setQuantity(quantity + 1)
     }else  if(quantity >= 1){
       setQuantity(quantity + 1)
     }
@@ -124,18 +162,14 @@ const Product = (props) => {
 
 
   const quantityDecrement = () => {
-    console.log("click---")
     const productId = props.match.params.productId;
     if(cartItem.some(item => item.id === productId && quantity > 1)){
-      console.log("click---quantityDecrement")
-      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity - 1 } : item,))
-      setQuantity(cartItem => cartData.some(item => item.id === productId ? item.quantity : null))
+      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity - 1 } : item ))
+      setQuantity(quantity - 1)
     }else if(quantity > 1){
-      console.log("click---quantityDecrement22")
       setQuantity(quantity - 1 )
     }
   }
-
   console.log("cartItem",cartItem)
                         
   const handelImages = (color) => (e) => {
@@ -147,7 +181,9 @@ const Product = (props) => {
     });
   }
 
-  // console.log("real",relatedProduct);
+
+
+
   return (
     <Layout
       title={product && product.name}
@@ -790,12 +826,11 @@ const Product = (props) => {
                   Object.values(res.images).map(( img , j ) =>(
                     <div className="product-img" key={j}>
                       {j === 0 ?
-                        <img src={img[1]} className="img-fluid" alt="My-image" style={{maxHeight : "100%" , maxWidth: "100%"}}></img>
+                        <img src={img[0]} className="img-fluid" alt="My-image" style={{maxHeight : "100%" , maxWidth: "100%"}}></img>
                         :null
                       }
                     </div>
                   )) 
-                
                  
                         : null}
                     <div className="overlay_sales">
@@ -859,16 +894,19 @@ const Product = (props) => {
                       </li>
                     </ul>
                     <h4>
-                      <i className="fas fa-rupee-sign fa-sm"></i>{res.price}{" "}
-                      {/* <span>
+                      <i className="fas fa-rupee-sign fa-sm"></i>
+                      { res.discount!=''?  res.price- (res.price *res.discount / 100): res.price } {" "}
+                      <span>
                         {" "}
+                        {res.discount!='' ?
                         <del>
-                          <i className="fas fa-rupee-sign fa-sm"></i>379.00
-                        </del>{" "}
-                      </span>{" "} */}
+                          <i className="fas fa-rupee-sign fa-sm"></i>{res.price}
+                        </del>
+                        :null}{" "}
+                      </span>{" "}
                     </h4>
                     <div className="custom_btn">
-                      <Link to="/cart">
+                      <Link to="#" onClick={addToCartSubProduct(res._id)} >
                         <i className="fas fa-shopping-cart"></i>&nbsp;&nbsp;Add
                         To Cart
                       </Link>

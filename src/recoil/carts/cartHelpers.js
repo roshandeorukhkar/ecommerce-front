@@ -4,24 +4,9 @@ import { recoilPersist } from "recoil-persist";
 const localStorage = typeof window !==`undefined` ? window.localStorage : null;
 
 const { persistAtom  } = recoilPersist({
-  key : 'recoil-persist',
+  key : 'cart',
   storage : localStorage
 })
-
-
-
-// export const cartList =  atom({
-//     key: 'cartList',
-//     default:[],
-//     effects_UNSTABLE: [
-//       ({ onSet }) => {
-//         onSet((e) => {
-//           console.debug("Cart", e);
-//         });
-//       }
-//     ]
-//   });
-
 
 export const cartList =  atom({
   key: 'cartList',

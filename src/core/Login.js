@@ -81,7 +81,7 @@ const Login = (props) => {
 
   const redirectUser = () => {
     if (redirectToReferrer) {
-      return <Redirect to="/user/dashboard" />;
+      return <Redirect to={props.location} />
     }
     if (isAuthenticated()) {
       return <Redirect to="/" />;
@@ -94,7 +94,6 @@ const Login = (props) => {
     const max = 999999;
     const otp = Math.floor(min + Math.random() * (max - min));
     signin({ mobile, otp }).then((data) => {
-      console.log("------", data);
       if (data.status == false) {
         setValues({
           ...values,
