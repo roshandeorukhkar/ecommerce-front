@@ -6,6 +6,9 @@ import { isAuthenticated } from "../common/utils"
 import { itemTotal } from "./cartHelpers";
 import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
+import { useRecoilState , useRecoilValue  } from 'recoil';
+import { cartFetchData,cartList } from '../recoil/carts/cartHelpers';
+
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) {
@@ -16,12 +19,10 @@ const isActive = (history, path) => {
 };
 
 
-const logout = () => {
-    localStorage.removeItem('jwt');
-    // <Redirect to="/" />
-};
 
 const Menu = ({ history }) => {
+   const [cartItem, setCartItem] = useRecoilState(cartList);
+
     const { user, token } = isAuthenticated();
     const [showLoginModal , setShowLoginModal] = useState(false);
     const [showRegistrationModal , setShowRegistrationModal] = useState(false);
@@ -41,6 +42,13 @@ const Menu = ({ history }) => {
         setShowRegistrationModal(false)
     }
   
+    
+    const logout = () => {
+        // setCartItem([]);
+        localStorage.removeItem('jwt');
+        // <Redirect to="/" />
+    };
+
     return (
         <div>
             <ul className="login f-r">

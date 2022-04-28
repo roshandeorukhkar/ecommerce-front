@@ -93,6 +93,7 @@ const Product = (props) => {
 
   const addToCart = (e) =>{
     e.preventDefault();
+    console.log("discountPrice",discountPrice);
     const productId = props.match.params.productId;
    if(cartItem.some(item => item.id === productId)){
      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ))
@@ -105,7 +106,7 @@ const Product = (props) => {
          description : product.description,
          category : category.name,
          image : colorProductImages['0'],
-         price : discountPrice!=''? discountPrice : product.price,
+         price : discountPrice!=''&&discountPrice!=undefined? discountPrice : product.price,
          quantity : quantity
         }
       ]);
@@ -818,7 +819,7 @@ const Product = (props) => {
             >
             {  relatedProduct.length !== '0' ?
             relatedProduct.map((res , i) => (
-               
+            res.deletedAt ?    
             <div key={i} className="col-lg-3 col-md-6 col-12">
                 <div className="product_box" style={{ width: "660%" }}>
                   <div className="img_sales">
@@ -913,7 +914,7 @@ const Product = (props) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> : null
             )) : null
             }
             </OwlCarousel>

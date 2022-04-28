@@ -150,6 +150,7 @@ const BestSellers = (props) => {
                       >
                         {productList != ""
                           ? productList.map((ele , i) => (
+                            !ele.deletedAt ? 
                            <div
                                 key={i}
                                 className="item"
@@ -164,7 +165,7 @@ const BestSellers = (props) => {
                             product={ele}
                             keyID={i} 
                             />
-                            </div>
+                            </div> : null
                             ))
                           : null}
                       </OwlCarousel>

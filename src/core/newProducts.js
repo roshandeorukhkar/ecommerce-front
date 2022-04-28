@@ -102,6 +102,7 @@ const NewProducts = (props) => {
                         {
                           productList != ""
                           ? productList.map((ele, i) => (
+                            !ele.deletedAt ? 
                               <div
                                 key={i}
                                 className="item"
@@ -116,7 +117,7 @@ const NewProducts = (props) => {
                                   product={ele}
                                   keyID={i}
                                 />
-                              </div>
+                              </div> : null
                             ))
                           : null}
                       </OwlCarousel>

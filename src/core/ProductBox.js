@@ -37,7 +37,7 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
           image : image,
           description : product.description,
           category : category,
-          price: discount_!= 0 ? discount_ : price,
+          price: discount_!= 0&&!product.description ? discount_ : price,
           quantity: 1,
           isComplete: false,
         },
