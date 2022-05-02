@@ -128,9 +128,11 @@ return (
       </div>
       <div className="bz_product_grid_content_main_wrapper float_left">
          <div className="container custom_container">
+         <form onSubmit={handleSubmit(placeOrder)}>
             <div className="row">
+           
                <div className="col-lg-8 col-md-12 col-12">
-               <form onSubmit={handleSubmit(placeOrder)}>
+              
                   <div className="bz_checkout_main_wrapper float_left">
                      <div className="accordion" id="accordionExample">
                         <div className="card checkout_accord">
@@ -317,10 +319,12 @@ return (
                         </div>
                      </div>
                    </div>
-                  </form>
+              
                </div>
+            
                <YourOrder total={total} placeOrder={placeOrder}/>
             </div>
+               </form>
          </div>
       </div>
    </Layout>
