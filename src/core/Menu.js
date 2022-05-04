@@ -22,11 +22,10 @@ const isActive = (history, path) => {
 
 const Menu = ({ history }) => {
    const [cartItem, setCartItem] = useRecoilState(cartList);
-
+    const {clength} = useRecoilValue(cartFetchData);
     const { user, token } = isAuthenticated();
     const [showLoginModal , setShowLoginModal] = useState(false);
     const [showRegistrationModal , setShowRegistrationModal] = useState(false);
-
     const handleLoginModalShow = () =>{
         setShowLoginModal(true);
     }
@@ -44,7 +43,9 @@ const Menu = ({ history }) => {
   
     
     const logout = () => {
-        // setCartItem([]);
+        if(clength!= 0 && user){
+            setCartItem([]);
+        }
         localStorage.removeItem('jwt');
         // <Redirect to="/" />
     };

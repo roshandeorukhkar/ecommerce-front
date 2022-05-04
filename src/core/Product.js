@@ -33,6 +33,7 @@ const Product = (props) => {
   const loadSingleProduct = (productId) => {
     const colorArray = [];
     read(productId).then((data) => {
+      console.log("data----",data)
       if (data.error) {
         setError(data.error);
       } else {
@@ -51,7 +52,7 @@ const Product = (props) => {
         });
         setColor(colorArray);
         setCategory(data.category);
-        if(data.discount != ''){
+        if(data.discount != ''  && data.discount != ""){
           const discountPrice_ = data.price - ( data.price * data.discount / 100 );
           setDiscountPrice(discountPrice_); 
         }
@@ -96,7 +97,9 @@ const Product = (props) => {
     console.log("discountPrice",discountPrice);
     const productId = props.match.params.productId;
    if(cartItem.some(item => item.id === productId)){
-     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item, quantity : item.quantity + 1 } : item ))
+     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item
+      // , quantity : item.quantity + 1 
+    } : item ))
    }else{
      setCartItem((oldCartItem) =>[
        ...oldCartItem,
@@ -171,8 +174,6 @@ const Product = (props) => {
       setQuantity(quantity - 1 )
     }
   }
-  console.log("cartItem",cartItem)
-                        
   const handelImages = (color) => (e) => {
     e.preventDefault();
     Object.entries(productImages).forEach((data,key) =>{
@@ -182,8 +183,7 @@ const Product = (props) => {
     });
   }
 
-
-
+  console.log("specification",product.specification);
 
   return (
     <Layout
@@ -349,7 +349,7 @@ const Product = (props) => {
                       </li>
                     </ul>
                     {
-                      discountPrice ? 
+                      discountPrice != undefined ? 
                     <h3>
                       <i className="fas fa-rupee-sign fa-sm"></i>
                       {discountPrice}{" "}
@@ -488,13 +488,18 @@ const Product = (props) => {
                             <p>{product.description}</p>
                             <ul className="nots">
                               <h3>Specification</h3>
-                              <li>
+                              {product.specification != undefined ? 
+                                product.specification.map((spec , i)=>(
+
+                              <li key={spec._id}>
                                 {" "}
                                 <span>
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
-                                Lorem Ipsum is simply dummy text.
+                                {spec.manufacturerName}{" : "}{spec.specification_type}
                               </li>
+                                ) )
+                              : null}
                             </ul>
                             {/* <div className="row">
                               <div className="col-md-4 col-12">

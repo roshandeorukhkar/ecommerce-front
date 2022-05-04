@@ -9,11 +9,13 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
   const [productImage , setProductImage] = useState(image);
   const history = useHistory();
   let discount_ = 0;
-  if( product.discount != "" ){
+  if( product.discount != 0 && product.discount != "" ){
     discount_ = price - (price * product.discount / 100 ) 
   }
+
   const addToCart = (e) => {
     e.preventDefault();
+    console.log("data");
     var i = 0;
     let image = "";
     Object.values(productImage).map((img)=>{
@@ -37,7 +39,7 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
           image : image,
           description : product.description,
           category : category,
-          price: discount_!= 0&&!product.description ? discount_ : price,
+          price: discount_!= 0 ? discount_ : price,
           quantity: 1,
           isComplete: false,
         },
@@ -111,7 +113,7 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
           {discount_ != 0 ? discount_ : price }{" "}
           <span>
               {" "}
-              {discount_ != 0 ? <del>
+              { discount_ != 0 ? <del>
                 <i className="fas fa-rupee-sign fa-sm"></i>
                {price}
               </del> : null }{" "}

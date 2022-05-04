@@ -21,7 +21,6 @@ const Cart = () => {
   const [showLoginModal , setShowLoginModal] = useState(false);
   const [showRegistrationModal , setShowRegistrationModal] = useState(false);
   const { user ,token } = isAuthenticated();
-
    //login and registartion model hide/show
 
    const handleLoginModalShow = () =>{
@@ -147,11 +146,11 @@ const Cart = () => {
         </div>
         {
           !user?
-          <YourOrder total={total} placeOrder={handleLoginModalShow}/> :
+          <YourOrder total={total} placeOrder={handleLoginModalShow} location=""/> :
           <YourOrder total={total} placeOrder='' location="/checkout"  />
         }
         {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location="/checkout"/> : null}
-        <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/>
+        {showRegistrationModal===true? <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/> :null}
         
       </div>
     );

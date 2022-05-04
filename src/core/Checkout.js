@@ -11,6 +11,8 @@ import { useHistory } from 'react-router-dom';
 import { read } from '../customer/apiUser';
 
 const Checkout = ({ products, setRun = f => f, run = undefined }) => {
+   
+   
    const { register , handleSubmit , setValue ,reset, watch, formState : {errors} } = useForm();
    
    const history = useHistory();
