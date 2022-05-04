@@ -33,7 +33,6 @@ const Product = (props) => {
   const loadSingleProduct = (productId) => {
     const colorArray = [];
     read(productId).then((data) => {
-      console.log("data----",data)
       if (data.error) {
         setError(data.error);
       } else {
@@ -52,7 +51,8 @@ const Product = (props) => {
         });
         setColor(colorArray);
         setCategory(data.category);
-        if(data.discount != ''  && data.discount != ""){
+        console.log("mydata----",data.discount)
+        if(data.discount!='0'){
           const discountPrice_ = data.price - ( data.price * data.discount / 100 );
           setDiscountPrice(discountPrice_); 
         }
@@ -94,7 +94,6 @@ const Product = (props) => {
 
   const addToCart = (e) =>{
     e.preventDefault();
-    console.log("discountPrice",discountPrice);
     const productId = props.match.params.productId;
    if(cartItem.some(item => item.id === productId)){
      setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item
@@ -120,8 +119,9 @@ const Product = (props) => {
   const addToCartSubProduct = productId => (e) =>{
    e.preventDefault();
    read(productId).then((data) => {
+     console.log(data.discount)
      let discountPrice = '';
-     if(data.discount != ""){
+     if(data.discount != "" && data.discount!=undefined){
        discountPrice = data.price - (data.price * data.discount / 100);
      }
      var i = 0;
@@ -183,7 +183,7 @@ const Product = (props) => {
     });
   }
 
-  console.log("specification",product.specification);
+  console.log("specification",discountPrice);
 
   return (
     <Layout
@@ -501,38 +501,31 @@ const Product = (props) => {
                                 ) )
                               : null}
                             </ul>
-                            {/* <div className="row">
-                              <div className="col-md-4 col-12">
-                                <div className="img_box">
-                                  <div className="product_icon">
-                                    <Link to="#">
-                                      <i className="fa fa-star"></i>
-                                    </Link>
-                                    <p>Dedicated Service</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-md-4 col-12">
-                                <div className="img_box">
-                                  <div className="product_icon">
-                                    <Link to="#">
-                                      <i className="fa fa-share"></i>
-                                    </Link>
-                                    <p>Free Returns</p>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-md-4 col-12">
-                                <div className="img_box">
-                                  <div className="product_icon">
-                                    <Link to="#">
-                                      <i className="fa fa-share"></i>
-                                    </Link>
-                                    <p>International Shipping</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div> */}
+                            
+                          </div>
+                          <div className="content_single_product">
+                            <p>{product.description}</p>
+                            <ul className="nots">
+                              <h3>Attribute</h3>
+                              {product.attribute != undefined ? 
+                                product.attribute.map((att , i)=>(
+
+                              <li key={product.attributeData[i]._id}>
+                                {" "}
+                                <span>
+                                  <i className="fas fa-check"></i>
+                                </span>{" "}
+                                {product.attributeData[i].attributeName}{" : "}
+                                {
+                                  att.Values.map(attlabel =>(
+                                    attlabel.label + ","
+                                  ))
+                                }
+                              </li>
+                                ) )
+                              : null}
+                            </ul>
+                            
                           </div>
                         </div>
                         <div
