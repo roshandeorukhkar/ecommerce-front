@@ -516,9 +516,9 @@ const Product = (props) => {
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
                                 {product.attributeData[i].attributeName}{" : "}
-                                {
-                                  att.Values.map(attlabel =>(
-                                    attlabel.label + ","
+                                { 
+                                  att.Values.map((attlabel,i) =>(
+                                    attlabel.label +  ","
                                   ))
                                 }
                               </li>
