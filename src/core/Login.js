@@ -235,7 +235,7 @@ const Login = (props) => {
               type="text"
               autoComplete="new-password"
               className="form-control verify-otp-input"
-              tabIndex={0}
+              tabIndex={1}
               key={0}
               maxLength={1}
               onKeyUp={autoTab}
@@ -246,7 +246,7 @@ const Login = (props) => {
               type="text"
               autoComplete="new-password"
               className="form-control verify-otp-input"
-              tabIndex={1}
+              tabIndex={2}
               key={1}
               maxLength={1}
               onKeyUp={autoTab}
@@ -257,7 +257,7 @@ const Login = (props) => {
               type="text"
               autoComplete="new-password"
               className="form-control verify-otp-input"
-              tabIndex={2}
+              tabIndex={3}
               key={2}
               maxLength={1}
               onKeyUp={autoTab}
@@ -268,7 +268,7 @@ const Login = (props) => {
               type="text"
               autoComplete="new-password"
               className="form-control verify-otp-input"
-              tabIndex={3}
+              tabIndex={4}
               key={3}
               maxLength={1}
               onKeyUp={autoTab}
@@ -279,7 +279,7 @@ const Login = (props) => {
               type="text"
               autoComplete="new-password"
               className="form-control verify-otp-input"
-              tabIndex={4}
+              tabIndex={5}
               key={4}
               maxLength={1}
               onKeyUp={autoTab}
@@ -290,7 +290,7 @@ const Login = (props) => {
               type="text"
               autoComplete="new-password"
               className="form-control verify-otp-input"
-              tabIndex={5}
+              tabIndex={6}
               key={5}
               maxLength={1}
               onKeyUp={autoTab}
