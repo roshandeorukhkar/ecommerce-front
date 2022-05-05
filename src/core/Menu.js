@@ -79,7 +79,8 @@ const Menu = ({ history }) => {
             {isAuthenticated() && (
                 <div className="cart_shop f-r margin-t-15">
                     <Link to="#">
-                        <span>{user.firstName+" "+user.lastName} <i className="fas fa-angle-down"></i></span>
+                        {/* +" "+user.lastName */}
+                        <span>{user.firstName} <i className="fas fa-angle-down"></i></span>
                     </Link>
                     <div className="cart_details" style={{ width: '160px' }}>
                         <ul>

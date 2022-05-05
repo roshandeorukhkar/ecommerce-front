@@ -78,7 +78,7 @@ export default function Header({ history }){
         total
     } = useRecoilValue(cartFetchData);
     const iStyle = {
-        background: '#edf6ff',
+        // background: '#edf6ff',
         borderRadius: '50%',
         padding: '10px',
     }
@@ -100,7 +100,7 @@ export default function Header({ history }){
                             <div className="cart_shop f-l">
                                 <Link to="/cart">
                                 <i className="fas fa-shopping-cart fa-2x white"></i>
-                                  <span className="cart-count" style={{background : "red" , borderRadius: "50%" , padding : "1px" }}> {clength} </span>  
+                                  <span className="cart-count" style={{display: 'inline', background : "red" , padding : "0px 2px" }}> {clength} </span>  
                                 <span>Your Cart <small><i className="fas fa-rupee-sign fa-sm"></i>{total}</small> </span>
                                 </Link>
                                 {/* <div className="cart_details">
