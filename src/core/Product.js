@@ -51,8 +51,7 @@ const Product = (props) => {
           }
         });
         setColor(colorArray);
-        setCategory(data.category);
-        console.log("mydata----",data.discount)
+        setCategory(data.category[0]);
         if(data.discount!='0'){
           const discountPrice_ = data.price - ( data.price * data.discount / 100 );
           setDiscountPrice(discountPrice_); 
@@ -187,6 +186,8 @@ const Product = (props) => {
   const handelChangeImage = (e) =>{
     setCurrentImage(e.target.src);
   }
+
+  console.log("-----",product.attribute)
 
   return (
     <Layout
@@ -508,29 +509,30 @@ const Product = (props) => {
                             </ul>
                             
                           </div>
-                          {/* <div className="content_single_product">
+                          <div className="content_single_product">
                             <ul className="nots">
                               <h3>Attribute</h3>
-                              {product.attribute != undefined ? 
+                              {product.attribute && product.attribute.length ? 
                                 product.attribute.map((att , i)=>(
-
-                              <li key={product.attributeData[i]._id}>
+                                  
+                              <li>
                                 {" "}
                                 <span>
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
                                 {product.attributeData[i].attributeName}{" : "}
-                                { 
+                                 { 
+                                  att.Values && att.Values.length?
                                   att.Values.map((attlabel,i) =>(
                                     attlabel.label +  ","
-                                  ))
-                                }
+                                  )):null
+                                } 
                               </li>
                                 ) )
                               : null}
                             </ul>
                             
-                          </div> */}
+                          </div>
                         </div>
                         <div
                           className="tab-pane fade"
