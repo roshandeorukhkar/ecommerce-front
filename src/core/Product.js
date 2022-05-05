@@ -25,6 +25,7 @@ const Product = (props) => {
   const { cartData } = useRecoilValue(cartFetchData);
   const [quantity , setQuantity] = useState(1);
   const [discountPrice , setDiscountPrice] = useState();
+  const [currentImage , setCurrentImage] = useState(null);
 
   const getQuantityOfProduct = (productId) => {
      cartData.map(item => item.id == productId ? setQuantity(item.quantity) : 1 )
@@ -183,7 +184,9 @@ const Product = (props) => {
     });
   }
 
-  console.log("specification",discountPrice);
+  const handelChangeImage = (e) =>{
+    setCurrentImage(e.target.src);
+  }
 
   return (
     <Layout
@@ -241,6 +244,7 @@ const Product = (props) => {
                             alt={product.name}
                             className="d-block w-100"
                             style={{ maxHeight: "100%", maxWidth: "100%" }}
+                            onMouseEnter={handelChangeImage}
                           /> 
                           </div>
                         </div>
@@ -252,7 +256,7 @@ const Product = (props) => {
                 <div className="sell_slider horizontal_slider">
                   <div
                     id="carouselExampleIndicators"
-                    className="carousel slide"
+                    className={!currentImage ?"carousel slide":null}
                     data-ride="carousel"
                   >
                     <div className="carousel-inner">
@@ -262,8 +266,9 @@ const Product = (props) => {
                         
                         <div className={`carousel-item ${i==0 ? 'active' : ''}`} key={i}>
                           <div className="product-img" >
+                          
                             <img
-                            src={ele}
+                            src={!currentImage?ele:currentImage}
                             alt={product.name}
                             className="d-block w-100"
                             style={{ maxHeight: "100%", maxWidth: "100%" }}
@@ -504,7 +509,6 @@ const Product = (props) => {
                             
                           </div>
                           <div className="content_single_product">
-                            <p>{product.description}</p>
                             <ul className="nots">
                               <h3>Attribute</h3>
                               {product.attribute != undefined ? 
