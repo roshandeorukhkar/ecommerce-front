@@ -15,6 +15,7 @@ const NewProducts = (props) => {
     sliderList().then((data) => {
       setSliderImages(data.result);
     });
+    console.log("I m in new product")
   };
 
   const advertiseList = () => {
