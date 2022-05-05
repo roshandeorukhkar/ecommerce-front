@@ -96,7 +96,7 @@ export default function Header({ history }){
                         <div className="col-md-7 col-12">
                             <Search/>
                         </div>
-                        <div className="col-md-3 col-12">
+                        <div className="col-md-3 col-12" style={{padding: '0px' }}>
                             <div className="cart_shop f-l">
                                 <Link to="/cart">
                                 <i className="fas fa-shopping-cart fa-2x white"></i>
