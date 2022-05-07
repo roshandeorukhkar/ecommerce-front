@@ -125,7 +125,7 @@ return (
                   <li><a href="#"> <span><i className="fas fa-home"></i></span> </a></li>
                   <li className="active"><a href="#"> <span><i className="fas fa-angle-right"></i></span> Checkout</a></li>
                </ul>
-            </div>collapse
+            </div>
          </div>
       </div>
       <div className="bz_product_grid_content_main_wrapper float_left">
@@ -143,78 +143,83 @@ return (
                                  <button type="button" className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">Order Information <span><i className="fa fa-minus"></i></span> </button>
                               </h2>
                            </div>
-                           <div id="collapseTwo" className="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                           <div id="collapseTwo" className="collapse show bg-white" aria-labelledby="headingTwo" data-parent="#accordionExample">
                               <div className="card-body">
-                                 <div className="billing_info float_left">
-                                 <div className="table table-responsive">
-                                    <table className="table table-borderless">
-                                       <thead>
-                                       <tr>
-                                          <th className="text-right">Product</th>
-                                          <th></th>
-                                          <th>Quantity</th>
-                                          <th>Unit Price</th>
-                                          <th>Total</th>
-                                       </tr>
-                                       </thead>
-                                       <tbody>
-                                       {cartData.map((product, i) => (
-                                          <tr key={i}>
-                                             <td>
-                                             <Link to="#" onClick={removeCartItem(product.id)}>
-                                                x
-                                             </Link>{" "}
-                                             <img
-                                                className="img-fluid"
-                                                src={product.image}
-                                                alt={product.name}
-                                             />
-                                             </td>
-                                             <td>{product.name}</td>
-                                             <td>
-                                             <div className="number_pluse">
-                                                <div className="nice-number">
-                                                   <button
-                                                   type="button"
-                                                   onClick={quantityDecrement(product.id)}
-                                                   >
-                                                   -
-                                                   </button>
-                                                   <input type="number" defaultValue={product.quantity} />
-                                                   <button
-                                                   type="button"
-                                                   onClick={quantityIncrement(product.id)}
-                                                   >
-                                                   +
-                                                   </button>
-                                                </div>
-                                             </div>
-                                             </td>
-                                             <td>
-                                             <i className="fas fa-rupee-sign fa-sm"></i>
-                                             {product.price} x {product.quantity}
-                                             </td>
-                                             <td>
-                                             <i className="fas fa-rupee-sign fa-sm"></i>
-                                             {product.price * product.quantity}
-                                             </td>
+                                 <div className="bz_cart_main_wrapper billing_info float_left">
+                                 <div className="cart_tbl">   
+                                    <div className="table table-responsive">
+                                       <table className="table table-borderless">
+                                          <thead>
+                                          <tr>
+                                             <th style={{width: '10%'}}>Product</th>
+                                             <th></th>
+                                             <th>Quantity</th>
+                                             <th style={{width: '15%'}}>Unit Price</th>
+                                             <th style={{width: '15%'}}>Total</th>
+                                             <th></th>
                                           </tr>
-                                       ))}
-                                       </tbody>
-                                    </table>
+                                          </thead>
+                                          <tbody>
+                                          {cartData.map((product, i) => (
+                                             <tr key={i}>
+                                                <td>
+                                                <img
+                                                   className="img-fluid"
+                                                   src={product.image}
+                                                   alt={product.name}
+                                                />
+                                                </td>
+                                                <td>{product.name}</td>
+                                                <td>
+                                                <div className="number_pluse">
+                                                   <div className="nice-number">
+                                                      <button
+                                                      type="button"
+                                                      onClick={quantityDecrement(product.id)}
+                                                      >
+                                                      -
+                                                      </button>
+                                                      <input type="number" defaultValue={product.quantity} />
+                                                      <button
+                                                      type="button"
+                                                      onClick={quantityIncrement(product.id)}
+                                                      >
+                                                      +
+                                                      </button>
+                                                   </div>
+                                                </div>
+                                                </td>
+                                                <td>
+                                                <i className="fas fa-rupee-sign fa-sm"></i>
+                                                {product.price.toFixed(2)}
+                                                </td>
+                                                <td>
+                                                <i className="fas fa-rupee-sign fa-sm"></i>
+                                                {(product.price * product.quantity).toFixed(2)}
+                                                </td>
+                                                <td class="text-center">
+                                                   <Link style={{fontSize: '12px', padding: '0 5px'}} to="#" title="Remove Item" className="btn btn-danger btn-sm"  onClick={removeCartItem(product.id)}>
+                                                      Remove
+                                                   </Link>{" "}
+                                                </td>
+                                             </tr>
+                                          ))}
+                                          </tbody>
+                                       </table>
+                                       </div>
                                     </div>
                                     <Link className="submit_btn" to="#">Continue</Link>
                                  </div>
                               </div>
                            </div>
                         </div>
-                        <div className="card checkout_accord">
+                        <div className="card checkout_accord" style={{border:'none'}}>
                            <div className="card-header" id="headingThree">
                               <h2 className="mb-0">
                                  <button type="button" className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"> Shipping Information <span><i className="fa fa-plus"></i></span> </button>                     
                               </h2>
                            </div>
-                           <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                           <div id="collapseThree" className="collapse bg-white" aria-labelledby="headingThree" data-parent="#accordionExample">
                               <div className="card-body">
                                  {/* <form onSubmit={handleSubmit(clickSubmit)}> */}
                                     <div className="billing_info float_left">
@@ -284,7 +289,7 @@ return (
                                  <button type="button" className="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"> Payment Method <span><i className="fa fa-plus"></i></span> </button>                     
                               </h2>
                            </div>
-                           <div id="collapseFour" className="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                           <div id="collapseFour" className="collapse bg-white" aria-labelledby="headingFour" data-parent="#accordionExample">
                               <div className="card-body">
                                  <div className="payment_method float_left">
                                     {/* <form> */}

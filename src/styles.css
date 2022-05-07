@@ -115,3 +115,33 @@
         background-position: 0% 50%;
     }
 }
+
+.woocommerce-loop-product__title {
+    line-height: 1em;
+    max-height: 2em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0;
+    overflow: hidden !important;
+    margin: 0px 5px;
+}
+
+.product_content {
+    min-height: 255px;
+}
+
+.bz_product_grid_content_main_wrapper .bz_cart_main_wrapper .cart_tbl .table thead tr th {
+    text-transform: none !important;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.checkout_accord {
+    border: none;
+}
+.form-control {
+    border: 1px solid #ced4da !important;
+}

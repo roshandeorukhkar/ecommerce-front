@@ -83,9 +83,54 @@ const Profile = ({ match }) => {
 
     return (
         <Layout title="Profile" description="Update your profile" className="container-fluid">
-            <h2 className="mb-4">Profile update</h2>
-            {profileUpdate(name, email, password)}
-            {redirectUser(success)}
+            
+            <div className="bz_inner_page_navigation float_left">
+                <div className="container custom_container">
+                <div className="inner_menu float_left">
+                    <ul>
+                    <li>
+                        <a href="#">
+                        {" "}
+                        <span>
+                            <i className="fas fa-home"></i>
+                        </span>{" "}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/user/dashboard">
+                        {" "}
+                        <span>
+                            <i className="fas fa-angle-right"></i>
+                        </span>{" "}
+                        My Profile
+                        </a>
+                    </li>
+                    <li className="active">
+                        <a href="#">
+                        {" "}
+                        <span>
+                            <i className="fas fa-angle-right"></i>
+                        </span>{" "}
+                        Profile Update
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <div className="bz_product_grid_content_main_wrapper float_left">
+                <div className="container custom_container">
+                    <div className="row">
+                        <div className="col-12">
+                            <h2 className="mb-4">Personal Information</h2>    
+                            {profileUpdate(name, email, password)}
+                            {redirectUser(success)}
+                        </div>
+                    </div>
+                </div>
+            </div>  
+
         </Layout>
     );
 };

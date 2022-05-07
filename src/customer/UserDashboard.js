@@ -67,12 +67,13 @@ const Dashboard = () => {
         return (
             <div className="card mb-5">
                 <h3 className="card-header">Purchase history</h3>
+                
+
                 <ul className="list-group">
                     <li className="list-group-item">
                         {history.map((h, i) => {
                             return (
                                 <div>
-                                    <hr />
                                     {h.products.map((p, i) => {
                                         return (
                                             <div key={i}>
@@ -89,6 +90,8 @@ const Dashboard = () => {
                                             </div>
                                         );
                                     })}
+                                    <hr />
+                                    
                                 </div>
                             );
                         })}
@@ -104,13 +107,44 @@ const Dashboard = () => {
             description={`G'day ${firstName+' '+lastName}!`}
             className="container-fluid"
         >
-            <div className="row">
-                <div className="col-3">{userLinks()}</div>
-                <div className="col-9">
-                    {userInfo()}
-                    {purchaseHistory(history)}
+            <div className="bz_inner_page_navigation float_left">
+                <div className="container custom_container">
+                <div className="inner_menu float_left">
+                    <ul>
+                    <li>
+                        <a href="#">
+                        {" "}
+                        <span>
+                            <i className="fas fa-home"></i>
+                        </span>{" "}
+                        </a>
+                    </li>
+                    <li className="active">
+                        <a href="#">
+                        {" "}
+                        <span>
+                            <i className="fas fa-angle-right"></i>
+                        </span>{" "}
+                        My Profile
+                        </a>
+                    </li>
+                    </ul>
+                </div>
                 </div>
             </div>
+
+            <div className="bz_product_grid_content_main_wrapper float_left">
+                <div className="container custom_container">
+                    <div className="row">
+                        <div className="col-3">{userLinks()}</div>
+                        <div className="col-9">
+                            {userInfo()}
+                            {purchaseHistory(history)}
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            
         </Layout>
     );
 };

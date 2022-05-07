@@ -5,7 +5,7 @@ const YourOrder = (props) => {
     console.log("---",props);
   return (
     <div className="col-lg-4 col-md-12 col-12">
-      <div className="your_order float_left">
+      <div className="your_order float_left bg-white">
         <h3>Your Order</h3>
         <div className="order_details">
           <p>
@@ -25,7 +25,7 @@ const YourOrder = (props) => {
           </p>
           <p>
             {" "}
-            SHIPPING{" "}
+            Shipping{" "}
             <span>
               <i className="fas fa-rupee-sign fa-sm"></i>0
             </span>{" "}

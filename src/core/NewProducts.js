@@ -132,6 +132,7 @@ const NewProducts = (props) => {
         {/* <!-- The Modal --> */}
         <ProductDetailsModal />
       </div>
+      {advertisImage.length > 0 &&
       <div className="bz_section_innerbox_main_wrapper float_left">
         <div className="container custom_container">
           <div className="row">
@@ -158,6 +159,7 @@ const NewProducts = (props) => {
           </div>
         </div>
       </div>
+      }
       <div className="bz_section_style_main_wrapper float_left">
         <div className="container custom_container">
           <div className="row">
