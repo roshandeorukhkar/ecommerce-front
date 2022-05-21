@@ -56,15 +56,23 @@ const Login = (props) => {
   const backRegistration = () => {
     setLoginDisplay(false);
   };
-  const autoTab = (d) => (e) => {
-    const BACKSPACE_KEY = 8;
-    const DELETE_KEY = 46;
-    if (e.keyCode === BACKSPACE_KEY) {
-      //
-    } else if (e.keyCode == DELETE_KEY) {
-      //
+  const autoTab = (c) => (e) => {
+    var d = c;
+    if(e.keyCode === 37){ 
+      // left arrow
     } else {
-      document.getElementById(d).focus();
+      const BACKSPACE_KEY = 8;
+      const DELETE_KEY = 46;
+      if (e.keyCode === BACKSPACE_KEY) {
+        if(d=='otp_verify'){ d = 'otp_7'; } if(d=='otp_2') { d = 'otp_3'; }
+        d = 'otp_'+(d.split('_')[1]-2);
+        document.getElementById(d).focus();
+      } else if (e.keyCode === DELETE_KEY) {
+        //
+      } else {
+        if(d=='otp_verify') { d = 'otp_6'; }
+        document.getElementById(d).focus();
+      }
     }
   };
 
@@ -319,6 +327,7 @@ const Login = (props) => {
               key={5}
               maxLength={1}
               id="otp_6"
+              onKeyUp={autoTab('otp_verify')}
               value={sixthNumber}
               onChange={handleChange("sixthNumber")}
             />
