@@ -56,24 +56,19 @@ const Login = (props) => {
   const backRegistration = () => {
     setLoginDisplay(false);
   };
-  const autoTab = (e) => {
+  const autoTab = (d) => (e) => {
     const BACKSPACE_KEY = 8;
     const DELETE_KEY = 46;
-    // let tabindex = $(e.target).attr("tabindex") || 0;
-    // tabindex = Number(tabindex);
-    // if (e.keyCode === BACKSPACE_KEY) {
-    //   tabindex -= 1;
-    // } else if (e.keyCode !== DELETE_KEY) {
-    //   tabindex += 1;
-    // }
-    // const elem = $("[tabindex=" + tabindex + "]");
-    // if (elem[0]) {
-    //   elem.focus();
-    // }
+    if (e.keyCode === BACKSPACE_KEY) {
+      //
+    } else if (e.keyCode == DELETE_KEY) {
+      //
+    } else {
+      document.getElementById(d).focus();
+    }
   };
 
   //redirct of pages
-
   const handleChange = (name) => (event) => {
     setValues({ ...values, [name]: event.target.value });
     setOtpValues({ ...otpValues, [name]: event.target.value });
@@ -101,14 +96,27 @@ const Login = (props) => {
         });
       } else {
         console.log("loginData...", data.otpData.otp);
+        setOtpValues({
+          ...otpValues,
+          firstNumber: "",
+          secondNumber: "",
+          thirdNumber: "",
+          fourthNumber: "",
+          fifthNumber: "",
+          sixthNumber: "",
+          otpError: "",
+          loading: false,
+          redirectToReferrer: false,
+          mobileNo: data.otpData.mobileNo,
+        });
         setValues({
           mobileError: "",
           mobile: "",
         });
-        setOtpValues({
-          ...otpValues,
-          mobileNo: data.otpData.mobileNo,
-        });
+        // setOtpValues({
+        //   ...otpValues,
+        //   mobileNo: data.otpData.mobileNo,
+        // });
         setLoginDisplay(true);
       }
     });
@@ -120,6 +128,18 @@ const Login = (props) => {
     const max = 999999;
     const otp = Math.floor(min + Math.random() * (max - min));
     getResendOTP({ mobile: mobileNo, otp }).then((data) => {
+      setOtpValues({
+        ...otpValues,
+        firstNumber: "",
+        secondNumber: "",
+        thirdNumber: "",
+        fourthNumber: "",
+        fifthNumber: "",
+        sixthNumber: "",
+        otpError: "",
+        loading: false,
+        redirectToReferrer: false,
+      });
       console.log("-----", data.otpData.otp);
     });
   };
@@ -238,7 +258,8 @@ const Login = (props) => {
               tabIndex={1}
               key={0}
               maxLength={1}
-              onKeyUp={autoTab}
+              id="otp_1"
+              onKeyUp={autoTab('otp_2')}
               value={firstNumber}
               onChange={handleChange("firstNumber")}
             />
@@ -249,7 +270,8 @@ const Login = (props) => {
               tabIndex={2}
               key={1}
               maxLength={1}
-              onKeyUp={autoTab}
+              id="otp_2"
+              onKeyUp={autoTab('otp_3')}
               value={secondNumber}
               onChange={handleChange("secondNumber")}
             />
@@ -260,7 +282,8 @@ const Login = (props) => {
               tabIndex={3}
               key={2}
               maxLength={1}
-              onKeyUp={autoTab}
+              id="otp_3"
+              onKeyUp={autoTab('otp_4')}
               value={thirdNumber}
               onChange={handleChange("thirdNumber")}
             />
@@ -271,7 +294,8 @@ const Login = (props) => {
               tabIndex={4}
               key={3}
               maxLength={1}
-              onKeyUp={autoTab}
+              id="otp_4"
+              onKeyUp={autoTab('otp_5')}
               value={fourthNumber}
               onChange={handleChange("fourthNumber")}
             />
@@ -282,7 +306,8 @@ const Login = (props) => {
               tabIndex={5}
               key={4}
               maxLength={1}
-              onKeyUp={autoTab}
+              id="otp_5"
+              onKeyUp={autoTab('otp_6')}
               value={fifthNumber}
               onChange={handleChange("fifthNumber")}
             />
@@ -293,7 +318,7 @@ const Login = (props) => {
               tabIndex={6}
               key={5}
               maxLength={1}
-              onKeyUp={autoTab}
+              id="otp_6"
               value={sixthNumber}
               onChange={handleChange("sixthNumber")}
             />
@@ -302,7 +327,7 @@ const Login = (props) => {
         </div>
         <input type="hidden" name="formName" value={formName} />
         <input type="hidden" name="mobileNo" value={mobileNo} />
-        <button className="submit_btn ucfirst" onClick={verifyOTPLogin}>
+        <button className="submit_btn ucfirst" id="otp_verify" onClick={verifyOTPLogin}>
           {" "}
           Verify{" "}
         </button>

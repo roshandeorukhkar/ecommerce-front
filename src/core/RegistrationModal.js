@@ -112,6 +112,18 @@ const handleLoginModalClose = () => {
     const otp = Math.floor(min + Math.random() * (max - min));
 
     getResendOTP({ mobile: otpValues.mobileNo, otp }).then((data) => {
+      setOtpValues({
+        ...otpValues,
+        firstNumber: "",
+        secondNumber: "",
+        thirdNumber: "",
+        fourthNumber: "",
+        fifthNumber: "",
+        sixthNumber: "",
+        otpError: "",
+        loading: false,
+        redirectToReferrer: false,
+      });
       console.log("-----", data.otpData.otp);
     });
   };
@@ -160,20 +172,16 @@ const handleLoginModalClose = () => {
     );
   };
 
-  const autoTab = (e) => {
+  const autoTab = (d) => (e) => {
     const BACKSPACE_KEY = 8;
     const DELETE_KEY = 46;
-    // let tabindex = $(e.target).attr("tabindex") || 0;
-    // tabindex = Number(tabindex);
-    // if (e.keyCode === BACKSPACE_KEY) {
-    //   tabindex -= 1;
-    // } else if (e.keyCode !== DELETE_KEY) {
-    //   tabindex += 1;
-    // }
-    // const elem = $("[tabindex=" + tabindex + "]");
-    // if (elem[0]) {
-    //   elem.focus();
-    // }
+    if (e.keyCode === BACKSPACE_KEY) {
+      //
+    } else if (e.keyCode == DELETE_KEY) {
+      //
+    } else {
+      document.getElementById(d).focus();
+    }
   };
 
   const signUpForm = () => (
@@ -269,31 +277,34 @@ const handleLoginModalClose = () => {
             <input
               type="text"
               maxLength="1"
-              tabIndex={0}
+              tabIndex={1}
               key={0}
-              onKeyUp={autoTab}
+              id="otp_1"
+              onKeyUp={autoTab('otp_2')}
               value={otpValues.firstNumber}
               onChange={handleChange("firstNumber")}
-              autoComplete="new-password"
-              className="form-control verify-otp-input"
-            />
-            <input
-              type="text"
-              maxLength="1"
-              tabIndex={1}
-              key={1}
-              onKeyUp={autoTab}
-              value={otpValues.secondNumber}
-              onChange={handleChange("secondNumber")}
-              autoComplete="new-password"
+              autoComplete="off"
               className="form-control verify-otp-input"
             />
             <input
               type="text"
               maxLength="1"
               tabIndex={2}
+              key={1}
+              id="otp_2"
+              onKeyUp={autoTab('otp_3')}
+              value={otpValues.secondNumber}
+              onChange={handleChange("secondNumber")}
+              autoComplete="off"
+              className="form-control verify-otp-input"
+            />
+            <input
+              type="text"
+              maxLength="1"
+              tabIndex={3}
               key={2}
-              onKeyUp={autoTab}
+              id="otp_3"
+              onKeyUp={autoTab('otp_4')}
               value={otpValues.thirdNumber}
               onChange={handleChange("thirdNumber")}
               autoComplete="new-password"
@@ -302,9 +313,10 @@ const handleLoginModalClose = () => {
             <input
               type="text"
               maxLength="1"
-              tabIndex={3}
+              tabIndex={4}
               key={3}
-              onKeyUp={autoTab}
+              id="otp_4"
+              onKeyUp={autoTab('otp_5')}
               value={otpValues.fourthNumber}
               onChange={handleChange("fourthNumber")}
               autoComplete="new-password"
@@ -313,9 +325,10 @@ const handleLoginModalClose = () => {
             <input
               type="text"
               maxLength="1"
-              tabIndex={4}
+              tabIndex={5}
               key={4}
-              onKeyUp={autoTab}
+              id="otp_5"
+              onKeyUp={autoTab('otp_6')}
               value={otpValues.fifthNumber}
               onChange={handleChange("fifthNumber")}
               autoComplete="new-password"
@@ -324,9 +337,10 @@ const handleLoginModalClose = () => {
             <input
               type="text"
               maxLength="1"
-              tabIndex={5}
+              tabIndex={6}
               key={5}
-              onKeyUp={autoTab}
+              id="otp_6"
+              onKeyUp={autoTab('otp_verify_signup')}
               value={otpValues.sixthNumber}
               onChange={handleChange("sixthNumber")}
               autoComplete="new-password"
@@ -337,7 +351,7 @@ const handleLoginModalClose = () => {
         </div>
         <input type="hidden" name="formName" value={otpValues.formName} />
         <input type="hidden" name="mobileNo" value={otpValues.mobileNo} />
-        <button className="signup_btn ucfirst" onClick={verifyOTPRegister}>
+        <button className="signup_btn ucfirst" id="otp_verify_signup" onClick={verifyOTPRegister}>
           Signup
         </button>
         <br />

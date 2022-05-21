@@ -78,9 +78,9 @@ const Menu = ({ history }) => {
             </ul>
             {isAuthenticated() && (
                 <div className="cart_shop f-r margin-t-15">
-                    <Link to="#">
+                    <Link to="#" style={{'textTransform':'capitalize'}}>
                         {/* +" "+user.lastName */}
-                        <span>{user.firstName} <i className="fas fa-angle-down"></i></span>
+                        <span>{user.firstName} &nbsp;<i className="fas fa-angle-down"></i></span>
                     </Link>
                     <div className="cart_details" style={{ width: '160px' }}>
                         <ul>
