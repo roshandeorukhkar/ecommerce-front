@@ -1,8 +1,13 @@
 import React, { memo } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect, useHistory  } from "react-router-dom";
 
 const YourOrder = (props) => {
-    console.log("---",props);
+   // console.log("---",props);
+  let history = useHistory();
+  if(props.total == '0') {
+    history.push("/");
+  }
+
   return (
     <div className="col-lg-4 col-md-12 col-12">
       <div className="your_order float_left bg-white">
@@ -40,8 +45,10 @@ const YourOrder = (props) => {
             </span>{" "}
           </h3>
         </div>
+        {/* <Link className="placeholder_btn" to="#" onClick={props.placeOrder}>  Place Order2</Link> */}
+            
         {props.placeOrder!='' ? 
-            <Link className="placeholder_btn" to="#" onClick={props.placeOrder}>  Place Order </Link>
+            <button className="placeholder_btn" to="#">Place Order</button>
             :
             <Link className="placeholder_btn" to={props.location} >
              Place Order

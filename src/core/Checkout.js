@@ -26,7 +26,7 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
    const [quantity, setQuantity] = useState(1);
    const { user ,token } = isAuthenticated();
    const userId = user._id;
-
+  
    const [cartItem, setCartItem] = useRecoilState(cartList);
    const [data, setData] = useState({
         loading: false,
@@ -100,7 +100,18 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
          address: data.address+','+data.city+','+data.country+' '+data.pinCode,
          user : data
      };
-     createOrder(userId, token, createOrderData)
+      //   console.log(data.address)
+      //   console.log(userId)
+      //   console.log(token)
+      //   console.log(createOrderData)
+
+     if(data.address === undefined){
+        //alert('Please check shipping information');
+     }
+    
+      if(total!=0 && data.address !== undefined)
+      {
+         createOrder(userId, token, createOrderData)
          .then(response => {
             if(response.error){
                alert("something is wrong")
@@ -109,8 +120,13 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
                setCartItem([]);
                history.push('/');
             }
-         })
-    }
+         }) 
+      }
+   }
+
+   const continueNext = (n) => {
+      //document.getElementById(n).click();
+   }
 
 return (
    <Layout
@@ -208,7 +224,7 @@ return (
                                        </table>
                                        </div>
                                     </div>
-                                    <Link className="submit_btn" to="#">Continue</Link>
+                                    <Link className="submit_btn" onclick={continueNext('headingThree')} to="#">Continue</Link>
                                  </div>
                               </div>
                            </div>
@@ -277,7 +293,7 @@ return (
                                              {errors.address && <span className='error'>Address is required</span>}
                                           </div>
                                        </div>
-                                       <button  className="submit_btn" >Continue</button>
+                                       <button onclick={continueNext('headingFour')} className="submit_btn" >Continue</button>
                                     </div>
                               </div>
                            </div>

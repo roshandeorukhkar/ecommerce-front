@@ -57,7 +57,7 @@ const Cart = () => {
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
-      );
+      ); 
       setQuantity(quantity + 1);
     }
     setRun(!run);
