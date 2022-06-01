@@ -514,7 +514,7 @@ const Product = (props) => {
                             </ul>
                             
                           </div>
-                          <div className="content_single_product">
+                          {/* <div className="content_single_product">
                             <ul className="nots">
                               <h3>Attribute</h3>
                               {product.attribute && product.attribute.length ? 
@@ -537,7 +537,7 @@ const Product = (props) => {
                               : null}
                             </ul>
                             
-                          </div>
+                          </div> */}
                         </div>
                         <div
                           className="tab-pane fade"
