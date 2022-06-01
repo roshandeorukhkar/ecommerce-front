@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { isAuthenticated } from '../common/utils';
 import Layout from "./Layout";
-import { read, listRelated } from "./apiCore";
+import { read, listRelated, addProdcutToWishlist } from "./apiCore";
 import Card from "./Card";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -9,6 +10,8 @@ import { Link } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { cartList ,cartFetchData } from "../recoil/carts/cartHelpers";
 import { useHistory } from "react-router-dom";
+const { user ,token } = isAuthenticated();
+
 
 
 const Product = (props) => {
@@ -25,6 +28,8 @@ const Product = (props) => {
   const { cartData } = useRecoilValue(cartFetchData);
   const [quantity , setQuantity] = useState(1);
   const [currentImage , setCurrentImage] = useState(null);
+  const { user ,token } = isAuthenticated();
+  const userId = (user !== undefined)?user._id:'0';
 
   const getQuantityOfProduct = (productId) => {
      cartData.map(item => item.id == productId ? setQuantity(item.quantity) : 1 )
@@ -109,6 +114,27 @@ const Product = (props) => {
       ]);
     }
    history.push('/cart');
+  }
+
+  const addToWishlist = (e) =>{
+    e.preventDefault();
+    const productData = {
+      product : props.match.params.productId,
+      user: userId
+    };
+    //const productId = props.match.params.productId;
+    //return false
+    addProdcutToWishlist(userId,token,productData).then(data => {
+        if (data.status == false) {
+          alert('Error occured while adding product into your wishlist, Please try again.')
+        } 
+        else 
+        {
+          alert('Product has been added successfully into your wishlist.')
+          history.push('/');
+        }
+    });
+    //history.push('/cart');
   }
 
   const addToCartSubProduct = productId => (e) =>{
@@ -296,7 +322,7 @@ const Product = (props) => {
                     </a>
                   </div>
                   <div className="slider_btn">
-                    <Link to="#">Add To Wishlist</Link>
+                    <Link to="#" onClick={addToWishlist} >Add To Wishlist</Link>
                     <Link className="black_btn" to="#" onClick={addToCart} >
                       Add To Cart
                     </Link>
