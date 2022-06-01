@@ -3,8 +3,10 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { cartList } from "../recoil/carts/cartHelpers";
+import { addProdcutToWishlist } from "./apiCore";
+import { isAuthenticated } from '../common/utils';
 
-const ProductBox = ({ image, productId, name, category, price, product }) => {
+const ProductBox = ({ image, productId, name, category, price, product, props }) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
   const [productImage , setProductImage] = useState(image);
   const history = useHistory();
@@ -12,6 +14,9 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
   if( product.discount != 0 && product.discount != "" ){
     discount_ = price - (price * product.discount / 100 ) 
   }
+
+  const { user ,token } = isAuthenticated();
+  const userId = (user !== undefined)?user._id:'0';
 
   const addToCart = (e) => {
     e.preventDefault();
@@ -48,6 +53,26 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
     history.push("/cart");
   };
 
+  const addToWishlist = productId =>(e) =>{
+    e.preventDefault();
+    const productData = {
+      product : productId,
+      user: userId
+    };
+    //console.log(productId)
+    addProdcutToWishlist(userId,token,productData).then(data => {
+        if (data.status == false) {
+          alert('Error occured while adding product into your wishlist, Please try again.')
+        } 
+        else 
+        {
+          alert('Product has been added successfully into your wishlist.')
+          history.push('/');
+        }
+    });
+    //history.push('/cart');
+  }
+
   return (
     <div className="product_box">
       <div className="product_img">
@@ -62,7 +87,7 @@ const ProductBox = ({ image, productId, name, category, price, product }) => {
             />
           ) : null
         )}
-        <div className="top_icon">
+        <div className="top_icon" onClick={addToWishlist(productId)}>
           <p className="new">new</p>
           <span>
             <i className="far fa-heart"></i>

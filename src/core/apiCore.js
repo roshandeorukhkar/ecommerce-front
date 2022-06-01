@@ -124,6 +124,22 @@ export const createOrder = (userId, token, createOrderData) => {
         .catch(err => console.log(err));
 };
 
+export const addProdcutToWishlist = (userId, token, wishlistData) => {
+    return fetch(`${API}/wishlist/create/${userId}`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ wishlist: wishlistData })
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
 export const sliderList = () =>{
     return fetch(`${API}/sliderList`,{
         method: "GET",
