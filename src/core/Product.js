@@ -24,7 +24,6 @@ const Product = (props) => {
   let history = useHistory();
   const { cartData } = useRecoilValue(cartFetchData);
   const [quantity , setQuantity] = useState(1);
-  const [discountPrice , setDiscountPrice] = useState();
   const [currentImage , setCurrentImage] = useState(null);
 
   const getQuantityOfProduct = (productId) => {
@@ -52,10 +51,6 @@ const Product = (props) => {
         });
         setColor(colorArray);
         setCategory(data.category[0]);
-        if(data.discount!='0'){
-          const discountPrice_ = data.price - ( data.price * data.discount / 100 );
-          setDiscountPrice(discountPrice_); 
-        }
         // fetch related products
         listRelated(data._id).then((data) => {
           if (data.error) {
@@ -108,7 +103,7 @@ const Product = (props) => {
          description : product.description,
          category : category.name,
          image : colorProductImages['0'],
-         price : discountPrice!=''&&discountPrice!=undefined? discountPrice : product.price,
+         price : product.price,
          quantity : quantity
         }
       ]);
@@ -119,11 +114,6 @@ const Product = (props) => {
   const addToCartSubProduct = productId => (e) =>{
    e.preventDefault();
    read(productId).then((data) => {
-     console.log(data.discount)
-     let discountPrice = '';
-     if(data.discount != "" && data.discount!=undefined){
-       discountPrice = data.price - (data.price * data.discount / 100);
-     }
      var i = 0;
      let img = ''; 
      Object.values(data.images).map(res => {
@@ -144,7 +134,7 @@ const Product = (props) => {
          description: data.description,
          category: data.category.name,
          image: img,
-         price: discountPrice != "" ? discountPrice : data.price,
+         price: data.price,
          quantity: 1,
        },
      ]);
@@ -354,21 +344,10 @@ const Product = (props) => {
                         <Link to="#">Add a review</Link>
                       </li>
                     </ul>
-                    {
-                      discountPrice != undefined ? 
-                    <h3>
-                      <i className="fas fa-rupee-sign fa-sm"></i>
-                      {discountPrice}{" "}
-                      <span>
-                        <del>
-                          <i className="fas fa-rupee-sign fa-sm"></i>{product.price}
-                        </del>
-                      </span>{" "}
-                    </h3>
-                    : <h3>
+                     <h3>
                       <i className="fas fa-rupee-sign fa-sm"></i>
                       {product.price}{" "}
-                    </h3> }
+                    </h3> 
                     {/* <p>
                       Pellentesque habitant morbi tristique senectus et netus et
                       malesuada fames ac turpis egestas. Vestibulum tortor quam,
@@ -502,7 +481,7 @@ const Product = (props) => {
                                 <span>
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
-                                {spec.manufacturerName}{" : "}{spec.specification_type}
+                               {spec.value}
                               </li>
                                 ) )
                               : null}
@@ -899,16 +878,9 @@ const Product = (props) => {
                       </li>
                     </ul>
                     <h4>
-                      <i className="fas fa-rupee-sign fa-sm"></i>
-                      { res.discount!=''?  res.price- (res.price *res.discount / 100): res.price } {" "}
-                      <span>
-                        {" "}
-                        {res.discount!='' ?
-                        <del>
-                          <i className="fas fa-rupee-sign fa-sm"></i>{res.price}
-                        </del>
-                        :null}{" "}
-                      </span>{" "}
+                      <del>
+                        <i className="fas fa-rupee-sign fa-sm"></i>{res.price}
+                      </del>
                     </h4>
                     <div className="custom_btn">
                       <Link to="#" onClick={addToCartSubProduct(res._id)} >
