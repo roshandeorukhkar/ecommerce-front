@@ -30,7 +30,7 @@ const Product = (props) => {
   const [discountPrice , setDiscountPrice] = useState();
   const [currentImage , setCurrentImage] = useState(null);
   const { user ,token } = isAuthenticated();
-  const userId = user._id;
+  const userId = (user !== undefined)?user._id:'0';
 
   const getQuantityOfProduct = (productId) => {
      cartData.map(item => item.id == productId ? setQuantity(item.quantity) : 1 )

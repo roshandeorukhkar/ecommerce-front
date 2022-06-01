@@ -16,7 +16,7 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
   }
 
   const { user ,token } = isAuthenticated();
-  const userId = '0';//user._id;
+  const userId = (user !== undefined)?user._id:'0';
 
   const addToCart = (e) => {
     e.preventDefault();
