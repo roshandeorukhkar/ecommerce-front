@@ -48,7 +48,7 @@ const YourOrder = (props) => {
         {/* <Link className="placeholder_btn" to="#" onClick={props.placeOrder}>  Place Order2</Link> */}
             
         {props.placeOrder!='' ? 
-            <p></p>
+            <Link className="placeholder_btn" to="#" onClick={props.placeOrder}>  Place Order</Link> 
                        :
             <Link className="placeholder_btn" to={props.location} >
              Place Order

@@ -84,6 +84,7 @@ const Login = (props) => {
 
   const redirectUser = () => {
     if (redirectToReferrer) {
+      props.close();
       return <Redirect to={props.location} />
     }
     if (isAuthenticated()) {

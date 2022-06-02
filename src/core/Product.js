@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { cartList ,cartFetchData } from "../recoil/carts/cartHelpers";
 import { useHistory } from "react-router-dom";
+import RegistrationModal from "./RegistrationModal";
+import Login from "./Login";
 const { user ,token } = isAuthenticated();
 
 
@@ -30,6 +32,24 @@ const Product = (props) => {
   const [currentImage , setCurrentImage] = useState(null);
   const { user ,token } = isAuthenticated();
   const userId = (user !== undefined)?user._id:'0';
+  const [showLoginModal , setShowLoginModal] = useState(false);
+  const [showRegistrationModal , setShowRegistrationModal] = useState(false);
+
+  const handleLoginModalShow = () =>{
+      setShowLoginModal(true);
+  }
+
+  const handleLoginModalClose = () => {
+      setShowLoginModal(false);
+  }
+
+  const handleRegistartionModalShow = () =>{
+      setShowRegistrationModal(true)
+  }
+  const handleRegistartionModalClose = () =>{
+      setShowRegistrationModal(false)
+  }
+
 
   const getQuantityOfProduct = (productId) => {
      cartData.map(item => item.id == productId ? setQuantity(item.quantity) : 1 )
@@ -322,7 +342,13 @@ const Product = (props) => {
                     </a>
                   </div>
                   <div className="slider_btn">
+                    {userId=='0' ? 
+                    <Link className="placeholder_btn" onClick={handleLoginModalShow}>
+                    Add To Wishlist
+                    </Link>
+                    :
                     <Link to="#" onClick={addToWishlist} >Add To Wishlist</Link>
+                    }
                     <Link className="black_btn" to="#" onClick={addToCart} >
                       Add To Cart
                     </Link>
@@ -923,7 +949,10 @@ const Product = (props) => {
           </div>
         </div>
       </div>
+      {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location={"/product/"+props.match.params.productId}/> : null}
+        {showRegistrationModal===true? <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/> :null}
     </Layout>
+    
   );
 };
 

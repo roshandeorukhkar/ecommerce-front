@@ -5,6 +5,8 @@ import { useRecoilState } from "recoil";
 import { cartList } from "../recoil/carts/cartHelpers";
 import { addProdcutToWishlist } from "./apiCore";
 import { isAuthenticated } from '../common/utils';
+import RegistrationModal from "./RegistrationModal";
+import Login from "./Login";
 
 const ProductBox = ({ image, productId, name, category, price, product, props }) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
@@ -17,6 +19,24 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
 
   const { user ,token } = isAuthenticated();
   const userId = (user !== undefined)?user._id:'0';
+
+  const [showLoginModal , setShowLoginModal] = useState(false);
+  const [showRegistrationModal , setShowRegistrationModal] = useState(false);
+
+  const handleLoginModalShow = () =>{
+    setShowLoginModal(true);
+  }
+
+  const handleLoginModalClose = () => {
+      setShowLoginModal(false);
+  }
+
+  const handleRegistartionModalShow = () =>{
+      setShowRegistrationModal(true)
+  }
+  const handleRegistartionModalClose = () =>{
+      setShowRegistrationModal(false)
+  }
 
   const addToCart = (e) => {
     e.preventDefault();
@@ -87,12 +107,22 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
             />
           ) : null
         )}
-        <div className="top_icon" onClick={addToWishlist(productId)}>
-          <p className="new">new</p>
-          <span>
-            <i className="far fa-heart"></i>
-          </span>
-        </div>
+        {userId=='0' ? 
+          <div className="top_icon" onClick={handleLoginModalShow}>
+            <p className="new">new</p>
+            <span>
+              <i className="far fa-heart"></i>
+            </span>
+          </div>
+            :
+            <div className="top_icon" onClick={addToWishlist(productId)}>
+              <p className="new">new</p>
+              <span>
+                <i className="far fa-heart"></i>
+              </span>
+            </div>
+            }
+        
         <div className="product_overlay">
           <div className="search_icon">
             <Link to={`/product/${productId}`}>
@@ -149,8 +179,10 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
           Add to Cart
         </Link>
       </div>
+      {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location={"/"}/> : null}
+        {showRegistrationModal===true? <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/> :null}
     </div>
-  );
+  ); 
 };
 
 export default ProductBox;
