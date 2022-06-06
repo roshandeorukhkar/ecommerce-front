@@ -11,7 +11,15 @@ export const getProducts = sortBy => {
         })
         .catch(err => console.log(err));
 };
-
+export const getTopCategories = categoryId => {
+    return fetch(`${API}/topcategories`, {
+        method: 'GET'
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
 export const getCategories = () => {
     console.log(API)
     return fetch(`${API}/categories`, {

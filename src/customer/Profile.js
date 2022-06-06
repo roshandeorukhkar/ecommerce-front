@@ -7,22 +7,26 @@ import { read, update, updateUser } from './apiUser';
 const Profile = ({ match }) => {
     const [values, setValues] = useState({
         name: '',
+        lastName:'',
+        gender:'',
         email: '',
-        password: '',
         error: false,
         success: false
     });
 
     const { token } = isAuthenticated();
-    const { name, email, password, error, success } = values;
+    const { name,lastName,gender, email, error, success } = values;
 
     const init = userId => {
         // console.log(userId);
+        //, email: data.email, email: data.mobile
         read(userId, token).then(data => {
             if (data.error) {
                 setValues({ ...values, error: true });
             } else {
-                setValues({ ...values, name: data.name, email: data.email });
+                console.log(data);
+                console.log(data.lastName)
+                setValues({ ...values, name: data.firstName,lastName:data.lastName,gender:data.gender, email: data.email });
             }
         });
     };
@@ -32,20 +36,29 @@ const Profile = ({ match }) => {
     }, []);
 
     const handleChange = name => e => {
+        console.log(name)
+        if(name=='gender') {
+            setValues({ ...values, error: false, [name]: e.target.value });
+        }
+        else {
         setValues({ ...values, error: false, [name]: e.target.value });
+        }
     };
 
     const clickSubmit = e => {
         e.preventDefault();
-        update(match.params.userId, token, { name, email, password }).then(data => {
+        update(match.params.userId, token, { name,lastName,gender, email }).then(data => {
             if (data.error) {
+                console.log(gender)
                 // console.log(data.error);
-                alert(data.error);
+               // alert(data.error);
             } else {
                 updateUser(data, () => {
                     setValues({
                         ...values,
                         name: data.name,
+                        lastName:data.lastName,
+                        gender:data.gender,
                         email: data.email,
                         success: true
                     });
@@ -60,20 +73,33 @@ const Profile = ({ match }) => {
         }
     };
 
-    const profileUpdate = (name, email, password) => (
+    const profileUpdate = (name,lastName,gender, email) => (
         <form>
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="text-muted">First Name</label>
                 <input type="text" onChange={handleChange('name')} className="form-control" value={name} />
             </div>
+            <div className="form-group">
+                <label className="text-muted">Last Name</label>
+                <input type="text" onChange={handleChange('lastName')} className="form-control" value={lastName} />
+            </div>
+            <div className="form-group">
+                <label className="text-muted">gender</label>
+                <span class="form-control">
+                <input onChange={handleChange('gender')} name="gender" type="radio" className="" value="M" style={{width: '32px', height:'30px'}} /> Male
+                <input onChange={handleChange('gender')} name="gender" type="radio" className="" value="F" style={{width: '32px', height:'30px'}} /> Female
+                </span>
+            </div>
+
+           
             <div className="form-group">
                 <label className="text-muted">Email</label>
                 <input type="email" onChange={handleChange('email')} className="form-control" value={email} />
             </div>
-            <div className="form-group">
-                <label className="text-muted">Password</label>
-                <input type="password" onChange={handleChange('password')} className="form-control" value={password} />
-            </div>
+            {/* <div className="form-group">
+                <label className="text-muted">Mobile</label>
+                <input type="text" onChange={handleChange('mobile')} className="form-control" value={mobile} />
+            </div> */}
 
             <button onClick={clickSubmit} className="btn btn-primary">
                 Submit
@@ -124,7 +150,7 @@ const Profile = ({ match }) => {
                     <div className="row">
                         <div className="col-12">
                             <h2 className="mb-4">Personal Information</h2>    
-                            {profileUpdate(name, email, password)}
+                            {profileUpdate(name,lastName,gender, email)}
                             {redirectUser(success)}
                         </div>
                     </div>
