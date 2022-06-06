@@ -239,7 +239,7 @@ export default function Header({ history }){
                                     </Link>
                                     <div className="cart_details device" style={{width: '120px'}}>
                                         <ul style={{display: 'block'}}>
-                                            <li><Link to="#">My Profile</Link></li>
+                                            <li><Link to="">My Profile</Link></li>
                                             <li><Link to="#">Wishlist</Link></li>
                                             <li><Link to="#">Conatct Us</Link></li>
                                             <li><Link to="#" onClick={logout}>Logout</Link></li>
