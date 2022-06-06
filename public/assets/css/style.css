@@ -27,6 +27,139 @@ body, html {
   font-family: Mulish;
 }
 
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+    padding-left: 15px;
+    padding-right: 15px
+}
+.profile{
+  width: 100%;
+  display: inline-block;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.profile-img{
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+}
+.profile-name{
+  width: 70%;
+  display: inline-block;
+  padding: 5px 0 0 16px;
+}
+.profile-name .pro-desc{
+  font-size: 12px;
+}
+.pro-naming{
+  padding-top: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-transform: capitalize;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #544d4d;
+}
+
+.pro-myorder{
+  padding: 15px;
+}
+.order-img{
+  width: 20px;
+  height: 20px;
+}
+.order-link{
+  width: calc(100% - 26px);
+    padding-left: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #878787;
+    cursor: pointer;
+}
+.border-bottom{
+  border-bottom: 1px solid
+}
+.account-setting{
+  font-size: 14px;
+  padding: 12px 5px 12px 66px;
+  cursor: pointer;
+}
+.order-address{
+  margin-top: 20px;
+}
+.order-addressInfo{
+    max-width: 848px;
+    overflow: hidden;
+    padding: 20px;
+}
+.order-nameInfo{
+  line-height: 1.5;
+}
+.address-info{
+  line-height: 1.5;
+  margin-top: 10px;
+  display: block;
+  max-width: 523px;
+  }
+.hover-link:hover{
+  color: #01a5ed;
+  background-color: #f1f1f1
+}
 a {
   color: #797979;
   font-family: "Lato", sans-serif;
@@ -42,20 +175,119 @@ i:before {
   margin-left: 0 !important;
 }
 
+.white-box {
+  background: #fff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 8px
+}
+
+/* Shubh : title change */
+.white-box .box-title {
+  margin: 10px 0 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #11142D;
+}
+
+.colorbox-group-widget .white-box {
+  padding: 0;
+  background: 0 0
+}
+
+.form-group .lable {
+  font-size: 12px;
+  font-weight: bold;
+  color: #11142D;
+  padding-left: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+.edit-link{
+  color: #01a5ed;
+}
+b{
+  font-weight: 600;
+}
+
+h3 {
+  line-height: 30px;
+  font-size: 21px;
+}
+
+h6 {
+  line-height: 16px;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333b3f;
+  font-family: 'Open Sans', sans-serif;
+  margin: 10px 0;
+  font-weight: 400;
+}
+hr {
+  border-color: #e5ebec;
+}
+
+hr {
+  border-color: #e5ebec;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.form-control {
+  background-color: #FFFFFF !important;
+  border: 2px solid #DBD7F4;
+  border-radius: 8px;
+  box-shadow: none;
+  color: #565656;
+  height: 38px;
+  max-width: 100%;
+  padding: 7px 12px;
+  transition: all 300ms linear 0s;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #2b2b2b
+}
+
+.form-control-line {
+  border-left: 0 none;
+  border-radius: 0;
+  border-right: 0 none;
+  border-top: 0 none;
+  box-shadow: none;
+  padding-left: 0
+}
+
+.has-success .form-control {
+  border-color: #2ecc71;
+  box-shadow: none !important
+}
+
+.has-warning .form-control {
+  border-color: #ffb136;
+  box-shadow: none !important
+}
+
+.has-error .form-control {
+  border-color: #e74a25;
+  box-shadow: none !important
+}
+
 a:hover, a:focus {
   text-decoration: none;
   outline: none;
   color: #111;
   transition: all 0.5s;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", sans-serif;
-  line-height: 1.1;
-  font-weight: 400;
-  color: #111111;
-  margin: 0;
-  padding: 0;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -17514,13 +17746,6 @@ form#mc-form {
 	background-color: #fff
 }
 
-.form-control {
-	font-size: 14px;
-	font-size: .875rem;
-	min-height: 40px;
-	border-color: #e1e8ed;
-  border-radius: 8px;
-}
 .hamburger-inner,
 .hamburger-inner::after,
 .hamburger-inner::before {

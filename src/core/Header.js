@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment,useState, useEffect } from "react";
 import { Link ,withRouter } from "react-router-dom";
 import Search from "./Search";
 //import { signout, isAuthenticated } from "../auth";
@@ -8,20 +8,10 @@ import $ from 'jquery';
 import {  useRecoilValue } from "recoil";
 import { itemTotal } from "./cartHelpers";
 import { cartFetchData } from "../recoil/carts/cartHelpers";
+//Added by deva below two import 
+import { getTopCategories } from "./apiCore";
+//import React, { useState, useEffect } from "react";
 
-const isActive = (history, path) => {
-    if (history.location.pathname === path) {
-        return { color: "#ff9900" };
-    } else {
-        return { color: "#ffffff" };
-    }
-};
-
-const logout = () => {
-    localStorage.removeItem('jwt');
-    window.location.reload();
-    //alert('Register Successfully');
-};
 
 // $(document).ready(function(){
 //     $("#toggle").on("click", function(){
@@ -71,6 +61,8 @@ const logout = () => {
 // 		}
 // 	});
 // })
+//getTopCategories
+
 
 export default function Header({ history }){
     const {
@@ -82,6 +74,28 @@ export default function Header({ history }){
         borderRadius: '50%',
         padding: '10px',
     }
+    const isActive = (history, path) => {
+        if (history.location.pathname === path) {
+            return { color: "#ff9900" };
+        } else {
+            return { color: "#ffffff" };
+        }
+    };
+    
+    const logout = () => {
+        localStorage.removeItem('jwt');
+        window.location.reload();
+        //alert('Register Successfully');
+    };
+    const [categories_list_top, setCategories_list_top] = useState([])
+    
+    useEffect(async () => {
+        let response_ = await getTopCategories()
+        //console.log(response_)
+        //console.log(5555555)
+        setCategories_list_top(response_)
+        
+    }, []);
     return(
         <div className="pd_header_main_wrapper float_left">
             <div className="container">
@@ -239,7 +253,7 @@ export default function Header({ history }){
                                     </Link>
                                     <div className="cart_details device" style={{width: '120px'}}>
                                         <ul style={{display: 'block'}}>
-                                            <li><Link to="#">My Profile</Link></li>
+                                            <li><Link to="">My Profile</Link></li>
                                             <li><Link to="#">Wishlist</Link></li>
                                             <li><Link to="#">Conatct Us</Link></li>
                                             <li><Link to="#" onClick={logout}>Logout</Link></li>
@@ -255,7 +269,15 @@ export default function Header({ history }){
                     </div>
                     <div className="pd_inner_navigation_wrapper">
                     <ul>
-                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops</Link>
+                        {
+                        categories_list_top.map(function(item, i){
+                            return <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-laptop fa-2x" style={iStyle}></i> <br/>{item.name}</Link>
+                            </li>
+                        })
+                        }
+
+
+                       {/*  <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-laptop fa-2x" style={iStyle}></i> <br/>Laptops8d</Link>
                         </li>
                         <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-desktop fa-2x" style={iStyle}></i> <br/>Dekstops</Link>
                         </li>
@@ -294,7 +316,7 @@ export default function Header({ history }){
                         <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-hotel fa-2x" style={iStyle}></i> <br/>Hotel</Link></li>
                         <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-book-open fa-2x" style={iStyle}></i> <br/>Book</Link></li>
                         <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-chair fa-2x" style={iStyle}></i> <br/>Furnitures</Link></li>
-                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-money-check-alt fa-2x" style={iStyle}></i> <br/>Rental</Link></li>
+                        <li><Link to="/shop" style={{ textAlign: 'center' }}><i className="fas fa-money-check-alt fa-2x" style={iStyle}></i> <br/>Rental</Link></li> */}
                     </ul>
                     </div>
                 </div>
