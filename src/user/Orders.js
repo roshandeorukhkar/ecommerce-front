@@ -83,7 +83,7 @@ const Orders = () => {
 
     return (
             <div className="row">
-                <div className="col-md-8 offset-md-2">
+                <div className="col-md-12">
                     
 
                     {orders.map((o, oIndex) => {
@@ -94,7 +94,7 @@ const Orders = () => {
                                 
                             >
 
-                                <ul className="list-group col-md-3">
+                                <ul className="list-group col-md-12">
                                     <li className="list-group-item">
                                         {showStatus(o)}
                                     </li>
@@ -117,7 +117,7 @@ const Orders = () => {
                                     Total products in the order:{" "}
                                     {o.products.length}
                                 </h3> */}
-                                <div className="order-product-list col-md-9">
+                                <div className="order-product-list col-md-12">
                                     {o.products.map((p, pIndex) => (
                     
                                         <div className="product_details col-12 float_left">

@@ -11,8 +11,8 @@ const Search = () => {
         searched: false
     });
 
-    //const { categories, category, search, results, searched } = data;
-    const categories =[], category=[], search =[], results=[], searched = [];
+    const { categories, category, search, results, searched } = data;
+    //const categories =[], category=[], search =[], results=[], searched = [];
 
    /* const loadCategories = () => {
         getCategories().then(data => {
