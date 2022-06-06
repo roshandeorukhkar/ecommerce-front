@@ -10,7 +10,6 @@ import Login from "./Login";
 
 const ProductBox = ({ image, productId, name, category, price, product, props }) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
-  const [productImage , setProductImage] = useState(image);
   const history = useHistory();
   let discount_ = 0;
   if( product.discount != 0 && product.discount != "" ){
@@ -42,10 +41,11 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
     e.preventDefault();
     console.log("data");
     var i = 0;
-    let image = "";
-    Object.values(productImage).map((img)=>{
+    let imageArr = "";
+    
+    Object.values(image).map((img)=>{
       if(i==0){
-        image = img[0];
+        imageArr = img[0];
         i++;
       }
     })
@@ -61,7 +61,7 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
         {
           id: productId,
           name: name,
-          image : image,
+          image : imageArr,
           description : product.description,
           category : category,
           price: discount_!= 0 ? discount_ : price,
@@ -96,7 +96,8 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
   return (
     <div className="product_box">
       <div className="product_img">
-        {Object.values(image).map((res, i) =>
+
+        {image && Object.values(image).map((res, i) =>
           i == 0 ? (
             <img
               key={i}

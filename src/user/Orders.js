@@ -39,7 +39,7 @@ const Orders = () => {
     const showOrdersLength = () => {
         if (orders.length > 0) {
             return (
-                <h1 className="text-danger display-2">
+                <h1>
                     Total orders: {orders.length}
                 </h1>
             );
@@ -76,18 +76,8 @@ const Orders = () => {
 
     const showStatus = o => (
         <div className="form-group">
-            <h3 className="mark mb-4">Status: {o.status}</h3>
-            <select
-                className="form-control"
-                onChange={e => handleStatusChange(e, o._id)}
-            >
-                <option>Update Status</option>
-                {statusValues.map((status, index) => (
-                    <option key={index} value={status}>
-                        {status}
-                    </option>
-                ))}
-            </select>
+            <h3 className="mb-4">{o.status}</h3>
+            
         </div>
     );
 
@@ -101,22 +91,17 @@ const Orders = () => {
         >
             <div className="row">
                 <div className="col-md-8 offset-md-2">
-                    {showOrdersLength()}
+                    
 
                     {orders.map((o, oIndex) => {
                         return (
                             <div
-                                className="mt-5"
+                                className="product-order row"
                                 key={oIndex}
-                                style={{ borderBottom: "5px solid indigo" }}
+                                
                             >
-                                <h2 className="mb-5">
-                                    <span className="bg-primary">
-                                        Order ID: {o._id}
-                                    </span>
-                                </h2>
 
-                                <ul className="list-group mb-2">
+                                <ul className="list-group col-md-3">
                                     <li className="list-group-item">
                                         {showStatus(o)}
                                     </li>
@@ -124,10 +109,7 @@ const Orders = () => {
                                         Transaction ID: {o.transaction_id}
                                     </li>
                                     <li className="list-group-item">
-                                        Amount: ${o.amount}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Ordered by: {o.user.name}
+                                        Amount: <i className="fas fa-rupee-sign fa-sm"></i> {o.amount}
                                     </li>
                                     <li className="list-group-item">
                                         Ordered on:{" "}
@@ -138,29 +120,31 @@ const Orders = () => {
                                     </li>
                                 </ul>
 
-                                <h3 className="mt-4 mb-4 font-italic">
+                                {/* <h3 className="mt-4 mb-4 font-italic">
                                     Total products in the order:{" "}
                                     {o.products.length}
-                                </h3>
-
-                                {o.products.map((p, pIndex) => (
-                                    <div
-                                        className="mb-4"
-                                        key={pIndex}
-                                        style={{
-                                            padding: "20px",
-                                            border: "1px solid indigo"
-                                        }}
-                                    >
-                                        {showInput("Product name", p.name)}
-                                        {showInput("Product price", p.price)}
-                                        {showInput("Product total", p.count)}
-                                        {showInput("Product Id", p._id)}
-                                    </div>
-                                ))}
+                                </h3> */}
+                                <div className="order-product-list col-md-9">
+                                    {o.products.map((p, pIndex) => (
+                    
+                                        <div className="product_details col-12 float_left">
+                                            <div className="img_product">
+                                                <img className="img-fluid" src={p.image} alt="img"/>
+                                            </div>
+                                            <div className="product_content">
+                                                <h3>{p.name}</h3>
+                                                <div className="rate">
+                                                    <p><span>Items: </span>{p.quantity}</p>
+                                                    <h3><i className="fas fa-rupee-sign fa-sm"></i>{p.price}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         );
                     })}
+                    
                 </div>
             </div>
         </Layout>

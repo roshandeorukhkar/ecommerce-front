@@ -25,15 +25,15 @@ const NewProducts = (props) => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    //const interval = setInterval(() => {
       SliderLists();
       advertiseList();
-    }, 50000);
+    //}, 50000);  
     SliderLists();
     advertiseList();
     setProductList(props.products);
-    return () => clearInterval(interval);
-  }, [props]);
+   // return () => clearInterval(interval);
+  }, []);
 
   const state = {
     responsive: {

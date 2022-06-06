@@ -110,7 +110,7 @@ const Product = (props) => {
     loadSingleProduct(productId);
     setReload(true);
     getQuantityOfProduct(productId)
-  }, [props,reload]);
+  }, []);
 
   const addToCart = (e) =>{
     e.preventDefault();
@@ -525,15 +525,18 @@ const Product = (props) => {
                             <p>{product.description}</p>
                             <ul className="nots">
                               <h3>Specification</h3>
-                              {product.specification != undefined ? 
-                                product.specification.map((spec , i)=>(
+                              {product.specificationData != undefined ? 
+                                product.specificationData.map((spec , i)=>(
 
                               <li key={spec._id}>
                                 {" "}
                                 <span>
                                   <i className="fas fa-check"></i>
                                 </span>{" "}
-                               {spec.value}
+                               {spec.manufacturerName}: 
+                               <p>
+                               {spec.specification_type}
+                               </p>
                               </li>
                                 ) )
                               : null}
