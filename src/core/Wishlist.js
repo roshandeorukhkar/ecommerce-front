@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getWishlist,removeFromWishlist } from "../customer/apiUser";
 import moment from "moment";
 
-const Wishlist = () => {
+const Wishlist = () => { 
     const [wishlist, setWishlist] = useState([]);
 
     const {
