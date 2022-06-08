@@ -151,7 +151,7 @@ const Product = (props) => {
         else 
         {
           alert('Product has been added successfully into your wishlist.')
-          history.push('/');
+          history.push('/wishlist');
         }
     });
     //history.push('/cart');

@@ -56,3 +56,33 @@ export const getPurchaseHistory = (userId, token) => {
         })
         .catch(err => console.log(err));
 };
+
+export const getWishlist = (userId, token) => {
+    return fetch(`${API}/wishlist/by/user/${userId}`, {
+        method: "GET",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const removeFromWishlist = (wishlist,wishlistId) => {
+    return fetch(`${API}/wishlist/delete/${wishlistId}`, {
+        method: 'DELETE',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(wishlist)
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};

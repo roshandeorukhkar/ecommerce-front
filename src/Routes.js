@@ -12,6 +12,7 @@ import MyOrders from './core/orders';
 import Profile from './customer/Profile';
 import Checkout from './core/Checkout';
 import ManageAddress from './core/ManageAddress';
+import Wishlist from './core/Wishlist';
 
 const Routes = () => {
     return (
@@ -29,6 +30,7 @@ const Routes = () => {
                 <PrivateRoute path="/profile/:userId" exact component={Profile} />
                 <PrivateRoute path="/orders/:userId" exact component={MyOrders} />
                 <PrivateRoute path="/checkout" exact component={Checkout} />
+                <Route path="/wishlist" exact component={Wishlist} />
             </Switch>
         </BrowserRouter>
     );
