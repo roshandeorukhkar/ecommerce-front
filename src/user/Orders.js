@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../core/Layout";
 import { isAuthenticated } from "../common/utils";
-import { Link } from "react-router-dom";
 import { listOrders, getStatusValues, updateOrderStatus } from "./apiAdmin";
 import moment from "moment";
 
@@ -84,8 +82,6 @@ const Orders = () => {
     return (
             <div className="row">
                 <div className="col-md-12">
-                    
-
                     {orders.map((o, oIndex) => {
                         return (
                             <div
@@ -93,7 +89,6 @@ const Orders = () => {
                                 key={oIndex}
                                 
                             >
-
                                 <ul className="list-group col-md-12">
                                     <li className="list-group-item">
                                         {showStatus(o)}

@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../common/utils";
 import Layout from "../core/Layout";
-import { Link } from "react-router-dom";
 import UserLinks from "../core/UserLink";
 import ProfileHome from "../core/ProfileHome"
-import Orders from "../user/Orders";
+import Cart from "./Cart";
 
-const MyOrders = () => {
+const MyCart = () => {
     const {
-        user : {_id, firstName, lastName, mobileNo_, email, role }
+        user : {_id, firstName, lastName}
     } = isAuthenticated();
     const token = isAuthenticated().token;
     
@@ -19,7 +18,8 @@ const MyOrders = () => {
             className="container-fluid"
         >
             <ProfileHome
-                profile="My Orders"
+                profile="My Cart"
+                Update="Shopping Cart"
             />
 
             <div className="bz_product_grid_content_main_wrapper float_left">
@@ -28,7 +28,7 @@ const MyOrders = () => {
                     <div className="col-3"><UserLinks/></div>
                         <div className="col-9">
                             <div className="white-box">
-                                <Orders/>
+                                <Cart/>
                             </div>  
                         </div>
                     </div>
@@ -40,4 +40,4 @@ const MyOrders = () => {
     
 };
 
-export default MyOrders;
+export default MyCart;

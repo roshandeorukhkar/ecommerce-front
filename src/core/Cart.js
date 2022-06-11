@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Layout from "./Layout";
-import Card from "./Card";
-import Checkout from "./Checkout";
-import $ from "jquery";
 import { getCart, addItem } from "./cartHelpers";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { cartFetchData, cartList } from "../recoil/carts/cartHelpers";
@@ -169,58 +165,9 @@ const Cart = () => {
   );
 
   return (
-    <Layout title="" description="" className="container-fluid">
-      {/*<div className="row">
-                <div className="col-6">{items.length > 0 ? showItems(items) : noItemsMessage()}</div>
-
-                <div className="col-6">
-                    <h2 className="mb-4">Your cart summary</h2>
-                    <hr />
-                    <Checkout products={items} setRun={setRun} run={run} />
-                </div>
-            </div>*/}
-
-      <div className="bz_inner_page_navigation float_left">
-        <div className="container custom_container">
-          <div className="inner_menu float_left">
-            <ul>
-              <li>
-                <a href="#">
-                  {" "}
-                  <span>
-                    <i className="fas fa-home"></i>
-                  </span>{" "}
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  {" "}
-                  <span>
-                    <i className="fas fa-angle-right"></i>
-                  </span>{" "}
-                  My Cart
-                </a>
-              </li>
-              <li className="active">
-                <a href="#">
-                  {" "}
-                  <span>
-                    <i className="fas fa-angle-right"></i>
-                  </span>
-                  Shopping Cart
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="bz_product_grid_content_main_wrapper float_left">
-        <div className="container custom_container">
-          {cartItem.length != 0 ? showItems() : noItemsMessage()}
-        </div>
-      </div>
-    </Layout>
+    <>
+      {cartItem.length != 0 ? showItems() : noItemsMessage()}
+    </>
   );
 };
 

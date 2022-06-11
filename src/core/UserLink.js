@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../common/utils";
-import Layout from "../core/Layout";
 import { Link } from "react-router-dom";
 import { FaFirstOrderAlt } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
-import { MdPayment } from 'react-icons/md';
-import { BsFillChatDotsFill } from 'react-icons/bs';
 import { AiFillSetting } from 'react-icons/ai';
 import { SiMaterialdesignicons } from 'react-icons/si';
 const userLinks = () => {
@@ -37,7 +34,7 @@ const userLinks = () => {
             <div className="pro-myorder">
                 <div className="pro-order">
                     <AiFillSetting/>
-                    <Link className="order-link ">ACCOUNT SETTING</Link>
+                    <Link to="" className="order-link ">ACCOUNT SETTING</Link>
                 </div>
                 <div>
                     <Link to='/user/profile'>
@@ -83,10 +80,10 @@ const userLinks = () => {
             <div className="pro-myorder">
                 <div className="pro-order">
                     <SiMaterialdesignicons/>
-                    <Link className="order-link">MY STUFF</Link>
+                    <Link to="" className="order-link">MY STUFF</Link>
                 </div>
                 <div>
-                    <Link>
+                    <Link to='/mycart'>
                         <div className="account-setting hover-link">My Cart</div>
                     </Link>
                     {/* <Link to='/cart'>
@@ -98,7 +95,7 @@ const userLinks = () => {
                     <Link>
                         <div className="account-setting hover-link">All Notifications</div>
                     </Link> */}
-                    <Link>
+                    <Link to='/wishlist'>
                         <div className="account-setting hover-link">My Wishlist</div>
                     </Link>
                 </div>

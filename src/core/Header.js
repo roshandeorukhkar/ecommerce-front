@@ -1,67 +1,13 @@
-import React, { Fragment,useState, useEffect } from "react";
-import { Link ,withRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Search from "./Search";
 //import { signout, isAuthenticated } from "../auth";
 import {isAuthenticated } from "../common/utils"
 import Menu from "./Menu"
-import $ from 'jquery';
 import {  useRecoilValue } from "recoil";
-import { itemTotal } from "./cartHelpers";
 import { cartFetchData } from "../recoil/carts/cartHelpers";
-//Added by deva below two import 
 import { getTopCategories } from "./apiCore";
-//import React, { useState, useEffect } from "react";
 
-
-// $(document).ready(function(){
-//     $("#toggle").on("click", function(){
-//         var w = $('#sidebar').width();
-//         var pos = $('#sidebar').offset().left;
-       
-//         if(pos == 0){
-//         $("#sidebar").animate({"left": -w}, "slow");
-//         }
-//         else
-//         {
-//         $("#sidebar").animate({"left": "0"}, "slow");
-//         }
-        
-//       });
-      
-//       $("#toggle_close").on("click", function(){
-//         var w = $('#sidebar').width();
-//         var pos = $('#sidebar').offset().left;
-       
-//         if(pos == 0){
-//         $("#sidebar").animate({"left": -w}, "slow");
-//         }
-//         else
-//         {
-//         $("#sidebar").animate({"left": "0"}, "slow");
-//         }
-        
-//       });
-
-//     $('#cssmenu li.active').addClass('open').children('ul').show();
-// 	$('#cssmenu li.has-sub>a').on('click', function(){
-// 		$(this).removeAttr('to');
-// 		var element = $(this).parent('li');
-// 		if (element.hasClass('open')) {
-// 			element.removeClass('open');
-// 			element.find('li').removeClass('open');
-// 			element.find('ul').slideUp(200);
-// 		}
-// 		else {
-// 			element.addClass('open');
-// 			element.children('ul').slideDown(200);
-// 			element.siblings('li').children('ul').slideUp(200);
-// 			element.siblings('li').removeClass('open');
-// 			element.siblings('li').find('li').removeClass('open');
-// 			element.siblings('li').find('ul').slideUp(200);
-// 		}
-// 	});
-// })
-//getTopCategories
 
 
 export default function Header({ history }){
@@ -88,14 +34,16 @@ export default function Header({ history }){
         //alert('Register Successfully');
     };
     const [categories_list_top, setCategories_list_top] = useState([])
-    
-    useEffect(async () => {
-        let response_ = await getTopCategories()
-        //console.log(response_)
-        //console.log(5555555)
-        setCategories_list_top(response_)
-        
-    }, []);
+    useEffect(() => {
+        async function fetchData() {
+          // You can await here
+          const response = await getTopCategories();
+          setCategories_list_top(response)
+          // ...
+        }
+        fetchData();
+      }, []);
+   
     return(
         <div className="pd_header_main_wrapper float_left">
             <div className="container">
@@ -112,7 +60,7 @@ export default function Header({ history }){
                         </div>
                         <div className="col-md-3 col-12" style={{padding: '0px' }}>
                             <div className="cart_shop f-l">
-                                <Link to="/cart">
+                                <Link to="/mycart">
                                 <i className="fas fa-shopping-cart fa-2x white"></i>
                                   <span className="cart-count" style={{display: 'inline', background : "red" , padding : "0px 2px" }}> {clength} </span>  
                                 <span>Your Cart <small><i className="fas fa-rupee-sign fa-sm"></i>{total}</small> </span>
@@ -219,7 +167,7 @@ export default function Header({ history }){
                                 <div className="cart_details">
                                 <div className="total-count">
                                     <span>1 ITEM</span>
-                                    <Link to="/cart">VIEW CART</Link>
+                                    <Link to="/mycart">VIEW CART</Link>
                                 </div>
                                 <div className="cart_list">
                                     <div className="select_cart">
@@ -234,7 +182,7 @@ export default function Header({ history }){
                                     <p>Sub Total:<span><i className="fas fa-rupee-sign fa-sm"></i> 289.00</span></p>
                                 </div>
                                 <div className="cart_btn">
-                                    <Link to="/cart"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
+                                    <Link to="/mycart"><i className="fas fa-shopping-cart"></i>&nbsp; View Cart</Link>
                                     <Link to="/checkout"><i className="fas fa-share"></i>&nbsp; Checkout</Link>
                                 </div>
                                 </div>

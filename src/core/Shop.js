@@ -457,7 +457,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -489,7 +489,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$350.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -521,7 +521,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$500.00 <span> <del>$550.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -557,7 +557,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -589,7 +589,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -621,7 +621,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -657,7 +657,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$500.00 <span> <del>$679.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -689,7 +689,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -721,7 +721,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -756,7 +756,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -788,7 +788,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -820,7 +820,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -855,7 +855,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$450.00 <span> <del>$500.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -886,7 +886,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -917,7 +917,7 @@ const Shop = () => {
                                                    <li><a href="#"><i className="fas fa-star"></i></a></li>
                                                 </ul>
                                                 <h4>$492.00 <span> <del>$379.00</del> </span> </h4>
-                                                <a className="add_btn custom_btn" href="/cart">Add to Cart</a>
+                                                <a className="add_btn custom_btn" href="/mycart">Add to Cart</a>
                                              </div>
                                           </div>
                                        </div>
@@ -1149,7 +1149,7 @@ const Shop = () => {
                                     </div>
                                     <div className="number_pluse float_left">
                                     <div className="nice-number"><button type="button">-</button><input type="number" defaultValue="1"/><button type="button">+</button></div>
-                                       <a href="/cart" className="cart_btn">Add To Cart</a>
+                                       <a href="/mycart" className="cart_btn">Add To Cart</a>
                                     </div>
                                     <div className="share_icon float_left">
                                        <p>Share:</p>
@@ -1252,7 +1252,7 @@ const Shop = () => {
                                     </div>
                                     <div className="number_pluse float_left">
                                        <input type="number" defaultValue="1"/>
-                                       <a href="/cart" className="cart_btn">Add To Cart</a>
+                                       <a href="/mycart" className="cart_btn">Add To Cart</a>
                                     </div>
                                     <div className="share_icon float_left">
                                        <p>Share:</p>

@@ -29,15 +29,25 @@ const Search = () => {
     const [categories_list, setCategories_list] = useState([])
     //const [categories_list_top, setCategories_list_top] = useState([])
 
-     useEffect(async () => {
-        let response = await getCategories()
-        setCategories_list(response)
-        /* let response_ = await getTopCategories()
-        console.log(response_)
-        console.log(5555555)
-        setCategories_list_top(response_) */
+    //  useEffect(async () => {
+    //     let response = await getCategories()
+    //     setCategories_list(response)
+    //     /* let response_ = await getTopCategories()
+    //     console.log(response_)
+    //     console.log(5555555)
+    //     setCategories_list_top(response_) */
        
-    }, []);
+    // }, []);
+
+    useEffect(() => {
+        async function fetchData() {
+          // You can await here
+          const response = await getCategories();
+          setCategories_list(response)
+          // ...
+        }
+        fetchData();
+      }, []);
     
 
     const searchData = () => {

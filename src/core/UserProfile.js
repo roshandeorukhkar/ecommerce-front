@@ -33,7 +33,9 @@ const UserInfo = () => {
             description={`G'day ${firstName + ' ' + lastName}!`}
             className="container-fluid"
         >
-            <ProfileHome/>
+            <ProfileHome
+                profile="My Profile"
+            />
 
             <div className="bz_product_grid_content_main_wrapper float_left">
                 <div className="container custom_container">
@@ -45,7 +47,7 @@ const UserInfo = () => {
                                     <div className="col-lg-12">
                                         <div className="row">
                                             <h3 className="col-lg-10">Personal Information</h3>
-                                            <Link className="edit-link col-lg-2" to={`/profile/${_id}`}>
+                                            <Link className="edit-link col-lg-2" to={`/user/profile/${_id}`}>
                                                 <b>Edit</b>
                                             </Link>
                                         </div>
@@ -72,7 +74,6 @@ const UserInfo = () => {
                                                 <input disabled className="form-control" value={userInfo.mobile}/>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </form>
@@ -80,7 +81,6 @@ const UserInfo = () => {
                     </div>
                 </div>
             </div>  
-            
         </Layout>
     );
     

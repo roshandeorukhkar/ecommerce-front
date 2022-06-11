@@ -84,6 +84,15 @@ body, html {
   padding: 12px;
   margin-bottom: 16px;
 }
+.addresslink{
+  border: 1px solid;
+  border-color: #dbdbdb;
+  padding: 5px;
+}
+.address{
+  color: #01a5ed;
+}
+
 .profile-img{
   width: 30%;
   display: inline-block;
@@ -140,12 +149,19 @@ body, html {
   cursor: pointer;
 }
 .order-address{
-  margin-top: 20px;
+  border: 1px solid;
+  margin: 0px;
+  border-color: #dbdbdb;
+  margin-top: 10px;
 }
 .order-addressInfo{
     max-width: 848px;
     overflow: hidden;
-    padding: 20px;
+    padding-left: 30px;
+}
+.addicon{
+  font-size: 39px;
+  padding-right: 10px;
 }
 .order-nameInfo{
   line-height: 1.5;

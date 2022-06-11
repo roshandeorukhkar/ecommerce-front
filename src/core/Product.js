@@ -133,7 +133,7 @@ const Product = (props) => {
         }
       ]);
     }
-   history.push('/cart');
+   history.push('/mycart');
   }
 
   const addToWishlist = (e) =>{
@@ -154,7 +154,7 @@ const Product = (props) => {
           history.push('/wishlist');
         }
     });
-    //history.push('/cart');
+    //history.push('/mycart');
   }
 
   const addToCartSubProduct = productId => (e) =>{
@@ -186,7 +186,7 @@ const Product = (props) => {
      ]);
     }
   })
-   history.push('/cart');
+   history.push('/mycart');
 }
 
 

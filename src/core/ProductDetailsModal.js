@@ -220,7 +220,7 @@ const ProductDetailsModal = ({showModel,close,productId,category}) => {
                       <input type="number" defaultValue="1" />
                       <button type="button">+</button>
                     </div>
-                    <a href="/cart" className="cart_btn">
+                    <a href="/mycart" className="cart_btn">
                       Add To Cart
                     </a>
                   </div>

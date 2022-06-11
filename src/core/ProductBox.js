@@ -70,7 +70,7 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
         },
       ]);
     }
-    history.push("/cart");
+    history.push("/mycart");
   };
 
   const addToWishlist = productId =>(e) =>{
@@ -90,7 +90,7 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
           history.push('/');
         }
     });
-    //history.push('/cart');
+    //history.push('/mycart');
   }
 
   return (
