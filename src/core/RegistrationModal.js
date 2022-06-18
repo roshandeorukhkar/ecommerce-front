@@ -98,7 +98,7 @@ const handleLoginModalClose = () => {
 
   const redirectUser = () => {
     if (otpValues.redirectToReferrer) {
-      return <Redirect to="/user/dashboard" />;
+      return <Redirect to="/user/profile" />;
     }
     if (isAuthenticated()) {
       return <Redirect to="/" />;

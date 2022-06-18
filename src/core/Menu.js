@@ -59,7 +59,7 @@ const Menu = ({ history }) => {
                     <Link to="#" onClick={handleLoginModalShow} >
                             Login
                     </Link>
-                    {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location="/user/dashboard" /> : null}
+                    {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location="/user/profile" /> : null}
                     </li>
                 )}
                 {!isAuthenticated() && (

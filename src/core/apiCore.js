@@ -116,8 +116,8 @@ export const processPayment = (userId, token, paymentData) => {
         .catch(err => console.log(err));
 };
 
-export const createOrder = (userId, token, createOrderData) => {
-    return fetch(`${API}/order/create/${userId}`, {
+export const createOrder = (customerId, token, createOrderData) => {
+    return fetch(`${API}/order/create/${customerId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",

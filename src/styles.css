@@ -28,6 +28,49 @@
     font-weight: bold;
 }
 
+ul#top_access {
+	float: right;
+	position: relative;
+	top: 3px;
+	margin: -1px 0 0
+}
+ul#top_access li {
+	display: inline-block;
+	position: relative;
+	padding: 0;
+	margin-right: 15px;
+	margin-top: 15px
+}
+ul#top_access li span {
+	font-size: 20px;
+}
+ul#top_access li ul a:hover {
+	color: #01a5ed
+}
+
+.address-menu ul li:hover>ul {
+  visibility: visible;
+  opacity: 1
+}
+.address-menu ul ul {
+  font-size: 14px;
+  position: absolute;
+  visibility: hidden;
+  right: 15px;
+  display: inline-grid;
+  padding: 15px;
+  background: #fff;
+  min-width: 60px;
+  -webkit-box-shadow: 0 6px 12px 0 rgb(0 0 0 / 18%);
+  -moz-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px 0 rgb(0 0 0 / 18%);
+  opacity: 0;
+}
+
+.cancel_btn{
+  color: #01a5ed;
+  padding-left: 55px;
+}
 /* black shade form 10-1 */
 .black-10 {
     background: #f2f2f2;

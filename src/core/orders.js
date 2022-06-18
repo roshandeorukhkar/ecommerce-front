@@ -7,15 +7,12 @@ import ProfileHome from "../core/ProfileHome"
 import Orders from "../user/Orders";
 
 const MyOrders = () => {
-    const {
-        user : {_id, firstName, lastName, mobileNo_, email, role }
-    } = isAuthenticated();
-    const token = isAuthenticated().token;
+    const { user} = isAuthenticated();
     
     return (
         <Layout
             title="Dashboard"
-            description={`G'day ${firstName + ' ' + lastName}!`}
+            description={` ${user.firstName + ' ' + user.lastName}!`}
             className="container-fluid"
         >
             <ProfileHome

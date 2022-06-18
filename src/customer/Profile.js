@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../common/utils";
 import Layout from "../core/Layout";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import UserLinks from "../core/UserLink";
 import ProfileHome from "../core/ProfileHome"
 import { read, update, updateUser } from '../customer/apiUser';
 
 const UserUpdate = ({ match }) => {
-
     const [values, setValues] = useState({});
-
     const { token } = isAuthenticated();
-    const { name,firstName,lastName,gender, email } = values;
+    const { firstName, lastName, gender, email } = values;
+    let history = useHistory();
 
     const init = userId => {
         read(userId, token).then(data => {
             if (data.error) {
                 setValues({ ...values, error: true });
             } else {
-                console.log(data);
-                console.log(data.lastName)
-                setValues({ ...values, name: data.firstName,lastName:data.lastName,gender:data.gender, email: data.email });
+                setValues({ ...values, firstName: data.firstName,lastName:data.lastName,gender:data.gender, email:data.email });
             }
         });
     };
@@ -41,14 +38,14 @@ const UserUpdate = ({ match }) => {
 
     const clickSubmit = e => {
         e.preventDefault();
-        update(match.params.userId, token, { name,lastName,gender, email }).then(data => {
+        update(match.params.userId, token, { firstName, lastName,gender, email }).then(data => {
             if (data.error) {
-                console.log(gender)
+                console.log(data)
             } else {
                 updateUser(data, () => {
                     setValues({
                         ...values,
-                        name: data.name,
+                        firstName: data.firstName,
                         lastName:data.lastName,
                         gender:data.gender,
                         email: data.email,
@@ -57,6 +54,7 @@ const UserUpdate = ({ match }) => {
                 });
             }
         });
+        history.push("/user/profile")
     };
 
     return (
@@ -85,7 +83,7 @@ const UserUpdate = ({ match }) => {
                                         <div className="row">
                                             <div className="form-group col-lg-6">
                                                 <h6><b>First Name</b></h6>
-                                                <input onChange={handleChange('name')} className="form-control" value={name}/>
+                                                <input onChange={handleChange('firstName')} className="form-control" value={firstName}/>
                                             </div>
                                             
                                             <div className="form-group col-lg-6">
@@ -106,7 +104,7 @@ const UserUpdate = ({ match }) => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <button onClick={clickSubmit} className="btn btn-primary">
+                                        <button onClick={clickSubmit} className="submit_btn">
                                             Submit
                                         </button>
                                     </div>
