@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 import { MdAdd } from 'react-icons/md';
 import AddNewAddress from "./AddNewAddress";
 import { readAddress } from "../customer/apiUser";
+import { useRecoilState } from "recoil";
+import { setManageAddress } from "../recoil/atom/setManageAddress";
 
 const Checkout = () => {
    const { handleSubmit, formState : {errors} } = useForm();
@@ -22,7 +24,7 @@ const Checkout = () => {
    const { user ,token } = isAuthenticated();
    const userId = user._id;
    const [ showAddress, setShowAddress] = useState(true);
-   const [ userInfo ,setUserInfo] = useState([])
+   const [ userInfo ,setUserInfo] = useRecoilState(setManageAddress)
    const [ address ,setAddress] = useState(null)//for show selected addressId
 
    function handleAdd() {
@@ -48,7 +50,6 @@ const Checkout = () => {
    };
 
    const placeOrder = (data) => {
-      console.log("data",data)
       const createOrderData = {
          products: cartData,
          transaction_id: "123",
@@ -111,7 +112,7 @@ const Checkout = () => {
                                           </Link> 
                                        </div>
                                        {showAddress == false ?(
-                                             <AddNewAddress costomer={user._id} recordAdded={handleRecordAdded} />
+                                             <AddNewAddress customer={user._id} recordAdded={handleRecordAdded} />
                                        ):null}
                                     </div>
                                  </div>
@@ -124,7 +125,7 @@ const Checkout = () => {
                                     </div>
                                     <div id="collapseThree" className="collapse bg-white" aria-labelledby="headingThree" data-parent="#accordionExample">
                                        {showAddress == false ?(
-                                          <AddNewAddress costomer={user._id} recordAdded={handleRecordAdded}/>
+                                          <AddNewAddress customer={user._id} recordAdded={handleRecordAdded}/>
                                        ):null}
                                     </div>
                                  </div> 

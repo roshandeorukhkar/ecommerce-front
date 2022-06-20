@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { isAuthenticated } from "../common/utils";
 import { readAddress, removeAddressById } from "../customer/apiUser";
 import { BsThreeDotsVertical} from 'react-icons/bs'
+import { useRecoilState } from "recoil";
+import { setManageAddress } from "../recoil/atom/setManageAddress";
 
 const SelectAddress = ( {getSelectedAddress}) => {
-    const [ userInfo ,setUserInfo] = useState([])
+    const [ userInfo ,setUserInfo] = useRecoilState(setManageAddress)
     const { user, token } = isAuthenticated();
 
     const listOfUserInfo = () => {
@@ -31,6 +33,7 @@ const SelectAddress = ( {getSelectedAddress}) => {
                 console.log(data.error);
             } else {
                 window.confirm('Are you sure you want to delete this Address?')
+                listOfUserInfo()
             }
         });
     };

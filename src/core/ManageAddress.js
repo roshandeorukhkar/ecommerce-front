@@ -16,7 +16,7 @@ const ManageAddress = () => {
         setShowAddress(!showAddress);
     }
 
-    function handleRecordAdded() {
+    function handleRecordAdded(address) {
         setShowAddress(true)
     }
 
@@ -41,7 +41,7 @@ const ManageAddress = () => {
                                     </Link> 
                                 </div>
                                 {showAddress == false ?(
-                                    <AddNewAddress costomer={user._id} recordAdded={handleRecordAdded} />
+                                    <AddNewAddress customer={user._id} recordAdded={handleRecordAdded} />
                                 ):null}
                                 
                                 <FetchAddress customer={user._id}/>

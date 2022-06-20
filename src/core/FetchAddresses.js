@@ -3,17 +3,19 @@ import { Link } from "react-router-dom";
 import { isAuthenticated } from "../common/utils";
 import { readAddress, removeAddressById } from "../customer/apiUser";
 import { BsThreeDotsVertical} from 'react-icons/bs'
+import { useRecoilState } from "recoil";
+import { setManageAddress } from "../recoil/atom/setManageAddress";
 
 const FetchAddress = () => {
-    const [ userInfo ,setUserInfo] = useState([])
+    const [ userInfo ,setUserInfo] = useRecoilState(setManageAddress)
     const { user, token } = isAuthenticated();
 
     const listOfUserInfo = () => {
-        readAddress(user._id, token).then(data => {
-            if (data.error) {
-                console.log(data.error);
+        readAddress(user._id, token).then(res => {
+            if (res.error) {
+                console.log(res.error);
             } else {
-                setUserInfo(data);
+                setUserInfo(res);
             }
         });
     };
@@ -27,6 +29,7 @@ const FetchAddress = () => {
                 console.log(data.error);
             } else {
                 window.confirm('Are you sure you want to delete this Address?')
+                listOfUserInfo()
             }
         });
     };
@@ -68,7 +71,7 @@ const FetchAddress = () => {
                     </div>
                 </>
             ))}
-        </>   
+        </>  
     );
 };
 

@@ -2,20 +2,20 @@ import React, { useState, useEffect} from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { addAddress} from "../customer/apiUser";
+import { useRecoilState } from "recoil";
+import { setManageAddress } from "../recoil/atom/setManageAddress";
 
 const AddNewAddress = (props) => {
-    const [address , setAddress]= useState([])
-
+    const [ address , setAddress]= useState([])
+    const [ coilAddress , setCoilAddress ] = useRecoilState(setManageAddress)
     const handleChange = data => event => {
         setAddress({ ...address,[data]: event.target.value });
     };
     const {handleSubmit, register, formState : {errors} } = useForm();
 
-
-
     const onSubmit = (data) => {
         const addressData ={
-            customerId:props.costomer,
+            customerId:props.customer,
             fname   :data.fname,
             lname   :data.lname,
             city    :data.city,
@@ -26,15 +26,12 @@ const AddNewAddress = (props) => {
             state   :data.state,
             pincode :data.pincode
         }
-        addAddress(addressData).then(data => {
+        addAddress(addressData).then(res => {
+            setCoilAddress(coilAddress.concat(res))        
             props.recordAdded()
-            console.log(data)
         });
     }  
 
-    const clickCancle = ()=>{
-    }
-    
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="col-lg-12 order-address">
@@ -97,7 +94,7 @@ const AddNewAddress = (props) => {
                     Save
                 </button>
 
-                <Link className="cancel_btn" onClick={clickCancle}>
+                <Link className="cancel_btn">
                     Cancle
                 </Link>
             </div>
