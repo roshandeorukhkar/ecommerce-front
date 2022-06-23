@@ -4,6 +4,7 @@ import { isAuthenticated } from "../common/utils";
 import { Link } from "react-router-dom";
 import { getWishlist,removeFromWishlist } from "../customer/apiUser";
 import moment from "moment";
+import ProfileHome from "./ProfileHome";
 
 const Wishlist = () => { 
     const [wishlist, setWishlist] = useState([]);
@@ -48,31 +49,7 @@ const Wishlist = () => {
     return (
       <Layout title="" description="" className="container-fluid">
 
-      <div className="bz_inner_page_navigation float_left">
-        <div className="container custom_container">
-          <div className="inner_menu float_left">
-            <ul>
-              <li>
-                <a href="#">
-                  {" "}
-                  <span>
-                    <i className="fas fa-home"></i>
-                  </span>{" "}
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  {" "}
-                  <span>
-                    <i className="fas fa-angle-right"></i>
-                  </span>{" "}
-                  Wishlist
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <ProfileHome profile="Wishlist"/>
 
       <div className="bz_product_grid_content_main_wrapper float_left">
         <div className="container custom_container">

@@ -84,11 +84,11 @@ const Menu = ({ history }) => {
                     </Link>
                     <div className="cart_details" style={{ width: '160px' }}>
                         <ul>
-                            <li><Link to="/user/profile">My Profile</Link></li>
-                            <li><Link to="/user/orders">My Orders</Link></li>
-                            <li><Link to="/wishlist">Wishlist</Link></li>
-                            <li><Link to="#">Conatct Us</Link></li>
-                            <li><Link to="#" onClick={logout}>Logout</Link></li>
+                            <li className="profile-link"><Link to="/user/profile">My Profile</Link></li>
+                            <li className="profile-link"><Link to="/user/orders">My Orders</Link></li>
+                            <li className="profile-link"><Link to="/wishlist">Wishlist</Link></li>
+                            <li className="profile-link"><Link to="#">Conatct Us</Link></li>
+                            <li className="profile-link"><Link to="#" onClick={logout}>Logout</Link></li>
                         </ul>
                     </div>
                 </div>

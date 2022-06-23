@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { isAuthenticated } from "../common/utils";
 import { Link } from "react-router-dom";
 import { FaFirstOrderAlt } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 import { AiFillSetting } from 'react-icons/ai';
 import { SiMaterialdesignicons } from 'react-icons/si';
+
 const userLinks = () => {
     const {
         user : { _id, firstName, lastName}
@@ -26,15 +27,15 @@ const userLinks = () => {
         <div className="card row">
             <div className="pro-myorder hover-link">
                 <div className="pro-order">
-                    <FaFirstOrderAlt/>
+                    <span><FaFirstOrderAlt/></span>
                     <Link to="/user/orders" className="order-link hover-link">MY ORDERS</Link>
                 </div>
             </div>
             <div className="border-bottom"></div>
             <div className="pro-myorder">
                 <div className="pro-order">
-                    <AiFillSetting/>
-                    <Link to="" className="order-link ">ACCOUNT SETTING</Link>
+                    <span><AiFillSetting/></span>
+                    <Link className="order-link ">ACCOUNT SETTING</Link>
                 </div>
                 <div>
                     <Link to='/user/profile'>
@@ -52,7 +53,7 @@ const userLinks = () => {
 
             {/* <div className="pro-myorder">
                 <div className="pro-order">
-                    <MdPayment/>
+                    <span><MdPayment/></span>
                     <Link className="order-link">Payment</Link>
                 </div>
                 <div>
@@ -79,7 +80,7 @@ const userLinks = () => {
 
             <div className="pro-myorder">
                 <div className="pro-order">
-                    <SiMaterialdesignicons/>
+                    <span><SiMaterialdesignicons/></span>
                     <Link to="" className="order-link">MY STUFF</Link>
                 </div>
                 <div>
@@ -104,7 +105,7 @@ const userLinks = () => {
 
             <div className="pro-myorder hover-link">
                 <div className="pro-order">
-                    <FiLogOut/>
+                    <span><FiLogOut/></span>
                     <Link to='/logout' className="order-link hover-link">LOGOUT</Link>
                 </div>
             </div>
@@ -122,7 +123,6 @@ const userLinks = () => {
             </ul> */}
         </div>
         </>
-        
     );
 };
 export default userLinks;

@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import { Link, Redirect, useHistory  } from "react-router-dom";
 
 const YourOrder = (props) => {
-   // console.log("---",props);
   let history = useHistory();
   if(props.total == '0') {
     history.push("/");
@@ -14,41 +13,38 @@ const YourOrder = (props) => {
         <h3>Your Order</h3>
         <div className="order_details">
           <p>
-            {" "}
-            Total Price{" "}
+            Total Price
             <span>
               <i className="fas fa-rupee-sign fa-sm"></i>
               {props.total}
-            </span>{" "}
+            </span>
           </p>
           <p>
-            {" "}
-            Discount Price{" "}
+            Discount Price
             <span>
               <i className="fas fa-rupee-sign fa-sm"></i>0
-            </span>{" "}
+            </span>
           </p>
           <p>
-            {" "}
-            Shipping{" "}
+            Shipping
             <span>
               <i className="fas fa-rupee-sign fa-sm"></i>0
-            </span>{" "}
+            </span>
           </p>
         </div>
         <div className="order_rate float_left">
           <h3>
-            Order Total{" "}
+            Order Total
             <span>
               <i className="fas fa-rupee-sign"></i>
               {props.total}
-            </span>{" "}
+            </span>
           </h3>
         </div>
         {/* <Link className="placeholder_btn" to="#" onClick={props.placeOrder}>  Place Order2</Link> */}
             
         {props.placeOrder!='' ? 
-            <Link className="placeholder_btn" to="#" onClick={props.placeOrder}>  Place Order</Link> 
+            null
                        :
             <Link className="placeholder_btn" to={props.location} >
              Place Order

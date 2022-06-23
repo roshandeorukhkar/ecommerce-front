@@ -28,11 +28,11 @@ const Checkout = () => {
    const [ address ,setAddress] = useState(null)//for show selected addressId
 
    function handleAdd() {
-       setShowAddress(!showAddress);
+      setShowAddress(!showAddress);
    }
 
    function handleRecordAdded() {
-       setShowAddress(true)
+      setShowAddress(true)
    }
 
    useEffect(() => {
@@ -144,7 +144,7 @@ const Checkout = () => {
                            </div>
                         </div>
                      </div>
-                     <YourOrder total={total} placeOrder={placeOrder}/>
+                     <YourOrder total={total} />
                   </div>
                </form>
             </div>

@@ -9,7 +9,6 @@ import { isAuthenticated } from "../common/utils";
 import YourOrder from "./YourOrder";
 
 const Cart = () => {
-  const [items, setItems] = useState([]);
   const [run, setRun] = useState(false);
   const [cartItem, setCartItem] = useRecoilState(cartList);
   const { cartData, clength, total } = useRecoilValue(cartFetchData);
@@ -124,7 +123,7 @@ const Cart = () => {
                         </td>
                         <td>
                           <i className="fas fa-rupee-sign fa-sm"></i>
-                          {product.price.toFixed(2)} {/* x {product.quantity} */}
+                          {product.price.toFixed(2)}
                         </td>
                         <td>
                           <i className="fas fa-rupee-sign fa-sm"></i>
@@ -133,10 +132,10 @@ const Cart = () => {
                         <td class="text-center">
                          <Link style={{fontSize: '12px', padding: '0 5px'}} to="#" title="Place Order" className="btn btn-success btn-sm">
                             Place Order
-                          </Link>{" "}
+                          </Link>
                           <Link style={{fontSize: '12px', minWidth: '75px', marginTop: '5px', padding: '0 5px'}} to="#" title="Remove Item" className="btn btn-danger btn-sm" onClick={removeCartItem(product.id)}>
                             Remove
-                          </Link>{" "}
+                          </Link>
                         </td>
                       </tr>
                     ))}

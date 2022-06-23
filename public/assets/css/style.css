@@ -137,11 +137,15 @@ body, html {
     padding-left: 20px;
     font-size: 16px;
     font-weight: 500;
-    color: #878787;
+    color: #0e0d0d;
     cursor: pointer;
 }
 .border-bottom{
   border-bottom: 1px solid
+}
+
+.pro-order span {
+  color: #01a5ed;
 }
 .account-setting{
   font-size: 14px;
@@ -177,11 +181,24 @@ body, html {
   margin-top: 10px;
   display: block;
   max-width: 523px;
-  }
+}
+
 .hover-link:hover{
   color: #01a5ed;
   background-color: #f1f1f1
 }
+
+.profile-link{
+  padding: 10px;
+}
+.pro-order a.active {
+  color: #fff;
+  background: #7600dc;
+}
+.pro-order a.inactive {
+  font-style: italic;
+}
+
 a {
   color: #797979;
   font-family: "Lato", sans-serif;
