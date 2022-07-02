@@ -2,7 +2,6 @@ import { API } from "../config";
 import queryString from "query-string";
 
 export const getProducts = sortBy => {
-    console.log(API)
     return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
         method: "GET"
     })
@@ -21,7 +20,6 @@ export const getTopCategories = categoryId => {
         .catch(err => console.log(err));
 };
 export const getCategories = () => {
-    console.log(API)
     return fetch(`${API}/categories`, {
         method: "GET"
     })
@@ -55,7 +53,6 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
 
 export const list = params => {
     const query = queryString.stringify(params);
-    console.log("query", query);
     return fetch(`${API}/products/search?${query}`, {
         method: "GET"
     })
@@ -192,3 +189,55 @@ export const partnerImgListAPI = () =>{
         console.log(err)
     )
 }
+
+export const createCart = (data, token) => {
+    return fetch(`${API}/cart/create`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type" : "application/json",
+            Authorization:`Bearer ${token}`
+        },
+        body: JSON.stringify({ data: data })
+    }).then(response => {
+        return response.json();
+    })
+    .catch(err => console.log(err));
+};
+
+export const getCartList = (userId)=> {
+    return fetch(`${API}/cart/list/${userId}`, {
+        method: "GET",
+    }).then(response => {
+        return response.json();
+    })
+    .catch(err => console.log(err));
+};
+
+export const removeCartItemById = (userId, id) => {
+    return fetch(`${API}/cart/delete/${userId}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+    }).then(response => {
+        return response.json();
+    })
+    .catch(err => console.log(err));
+};
+//working on........
+export const removeCartItems = (userId) => {
+    console.log("userId=============0",userId)
+    return fetch(`${API}/cart/delete/${userId}`, {
+        method: 'DELETE',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        //Authorization:`Bearer ${token}`
+    }).then(response => {
+        return response.json();
+    })
+    .catch(err => console.log(err));
+};

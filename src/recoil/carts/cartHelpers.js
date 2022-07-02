@@ -1,17 +1,8 @@
 import { atom, selector } from "recoil";
-import { recoilPersist } from "recoil-persist";
-
-const localStorage = typeof window !==`undefined` ? window.localStorage : null;
-
-const { persistAtom  } = recoilPersist({
-  key : 'cart',
-  storage : localStorage
-})
 
 export const cartList =  atom({
   key: 'cartList',
   default:[],
-  effects_UNSTABLE: [persistAtom]
 });
 
 export const cartFetchData = selector({
@@ -20,7 +11,7 @@ export const cartFetchData = selector({
       const cartD = get(cartList);
       const clength = cartD.length;
       const cartData = cartD;
-      const total = cartD.reduce((prev , cur) => prev + (cur.price * cur.quantity) , 0 ); 
+      const total = cartD.reduce((prev , cur) => prev + (cur.productDetails[0].price * cur.quantity) , 0 ); 
       return {
         cartData,
         clength,
@@ -28,9 +19,3 @@ export const cartFetchData = selector({
       };
     },
 })
-
-// export const filterQantityByID = selector({
-//   key : "filterQantityByID",
-//   get : ({get}) => get
-// })
-

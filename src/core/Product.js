@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from '../common/utils';
 import Layout from "./Layout";
-import { read, listRelated, addProdcutToWishlist } from "./apiCore";
+import { read, listRelated, addProdcutToWishlist, createCart } from "./apiCore";
 import Card from "./Card";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -13,8 +13,6 @@ import { useHistory } from "react-router-dom";
 import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
 const { user ,token } = isAuthenticated();
-
-
 
 const Product = (props) => {
   const [product, setProduct] = useState({});
@@ -115,25 +113,23 @@ const Product = (props) => {
   const addToCart = (e) =>{
     e.preventDefault();
     const productId = props.match.params.productId;
-   if(cartItem.some(item => item.id === productId)){
-     setCartItem(cartItem => cartItem.map(item => item.id === productId ? {...item
-      // , quantity : item.quantity + 1 
-    } : item ))
-   }else{
-     setCartItem((oldCartItem) =>[
-       ...oldCartItem,
-       {
-         id : product._id,
-         name : product.name,
-         description : product.description,
-         category : category.name,
-         image : colorProductImages['0'],
-         price : product.price,
-         quantity : quantity
-        }
-      ]);
+    if (cartItem.some((item) => item.id === productId)) {
+      setCartItem((cartItem) =>
+        cartItem.map((item) =>
+          item.id === productId ? { ...item, quantity : item.quantity + 1 } : item,
+        )
+      );
+    } else {
+      const cartItemData ={
+        product: productId,
+        quantity: 1 ,
+        user: user._id,
+      }
+      createCart(cartItemData).then(res => {
+        console.log(res)
+      });
     }
-   history.push('/mycart');
+    history.push("/mycart");
   }
 
   const addToWishlist = (e) =>{
@@ -142,8 +138,6 @@ const Product = (props) => {
       product : props.match.params.productId,
       user: userId
     };
-    //const productId = props.match.params.productId;
-    //return false
     addProdcutToWishlist(userId,token,productData).then(data => {
         if (data.status == false) {
           alert('Error occured while adding product into your wishlist, Please try again.')
@@ -159,31 +153,31 @@ const Product = (props) => {
 
   const addToCartSubProduct = productId => (e) =>{
    e.preventDefault();
-   read(productId).then((data) => {
-     var i = 0;
-     let img = ''; 
-     Object.values(data.images).map(res => {
-       if(i == 0){
-        img = res[0];
-        i++;
-       }
-     })
+    read(productId).then((data) => {
+      var i = 0;
+      let img = ''; 
+      Object.values(data.images).map(res => {
+        if(i == 0){
+          img = res[0];
+          i++;
+        }
+      })
       //Add to cart
-     if(cartItem.some(item => item.id == data._id)){
-     setCartItem(cartItem => cartItem.map(item => item.id === data._id ? {...item, quantity : item.quantity + 1 } : item ))
-     }else{
-     setCartItem((oldCartItem) => [
-       ...oldCartItem,
-       {
-         id: productId,
-         name: data.name,
-         description: data.description,
-         category: data.category.name,
-         image: img,
-         price: data.price,
-         quantity: 1,
-       },
-     ]);
+      if(cartItem.some(item => item.id == data._id)){
+      setCartItem(cartItem => cartItem.map(item => item.id === data._id ? {...item, quantity : item.quantity + 1 } : item ))
+      }else{
+      setCartItem((oldCartItem) => [
+        ...oldCartItem,
+        {
+          id: productId,
+          name: data.name,
+          description: data.description,
+          category: data.category.name,
+          image: img,
+          price: data.price,
+          quantity: 1,
+        },
+      ]);
     }
   })
    history.push('/mycart');
@@ -222,9 +216,6 @@ const Product = (props) => {
   const handelChangeImage = (e) =>{
     setCurrentImage(e.target.src);
   }
-
-  console.log("-----",product.attribute)
-
   return (
     <Layout
       title={product && product.name}
@@ -239,28 +230,25 @@ const Product = (props) => {
             <ul>
               <li>
                 <Link to="#">
-                  {" "}
                   <span>
                     <i className="fas fa-home"></i>
-                  </span>{" "}
+                  </span>
                   Shop
                 </Link>
               </li>
               <li>
                 <Link to="#">
-                  {" "}
                   <span>
                     <i className="fas fa-angle-right"></i>
-                  </span>{" "}
-                  Product{" "}
+                  </span>
+                  Product
                 </Link>
               </li>
               <li className="active">
                 <Link to="#">
-                  {" "}
                   <span>
                     <i className="fas fa-angle-right"></i>
-                  </span>{" "}
+                  </span>
                   {category.name}
                 </Link>
               </li>
@@ -271,7 +259,7 @@ const Product = (props) => {
               <div className="col-lg-6 col-md-6 col-12">
                 <div className="container pt-4 pb-5 small_slider verticle_slider">
                   <div className="row carousel-indicators">
-                  {
+                    {
                       colorProductImages.length != 0 ?
                       colorProductImages.map((ele , i ) => (
                         <div className="item"  key={i}>
@@ -398,15 +386,8 @@ const Product = (props) => {
                     </ul>
                      <h3>
                       <i className="fas fa-rupee-sign fa-sm"></i>
-                      {product.price}{" "}
-                    </h3> 
-                    {/* <p>
-                      Pellentesque habitant morbi tristique senectus et netus et
-                      malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                      feugiat vitae, ultricies eget, tempor sit amet, ante.
-                      Donec eu libero sit amet quam egestas semper. Aenean
-                      ultricies mi vitae est. Mauris placerat eleifend leo.
-                    </p> */}
+                      {product.price}
+                    </h3>
                   </div>
                   <div className="color_code float_left">
                     <div className="fashion_color">
@@ -427,7 +408,7 @@ const Product = (props) => {
                     </div>
                     <div className="fashion_category">
                       <p>
-                        Categories:{" "}
+                        Categories:
                         <span>
                           <Link to="#">{category.name}</Link>
                         </span>
@@ -435,7 +416,7 @@ const Product = (props) => {
                     </div>
                     <div className="fashion_category">
                       <p>
-                        Brand:{" "}
+                        Brand:
                         <span>
                           <p>{product.brand}</p>
                         </span>
@@ -508,7 +489,7 @@ const Product = (props) => {
                           aria-controls="nav-contact"
                           aria-selected="false"
                         >
-                          Reviews (0){" "}
+                          Reviews (0)
                         </a>
                       </div>
                       <div
@@ -529,10 +510,10 @@ const Product = (props) => {
                                 product.specificationData.map((spec , i)=>(
 
                               <li key={spec._id}>
-                                {" "}
+                                
                                 <span>
                                   <i className="fas fa-check"></i>
-                                </span>{" "}
+                                </span>
                                {spec.manufacturerName}: 
                                <p>
                                {spec.specification_type}
@@ -541,7 +522,6 @@ const Product = (props) => {
                                 ) )
                               : null}
                             </ul>
-                            
                           </div>
                           {/* <div className="content_single_product">
                             <ul className="nots">
@@ -550,10 +530,10 @@ const Product = (props) => {
                                 product.attribute.map((att , i)=>(
                                   
                               <li>
-                                {" "}
+                                
                                 <span>
                                   <i className="fas fa-check"></i>
-                                </span>{" "}
+                                </span>
                                 {product.attributeData[i].attributeName}{" : "}
                                  { 
                                   att.Values && att.Values.length?
@@ -901,8 +881,8 @@ const Product = (props) => {
                     </p>
                     <Link to={`/product/${res._id}`} onClick={()=>setReload(!reload)}>
                       <h3 className="woocommerce-loop-product__title">
-                        {" "}
-                        {res.name}{" "}
+                        
+                        {res.name}
                       </h3>
                     </Link>
                     <ul className="star">

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const OrderInfo = () => {
    //payment
    const { cartData } = useRecoilValue(cartFetchData);
-
    return (
     <div className="card-body">
         <div className="bz_cart_main_wrapper billing_info float_left">
@@ -27,13 +26,19 @@ const OrderInfo = () => {
                             {cartData.map((product, i) => (
                                 <tr key={i}>
                                     <td>
-                                    <img
-                                        className="img-fluid"
-                                        src={product.image}
-                                        alt={product.name}
-                                    />
+                                    {product.productDetails[0].images && Object.values(product.productDetails[0].images).map((res, i) =>
+                                        i == 0 ? (
+                                            <img
+                                            key={i}
+                                            src={res[0]}
+                                            style={{ maxHeight: "100%", maxWidth: "100%" }}
+                                            alt={res.name}
+                                            />
+                                        ) : null
+                                        )
+                                    }
                                     </td>
-                                    <td>{product.name}</td>
+                                        <td>{product.productDetails[0].name}</td>
                                     <td>
                                         <div className="number_pluse">
                                             {product.quantity}
@@ -41,11 +46,11 @@ const OrderInfo = () => {
                                     </td>
                                     <td>
                                         <i className="fas fa-rupee-sign fa-sm"></i>
-                                        {product.price.toFixed(2)}
+                                        {product.productDetails[0].price.toFixed(2)}
                                     </td>
                                     <td>
                                         <i className="fas fa-rupee-sign fa-sm"></i>
-                                        {(product.price * product.quantity).toFixed(2)}
+                                        {(product.productDetails[0].price * product.quantity).toFixed(2)}
                                     </td>
                                 </tr>
                             ))}

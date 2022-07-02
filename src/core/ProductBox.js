@@ -3,12 +3,12 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { cartList } from "../recoil/carts/cartHelpers";
-import { addProdcutToWishlist } from "./apiCore";
+import { addProdcutToWishlist, createCart } from "./apiCore";
 import { isAuthenticated } from '../common/utils';
 import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
 
-const ProductBox = ({ image, productId, name, category, price, product, props }) => {
+const ProductBox = ({ image, productId, name, category, price, product}) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
   const history = useHistory();
   let discount_ = 0;
@@ -27,50 +27,39 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
   }
 
   const handleLoginModalClose = () => {
-      setShowLoginModal(false);
+    setShowLoginModal(false);
   }
 
   const handleRegistartionModalShow = () =>{
-      setShowRegistrationModal(true)
+    setShowRegistrationModal(true)
   }
   const handleRegistartionModalClose = () =>{
-      setShowRegistrationModal(false)
+    setShowRegistrationModal(false)
   }
 
   const addToCart = (e) => {
     e.preventDefault();
-    console.log("data");
-    var i = 0;
-    let imageArr = "";
-    
-    Object.values(image).map((img)=>{
-      if(i==0){
-        imageArr = img[0];
-        i++;
+    if(!user){
+      setShowLoginModal(true);
+    }else{
+      if (cartItem.some((item) => item.id === productId)) {
+        setCartItem((cartItem) =>
+          cartItem.map((item) =>
+            item.id === productId ? { ...item, quantity : item.quantity + 1 } : item,
+          )
+        );
+      } else {
+        const cartItemData ={
+          product: productId,
+          quantity: 1 ,
+          user: user._id,
+        }
+        createCart(cartItemData, token).then(res => {
+          console.log(res)
+        });
       }
-    })
-    if (cartItem.some((item) => item.id === productId)) {
-      setCartItem((cartItem) =>
-        cartItem.map((item) =>
-          item.id === productId ? { ...item, quantity : item.quantity + 1 } : item
-        )
-      );
-    } else {
-      setCartItem((oldCartItem) => [
-        ...oldCartItem,
-        {
-          id: productId,
-          name: name,
-          image : imageArr,
-          description : product.description,
-          category : category,
-          price: discount_!= 0 ? discount_ : price,
-          quantity: 1,
-          isComplete: false,
-        },
-      ]);
-    }
-    history.push("/mycart");
+      history.push("/mycart");
+    } 
   };
 
   const addToWishlist = productId =>(e) =>{
@@ -79,18 +68,17 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
       product : productId,
       user: userId
     };
-    //console.log(productId)
     addProdcutToWishlist(userId,token,productData).then(data => {
-        if (data.status == false) {
-          alert('Error occured while adding product into your wishlist, Please try again.')
-        } 
-        else 
-        {
-          alert('Product has been added successfully into your wishlist.')
-          history.push('/');
-        }
+      if (data.status == false) {
+        alert('Error occured while adding product into your wishlist, Please try again.')
+      } 
+      else 
+      {
+        alert('Product has been added successfully into your wishlist.')
+        history.push('/');
+      }
     });
-    //history.push('/mycart');
+    //history.push('/user/wishlist');
   }
 
   return (
@@ -108,6 +96,7 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
             />
           ) : null
         )}
+
         {userId=='0' ? 
           <div className="top_icon" onClick={handleLoginModalShow}>
             <p className="new">new</p>
@@ -115,14 +104,14 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
               <i className="far fa-heart"></i>
             </span>
           </div>
-            :
-            <div className="top_icon" onClick={addToWishlist(productId)}>
-              <p className="new">new</p>
-              <span>
-                <i className="far fa-heart"></i>
-              </span>
-            </div>
-            }
+          :
+          <div className="top_icon" onClick={addToWishlist(productId)}>
+            <p className="new">new</p>
+            <span>
+              <i className="far fa-heart"></i>
+            </span>
+          </div>
+        }
         
         <div className="product_overlay">
           <div className="search_icon">
@@ -166,21 +155,19 @@ const ProductBox = ({ image, productId, name, category, price, product, props })
         </ul>
         <h4>
           <i className="fas fa-rupee-sign fa-sm"></i>
-          {discount_ != 0 ? discount_ : price }{" "}
-          <span>
-              {" "}
+          {discount_ != 0 ? discount_ : price }
+            <span>
               { discount_ != 0 ? <del>
                 <i className="fas fa-rupee-sign fa-sm"></i>
                {price}
-              </del> : null }{" "}
-              {" "}
-            </span>{" "}
+              </del> : null }
+            </span>
         </h4>
         <Link to="" onClick={addToCart} className="add_btn custom_btn">
           Add to Cart
         </Link>
       </div>
-      {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location={"/"}/> : null}
+        {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location={"/"}/> : null}
         {showRegistrationModal===true? <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/> :null}
     </div>
   ); 

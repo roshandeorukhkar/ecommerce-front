@@ -7,11 +7,13 @@ import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
 import { isAuthenticated } from "../common/utils";
 import YourOrder from "./YourOrder";
+import { getCartList, removeCartItemById } from "./apiCore";
 
 const Cart = () => {
   const [run, setRun] = useState(false);
   const [cartItem, setCartItem] = useRecoilState(cartList);
   const { cartData, clength, total } = useRecoilValue(cartFetchData);
+
   const [quantity, setQuantity] = useState(1);
   const [showLoginModal , setShowLoginModal] = useState(false);
   const [showRegistrationModal , setShowRegistrationModal] = useState(false);
@@ -29,48 +31,63 @@ const Cart = () => {
   const handleRegistartionModalShow = () =>{
       setShowRegistrationModal(true)
   }
+
   const handleRegistartionModalClose = () =>{
       setShowRegistrationModal(false)
   }
 
-
   useEffect(() => {
-    //  setItems(cartData);
-  }, [run]);
+    listOfCartInfo()
+  }, []);
 
-  const removeCartItem = (productId) => (e) => {
-    e.preventDefault();
-    setCartItem((cartItem) => cartItem.filter((item) => item.id !== productId));
+  const listOfCartInfo = () => {
+    getCartList(user._id).then(data => {
+      if (data.error) {
+          console.log(data.error);
+      } else {
+        setCartItem(data);
+      }
+    });
+  };
+
+  const removeCartItem = (id) => {
+    removeCartItemById(user._id, id).then(data => {
+      if (data.error) {                  
+        console.log(data.error);
+      } else {
+        listOfCartInfo()
+      }
+    });
   };
 
   const quantityIncrement = (productId) => (e) => {
     e.preventDefault();
-    if (cartItem.some((item) => item.id === productId && item.quantity >= 1)) {
+    if (cartItem.some((item) => item.product === productId && item.quantity >= 1)) {
       setCartItem((cartItem) =>
         cartItem.map((item) =>
-          item.id === productId
+          item.product === productId
             ? { ...item, quantity: item.quantity + 1 }
             : item
         )
       ); 
       setQuantity(quantity + 1);
     }
-    setRun(!run);
+    setRun(run);
   };
 
   const quantityDecrement = (productId) => (e) => {
     e.preventDefault();
-    if (cartItem.some((item) => item.id === productId && item.quantity > 1)) {
+    if (cartItem.some((item) => item.product === productId && item.quantity > 1)) {
       setCartItem((cartItem) =>
         cartItem.map((item) =>
-          item.id === productId
+          item.product === productId
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
       );
       setQuantity(quantity - 1);
     }
-    setRun(!run);
+    setRun(run);
   };
 
   const showItems = () => {
@@ -92,29 +109,35 @@ const Cart = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartData.map((product, i) => (
-                      <tr key={i}>
+                    {cartData.map((product, index) => (
+                      <tr key={index}>
                         <td>
-                          <img
-                            className="img-fluid"
-                            src={product.image}
-                            alt={product.name}
-                          />
+                          {product.productDetails[0].images && Object.values(product.productDetails[0].images).map((res, i) =>
+                              i == 0 ? (
+                                <img
+                                  key={i}
+                                  src={res}
+                                  style={{ maxHeight: "100%", maxWidth: "100%" }}
+                                  alt={res.name}
+                                />
+                              ) : null
+                            )
+                          }
                         </td>
-                        <td>{product.name}</td>
+                        <td>{product.productDetails[0].name}</td>
                         <td>
                           <div className="number_pluse">
                             <div className="nice-number">
                               <button
                                 type="button"
-                                onClick={quantityDecrement(product.id)}
+                                onClick={quantityDecrement(product.product)}//product is productId
                               >
                                 -
                               </button>
                               <input type="number" value={product.quantity} />
                               <button
                                 type="button"
-                                onClick={quantityIncrement(product.id)}
+                                onClick={quantityIncrement(product.product)}//product is productId
                               >
                                 +
                               </button>
@@ -123,19 +146,16 @@ const Cart = () => {
                         </td>
                         <td>
                           <i className="fas fa-rupee-sign fa-sm"></i>
-                          {product.price.toFixed(2)}
+                          {product.productDetails[0].price.toFixed(2)}
                         </td>
                         <td>
                           <i className="fas fa-rupee-sign fa-sm"></i>
-                          {(product.price * product.quantity).toFixed(2)}
+                          {(product.productDetails[0].price * product.quantity).toFixed(2)}
                         </td>
                         <td class="text-center">
-                         <Link style={{fontSize: '12px', padding: '0 5px'}} to="#" title="Place Order" className="btn btn-success btn-sm">
-                            Place Order
-                          </Link>
-                          <Link style={{fontSize: '12px', minWidth: '75px', marginTop: '5px', padding: '0 5px'}} to="#" title="Remove Item" className="btn btn-danger btn-sm" onClick={removeCartItem(product.id)}>
-                            Remove
-                          </Link>
+                        <button style={{fontSize: '12px', minWidth: '75px', marginTop: '5px', padding: '0 5px'}} to="#" title="Remove Item" className="btn btn-danger btn-sm" onClick={(e)=> removeCartItem(product._id)}>
+                          Remove
+                        </button>
                         </td>
                       </tr>
                     ))}

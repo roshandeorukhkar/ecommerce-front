@@ -31,8 +31,8 @@ export const removeAddressById = (address,addressId) => {
 };
 
 //for adress 
-export const readAddress = (addressId, token) => {
-    return fetch(`${API}/customeraddress/read/${addressId}`, {
+export const readAddress = (userId, token) => {
+    return fetch(`${API}/customeraddress/read/${userId}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -69,11 +69,11 @@ export const addAddress = (data) => {
         },
         body: JSON.stringify(data)
     }).then(response => {
-            return response.json();
-        })
-        .catch(err => {
-            console.log(err);
-        });
+        return response.json();
+    })
+    .catch(err => {
+        console.log(err);
+    });
 };
 
 export const updateAddress = (addressId, token, user) => {
@@ -86,9 +86,9 @@ export const updateAddress = (addressId, token, user) => {
         },
         body: JSON.stringify(user)
     }).then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+        return response.json();
+    })
+    .catch(err => console.log(err));
 };
 
 export const update = (userId, token, user) => {
@@ -101,9 +101,9 @@ export const update = (userId, token, user) => {
         },
         body: JSON.stringify(user)
     }).then(response => {
-            return response.json();
-        })
-        .catch(err => console.log(err));
+        return response.json();
+    })
+    .catch(err => console.log(err));
 };
 
 export const updateUser = (user, next) => {

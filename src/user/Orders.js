@@ -80,61 +80,59 @@ const Orders = () => {
     );
 
     return (
-            <div className="row">
-                <div className="col-md-12">
-                    {orders.map((o, oIndex) => {
-                        return (
-                            <div
-                                className="product-order row"
-                                key={oIndex}
-                                
-                            >
-                                <ul className="list-group col-md-12">
-                                    <li className="list-group-item">
-                                        {showStatus(o)}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Transaction ID: {o.transaction_id}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Amount: <i className="fas fa-rupee-sign fa-sm"></i> {o.amount}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Ordered on:{" "}
-                                        {moment(o.createdAt).fromNow()}
-                                    </li>
-                                    <li className="list-group-item">
-                                        Delivery address: {o.address}
-                                    </li>
-                                </ul>
+        <div className="row">
+            <div className="col-md-12">
+                {orders.map((o, oIndex) => {
+                    return (
+                        <div
+                            className="product-order row"
+                            key={oIndex}
+                            
+                        >
+                            <ul className="list-group col-md-12">
+                                <li className="list-group-item">
+                                    {showStatus(o)}
+                                </li>
+                                <li className="list-group-item">
+                                    Transaction ID: {o.transaction_id}
+                                </li>
+                                <li className="list-group-item">
+                                    Amount: <i className="fas fa-rupee-sign fa-sm"></i> {o.amount}
+                                </li>
+                                <li className="list-group-item">
+                                    Ordered on:{" "}
+                                    {moment(o.createdAt).fromNow()}
+                                </li>
+                                <li className="list-group-item">
+                                    Delivery address:  {o.adrressData[0].address+' '+' '+o.adrressData[0].city+' '+', '+o.adrressData[0].country+' '+o.adrressData[0].state+' '+', '}<b>{o.adrressData[0].pincode}</b>
+                                </li>
+                            </ul>
 
-                                {/* <h3 className="mt-4 mb-4 font-italic">
-                                    Total products in the order:{" "}
-                                    {o.products.length}
-                                </h3> */}
-                                <div className="order-product-list col-md-12">
-                                    {o.products.map((p, pIndex) => (
-                    
-                                        <div className="product_details col-12 float_left">
-                                            <div className="img_product">
-                                                <img className="img-fluid" src={p.image} alt="img"/>
-                                            </div>
-                                            <div className="product_content">
-                                                <h3>{p.name}</h3>
-                                                <div className="rate">
-                                                    <p><span>Items: </span>{p.quantity}</p>
-                                                    <h3><i className="fas fa-rupee-sign fa-sm"></i>{p.price}</h3>
-                                                </div>
+                            {/* <h3 className="mt-4 mb-4 font-italic">
+                                Total products in the order:{" "}
+                                {o.products.length}
+                            </h3> */}
+                            <div className="order-product-list col-md-12">
+                                {o.productData.map((p) => (
+                                    <div className="product_details col-12 float_left">
+                                        <div className="img_product">
+                                            <img className="img-fluid" src={p.images[Object.keys(p.images)[0]][0]} alt="img"/>
+                                        </div>
+                                        <div className="product_content">
+                                            <h3>{p.name}</h3>
+                                            <div className="rate">
+                                                <p><span>Items: </span>{p.quantity}</p>
+                                                <h3><i className="fas fa-rupee-sign fa-sm"></i>{p.price}</h3>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                ))}
                             </div>
-                        );
-                    })}
-                    
-                </div>
+                        </div>
+                    );
+                })}
             </div>
+        </div>
     );
 };
 
