@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from '../common/utils';
 import Layout from "./Layout";
-import { read, listRelated, addProdcutToWishlist, createCart } from "./apiCore";
+import { read, listRelated, addProdcutToWishlist,addrating_api, createCart } from "./apiCore";
 import Card from "./Card";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -129,7 +129,7 @@ const Product = (props) => {
         console.log(res)
       });
     }
-    history.push("/mycart");
+   history.push('/cart');
   }
 
   const addToWishlist = (e) =>{
@@ -148,7 +148,51 @@ const Product = (props) => {
           history.push('/wishlist');
         }
     });
-    //history.push('/mycart');
+    //history.push('/cart');
+  }
+  //Onchange 
+  const [values, setValues] = useState({
+    name_rating: '',
+    email_rating:'',
+    comment_rating:''
+});
+
+//onchanges text box value add here 
+  const handleChange = ( event, name) => {
+    //CHeck box name checked here 
+    //console.log(event, name)
+    console.log(name)
+    setValues({ ...values, [name]: event.target.value, }); 
+   };
+
+  // 
+   const { name_rating, success,email_rating,comment_rating, redirectToProfile } = values;
+
+  const addrating = (e) =>{
+    //setValues({ ...values, error: false });
+    e.preventDefault();
+    const productData = {
+      product : props.match.params.productId,
+      user: userId,
+      comment_rating:comment_rating,
+      name_rating:name_rating,
+      email_rating:email_rating
+    };
+    //console.log(comment_rating);
+    console.log(1111111);
+    //const productId = props.match.params.productId;
+   //return false;
+    addrating_api(userId,token,productData).then(data => {
+        if (data.status == false) {
+          alert('Error occured while adding product into your wishlist, Please try again.')
+        } 
+        else 
+        {
+          alert('Product has been added successfully into your wishlist.')
+          //history.push('/wishlist');
+        }
+    });
+    //history.push('/cart');
   }
 
   const addToCartSubProduct = productId => (e) =>{
@@ -180,7 +224,7 @@ const Product = (props) => {
       ]);
     }
   })
-   history.push('/mycart');
+   history.push('/cart');
 }
 
 
@@ -772,7 +816,7 @@ const Product = (props) => {
                                     <label>Your review*</label>
                                   </div>
                                   <div className="col-12">
-                                    <textarea rows="5"></textarea>
+                                    <textarea rows="5" onChange={(e) =>  handleChange(e, 'comment_rating')} value={values.comment_rating}></textarea>
                                   </div>
                                 </div>
                                 <div className="form-group row">
@@ -780,7 +824,7 @@ const Product = (props) => {
                                     <label>Name*</label>
                                   </div>
                                   <div className="col-12">
-                                    <input type="text" />
+                                    <input type="text" onChange={(e) =>  handleChange(e, 'name_rating')} value={values.name_rating}/>
                                   </div>
                                 </div>
                                 <div className="form-group row">
@@ -788,14 +832,14 @@ const Product = (props) => {
                                     <label>Emali*</label>
                                   </div>
                                   <div className="col-12">
-                                    <input type="email" />
+                                    <input type="email" onChange={(e) =>  handleChange(e, 'email_rating')} value={values.email_rating}/>
                                   </div>
                                 </div>
                                 <p>
                                   Save my name, email, and website in this
                                   browser for the next time I comment.
                                 </p>
-                                <Link className="custom_btn" to="#">
+                                <Link className="custom_btn" to="#" onClick={addrating}>
                                   Submit
                                 </Link>
                               </form>
