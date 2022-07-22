@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
-import { read, listRelated } from './apiCore';
+import { readProduct } from "../apiCore/productsApi";
 import ShowImage from "./ShowImage";
 
 
@@ -13,19 +13,14 @@ const ProductDetailsModal = ({showModel,close,productId,category}) => {
   const [product, setProduct] = useState(false);
   const [error , setError] = useState('');
   const productArray = {_id : productId}
+
   useEffect(()=>{
     productDetails();
   },[productId])
-  // console.log("--------product",product.category);
+
   const productDetails = () =>{
-    // console.log("hello----",);
-    read(productId).then(data => {
-      if (data.error) {
-          setError(data.error);
-      } else {
-        console.log(data);
-          setProduct(data);
-      }
+    readProduct(productId).then(data => {
+        setProduct(data.data);
     });
   }
   

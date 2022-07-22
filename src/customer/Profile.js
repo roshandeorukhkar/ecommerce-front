@@ -4,20 +4,20 @@ import Layout from "../core/Layout";
 import { useHistory } from "react-router-dom";
 import UserLinks from "../core/UserLink";
 import ProfileHome from "../core/ProfileHome"
-import { read, update, updateUser } from '../customer/apiUser';
+import { readCustomer, update, updateUser } from '../apiCore/customerApi';
 
 const UserUpdate = ({ match }) => {
     const [values, setValues] = useState({});
-    const { token } = isAuthenticated();
+    const {user, token } = isAuthenticated();
     const { firstName, lastName, gender, email } = values;
     let history = useHistory();
 
     const init = userId => {
-        read(userId, token).then(data => {
+        readCustomer(userId, token).then(data => {
             if (data.error) {
                 setValues({ ...values, error: true });
             } else {
-                setValues({ ...values, firstName: data.firstName,lastName:data.lastName,gender:data.gender, email:data.email });
+                setValues({ ...values, firstName: data.data.firstName,lastName:data.data.lastName,gender:data.data.gender, email:data.data.email });
             }
         });
     };
@@ -38,7 +38,7 @@ const UserUpdate = ({ match }) => {
 
     const clickSubmit = e => {
         e.preventDefault();
-        update(match.params.userId, token, { firstName, lastName,gender, email }).then(data => {
+        update(match.params.userId, { firstName, lastName,gender, email }).then(data => {
             if (data.error) {
                 console.log(data)
             } else {
@@ -60,7 +60,7 @@ const UserUpdate = ({ match }) => {
     return (
         <Layout
             title="Dashboard"
-            description={`G'day ${firstName + ' ' + lastName}!`}
+            description={`G'day ${user.firstName + ' ' + user.lastName}!`}
             className="container-fluid"
         >
             <ProfileHome

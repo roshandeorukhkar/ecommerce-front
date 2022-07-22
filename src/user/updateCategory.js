@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
 import { isAuthenticated } from '../common/utils';
 import { Link, Redirect } from 'react-router-dom';
-import { getCategory, updateCategory } from './apiAdmin';
-// {category: ["5cd0258f2793ec6e100bc191"], price: []}
-// http://localhost:3000/admin/category/update/5cd0258f2793ec6e100bc191
+import { getCategory, updateCategory } from '../apiCore/categoryApi';
+
 const UpdateCategory = ({ match }) => {
     const [values, setValues] = useState({
         name: '',
@@ -15,9 +14,7 @@ const UpdateCategory = ({ match }) => {
 
     // destructure user and token from localStorage
     const { user, token } = isAuthenticated();
-
     const { name, error, redirectToProfile } = values;
-
     const init = categoryId => {
         getCategory(categoryId, token).then(data => {
             if (data.error) {

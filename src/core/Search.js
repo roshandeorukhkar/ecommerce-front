@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getTopCategories,getCategories, list } from "./apiCore";
+import { getCategories } from "../apiCore/categoryApi";
+import { list } from "../apiCore/productsApi";
+
 import Card from "./Card";
 
 const Search = () => {
@@ -40,15 +42,14 @@ const Search = () => {
     // }, []);
 
     useEffect(() => {
-        async function fetchData() {
-          // You can await here
-          const response = await getCategories();
-          setCategories_list(response)
-          // ...
-        }
         fetchData();
       }, []);
-    
+    async function fetchData() {
+    // You can await here
+    const response = await getCategories();
+    setCategories_list(response.data)
+    // ...
+    }
 
     const searchData = () => {
         // console.log(search, category);

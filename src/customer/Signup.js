@@ -74,7 +74,7 @@ const Signup = () => {
                             </button>
                         </form>              
         
-                        <p>Alreay have an account? <a href="/signin">Signin</a></p>
+                        <p>Already have an account? <a href="/signin">Signin</a></p>
                     </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-12">
@@ -111,14 +111,14 @@ const Signup = () => {
         // </Layout>
         <Layout>
             <div className="bz_inner_page_navigation float_left">
-               <div className="container custom_container">
-                  <div className="inner_menu float_left">
-                     <ul>
-                        <li><a href="/"> <span><i className="fas fa-home"></i></span> </a></li>
-                        <li className="active"><a href="#"> <span><i className="fas fa-angle-right"></i></span> Signup</a></li>
-                     </ul>
-                  </div>
-               </div>
+                <div className="container custom_container">
+                    <div className="inner_menu float_left">
+                        <ul>
+                            <li><a href="/"> <span><i className="fas fa-home"></i></span> </a></li>
+                            <li className="active"><a href="#"> <span><i className="fas fa-angle-right"></i></span> Signup</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             {showSuccess()}
             {showError()}

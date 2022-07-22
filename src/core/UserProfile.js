@@ -4,7 +4,7 @@ import Layout from "../core/Layout";
 import { Link } from "react-router-dom";
 import UserLinks from "../core/UserLink";
 import ProfileHome from "../core/ProfileHome";
-import { read } from "../customer/apiUser";
+import { readCustomer } from "../apiCore/customerApi";
 
 const UserInfo = () => {
     const [userInfo ,setUserInfo] = useState({})
@@ -12,12 +12,8 @@ const UserInfo = () => {
     const { user, token } = isAuthenticated();
 
     const listOfUserInfo = () => {
-        read(user._id, token).then(data => {
-            if (data.error) {
-                console.log(data.error);
-            } else {
-                setUserInfo(data);
-            }
+        readCustomer(user._id).then(data => {
+            setUserInfo(data.data);
         });
     };
 

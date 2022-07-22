@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../common/utils";
-import { readAddress, removeAddressById } from "../customer/apiUser";
+import { readAddress, removeAddressById } from "../apiCore/addressApi";
 import { BsThreeDotsVertical} from 'react-icons/bs'
 import { useRecoilState } from "recoil";
 import { setManageAddress } from "../recoil/atom/setManageAddress";
@@ -11,20 +11,16 @@ const FetchAddress = () => {
     const { user, token } = isAuthenticated();
 
     const listOfUserInfo = () => {
-        readAddress(user._id, token).then(res => {
-            if (res.error) {
-                console.log(res.error);
-            } else {
-                setUserInfo(res);
-            }
-        });
+        readAddress(user._id).then((response) => {
+            setUserInfo(response.data);
+        }); 
     };
 
     const removeAddress = (addressId) => {
         const address = {
             addressId: addressId
         };
-        removeAddressById(address,addressId).then(data => {
+        removeAddressById( addressId, address).then(data => {
             if (data.error) {                  
                 console.log(data.error);
             } else {

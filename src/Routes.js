@@ -8,7 +8,7 @@ import Shop from './core/Shop';
 import Product from './core/Product';
 import MyCart from './core/MyCart';
 import UserProfile from './core/UserProfile'
-import MyOrders from './core/orders';
+import MyOrders from './core/MyOrders';
 import Profile from './customer/Profile';
 import Checkout from './core/Checkout';
 import ManageAddress from './core/ManageAddress';
@@ -28,10 +28,10 @@ const Routes = () => {
                 <PrivateRoute path="/user/address" exact component={ManageAddress}/>
                 <PrivateRoute path="/address/:userId" exact component={ManageAddress}/>
                 <PrivateRoute path="/user/profile" exact component={UserProfile} />
-                <PrivateRoute path="/user/orders" exact component={MyOrders} />
+                <PrivateRoute path="/user/myorders" exact component={MyOrders} />
                 <PrivateRoute path="/user/profile/:userId" exact component={Profile} />
                 <PrivateRoute path="/user/updateaddress/:addressId" exact component={UpdateAddress} />
-                <PrivateRoute path="/orders/:userId" exact component={MyOrders} />
+                {/* <PrivateRoute path="/orders/:userId" exact component={MyOrders} /> */}
                 <PrivateRoute path="/checkout" exact component={Checkout} />
                 <Route path="/wishlist" exact component={Wishlist} />
             </Switch>

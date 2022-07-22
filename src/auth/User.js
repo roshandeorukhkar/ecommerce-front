@@ -8,12 +8,5 @@ export const adminsignin = admin => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(admin)
-    })
-        // .then(response => {
-        //     return response.json();
-        // })
-        // .catch(err => {
-        //     console.log(err);
-        // });
-        
+    })  
 };

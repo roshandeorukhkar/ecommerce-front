@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from "react-hook-form";
 
 const PaymentMethods = () => {
    const { register } = useForm();

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Layout from "../core/Layout";
 import { isAuthenticated } from "../common/utils";
 import { Link } from "react-router-dom";
-import { createCategory } from "./apiAdmin";
+import { createCategory } from "../apiCore/categoryApi";
 
 const AddCategory = () => {
     const [name, setName] = useState("");

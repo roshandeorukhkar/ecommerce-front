@@ -5,22 +5,23 @@ import { cartFetchData, cartList} from '../recoil/carts/cartHelpers';
 import { useRecoilValue  } from 'recoil';
 import YourOrder from './YourOrder';
 import { useForm } from "react-hook-form";
-import { createOrder, removeCartItems, getCartList } from './apiCore';
+import { createOrder } from '../apiCore/orderApi';
+import { getCartList, removeCartItems }  from "../apiCore/cartApi";
 import OrderInfo from "./OrderInfo"
 import PaymentMethods from './PaymentMethods';
 import SelectAddress from './selectAddresses';
 import { Link } from "react-router-dom";
 import { MdAdd } from 'react-icons/md';
 import AddNewAddress from "./AddNewAddress";
-import { readAddress } from "../customer/apiUser";
+import { readAddress } from "../apiCore/addressApi";
 import { useRecoilState } from "recoil";
 import { setManageAddress } from "../recoil/atom/setManageAddress";
 import { useHistory } from 'react-router-dom';
 
 const Checkout = () => {
-   const { handleSubmit, formState : {errors} } = useForm();
-   //payment
-   const { cartData, total } = useRecoilValue(cartFetchData);
+   const { cartData } = useRecoilValue(cartFetchData);
+   const total = cartData.reduce((total, item)=>total+(item.productDetails[0].price*item.quantity),0)
+   const [run, setRun] = useState(false);
    const [cartItem, setCartItem] = useRecoilState(cartList);
    const { user ,token } = isAuthenticated();
    const userId = user._id;
@@ -28,6 +29,7 @@ const Checkout = () => {
    const [ userInfo ,setUserInfo] = useRecoilState(setManageAddress)
    const [ address ,setAddress] = useState(null)//for show selected addressId
    let history = useHistory()
+
    function handleAdd() {
       setShowAddress(!showAddress);
    }
@@ -39,25 +41,20 @@ const Checkout = () => {
    useEffect(() => {
       listOfUserInfo()
       listOfCartInfo()
-   }, []);
+   }, [!run]);
 
    const listOfUserInfo = () => {
-      readAddress(user._id, token).then(data => {
-          if (data.error) {
-              console.log(data.error);
-          } else {
-              setUserInfo(data);
-          }
+      readAddress(user._id).then(data => {
+         setUserInfo(data.data);
       });
    };
    
-  
    const listOfCartInfo = () => {
       getCartList(user._id).then(data => {
         if (data.error) {
             console.log(data.error);
         } else {
-          setCartItem(data);
+          setCartItem(data.data);
         }
       });
    };
@@ -70,18 +67,18 @@ const Checkout = () => {
          addressId: address,
          user : userId
       };
-      createOrder(userId, token, createOrderData)
+      createOrder(userId, createOrderData)
       .then(response => {
          console.log(response)
       }) 
-      removeCartItems(userId).then(data => {
-         if (data.error) {                  
-           console.log(data.error);
-         } else {
-           listOfCartInfo()
-         }
-      });
-      history.push('/user/orders')
+      // removeCartItems(userId, token).then(data => {
+      //    if (data.error) {                  
+      //      console.log(data.error);
+      //    } else {
+      //      listOfCartInfo()
+      //    }
+      // });
+      history.push('/user/myorders')
    }
 
    return (
@@ -113,7 +110,7 @@ const Checkout = () => {
                                  </h2>
                               </div>
                               <div id="collapseTwo" className="collapse show bg-white" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                 <OrderInfo/>
+                                 <OrderInfo cartData={cartData}/>
                               </div>
                            </div>
                            {userInfo.length > 0 ?

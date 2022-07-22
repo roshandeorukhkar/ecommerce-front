@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../common/utils";
-import { readAddress, removeAddressById } from "../customer/apiUser";
+import { readAddress, removeAddressById } from "../apiCore/addressApi";
 import { BsThreeDotsVertical} from 'react-icons/bs'
 import { useRecoilState } from "recoil";
 import { setManageAddress } from "../recoil/atom/setManageAddress";
 
 const SelectAddress = ( {getSelectedAddress}) => {
     const [ userInfo ,setUserInfo] = useRecoilState(setManageAddress)
+    console.log("userInfo----",userInfo)
     const { user, token } = isAuthenticated();
 
     const listOfUserInfo = () => {
-        readAddress(user._id, token).then(data => {
-            if (data.error) {
-                console.log(data.error);
-            } else {
-                setUserInfo(data);
-            }
+        readAddress(user._id).then(response => {
+            setUserInfo(response.data);
         });
     };
 
@@ -28,7 +25,7 @@ const SelectAddress = ( {getSelectedAddress}) => {
         const address = {
             addressId: addressId
         };
-        removeAddressById(address,addressId).then(data => {
+        removeAddressById(addressId, address).then(data => {
             if (data.error) {                  
                 console.log(data.error);
             } else {

@@ -4,7 +4,7 @@ import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ProductBox from "./ProductBox";
 import ProductDetailsModal from "./ProductDetailsModal";
-import { sliderList, advertiseListAPI } from "./apiCore";
+import { sliderList, advertiseListAPI } from "../apiCore/homeApi";
 
 const NewProducts = (props) => {
   const [productList, setProductList] = useState(props.products);
@@ -13,14 +13,14 @@ const NewProducts = (props) => {
   
   const SliderLists = () => {
     sliderList().then((data) => {
-      setSliderImages(data.result);
+      setSliderImages(data.data.result);
     });
     console.log("I m in new product")
   };
 
   const advertiseList = () => {
     advertiseListAPI().then((data) => {
-      setAdvertiseImage(data.res_);
+      setAdvertiseImage(data.data.res_);
     });
   };
 

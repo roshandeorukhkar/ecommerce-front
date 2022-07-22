@@ -1,7 +1,13 @@
+
+
+
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from '../common/utils';
 import Layout from "./Layout";
-import { read, listRelated, addProdcutToWishlist,addrating_api, createCart } from "./apiCore";
+import { addProdcutToWishlist, } from "../apiCore/wishlistApi";
+import { addrating_api } from "../apiCore/homeApi";
+import { readProduct, listRelated } from "../apiCore/productsApi";
+import { createCart }  from "../apiCore/cartApi";
 import Card from "./Card";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -12,7 +18,7 @@ import { cartList ,cartFetchData } from "../recoil/carts/cartHelpers";
 import { useHistory } from "react-router-dom";
 import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
-const { user ,token } = isAuthenticated();
+
 
 const Product = (props) => {
   const [product, setProduct] = useState({});
@@ -55,34 +61,26 @@ const Product = (props) => {
 
   const loadSingleProduct = (productId) => {
     const colorArray = [];
-    read(productId).then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setProduct(data);
-        var images = JSON.parse(JSON.stringify(data.images));
-        setProductImages(images);
-        Object.keys(images).forEach((key,i) =>{
-          colorArray.push(key);
-        });
-        var i = 0;
-        Object.entries(images).forEach((data) =>{
-          if(i == 0){
-             setColorProductImages(data[1]);
-            i++;
-          }
-        });
-        setColor(colorArray);
-        setCategory(data.category[0]);
-        // fetch related products
-        listRelated(data._id).then((data) => {
-          if (data.error) {
-            setError(data.error);
-          } else {
-            setRelatedProduct(data)
-          }
-        });
-      }
+    readProduct(productId).then((data) => {
+      setProduct(data.data);
+      var images = JSON.parse(JSON.stringify(data.data.images));
+      setProductImages(images);
+      Object.keys(images).forEach((key,i) =>{
+        colorArray.push(key);
+      });
+      var i = 0;
+      Object.entries(images).forEach((data) =>{
+        if(i == 0){
+            setColorProductImages(data[1]);
+          i++;
+        }
+      });
+      setColor(colorArray);
+      setCategory(data.data.category[0]);
+      // fetch related products
+      listRelated(productId).then((data) => {
+          setRelatedProduct(data.data)
+      });
     });
   };
 
@@ -129,7 +127,7 @@ const Product = (props) => {
         console.log(res)
       });
     }
-   history.push('/cart');
+   history.push('/mycart');
   }
 
   const addToWishlist = (e) =>{
@@ -139,6 +137,7 @@ const Product = (props) => {
       user: userId
     };
     addProdcutToWishlist(userId,token,productData).then(data => {
+      console.log("data----",data)
         if (data.status == false) {
           alert('Error occured while adding product into your wishlist, Please try again.')
         } 
@@ -169,7 +168,6 @@ const Product = (props) => {
    const { name_rating, success,email_rating,comment_rating, redirectToProfile } = values;
 
   const addrating = (e) =>{
-    //setValues({ ...values, error: false });
     e.preventDefault();
     const productData = {
       product : props.match.params.productId,
@@ -178,10 +176,6 @@ const Product = (props) => {
       name_rating:name_rating,
       email_rating:email_rating
     };
-    //console.log(comment_rating);
-    console.log(1111111);
-    //const productId = props.match.params.productId;
-   //return false;
     addrating_api(userId,token,productData).then(data => {
         if (data.status == false) {
           alert('Error occured while adding product into your wishlist, Please try again.')
@@ -197,7 +191,7 @@ const Product = (props) => {
 
   const addToCartSubProduct = productId => (e) =>{
    e.preventDefault();
-    read(productId).then((data) => {
+   readProduct(productId).then((data) => {
       var i = 0;
       let img = ''; 
       Object.values(data.images).map(res => {

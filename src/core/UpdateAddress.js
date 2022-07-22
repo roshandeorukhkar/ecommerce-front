@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory  } from "react-router-dom";
-import { readAllAddress, updateAddress} from "../customer/apiUser";
+import { readAllAddress, updateAddress} from "../apiCore/addressApi";
 import { isAuthenticated } from "../common/utils";
 import Layout from "../core/Layout";
 import UserLinks from "../core/UserLink";
@@ -26,12 +26,8 @@ const UpdateAddress = ({ match }) => {
     }, []);
 
     const getAddress = () => {
-        readAllAddress(params.addressId, token).then(data => {
-            if (data.error) {
-                console.log(data.error);
-            } else {
-                setAddress(data);
-            }
+        readAllAddress(params.addressId).then(data => {
+            setAddress(data.data);
         });
     };
 
@@ -49,7 +45,8 @@ const UpdateAddress = ({ match }) => {
             state:address.state,
             pincode:address.pincode
         }
-        updateAddress(params.addressId, token, addressData).then(data => {
+        updateAddress(params.addressId, addressData).then(data => {
+            setAddress(data.data)
             console.log(data)
         });
         history.push('/user/address')

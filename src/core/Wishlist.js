@@ -2,27 +2,17 @@ import React, { useState, useEffect } from "react";
 import Layout from "../core/Layout";
 import { isAuthenticated } from "../common/utils";
 import { Link } from "react-router-dom";
-import { getWishlist,removeFromWishlist } from "../customer/apiUser";
-import moment from "moment";
+import { getWishlist,removeFromWishlist } from "../apiCore/wishlistApi";
 import ProfileHome from "./ProfileHome";
 
 const Wishlist = () => { 
+  const { user } = isAuthenticated();
     const [wishlist, setWishlist] = useState([]);
 
-    const {
-        user : { _id, firstName, lastName, mobileNo_, role }
-    } = isAuthenticated();
-    const token = isAuthenticated().token;
-
     const init = (userId, token) => {
-        getWishlist(userId, token).then(data => {
-            console.log("purches---",data);
-            if (data.error) {
-                console.log(data.error);
-            } else {
-              setWishlist(data);
-            }
-        });
+      getWishlist(userId, token).then(data => {
+        setWishlist(data.data);
+      });
     };
 
     const remove = wishlistId => {
@@ -43,7 +33,7 @@ const Wishlist = () => {
   };
 
     useEffect(() => {
-        init(_id, token);
+        init(user._id);
     }, []);
 
     return (

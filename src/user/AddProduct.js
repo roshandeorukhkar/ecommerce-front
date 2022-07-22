@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
 import { isAuthenticated } from '../common/utils';
-import { Link } from 'react-router-dom';
-import { createProduct, getCategories } from './apiAdmin';
+import { createProduct } from '../apiCore/productsApi';
+import { getCategories } from "../apiCore/categoryApi";
 
 const AddProduct = () => {
     const [values, setValues] = useState({
@@ -27,13 +27,10 @@ const AddProduct = () => {
         description,
         price,
         categories,
-        category,
-        shipping,
         quantity,
         loading,
         error,
         createdProduct,
-        redirectToProfile,
         formData
     } = values;
 
@@ -45,7 +42,7 @@ const AddProduct = () => {
             } else {
                 setValues({
                     ...values,
-                    categories: data,
+                    categories: data.data,
                     formData: new FormData()
                 });
             }

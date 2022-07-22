@@ -1,52 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getCart, addItem } from "./cartHelpers";
+import { getCartList, removeCartItemById }  from "../apiCore/cartApi";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { cartFetchData, cartList } from "../recoil/carts/cartHelpers";
 import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
 import { isAuthenticated } from "../common/utils";
 import YourOrder from "./YourOrder";
-import { getCartList, removeCartItemById } from "./apiCore";
 
-const Cart = () => {
+const Cart = ({cartData, user}) => {
   const [run, setRun] = useState(false);
   const [cartItem, setCartItem] = useRecoilState(cartList);
-  const { cartData, clength, total } = useRecoilValue(cartFetchData);
-
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState();
   const [showLoginModal , setShowLoginModal] = useState(false);
   const [showRegistrationModal , setShowRegistrationModal] = useState(false);
-  const { user ,token } = isAuthenticated();
-   //login and registartion model hide/show
 
-   const handleLoginModalShow = () =>{
-      setShowLoginModal(true);
+  const total = cartData.reduce((total, item)=>total+(item.productDetails[0].price*item.quantity),0)
+
+  const handleLoginModalShow = () =>{
+    setShowLoginModal(true);
   }
 
   const handleLoginModalClose = () => {
-      setShowLoginModal(false);
+    setShowLoginModal(false);
   }
   
   const handleRegistartionModalShow = () =>{
-      setShowRegistrationModal(true)
+    setShowRegistrationModal(true)
   }
 
   const handleRegistartionModalClose = () =>{
-      setShowRegistrationModal(false)
+    setShowRegistrationModal(false)
   }
 
   useEffect(() => {
     listOfCartInfo()
-  }, []);
+  }, [!run]);
 
   const listOfCartInfo = () => {
     getCartList(user._id).then(data => {
-      if (data.error) {
-          console.log(data.error);
-      } else {
-        setCartItem(data);
-      }
+      setCartItem(data.data);
     });
   };
 
@@ -165,14 +158,12 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        {
-          !user?
-          <YourOrder total={total.toFixed(2)} placeOrder={handleLoginModalShow} location=""/> :
-          <YourOrder total={total.toFixed(2)} placeOrder='' location="/checkout"  />
+        {!user?
+          <YourOrder total={total} placeOrder={handleLoginModalShow} location=""/> :
+          <YourOrder total={total} placeOrder='' location="/checkout"  />
         }
         {showLoginModal === true ? <Login show={showLoginModal} close={handleLoginModalClose} registrationModal={handleRegistartionModalShow} location="/checkout"/> : null}
         {showRegistrationModal===true? <RegistrationModal show={showRegistrationModal} close={handleRegistartionModalClose} loginModal={handleLoginModalShow}/> :null}
-        
       </div>
     );
   };

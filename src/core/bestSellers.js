@@ -3,7 +3,7 @@ import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import ProductBox from "./ProductBox";
-import { partnerImgListAPI } from "./apiCore";
+import { partnerImgListAPI } from "../apiCore/homeApi";
 
 const BestSellers = (props) => {
   const [productList, setProductList] = useState(props.products);
@@ -11,8 +11,7 @@ const BestSellers = (props) => {
 
   const partnerImgLists = () => {
     partnerImgListAPI().then((data) =>{
-      setPartnerImages(data.res_);
-      
+      setPartnerImages(data.data.res_);
     })
   }
    

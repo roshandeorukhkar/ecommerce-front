@@ -1,28 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
-import Card from "./Card";
-import { getCategories, getFilteredProducts } from "./apiCore";
-import Checkbox from "./Checkbox";
-import RadioBox from "./RadioBox";
+import { getCategories } from "../apiCore/categoryApi";
+import { getFilteredProducts } from "../apiCore/productsApi"
 import { prices } from "./fixedPrices";
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import $ from 'jquery';
-
-// $(document).ready(function(){
-//     $( "#slider-range" ).slider({
-//         range: true,
-//         min: 0,
-//         max: 500,
-//         values: [ 75, 300 ],
-//         slide: function( event, ui ) {
-//         $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-//         }
-//     });
-//     $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-//         " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-// })    
 
 const Shop = () => {
     const [myFilters, setMyFilters] = useState({
@@ -37,11 +20,7 @@ const Shop = () => {
 
     const init = () => {
         getCategories().then(data => {
-            if (data.error) {
-                setError(data.error);
-            } else {
-                setCategories(data);
-            }
+            setCategories(data.data);
         });
     };
 

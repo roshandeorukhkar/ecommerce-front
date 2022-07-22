@@ -1,17 +1,12 @@
-import React, { useState } from "react";
-import { useRecoilValue } from "recoil";
-import { cartFetchData } from "../recoil/carts/cartHelpers";
+import React from "react";
 import { isAuthenticated } from "../common/utils";
-import Layout from "../core/Layout";
-import UserLinks from "../core/UserLink";
-import ProfileHome from "../core/ProfileHome"
-import Cart from "./Cart";
+import Layout from "./Layout";
+import UserLinks from "./UserLink";
+import ProfileHome from "./ProfileHome"
+import Orders from "./Orders";
 
-const MyCart = () => {
-    const {user, token} = isAuthenticated();
-    const { cartData } = useRecoilValue(cartFetchData);
-    const [total, setTotal] = useState(0)
-    console.log("cartData===", cartData)
+const MyOrders = () => {
+    const {user} = isAuthenticated();
     return (
         <Layout
             title="Dashboard"
@@ -19,8 +14,7 @@ const MyCart = () => {
             className="container-fluid"
         >
             <ProfileHome
-                profile="My Cart"
-                Update="Shopping Cart"
+                profile="My Orders"
             />
 
             <div className="bz_product_grid_content_main_wrapper float_left">
@@ -29,7 +23,7 @@ const MyCart = () => {
                     <div className="col-3"><UserLinks/></div>
                         <div className="col-9">
                             <div className="white-box">
-                                <Cart cartData={cartData} user={user} total={total}/>
+                                <Orders/>
                             </div>  
                         </div>
                     </div>
@@ -41,4 +35,4 @@ const MyCart = () => {
     
 };
 
-export default MyCart;
+export default MyOrders;

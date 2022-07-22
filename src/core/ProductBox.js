@@ -3,13 +3,19 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { cartList } from "../recoil/carts/cartHelpers";
-import { addProdcutToWishlist, createCart } from "./apiCore";
+import { addProdcutToWishlist } from "../apiCore/wishlistApi";
+import { createCart }  from "../apiCore/cartApi";
 import { isAuthenticated } from '../common/utils';
 import RegistrationModal from "./RegistrationModal";
 import Login from "./Login";
+import { useRecoilValue } from "recoil";
+import { cartFetchData } from "../recoil/carts/cartHelpers";
 
 const ProductBox = ({ image, productId, name, category, price, product}) => {
   const [cartItem, setCartItem] = useRecoilState(cartList);
+  const [quantity, setQuantity] = useState(1);
+  const { cartData, total } = useRecoilValue(cartFetchData);
+  console.log("quantity-------",quantity)
   const history = useHistory();
   let discount_ = 0;
   if( product.discount != 0 && product.discount != "" ){
@@ -17,7 +23,7 @@ const ProductBox = ({ image, productId, name, category, price, product}) => {
   }
 
   const { user ,token } = isAuthenticated();
-  const userId = (user !== undefined)?user._id:'0';
+  const userId = (user !== undefined) ?  user._id:'0';
 
   const [showLoginModal , setShowLoginModal] = useState(false);
   const [showRegistrationModal , setShowRegistrationModal] = useState(false);
@@ -33,33 +39,46 @@ const ProductBox = ({ image, productId, name, category, price, product}) => {
   const handleRegistartionModalShow = () =>{
     setShowRegistrationModal(true)
   }
+   
   const handleRegistartionModalClose = () =>{
     setShowRegistrationModal(false)
   }
 
   const addToCart = (e) => {
+    console.log(" productid---",productId, cartData)
     e.preventDefault();
-    if(!user){
-      setShowLoginModal(true);
-    }else{
-      if (cartItem.some((item) => item.id === productId)) {
-        setCartItem((cartItem) =>
-          cartItem.map((item) =>
-            item.id === productId ? { ...item, quantity : item.quantity + 1 } : item,
+    const check_index = cartData.findIndex(item => item.product === productId);
+    console.log("check_index-------", check_index )
+    if (check_index !== -1) {
+      //console.log("check_index-------", cartData[check_index], cartData[check_index].quantity )
+      //cartData[check_index].quantity ++;
+      //console.log("Quantity updated:", cartData);
+
+      setCartItem((cartItem) =>
+        console.log("cartItem-----",cartItem),
+        cartItem.map((item) =>
+            item.product === productId ? { ...item, quantity : item.quantity + 1 } : item,
           )
         );
-      } else {
-        const cartItemData ={
-          product: productId,
-          quantity: 1 ,
-          user: user._id,
-        }
-        createCart(cartItemData, token).then(res => {
-          console.log(res)
-        });
+
+    } else {
+      const cartItemData = {
+        //...cartData.productDetails[0].find(p => p.productId === productId),
+        product: productId,
+        quantity: 1 ,
+        user: userId,
       }
-      history.push("/mycart");
-    } 
+      setCartItem((oldCartItem) => [
+        ...oldCartItem,
+        cartItemData
+      ]);
+      console.log("cartItemData:---", cartItemData);
+      createCart(cartItemData).then(res => {
+        console.log(res)
+        setCartItem(res.data)
+      });
+    }
+   // history.push("/mycart");
   };
 
   const addToWishlist = productId =>(e) =>{
@@ -84,7 +103,6 @@ const ProductBox = ({ image, productId, name, category, price, product}) => {
   return (
     <div className="product_box">
       <div className="product_img">
-
         {image && Object.values(image).map((res, i) =>
           i == 0 ? (
             <img

@@ -1,11 +1,8 @@
 import React from 'react';
-import { cartFetchData } from '../recoil/carts/cartHelpers';
-import { useRecoilValue  } from 'recoil';
 import { Link } from 'react-router-dom';
 
-const OrderInfo = () => {
-   //payment
-   const { cartData } = useRecoilValue(cartFetchData);
+const OrderInfo = ({cartData}) => {
+    console.log("orderInfo---cartData",cartData)
    return (
     <div className="card-body">
         <div className="bz_cart_main_wrapper billing_info float_left">

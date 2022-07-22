@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getProducts, getBraintreeClientToken, processPayment, createOrder } from './apiCore';
+import { createOrder } from '../apiCore/orderApi';
+import { getBraintreeClientToken, processPayment } from "../apiCore/homeApi";
 import { emptyCart } from './cartHelpers';
 import Card from './Card';
 import { isAuthenticated } from '../common/utils';
@@ -25,13 +26,13 @@ const CheckoutOld = ({ products, setRun = f => f, run = undefined }) => {
 
    const [cartItem, setCartItem] = useRecoilState(cartList);
    const [data, setData] = useState({
-        loading: false,
-        success: false,
-        clientToken: null,
-        error: '',
-        instance: {},
-        address: ''
-    });
+      loading: false,
+      success: false,
+      clientToken: null,
+      error: '',
+      instance: {},
+      address: ''
+   });
 
     const removeCartItem = (productId) => (e) => {
       e.preventDefault();
@@ -130,38 +131,35 @@ const CheckoutOld = ({ products, setRun = f => f, run = undefined }) => {
                 };
 
                 processPayment(userId, token, paymentData)
-                    .then(response => {
-                        console.log(response);
-                        // empty cart
-                        // create order
+               .then(response => {
+                  console.log(response);
+                  const createOrderData = {
+                        products: products,
+                        transaction_id: response.transaction.id,
+                        amount: response.transaction.amount,
+                        address: deliveryAddress
+                  };
 
-                        const createOrderData = {
-                            products: products,
-                            transaction_id: response.transaction.id,
-                            amount: response.transaction.amount,
-                            address: deliveryAddress
-                        };
-
-                        createOrder(userId, token, createOrderData)
-                            .then(response => {
-                                emptyCart(() => {
-                                    setRun(!run); // run useEffect in parent Cart
-                                    console.log('payment success and empty cart');
-                                    setData({
-                                        loading: false,
-                                        success: true
-                                    });
-                                });
-                            })
-                            .catch(error => {
-                                console.log(error);
-                                setData({ loading: false });
-                            });
-                    })
-                    .catch(error => {
-                        console.log(error);
-                        setData({ loading: false });
-                    });
+                  createOrder(userId, token, createOrderData)
+                        .then(response => {
+                           emptyCart(() => {
+                              setRun(!run); // run useEffect in parent Cart
+                              console.log('payment success and empty cart');
+                              setData({
+                                    loading: false,
+                                    success: true
+                              });
+                           });
+                        })
+                        .catch(error => {
+                           console.log(error);
+                           setData({ loading: false });
+                        });
+               })
+               .catch(error => {
+                  console.log(error);
+                  setData({ loading: false });
+               });
             })
             .catch(error => {
                 // console.log("dropin error: ", error);

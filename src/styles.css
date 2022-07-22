@@ -197,7 +197,7 @@ ul#top_access li ul a:hover {
   
   .product_details .img_product {
     position: relative;
-    width: 40%;
+    width: 30%;
     float: left;
   }
   
@@ -237,16 +237,25 @@ ul#top_access li ul a:hover {
     webkit-transition: all 0.5s;
     transition: all 0.5s;
   }
-  
+  .image_heading{
+    color: black;
+    font-size: 25px;
+    /* padding-left: 156px; */
+    /* float: left; */
+    margin-left: 250px;
+  }
+  .product_content_span_font{
+    color: #3e3b3b;
+    font-weight: 700;
+  }
   .product_details .product_content {
-    width: 60%;
+    width: 35%;
     float: left;
   }
   
   .product_details .product_content h3 {
     font-size: 24px;
     padding-left: 24px;
-    padding-top: 34px;
   }
   
   .product_details .product_content .review {

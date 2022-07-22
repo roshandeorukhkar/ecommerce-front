@@ -7,10 +7,7 @@ import { AiFillSetting } from 'react-icons/ai';
 import { SiMaterialdesignicons } from 'react-icons/si';
 
 const userLinks = () => {
-    const {
-        user : { _id, firstName, lastName}
-    } = isAuthenticated();
-    const token = isAuthenticated().token;
+    const { user } = isAuthenticated()
 
     return (
         <>
@@ -19,7 +16,7 @@ const userLinks = () => {
                 <img className="profile-img" src="https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/profile-pic-female_0627fd.svg"/>
                 <div className="profile-name">
                     <div className="pro-desc">Hello,</div>
-                    <div className="pro-naming">{firstName +' '+ ' '+lastName}</div>
+                    <div className="pro-naming">{user.firstName +' '+ ' '+user.lastName}</div>
                 </div>
             </div>
         </div>
@@ -28,7 +25,7 @@ const userLinks = () => {
             <div className="pro-myorder hover-link">
                 <div className="pro-order">
                     <span><FaFirstOrderAlt/></span>
-                    <Link to="/user/orders" className="order-link hover-link">MY ORDERS</Link>
+                    <Link to="/user/myorders" className="order-link hover-link">MY ORDERS</Link>
                 </div>
             </div>
             <div className="border-bottom"></div>

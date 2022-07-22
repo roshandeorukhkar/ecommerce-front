@@ -1,14 +1,16 @@
 import React, { useState, useEffect} from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { addAddress} from "../customer/apiUser";
+import { addAddress} from "../apiCore/addressApi";
 import { useRecoilState } from "recoil";
 import { setManageAddress } from "../recoil/atom/setManageAddress";
 
 const AddNewAddress = (props) => {
     const [ address , setAddress]= useState([])
     const [ coilAddress , setCoilAddress ] = useRecoilState(setManageAddress)
+
     const handleChange = data => event => {
+        console.log("data",data)
         setAddress({ ...address,[data]: event.target.value });
     };
     const {handleSubmit, register, formState : {errors} } = useForm();
@@ -27,7 +29,8 @@ const AddNewAddress = (props) => {
             pincode :data.pincode
         }
         addAddress(addressData).then(res => {
-            setCoilAddress(coilAddress.concat(res))        
+            setCoilAddress(coilAddress.concat(res.data))       
+            console.log("res.data", res.data) 
             props.recordAdded()
         });
     }  

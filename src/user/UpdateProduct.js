@@ -66,7 +66,7 @@ const UpdateProduct = ({ match }) => {
             if (data.error) {
                 setValues({ ...values, error: data.error });
             } else {
-                setCategories(data);
+                setCategories(data.data);
             }
         });
     };

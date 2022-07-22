@@ -39,11 +39,11 @@ const Signin = () => {
 
     const signUpForm = () => (
         <div className="bz_product_grid_content_main_wrapper float_left">
-               <div className="container custom_container">
-                  <div className="row">
-                     <div className="col-lg-6 col-md-6 col-12">
+            <div className="container custom_container">
+                <div className="row">
+                    <div className="col-lg-6 col-md-6 col-12">
                         <div className="login_form">
-                           <h3>Signin</h3>
+                            <h3>Signin</h3>
                             <form>
                                 <div className="form-group row">
                                     <div className="col-12">
@@ -79,15 +79,15 @@ const Signin = () => {
                             </form>
                             <p>Don't have an account? <a href="/signup">Signup</a></p>
                         </div>
-                     </div>
-                     <div className="col-lg-6 col-md-6 col-12">
+                    </div>
+                    <div className="col-lg-6 col-md-6 col-12">
                         <div className="login_side_img">
                             <img className="img-fluid" src="../assets/images/login_img.jpg" alt="online-shopping" style={{height:'500px'}}/> 
                         </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
+        </div>
     );
 
     const showError = () => (
